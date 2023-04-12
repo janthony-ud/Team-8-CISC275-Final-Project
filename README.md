@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# CISC275-Final-Project
+
+This project is a movie rating system with three different levels of users: Super, Admin, and User. Each role has different permissions and can edit different data. The system contains a Central item list, an Admin list, and multiple User lists. Users can drag items from the Central Movie list to their own User list, and edit their own lists as necessary. Admins can edit items from the Admin list, which will update the item across all lists. Super users have access to all features and can create new items and add more users to the system.
+>>>>>>> 3c2cef7dadbf961aa5250d900e1ecb8db5d52f9a
