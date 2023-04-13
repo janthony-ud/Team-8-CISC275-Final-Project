@@ -1,17 +1,17 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import movieList from "../data/movieList.json";
+import { Movie } from "../interfaces/movie";
+
 
 export function CentralList(): JSX.Element {
-    const movies = movieList.map((movie, index) => {
+    const movies: Movie[] = movieList.map((movie) => {
         return {
-            id: index + 1,
-            name: movie.name,
             image: movie.image,
+            title: movie.name,
             description: movie.desc,
-            genre: movie.genre,
-            age: movie.age,
-            cast: movie.cast.split(",")
+            maturity_rating: movie.age,
+            cast: movie.cast.split(","),
+            genre: movie.genre.split(",")
         };
     });
 
@@ -19,12 +19,12 @@ export function CentralList(): JSX.Element {
         <div>
             <h1>Central Movie List</h1>
             {movies.map((movie) => (
-                <div key={movie.id}>
-                    <h2>{movie.name}</h2>
-                    <img src={movie.image} alt={movie.name} />
+                <div>
+                    <h2>{movie.title}</h2>
+                    <img src={movie.image} alt={movie.title} />
                     <p>{movie.description}</p>
                     <p>Genre: {movie.genre}</p>
-                    <p>Age: {movie.age}</p>
+                    <p>Age Rating: {movie.maturity_rating}</p>
                     <p>Cast: {movie.cast}</p>
                 </div>
             ))}
