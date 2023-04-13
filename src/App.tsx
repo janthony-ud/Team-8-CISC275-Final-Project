@@ -5,12 +5,18 @@ import React from "react";
 //import { Button } from "react-bootstrap";
 
 import "./App.css";
+import { CentralList } from "./components/CentralList";
 
 function App(): JSX.Element {
     return (
-        <header className="App-header">
-            <p>Movie Rating App</p>
-        </header>
+        <div className="App">
+            <header className="App-header">
+                <p>Movie Rating App</p>
+            </header>
+            <hr></hr>
+            <CentralList />
+            <hr></hr>
+        </div>
     );
 }
 
