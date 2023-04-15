@@ -9,14 +9,20 @@ import { CentralList } from "./components/CentralList";
 
 function App(): JSX.Element {
     return (
-        <div className="App">
-            <header className="App-header">
-                <p>Movie Rating App</p>
-            </header>
-            <hr></hr>
-            <CentralList />
-            <hr></hr>
-        </div>
+        <>
+            <div className="App">
+                <header className="App-header">
+                    <p>Movie Rating App</p>
+                    <p className="Header-names">
+                        Justin Anthony, Meghan Gamble, Brad Daughtery, Jakeb
+                        Milburn, Ryan Sanchez
+                    </p>
+                </header>
+                <hr></hr>
+                <CentralList />
+                <hr></hr>
+            </div>
+        </>
     );
 }
 

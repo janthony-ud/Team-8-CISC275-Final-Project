@@ -2,7 +2,6 @@ import React from "react";
 import movieList from "../data/movieList.json";
 import { Movie } from "../interfaces/movie";
 
-
 export function CentralList(): JSX.Element {
     const movies: Movie[] = movieList.map((movie) => {
         return {
@@ -19,7 +18,7 @@ export function CentralList(): JSX.Element {
         <div>
             <h1>Central Movie List</h1>
             {movies.map((movie) => (
-                <div>
+                <div key={movie.title}>
                     <h2>{movie.title}</h2>
                     <img src={movie.image} alt={movie.title} />
                     <p>{movie.description}</p>
