@@ -11,6 +11,14 @@ function App(): JSX.Element {
         <header className="App-header">
             <p>Movie Rating App</p>
         </header>
+        <p>
+            Justin Anthony
+Meghan Gamble
+Brad Daughtery
+Jakeb Milburn
+Ryan Sanchez
+
+        </p>
     );
 }
 
