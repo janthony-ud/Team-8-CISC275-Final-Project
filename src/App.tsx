@@ -6,6 +6,7 @@ import React from "react";
 
 import "./App.css";
 import { CentralList } from "./components/CentralList";
+import YourList from "./components/UserList";
 
 function App(): JSX.Element {
     return (
@@ -19,6 +20,7 @@ function App(): JSX.Element {
                     </p>
                 </header>
                 <hr></hr>
+                <YourList></YourList>
                 <CentralList />
                 <hr></hr>
             </div>
