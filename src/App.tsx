@@ -15,8 +15,8 @@ function App(): JSX.Element {
                 <header className="App-header">
                     <p>Movie Rating App</p>
                     <p className="Header-names">
-                        Justin Anthony, Meghan Gamble, Brad Daughtery, Jakeb
-                        Milburn, Ryan Sanchez
+                        Team 8: Justin Anthony, Meghan Gamble, Brad Daughtery,
+                        Jakeb Milburn, Ryan Sanchez
                     </p>
                 </header>
                 <hr></hr>
