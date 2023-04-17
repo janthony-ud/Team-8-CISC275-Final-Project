@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Movie } from "../interfaces/movie";
-import movieList from "../data/movieList.json";
+//import movieList from "../data/movieList.json";
 import "./UserList.css";
 
 const YourList: React.FC = () => {
-    const [movies, setMovies] = useState<Movie[]>([
+    const [movies] = useState<Movie[]>([
         {
             title: "Cocaine Bear",
             image: "https://m.media-amazon.com/images/M/MV5BODAwZDQ5ZjEtZDI1My00MTFiLTg0ZjUtOGE2YTBkOTdjODFhXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_UX67_CR0,0,67,98_AL_.jpg",
