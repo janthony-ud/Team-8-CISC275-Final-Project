@@ -6,7 +6,7 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 FAIL src/App.test.tsx
-  ✕ renders learn react link (164 ms)
+  ✕ renders learn react link (109 ms)
 
   ● renders learn react link
 
@@ -87,9 +87,7 @@ FAIL src/App.test.tsx
               [36m</p>[39m
               [36m<p>[39m
                 [0mGenre: [0m
-                [0mAnimation[0m
-                [0m Adventure[0m
-                [0m Comedy [0m
+                [0mAnimation, Adventure, Comedy[0m
               [36m</p>[39m
               [36m<p>[39m
                 [0mAge Rating: [0m
@@ -97,10 +95,7 @@ FAIL src/App.test.tsx
               [36m</p>[39m
               [36m<p>[39m
                 [0mCast: [0m
-                [0mChris Pratt[0m
-                [0m Anya Taylor-Joy[0m
-                [0m Charlie Day[0m
-                [0m Jack Black [0m
+                [0mChris Pratt, Anya Taylor-Joy, Charlie Day, Jack Black[0m
               [36m</p>[39m
             [36m</div>[39m
             [36m<div>[39m
@@ -116,9 +111,7 @@ FAIL src/App.test.tsx
               [36m</p>[39m
               [36m<p>[39m
                 [0mGenre: [0m
-                [0mAdventure[0m
-                [0m Comedy[0m
-                [0m Fantasy  [0m
+                [0mAdventure, Comedy, Fantasy[0m
               [36m</p>[39m
               [36m<p>[39m
                 [0mAge Rating: [0m
@@ -126,10 +119,7 @@ FAIL src/App.test.tsx
               [36m</p>[39m
               [36m<p>[39m
                 [0mCast: [0m
-                [0mMargot Robbie[0m
-                [0m Ariana Greenblatt[0m
-                [0m Ryan Gosling[0m
-                [0m Emma Mackey [0m
+                [0mMargot Robbie, Ariana Greenblatt, Ryan Gosling, Emma Mackey[0m
               [36m</p>[39m
             [36m</div>[39m
             [36m<div>[39m
@@ -145,9 +135,7 @@ FAIL src/App.test.tsx
               [36m</p>[39m
               [36m<p>[39m
                 [0mGenre: [0m
-                [0mAction[0m
-                [0m Adventure[0m
-                [0m Comedy [0m
+                [0mAction, Adventure, Comedy[0m
               [36m</p>[39m
               [36m<p>[39m
                 [0mAge Rating: [0m
@@ -155,10 +143,7 @@ FAIL src/App.test.tsx
               [36m</p>[39m
               [36m<p>[39m
                 [0mCast: [0m
-                [0mChris Pine[0m
-                [0m Michelle Rodriguez[0m
-                [0m Regé-Jean Page[0m
-                [0m Justice Smith [0m
+                [0mChris Pine, Michelle Rodriguez, Regé-Jean Paige, Justice Smith[0m
               [36m</p>[39m
             [36m</div>[39m
             [36m<div>[39m
@@ -174,9 +159,7 @@ FAIL src/App.test.tsx
               [36m</p>[39m
               [36m<p>[39m
                 [0mGenre: [0m
-                [0mAction[0m
-                [0m Crime[0m
-                [0m Thriller [0m
+                [0mAction, Crime, Thriller[0m
               [36m</p>[39m
               [36m<p>[39m
                 [0mAge Rating: [0m
@@ -184,17 +167,19 @@ FAIL src/App.test.tsx
               [36m</p>[39m
               [36m<p>[39m
                 [0mCast: [0m
-                [0mKeanu Reeves[0m
-                [0m Laurence Fishburne[0m
-                [0m George Georgiou[0m
-                [0m Lance Reddick [0m
+                [0mKeanu Reeves, Laurence Fishburne, George Georgiou, Lance Reddick[0m
               [36m</p>[39m
             [36m</div>[39m
             [36m<div>[39m
               [36m<h2>[39m
                 [0mMurder Mystery 2 [0m
               [36m</h2>[39m
-          ...
+              [36m<img[39m
+                [33malt[39m=[32m"Murder Mystery 2 "[39m
+                [33msrc[39m=[32m"https://m.media-amazon.com/images/M/MV5BMzkyMjU1ZjMtMDJlMS00M2YzLWJhZDQtYjFjZTUyMzI2MDViXkEyXkFqcGdeQXVyMzQyMDgzOTU@._V1_UX67_CR0,0,67,98_AL_.jpg"[39m
+              [36m/>[39m
+              [36m<p>[39m
+                [0mFull-time detectives Nick and Audrey are struggling to get their private eye agency of...
 
        5 | test("renders learn react link", () => {
        6 |     render(<App />);
@@ -230,5 +215,5 @@ All files         |     100 |      100 |     100 |     100 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.518 s
+Time:        1.79 s
 Ran all test suites.
