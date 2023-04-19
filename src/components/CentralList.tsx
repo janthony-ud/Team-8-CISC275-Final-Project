@@ -9,8 +9,8 @@ export function CentralList(): JSX.Element {
             title: movie.name,
             description: movie.desc,
             maturity_rating: movie.age,
-            cast: movie.cast.split(","),
-            genre: movie.genre.split(",")
+            cast: movie.cast,
+            genre: movie.genre
         };
     });
 
@@ -22,9 +22,9 @@ export function CentralList(): JSX.Element {
                     <h2>{movie.title}</h2>
                     <img src={movie.image} alt={movie.title} />
                     <p>{movie.description}</p>
-                    <p>Genre: {movie.genre}</p>
+                    <p>Genre: {movie.genre.join(", ")}</p>
                     <p>Age Rating: {movie.maturity_rating}</p>
-                    <p>Cast: {movie.cast}</p>
+                    <p>Cast: {movie.cast.join(", ")}</p>
                 </div>
             ))}
         </div>

@@ -3,240 +3,355 @@
         "name": "The Super Mario Bros. Movie ",
         "image": "https://m.media-amazon.com/images/M/MV5BOTJhNzlmNzctNTU5Yy00N2YwLThhMjQtZDM0YjEzN2Y0ZjNhXkEyXkFqcGdeQXVyMTEwMTQ4MzU5._V1_UX67_CR0,0,67,98_AL_.jpg ",
         "desc": "The story of The Super Mario Bros. on their journey through the Mushroom Kingdom. ",
-        "genre": "Animation, Adventure, Comedy ",
+        "genre": ["Animation", "Adventure", "Comedy"],
         "age": "PG ",
-        "cast": "Chris Pratt, Anya Taylor-Joy, Charlie Day, Jack Black "
+        "cast": ["Chris Pratt", "Anya Taylor-Joy", "Charlie Day", "Jack Black"]
     },
     {
         "name": "Barbie ",
         "image": "https://m.media-amazon.com/images/M/MV5BOWIwZGY0OTYtZjUzYy00NzRmLTg5YzgtYWMzNWQ0MmZiY2MwXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_UX67_CR0,0,67,98_AL_.jpg ",
         "desc": "To live in Barbie Land is to be a perfect being in a perfect place. Unless you have a full-on existential crisis. Or you're a Ken. ",
-        "genre": "Adventure, Comedy, Fantasy  ",
+        "genre": ["Adventure", "Comedy", "Fantasy"],
         "age": "PG-13 ",
-        "cast": "Margot Robbie, Ariana Greenblatt, Ryan Gosling, Emma Mackey "
+        "cast": [
+            "Margot Robbie",
+            "Ariana Greenblatt",
+            "Ryan Gosling",
+            "Emma Mackey"
+        ]
     },
     {
         "name": "Dungeons & Dragons: Honor Among Thieves ",
         "image": "https://m.media-amazon.com/images/M/MV5BZjAyMGMwYTEtNDk4ZS00YmY0LThhZjUtOWI4ZjFmZmU4N2I3XkEyXkFqcGdeQXVyMTEyNzQ1MTk0._V1_UY98_CR0,0,67,98_AL_.jpg ",
         "desc": "A charming thief and a band of unlikely adventurers embark on an epic quest to retrieve a lost relic, but things go dangerously awry when they run afoul of the wrong people. ",
-        "genre": "Action, Adventure, Comedy ",
+        "genre": ["Action", "Adventure", "Comedy"],
         "age": "PG-13 ",
-        "cast": "Chris Pine, Michelle Rodriguez, Regé-Jean Page, Justice Smith "
+        "cast": [
+            "Chris Pine",
+            "Michelle Rodriguez",
+            "Regé-Jean Paige",
+            "Justice Smith"
+        ]
     },
     {
         "name": "John Wick: Chapter 4  ",
         "image": "https://m.media-amazon.com/images/M/MV5BMDExZGMyOTMtMDgyYi00NGIwLWJhMTEtOTdkZGFjNmZiMTEwXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_UX67_CR0,0,67,98_AL_.jpg ",
         "desc": "John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes. ",
-        "genre": "Action, Crime, Thriller ",
+        "genre": ["Action", "Crime", "Thriller"],
         "age": "R ",
-        "cast": "Keanu Reeves, Laurence Fishburne, George Georgiou, Lance Reddick "
+        "cast": [
+            "Keanu Reeves",
+            "Laurence Fishburne",
+            "George Georgiou",
+            "Lance Reddick"
+        ]
     },
     {
         "name": "Murder Mystery 2 ",
         "image": "https://m.media-amazon.com/images/M/MV5BMzkyMjU1ZjMtMDJlMS00M2YzLWJhZDQtYjFjZTUyMzI2MDViXkEyXkFqcGdeQXVyMzQyMDgzOTU@._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "Full-time detectives Nick and Audrey are struggling to get their private eye agency off the ground. They find themselves at the center of international abduction when their friend Maharaja, is kidnapped at his own lavish wedding. ",
-        "genre": "Action, Comedy, Crime ",
+        "genre": ["Action", "Comedy", "Crime"],
         "age": "PG-13 ",
-        "cast": "Adam Sandler, Jennifer Aniston, Mark Strong, Mélanie Laurent "
+        "cast": [
+            "Adam Sandler",
+            "Jennifer Aniston",
+            "Mark Strong",
+            "Melanie Laurent"
+        ]
     },
     {
         "name": "Air ",
         "image": "https://m.media-amazon.com/images/M/MV5BYmNlOTNlYjUtM2U3Yy00M2ZjLTkxZDQtN2NiNGZiZDI0ZjE3XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "Follows the history of shoe salesman Sonny Vaccaro, and how he led Nike in its pursuit of the greatest athlete in the history of basketball, Michael Jordan. ",
-        "genre": "Drama, Sport ",
+        "genre": ["Drama", "Sport"],
         "age": "R ",
-        "cast": "Matt Damon, Jason Bateman, Ben Affleck, Chris Messina "
+        "cast": ["Matt Damon", "Jason Bateman", "Ben Affleck", "Chris Messina"]
     },
     {
         "name": "Tetris ",
         "image": "https://m.media-amazon.com/images/M/MV5BZmZmNTdiYjMtZDdmNi00ZGU4LThkYmQtZTFhZWNlYmUxYWZkXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "The story of how one of the world's most popular video games found its way to players around the globe. Businessman Henk Rogers and Tetris inventor Alexey Pajitnov join forces in the USSR, risking it all to bring Tetris to the masses. ",
-        "genre": "Biography, Drama, History ",
+        "genre": ["Biography", "Drama", "History"],
         "age": "R ",
-        "cast": "Taron Egerton, Mara Huf, Miles Barrow, Rick Yune "
+        "cast": ["Taron Egerton", "Mara Huf", "Miles Barrow", "Rick Yune"]
     },
     {
         "name": "Creed 3 ",
         "image": "https://m.media-amazon.com/images/M/MV5BYWY1ZDY4MmQtYjhiYS00N2QwLTk1NzgtOWI2YzUwZThjNDYwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "Adonis has been thriving in both his career and family life, but when a childhood friend and former boxing prodigy resurfaces, the face-off is more than just a fight. ",
-        "genre": "Drama, Sport ",
+        "genre": ["Drama", "Sport"],
         "age": "PG-13 ",
-        "cast": "Michael B. Jordan, Tessa Thompson, Jonathan Majors, Wood Harris "
+        "cast": [
+            "Michael B. Jordan",
+            "Tessa Thompson",
+            "Jonathan Majors",
+            "Wood Harris"
+        ]
     },
     {
         "name": "Shazam! Fury of the Gods  ",
         "image": "https://m.media-amazon.com/images/M/MV5BNzJlM2NmZTItOGQyYS00MmE2LTkwZGUtNDFkNmJmZjRjZjcxXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "The film continues the story of teenage Billy Batson who, upon reciting the magic word \"SHAZAM!\" is transformed into his adult Super Hero alter ego, Shazam.",
-        "genre": "Action, Adventure, Comedy ",
+        "genre": ["Action", "Adventure", "Comedy"],
         "age": "PG-13 ",
-        "cast": "Zachary Levi, Asher Angel, Jack Dylan Grazer, Rachel Zegler "
+        "cast": [
+            "Zachary Levi",
+            "Asher Angel",
+            "Jack Dylan Grazer",
+            "Rachel Zegler"
+        ]
     },
     {
         "name": "Blue Beetle ",
         "image": "https://m.media-amazon.com/images/M/MV5BZGRiNTE1MTAtYTk1NC00ODM5LWIxZDQtMzg1M2Y0MjkyNzljXkEyXkFqcGdeQXVyMTAzODYwMzY3._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "A Mexican teenager finds an alien beetle that gives him superpowered armor. ",
-        "genre": "Action, Adventure, Sci-Fi ",
+        "genre": ["Action", "Adventure", "Sci-Fi"],
         "age": "PG-13 ",
-        "cast": "Bruna Marquezine, Xolo Maridueña, Susan Sarandon, Raoul Max Trujillo "
+        "cast": [
+            "Bruna Marquezine",
+            "Xolo Maridueña",
+            "Susan Sarandon",
+            "Raoul Max Trujillo"
+        ]
     },
     {
         "name": "65 ",
         "image": "https://m.media-amazon.com/images/M/MV5BYzFhM2M1MDUtNDhmNC00YzEzLThiMzctYWYxZTc0MGJhNWYyXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_UY98_CR5,0,67,98_AL_.jpg",
         "desc": "An astronaut crash lands on a mysterious planet only to discover he's not alone. ",
-        "genre": "Action, Adventure, Drama ",
+        "genre": ["Action", "Adventure", "Drama"],
         "age": "PG-13 ",
-        "cast": "Adam Driver, Ariana Greenblatt, Chloe Coleman, Nika King "
+        "cast": [
+            "Adam Driver",
+            "Ariana Greenblatt",
+            "Chloe Coleman",
+            "Nika King"
+        ]
     },
     {
         "name": "The Pope's Exorcist  ",
         "image": "https://m.media-amazon.com/images/M/MV5BYjA0MGU4MzYtYTYxMy00MjRhLTlmMDYtZTVhZDc1Y2QwNWY2XkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "Follow Gabriele Amorth, the Vatican's leading exorcist, as he investigates the possession of a child and uncovers a conspiracy the Vatican has tried to keep secret. ",
-        "genre": "Horror, Thriller ",
+        "genre": ["Horror", "Thriller"],
         "age": "R ",
-        "cast": " "
+        "cast": ["Russel Crowe", "Daniel Zovatto", "Franco Nero", "Alex Essoe"]
     },
     {
         "name": "Evil Dead Rise ",
         "image": "https://m.media-amazon.com/images/M/MV5BMmZiN2VmMjktZDE5OC00ZWRmLWFlMmEtYWViMTY4NjM3ZmNkXkEyXkFqcGdeQXVyMTI2MTc2ODM3._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "A twisted tale of two estranged sisters whose reunion is cut short by the rise of flesh-possessing demons, thrusting them into a primal battle for survival as they face the most nightmarish version of family imaginable. ",
-        "genre": "Horror ",
+        "genre": ["Horror"],
         "age": "R ",
-        "cast": " "
+        "cast": [
+            "Alyssa Sutherland",
+            "Lily Sullivan",
+            "Morgan Davies",
+            "Nell Fisher"
+        ]
     },
     {
         "name": "Asteroid City ",
         "image": "https://m.media-amazon.com/images/M/MV5BZDAxZmNmOWQtZTM2YS00MzQxLWE1Y2YtOGFlOTFmYzNmZDMzXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "The itinerary of a Junior Stargazer convention is spectacularly disrupted by world-changing events. ",
-        "genre": "Comedy, Romance ",
+        "genre": ["Comedy", "Romance"],
         "age": "R ",
-        "cast": "Alyssa Sutherland, Lily Sullivan, Morgan Davies, Nell Fisher "
+        "cast": [
+            "Jason Schwartzman",
+            "Scarlet Johansson",
+            "Tom Hanks",
+            "Jeffrey Wright"
+        ]
     },
     {
         "name": "Scream VI ",
         "image": "https://m.media-amazon.com/images/M/MV5BODBjM2M4YTQtNmJlMS00MGU2LWI4ZGYtZTA1MzdmZDAyMjFkXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "In the next installment, the survivors of the Ghostface killings leave Woodsboro behind and start a fresh chapter in New York City. ",
-        "genre": "Horror, Mystery, Thriller ",
+        "genre": ["Horror", "Mystery", "Thriller"],
         "age": "R ",
-        "cast": "Jason Schwartzman, Scarlett Johansson, Tom Hanks, Jeffrey Wright "
+        "cast": [
+            "Courteney Cox",
+            "Melissa Barrera",
+            "Jenna Ortega",
+            "Jasmin Savoy Brown"
+        ]
     },
     {
         "name": "Inside ",
         "image": "https://m.media-amazon.com/images/M/MV5BOWU0MjdiMmQtMTQ2OC00YzY4LWEzN2ItOTE4NjIwNmJjMWZmXkEyXkFqcGdeQXVyMTQzNTA5MzYz._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "Nemo, a high-end art thief, is trapped in a New York penthouse after his heist doesn't go as planned. Locked inside with nothing but priceless works of art, he must use all his cunning and ingenuity to survive. ",
-        "genre": "Drama, Thriller ",
+        "genre": ["Drama", "Thriller"],
         "age": "R ",
-        "cast": "Courteney Cox, Melissa Barrera, Jenna Ortega, Jasmin Savoy Brown "
+        "cast": [
+            "William Dafoe",
+            "Gene Bervoets",
+            "Eliza Stuyck",
+            "Andrew Blumenthal"
+        ]
     },
     {
         "name": "Beau Is Afraid ",
         "image": "https://m.media-amazon.com/images/M/MV5BYTNhNWRmMDctYzE4OS00MzczLWJkODgtNzYxZTQxM2Y1YmM3XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "Following the sudden death of his mother, a mild-mannered but anxiety-ridden man confronts his darkest fears as he embarks on an epic, Kafkaesque odyssey back home. ",
-        "genre": "Comedy, Drama, Horror ",
+        "genre": ["Comedy", "Drama", "Horror"],
         "age": "R ",
-        "cast": "Willem Dafoe, Gene Bervoets, Eliza Stuyck, Andrew Blumenthal "
+        "cast": [
+            "Joaquin Phoenix",
+            "Parker Posey",
+            "Amy Ryan",
+            "Hayley Squires"
+        ]
     },
     {
         "name": "Operation Fortune: Ruse de guerre ",
         "image": "https://m.media-amazon.com/images/M/MV5BNjcxOTJhZTEtMWFiYi00NTkwLTlkMzktZDQwMGQ0ZjM3YWU2XkEyXkFqcGdeQXVyMTAxNzQ1NzI@._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "Special agent Orson Fortune and his team of operatives recruit one of Hollywood's biggest movie stars to help them on an undercover mission when the sale of a deadly new weapons technology threatens to disrupt the world order.",
-        "genre": "Action, Comedy, Thriller ",
+        "genre": ["Action", "Comedy", "Thriller"],
         "age": "R ",
-        "cast": "Joaquin Phoenix, Parker Posey, Amy Ryan, Hayley Squires "
+        "cast": ["Jason Statham", "Aubrey Plaza", "Cary Elwes", "Hugh Grant"]
     },
     {
         "name": "Indiana Jones and the Dial of Destiny ",
         "image": "https://m.media-amazon.com/images/M/MV5BYzM4MjQ0MzktNTMwNi00MDdjLTg3YTctY2M4OWRjNzA2N2E1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "The next installment of the Indiana Jones series. ",
-        "genre": "Action, Adventure ",
+        "genre": ["Action", "Adventure"],
         "age": "PG-13 ",
-        "cast": "Jason Statham, Aubrey Plaza, Cary Elwes, Hugh Grant "
+        "cast": [
+            "Harrison Ford",
+            "Phoebe Waller-Bridge",
+            "Boyd Holbrook",
+            "Mads Mikkelsen"
+        ]
     },
     {
         "name": "Spider-Man: Across the Spider-Verse ",
         "image": "https://m.media-amazon.com/images/M/MV5BNjk5YTU0OTAtMTM1NC00Zjc1LWEzZjAtOWJkYzcxOGRhNWNhXkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_UY98_CR0,0,67,98_AL_.jpg",
         "desc": "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence. When the heroes clash on how to handle a new threat, Miles must redefine what it means to be a hero.",
-        "genre": "Animation, Action, Adventure ",
+        "genre": ["Animation", "Action", "Adventure"],
         "age": "PG-13 ",
-        "cast": "Harrison Ford, Phoebe Waller-Bridge, Boyd Holbrook, Mads Mikkelsen "
+        "cast": [
+            "Shameik Moore",
+            "Hailee Steinfeld",
+            "Oscar Isaac",
+            "Jake Johnson"
+        ]
     },
     {
         "name": "Cocaine Bear ",
         "image": "https://m.media-amazon.com/images/M/MV5BODAwZDQ5ZjEtZDI1My00MTFiLTg0ZjUtOGE2YTBkOTdjODFhXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "An oddball group of cops, criminals, tourists and teens converge on a Georgia forest where a huge black bear goes on a murderous rampage after unintentionally ingesting cocaine.",
-        "genre": "Comedy, Thriller ",
+        "genre": ["Comedy", "Thriller"],
         "age": "R ",
-        "cast": "Shameik Moore, Hailee Steinfeld, Oscar Isaac, Jake Johnson "
+        "cast": [
+            "Keri Russell",
+            "Aiden Ehrenreich",
+            "O'Shea Jackson Jr.",
+            "Ray Liotta"
+        ]
     },
     {
         "name": "Champions ",
         "image": "https://m.media-amazon.com/images/M/MV5BOTYwMWJjZTgtMzJiNS00OGIzLWE1NDYtNjgwMDUwYjZiOTc5XkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "A former minor-league basketball coach is ordered by the court to manage a team of players with intellectual disabilities. He soon realizes that despite his doubts, together, this team can go further than they ever imagined.",
-        "genre": "Comedy, Drama, Sport ",
+        "genre": ["Comedy", "Drama", "Sport"],
         "age": "PG-13 ",
-        "cast": "Keri Russell, Alden Ehrenreich, O'Shea Jackson Jr., Ray Liotta "
+        "cast": [
+            "Woody Harrelson",
+            "Kaitlin Olson",
+            "Matt Cook",
+            "Ernie Hudson"
+        ]
     },
     {
         "name": "Knock at the Cabin ",
         "image": "https://m.media-amazon.com/images/M/MV5BZDA0MzcxZTgtMTAzZC00MGJkLTg3YzItZjMzNjkwOTVlODNlXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "While vacationing, a girl and her parents are taken hostage by armed strangers who demand that the family make a choice to avert the apocalypse.",
-        "genre": "Horror, Mystery, Thriller ",
+        "genre": ["Horror", "Mystery", "Thriller"],
         "age": "R ",
-        "cast": "Woody Harrelson, Kaitlin Olson, Matt Cook, Ernie Hudson "
+        "cast": [
+            "Dave Bautista",
+            "Jonathan Groff",
+            "Ben Aldridge",
+            "Nikki Amuka-Bird"
+        ]
     },
     {
         "name": "Ant-Man and the Wasp: Quantumania ",
         "image": "https://m.media-amazon.com/images/M/MV5BODZhNzlmOGItMWUyYS00Y2Q5LWFlNzMtM2I2NDFkM2ZkYmE1XkEyXkFqcGdeQXVyMTU5OTA4NTIz._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "Scott Lang and Hope Van Dyne, along with Hank Pym and Janet Van Dyne, explore the Quantum Realm, where they interact with strange creatures and embark on an adventure that goes beyond the limits of what they thought was possible.",
-        "genre": "Action, Adventure, Comedy ",
+        "genre": ["Action", "Adventure", "Comedy"],
         "age": "PG-13 ",
-        "cast": "Dave Bautista, Jonathan Groff, Ben Aldridge, Nikki Amuka-Bird "
+        "cast": [
+            "Paul Rudd",
+            "Evangeline Lilly",
+            "Michael Douglas",
+            "Michelle Pfeiffer"
+        ]
     },
     {
         "name": "80 for Brady ",
         "image": "https://m.media-amazon.com/images/M/MV5BNzY4MzQ1MTgtNGZiYS00Y2M5LWJmODUtYzIzNWFlOGZjMjk5XkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "A group of friends made it their life-long mission to go to the Super Bowl and meet NFL superstar Tom Brady. ",
-        "genre": "Comedy, Drama, Sport ",
+        "genre": ["Comedy", "Drama", "Sport"],
         "age": "PG-13 ",
-        "cast": "Paul Rudd, Evangeline Lilly, Michael Douglas, Michelle Pfeiffer "
+        "cast": ["Lily Tomlin", "Jane Fonda", "Rita Moreno", "Sally Field"]
     },
     {
         "name": "A Good Person ",
         "image": "https://m.media-amazon.com/images/M/MV5BMDExZGMyOTMtMDgyYi00NGIwLWJhMTEtOTdkZGFjNmZiMTEwXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_UX67_CR0,0,67,98_AL_.jpg  ",
         "desc": "Follows Allison, whose life falls apart following her involvement in a fatal accident.",
-        "genre": "Drama ",
+        "genre": ["Drama"],
         "age": "R ",
-        "cast": "Lily Tomlin, Jane Fonda, Rita Moreno, Sally Field "
+        "cast": [
+            "Florence Pugh",
+            "Morgan Freeman",
+            "Celeste O'Connor",
+            "Molly Shannon"
+        ]
     },
     {
         "name": "Paint ",
         "image": "https://m.media-amazon.com/images/M/MV5BMWFmOTU2ZjctN2VhMS00Yzg4LWIyOGEtMTgwZTdjYTMyZjNkXkEyXkFqcGdeQXVyMzQwMTY2Nzk@._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "Carl Nargle, Vermont's #1 public television painter, is convinced he has it all: a signature perm, custom van, and fans hanging on his every stroke - until a younger, better artist steals everything (and everyone) Carl loves. ",
-        "genre": "Comedy, Drama ",
+        "genre": ["Comedy", "Drama"],
         "age": "PG-13 ",
-        "cast": "Florence Pugh, Morgan Freeman, Celeste O'Connor, Molly Shannon "
+        "cast": [
+            "Owen Wilson",
+            "Elisabeth Henry",
+            "Paul Kosopod",
+            "Sonia Darmei Lopes"
+        ]
     },
     {
         "name": "The Portable Door ",
         "image": "https://m.media-amazon.com/images/M/MV5BYjY0ZmZjNDUtN2VlYi00MmI5LThhMzAtZjcyOTQ1Nzg2NDQxXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "Paul Carpenter is an intern at a mysterious London firm with unconventional employers, including a CEO who wants to disrupt the ancient magical world with modern corporate practices.",
-        "genre": "Fantasy ",
+        "genre": ["Fantasy"],
         "age": "PG-13 ",
-        "cast": "Owen Wilson, Elisabeth Henry, Paul Kosopod, Sonia Darmei Lopes "
+        "cast": [
+            "Christoph Waltz",
+            "Patrick Gibson",
+            "Damon Herriman",
+            "Sophie Wilde"
+        ]
     },
     {
         "name": "Guardians of the Galaxy Vol. 3 ",
         "image": "https://m.media-amazon.com/images/M/MV5BMDgxOTdjMzYtZGQxMS00ZTAzLWI4Y2UtMTQzN2VlYjYyZWRiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "Still reeling from the loss of Gamora, Peter Quill rallies his team to defend the universe and one of their own - a mission that could mean the end of the Guardians if not successful.",
-        "genre": "Action, Adventure, Comedy ",
+        "genre": ["Action", "Adventure", "Comedy"],
         "age": "PG-13 ",
-        "cast": "Christoph Waltz, Patrick Gibson, Damon Herriman, Sophie Wilde "
+        "cast": ["Chris Pratt", "Zoe Saldana", "Dave Bautista", "Vin Diesel"]
     },
     {
         "name": "The Little Mermaid ",
         "image": "https://m.media-amazon.com/images/M/MV5BYTUxYjczMWUtYzlkZC00NTcwLWE3ODQtN2I2YTIxOTU0ZTljXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX67_CR0,0,67,98_AL_.jpg",
         "desc": "A young mermaid makes a deal with a sea witch to trade her beautiful voice for human legs so she can discover the world above water and impress a prince.",
-        "genre": "Adventure, Family, Fantasy ",
+        "genre": ["Adventure", "Family", "Fantasy"],
         "age": "PG ",
-        "cast": "Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel "
+        "cast": [
+            "Halle Bailey",
+            "Melissa McCarthy",
+            "Jonah Hauer-King",
+            "Daveed Diggs"
+        ]
     }
 ]
