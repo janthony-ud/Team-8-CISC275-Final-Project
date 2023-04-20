@@ -6,7 +6,7 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 FAIL src/App.test.tsx
-  ✕ renders learn react link (189 ms)
+  ✕ renders learn react link (179 ms)
 
   ● renders learn react link
 
@@ -30,6 +30,35 @@ FAIL src/App.test.tsx
               [0mTeam 8: Justin Anthony, Meghan Gamble, Brad Daughtery, Jakeb Milburn, Ryan Sanchez[0m
             [36m</p>[39m
           [36m</header>[39m
+          [36m<div>[39m
+            [36m<div>[39m
+              [36m<div>[39m
+                [36m<h3>[39m
+                  [0mSelect Your User[0m
+                [36m</h3>[39m
+                [36m<select[39m
+                  [33mclass[39m=[32m"form-select"[39m
+                  [33mid[39m=[32m"formUserSelect"[39m
+                [36m>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"user"[39m
+                  [36m>[39m
+                    [0muser[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"admin"[39m
+                  [36m>[39m
+                    [0madmin[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"super"[39m
+                  [36m>[39m
+                    [0msuper[0m
+                  [36m</option>[39m
+                [36m</select>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
           [36m<hr />[39m
           [36m<div>[39m
             [36m<h1[39m
@@ -160,25 +189,7 @@ FAIL src/App.test.tsx
                     [0mChris Pine, Michelle Rodriguez, Regé-Jean Paige, Justice Smith[0m
                   [36m</p>[39m
                 [36m</div>[39m
-              [36m</div>[39m
-              [36m<div>[39m
-                [36m<div>[39m
-                  [36m<img[39m
-                    [33malt[39m=[32m"John Wick: Chapter 4  "[39m
-                    [33msrc[39m=[32m"https://m.media-amazon.com/images/M/MV5BMDExZGMyOTMtMDgyYi00NGIwLWJhMTEtOTdkZGFjNmZiMTEwXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_UX67_CR0,0,67,98_AL_.jpg "[39m
-                  [36m/>[39m
-                  [36m<h3>[39m
-                    [0mJohn Wick: Chapter 4  [0m
-                  [36m</h3>[39m
-                [36m</div>[39m
-                [36m<div>[39m
-                  [36m<p>[39m
-                    [0mJohn Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes. [0m
-                  [36m</p>[39m
-                  [36m<p>[39m
-                    [0mGenre: [0m
-                    [0mAction, Crime, Thriller[0m
-     ...
+              ...
 
        5 | test("renders learn react link", () => {
        6 |     render(<App />);
@@ -198,21 +209,22 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-------------------|---------|----------|---------|---------|-------------------
-File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-------------------|---------|----------|---------|---------|-------------------
-All files         |     100 |      100 |     100 |     100 |                   
- src              |     100 |      100 |     100 |     100 |                   
-  App.tsx         |     100 |      100 |     100 |     100 |                   
- src/components   |     100 |      100 |     100 |     100 |                   
-  CentralList.tsx |     100 |      100 |     100 |     100 |                   
-  UserList.tsx    |     100 |      100 |     100 |     100 |                   
- src/interfaces   |       0 |        0 |       0 |       0 |                   
-  movie.ts        |       0 |        0 |       0 |       0 |                   
-  user.ts         |       0 |        0 |       0 |       0 |                   
-------------------|---------|----------|---------|---------|-------------------
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |    92.3 |      100 |   88.88 |    92.3 |                   
+ src               |     100 |      100 |     100 |     100 |                   
+  App.tsx          |     100 |      100 |     100 |     100 |                   
+ src/components    |   91.66 |      100 |    87.5 |   91.66 |                   
+  CentralList.tsx  |     100 |      100 |     100 |     100 |                   
+  UserDropdown.tsx |      75 |      100 |   66.66 |      75 | 8                 
+  UserList.tsx     |     100 |      100 |     100 |     100 |                   
+ src/interfaces    |       0 |        0 |       0 |       0 |                   
+  movie.ts         |       0 |        0 |       0 |       0 |                   
+  user.ts          |       0 |        0 |       0 |       0 |                   
+-------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.679 s
+Time:        2.864 s
 Ran all test suites.
