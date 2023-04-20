@@ -1,3 +1,3 @@
 export interface User {
-    name: string;
+    userOptions: string[];
 }
