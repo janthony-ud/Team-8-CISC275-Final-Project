@@ -9,8 +9,8 @@ export function CentralList(): JSX.Element {
             title: movie.name,
             description: movie.desc,
             maturity_rating: movie.age,
-            cast: movie.cast.split(","),
-            genre: movie.genre.split(",")
+            cast: movie.cast,
+            genre: movie.genre
         };
     });
 
