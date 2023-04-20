@@ -3,11 +3,7 @@ import movieList from "../data/movieList.json";
 import { Movie } from "../interfaces/movie";
 import { useDrag, DragSourceMonitor } from "react-dnd";
 import { useState } from "react";
-
-interface MovieDragItem {
-    type: string;
-    payload: Movie | null;
-}
+import { DraggedMovieItem } from "../interfaces/draggedMovie";
 
 export function CentralList(): JSX.Element {
     const [movies, setMovies] = useState<Movie[]>(
@@ -24,7 +20,7 @@ export function CentralList(): JSX.Element {
     );
 
     const [draggedMovie, setDraggedMovie] = useState<Movie | null>(null);
-    const [, drag] = useDrag<MovieDragItem, void, { isDragging: boolean }>({
+    const [, drag] = useDrag<DraggedMovieItem, void, { isDragging: boolean }>({
         item: { type: "movie", payload: null },
         collect: (monitor: DragSourceMonitor) => ({
             isDragging: !!monitor.isDragging()
