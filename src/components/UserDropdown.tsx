@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-import { User } from "../interfaces/user";
+//import { User } from "../interfaces/user";
 
 export function UserDropdown({ options }: { options: string[] }): JSX.Element {
     const [user, setUser] = useState<string>("user");
