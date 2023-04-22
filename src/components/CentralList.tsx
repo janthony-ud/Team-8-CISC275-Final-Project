@@ -71,7 +71,8 @@ export function CentralList(): JSX.Element {
 
     return (
         <div>
-            <h1> Drag Movies Here </h1>
+            <h1> Your Movies </h1>
+            <p>Drag movies here to add them to your list</p>
             <div
                 className="col"
                 onDrop={handleOnDrop}
