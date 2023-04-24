@@ -30,27 +30,36 @@ export function YourList(): JSX.Element {
 
     return (
         <div>
-            <h1 className="list-header">Your List</h1>
-            <ul className="movie-list">
-                {movies.map((movie, index) => (
-                    <><li key={movie.title}>
-                        <div className="movie-title">{movie.title}</div>
-                        <img
-                            src={movie.image}
-                            alt={movie.title}
-                            width="67"
-                            height="98"
-                            className="movie-image" />
+            <h1> Your Movies </h1>
+            <p>Drag movies here to add them to your list</p>
+            <div
+                className="col"
+                onDrop={handleOnDrop}
+                onDragOver={handleDragOver}
+            >
+                {userMovies.map((movie, index) => (
+                    <div className="droppedMovie" key={movie.title}>
+                        <img src={movie.image} alt={movie.title} />
+                        <h3>{movie.title}</h3>
+                        <div>
+                            <p>{movie.description}</p>
+                            <p>Genre: {movie.genre.join(", ")}</p>
+                            <p>Age Rating: {movie.maturity_rating}</p>
+                            <p>Cast: {movie.cast.join(", ")}</p>
+                        </div>{" "}
                         <div className="movie-rating">
                             <input
                                 type="range"
                                 min="1"
                                 max="5"
                                 value={movie.user_rating}
-                                onChange={(event) => handleRatingChange(
-                                    index,
-                                    parseInt(event.target.value)
-                                )} />
+                                onChange={(event) =>
+                                    handleRatingChange(
+                                        index,
+                                        parseInt(event.target.value)
+                                    )
+                                }
+                            />
                             <div>
                                 {[...Array(movie.user_rating)].map(
                                     (_, starIndex) => (
@@ -64,23 +73,11 @@ export function YourList(): JSX.Element {
                                 )}
                             </div>
                         </div>
-                    </li><h1> Your Movies </h1><p>Drag movies here to add them to your list</p><div
-                        className="col"
-                        onDrop={handleOnDrop}
-                        onDragOver={handleDragOver}
-                    >
-                            {userMovies.map((movie) => (
-                                <div className="droppedMovie" key={movie.title}>
-                                    <img src={movie.image} alt={movie.title} />
-                                    <h3>{movie.title}</h3>
-                                    <div>
-                                        <p>{movie.description}</p>
-                                        <p>Genre: {movie.genre.join(", ")}</p>
-                                        <p>Age Rating: {movie.maturity_rating}</p>
-                                        <p>Cast: {movie.cast.join(", ")}</p>
-                                    </div>{" "}
-                                </div>
-                            ))}
-                        </div></>
+                    </div>
+                ))}
+            </div>
+        </div>
     );
 }
+
+export default YourList;
