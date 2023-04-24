@@ -12,6 +12,7 @@ export interface Movie {
     cast: string[];
     /** List of genres that the movie falls under */
     genre: string[];
-
+    /**Rating out of 5 stars */
+    user_rating: number;
     /** Will add more attributes as needed */
 }

@@ -10,7 +10,8 @@ export function CentralList(): JSX.Element {
             description: movie.desc,
             maturity_rating: movie.age,
             cast: movie.cast.split(","),
-            genre: movie.genre.split(",")
+            genre: movie.genre.split(","),
+            user_rating: 1
         };
     });
 
