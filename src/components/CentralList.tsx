@@ -47,14 +47,14 @@ export function CentralList(): JSX.Element {
             >
                 {userMovies.map((movie) => (
                     <div className="droppedMovie" key={movie.title}>
-                        <img src={movie.image} alt={movie.title} />
-                        <h3>{movie.title}</h3>
-                        <div>
-                            <p>{movie.description}</p>
-                            <p>Genre: {movie.genre.join(", ")}</p>
-                            <p>Age Rating: {movie.maturity_rating}</p>
-                            <p>Cast: {movie.cast.join(", ")}</p>
-                        </div>{" "}
+                        <div className="movie-title">{movie.title}</div>
+                        <img
+                            src={movie.image}
+                            alt={movie.title}
+                            width="67"
+                            height="98"
+                            className="movie-image"
+                        />
                     </div>
                 ))}
             </div>
