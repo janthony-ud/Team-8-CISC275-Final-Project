@@ -17,48 +17,12 @@ export function CentralList(): JSX.Element {
         })
     );
 
-    // internal component state for testing/getting it working
-    const [userMovies, setUserMovies] = useState<Movie[]>([]);
-
     function handleOnDrag(e: React.DragEvent, widgetType: Movie) {
         e.dataTransfer.setData("widgetType", JSON.stringify(widgetType));
     }
 
-    function handleOnDrop(e: React.DragEvent) {
-        const widgetType = JSON.parse(
-            e.dataTransfer.getData("widgetType")
-        ) as Movie;
-        console.log("widgetType", widgetType);
-        setUserMovies([...userMovies, widgetType]);
-    }
-
-    function handleDragOver(e: React.DragEvent) {
-        e.preventDefault();
-    }
-
     return (
         <div>
-            <h1> Your List </h1>
-            <p>Drag movies here to add them to your list</p>
-            <div
-                className="col"
-                onDrop={handleOnDrop}
-                onDragOver={handleDragOver}
-            >
-                {userMovies.map((movie) => (
-                    <div className="droppedMovie" key={movie.title}>
-                        <div className="movie-title">{movie.title}</div>
-                        <img
-                            src={movie.image}
-                            alt={movie.title}
-                            width="67"
-                            height="98"
-                            className="movie-image"
-                        />
-                    </div>
-                ))}
-            </div>
-
             <h1>Central Movie List</h1>
             <div className="col">
                 {movies.map((movie) => (
