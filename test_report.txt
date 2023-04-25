@@ -109,7 +109,7 @@ All files          |    12.9 |       50 |       5 |    12.9 |
  src               |   57.14 |       50 |      25 |   57.14 |                   
   App.tsx          |   57.14 |       50 |      25 |   57.14 | 24-30             
  src/components    |       0 |      100 |       0 |       0 |                   
-  CentralList.tsx  |       0 |      100 |       0 |       0 | 9-36              
+  CentralList.tsx  |       0 |      100 |       0 |       0 | 9-35              
   UserDropdown.tsx |       0 |      100 |       0 |       0 | 6-17              
   UserList.tsx     |       0 |      100 |       0 |       0 | 6-66              
  src/interfaces    |       0 |        0 |       0 |       0 |                   
@@ -119,5 +119,5 @@ All files          |    12.9 |       50 |       5 |    12.9 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.675 s
+Time:        3.111 s
 Ran all test suites.
