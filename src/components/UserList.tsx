@@ -73,6 +73,9 @@ export function YourList(): JSX.Element {
                                 )}
                             </div>
                         </div>
+                        <div className="remove-movie">
+                            <button>Remove</button>
+                        </div>
                     </div>
                 ))}
             </div>
