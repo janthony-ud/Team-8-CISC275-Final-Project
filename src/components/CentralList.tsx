@@ -30,11 +30,11 @@ export function CentralList(): JSX.Element {
             <div className="col">
                 {movies.map((movie) => (
                     <div key={movie.title}>
-                        <div className="border">
-                            <div
-                                draggable
-                                onDragStart={(e) => handleOnDrag(e, movie)}
-                            >
+                        <div
+                            draggable
+                            onDragStart={(e) => handleOnDrag(e, movie)}
+                        >
+                            <div className="border">
                                 <Box p="5" maxW="320px" borderWidth="1px">
                                     <Image
                                         borderRadius="md"
