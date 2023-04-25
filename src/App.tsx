@@ -35,11 +35,6 @@ function App(): JSX.Element {
                         Jakeb Milburn, Ryan Sanchez
                     </p>
                 </header>
-                <div>
-                    <UserDropdown
-                        options={["user", "admin", "super"]}
-                    ></UserDropdown>
-                </div>
                 <hr></hr>
                 Please Select Your Role:
                 <Button onClick={flipVisibilityuser}>User</Button>
