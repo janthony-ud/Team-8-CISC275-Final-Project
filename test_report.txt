@@ -6,7 +6,7 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 FAIL src/App.test.tsx
-  ✕ renders learn react link (43 ms)
+  ✕ renders learn react link (27 ms)
 
   ● renders learn react link
 
@@ -14,6 +14,35 @@ FAIL src/App.test.tsx
 
     Ignored nodes: comments, <script />, <style />
     [36m<body>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"Toaster"[39m
+        [33mid[39m=[32m"react-toast"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
+        [36m/>[39m
+      [36m</div>[39m
       [36m<div>[39m
         [36m<div[39m
           [33mclass[39m=[32m"App"[39m
@@ -78,9 +107,9 @@ File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 -------------------|---------|----------|---------|---------|-------------------
 All files          |    12.9 |       50 |       5 |    12.9 |                   
  src               |   57.14 |       50 |      25 |   57.14 |                   
-  App.tsx          |   57.14 |       50 |      25 |   57.14 | 20-26             
+  App.tsx          |   57.14 |       50 |      25 |   57.14 | 24-30             
  src/components    |       0 |      100 |       0 |       0 |                   
-  CentralList.tsx  |       0 |      100 |       0 |       0 | 7-33              
+  CentralList.tsx  |       0 |      100 |       0 |       0 | 9-36              
   UserDropdown.tsx |       0 |      100 |       0 |       0 | 6-17              
   UserList.tsx     |       0 |      100 |       0 |       0 | 6-66              
  src/interfaces    |       0 |        0 |       0 |       0 |                   
@@ -90,5 +119,5 @@ All files          |    12.9 |       50 |       5 |    12.9 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.283 s
+Time:        2.675 s
 Ran all test suites.
