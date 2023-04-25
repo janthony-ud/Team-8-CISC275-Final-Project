@@ -1,9 +1,14 @@
+.border {
+    border-style: solid;
+    border-width: 1px;
+    padding: 3;
+}
 .col {
     display: grid;
     gap: 30px;
-    grid-template-columns: auto auto auto auto auto;
-    background-color: rgb(211, 198, 198);
+    grid-template-columns: auto auto auto auto;
     padding: 50px;
+    text-align: left;
 }
 
 .App {
