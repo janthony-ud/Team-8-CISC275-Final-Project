@@ -28,6 +28,12 @@ export function YourList(): JSX.Element {
         });
     };
 
+    function removeMovie(title: string): void {
+        setUserMovies(
+            [...userMovies].filter((userMovie) => userMovie.title !== title)
+        );
+    }
+
     return (
         <div>
             <h1> Your Movies </h1>
@@ -38,7 +44,7 @@ export function YourList(): JSX.Element {
                 onDragOver={handleDragOver}
             >
                 {userMovies.map((movie, index) => (
-                    <div className="droppedMovie" key={movie.title}>
+                    <div className="droppedMovie" key={index}>
                         <img src={movie.image} alt={movie.title} />
                         <h3>{movie.title}</h3>
                         <div>
@@ -73,9 +79,10 @@ export function YourList(): JSX.Element {
                                 )}
                             </div>
                         </div>
-                        <br></br>
                         <div className="remove-movie">
-                            <button>Remove</button>
+                            <button onClick={() => removeMovie(movie.title)}>
+                                Remove
+                            </button>
                         </div>
                     </div>
                 ))}
