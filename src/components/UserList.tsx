@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { Movie } from "../interfaces/movie";
+import { userMovie } from "../interfaces/userMovie";
 import "./UserList.css";
 
 export function YourList(): JSX.Element {
-    const [userMovies, setUserMovies] = useState<Movie[]>([]);
+    const [userMovies, setUserMovies] = useState<userMovie[]>([]);
 
     function handleOnDrop(e: React.DragEvent) {
         const widgetType = JSON.parse(
             e.dataTransfer.getData("widgetType")
         ) as Movie;
         console.log("widgetType", widgetType);
-        setUserMovies([...userMovies, widgetType]);
+        const newMovie: userMovie = { ...widgetType, id: userMovies.length };
+        setUserMovies([...userMovies, newMovie]);
     }
 
     function handleDragOver(e: React.DragEvent) {
@@ -28,9 +30,9 @@ export function YourList(): JSX.Element {
         });
     };
 
-    function removeMovie(title: string): void {
+    function removeMovie(id: number): void {
         setUserMovies(
-            [...userMovies].filter((userMovie) => userMovie.title !== title)
+            [...userMovies].filter((userMovie) => userMovie.id !== id)
         );
     }
 
@@ -44,7 +46,7 @@ export function YourList(): JSX.Element {
                 onDragOver={handleDragOver}
             >
                 {userMovies.map((movie, index) => (
-                    <div className="droppedMovie" key={index}>
+                    <div className="droppedMovie" key={movie.id}>
                         <img src={movie.image} alt={movie.title} />
                         <h3>{movie.title}</h3>
                         <div>
@@ -80,7 +82,7 @@ export function YourList(): JSX.Element {
                             </div>
                         </div>
                         <div className="remove-movie">
-                            <button onClick={() => removeMovie(movie.title)}>
+                            <button onClick={() => removeMovie(movie.id)}>
                                 Remove
                             </button>
                         </div>
