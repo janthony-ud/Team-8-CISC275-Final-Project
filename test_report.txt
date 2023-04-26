@@ -6,7 +6,7 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 FAIL src/App.test.tsx
-  ✕ renders learn react link (25 ms)
+  ✕ renders learn react link (77 ms)
 
   ● renders learn react link
 
@@ -59,8 +59,25 @@ FAIL src/App.test.tsx
               [0mTeam 8: Justin Anthony, Meghan Gamble, Brad Daughtery, Jakeb Milburn, Ryan Sanchez[0m
             [36m</p>[39m
           [36m</header>[39m
-          [36m<hr />[39m
-          [0mPlease Select Your Role:[0m
+          [36m<div[39m
+            [33mclass[39m=[32m"Role"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<hr />[39m
+              [0mPlease Select Your Role:[0m
+              [36m<button[39m
+                [33maria-controls[39m=[32m"menu-1"[39m
+                [33maria-expanded[39m=[32m"false"[39m
+                [33maria-haspopup[39m=[32m"menu"[39m
+                [33mclass[39m=[32m"css-c4fa1y"[39m
+                [33mid[39m=[32m"menubutton-2"[39m
+                [33mrole[39m=[32m"button"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mRoles[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
           [36m<button[39m
             [33mclass[39m=[32m"btn btn-primary"[39m
             [33mtype[39m=[32m"button"[39m
@@ -80,6 +97,38 @@ FAIL src/App.test.tsx
             [0mSuper[0m
           [36m</button>[39m
           [36m<hr />[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [36m<div>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"form-label"[39m
+              [33mfor[39m=[32m"userchoices"[39m
+            [36m>[39m
+              [0mChoose Your Name[0m
+            [36m</label>[39m
+            [36m<select[39m
+              [33mclass[39m=[32m"form-select"[39m
+              [33mid[39m=[32m"userchoices"[39m
+            [36m>[39m
+              [36m<option[39m
+                [33mvalue[39m=[32m"Jake"[39m
+              [36m>[39m
+                [0mJake[0m
+              [36m</option>[39m
+              [36m<option[39m
+                [33mvalue[39m=[32m"Ryan"[39m
+              [36m>[39m
+                [0mRyan[0m
+              [36m</option>[39m
+              [36m<option[39m
+                [33mvalue[39m=[32m"Meg"[39m
+              [36m>[39m
+                [0mMeg[0m
+              [36m</option>[39m
+            [36m</select>[39m
+          [36m</div>[39m
+          [0m[0m
+          [0ms Movie List:.[0m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -105,13 +154,15 @@ FAIL src/App.test.tsx
 -------------------|---------|----------|---------|---------|-------------------
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -------------------|---------|----------|---------|---------|-------------------
-All files          |   11.42 |       50 |    4.34 |   11.42 |                   
+All files          |   23.91 |       50 |   13.33 |   23.91 |                   
  src               |   57.14 |       50 |      25 |   57.14 |                   
-  App.tsx          |   57.14 |       50 |      25 |   57.14 | 24-30             
- src/components    |       0 |      100 |       0 |       0 |                   
+  App.tsx          |   57.14 |       50 |      25 |   57.14 | 18-24             
+ src/components    |   17.94 |       50 |   11.53 |   17.94 |                   
   CentralList.tsx  |       0 |      100 |       0 |       0 | 9-35              
+  ChooseRole.tsx   |   57.14 |       50 |      25 |   57.14 | 17-23             
   UserDropdown.tsx |       0 |      100 |       0 |       0 | 6-17              
-  UserList.tsx     |       0 |      100 |       0 |       0 | 7-85              
+  UserList.tsx     |       0 |      100 |       0 |       0 | 8-116             
+  Users.tsx        |      75 |      100 |   66.66 |      75 | 10                
  src/interfaces    |       0 |        0 |       0 |       0 |                   
   movie.ts         |       0 |        0 |       0 |       0 |                   
   user.ts          |       0 |        0 |       0 |       0 |                   
@@ -120,5 +171,5 @@ All files          |   11.42 |       50 |    4.34 |   11.42 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.484 s
+Time:        3.655 s
 Ran all test suites.
