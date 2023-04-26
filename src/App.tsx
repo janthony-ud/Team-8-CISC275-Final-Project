@@ -1,18 +1,12 @@
-//import React from "react";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
-//import { Container } from "react-bootstrap";
-//import { Row } from "react-bootstrap";
-//import { Col } from "react-bootstrap";
-//import { Button } from "react-bootstrap";
 import * as React from "react";
-
-// 1. import `ChakraProvider` component
 import { ThemeProvider } from "@chakra-ui/core";
-
+import { ChooseRole } from "./components/ChooseRole";
 import "./App.css";
 import { CentralList } from "./components/CentralList";
 import YourList from "./components/UserList";
+import { UserName } from "./components/Users";
 //import { UserDropdown } from "./components/UserDropdown";
 
 function App(): JSX.Element {
@@ -40,8 +34,7 @@ function App(): JSX.Element {
                             Daughtery, Jakeb Milburn, Ryan Sanchez
                         </p>
                     </header>
-                    <hr></hr>
-                    Please Select Your Role:
+                    <ChooseRole />
                     <Button onClick={flipVisibilityuser}>User</Button>
                     {visibleuser && <YourList></YourList>}
                     <Button onClick={flipVisibilityad}>Admin</Button>
@@ -50,6 +43,7 @@ function App(): JSX.Element {
                     {visiblesuper && <div>42</div>}
                     <hr></hr>
                 </div>
+                <UserName Names={["Jake", "Ryan", "Meg"]}></UserName>
             </>
         </ThemeProvider>
     );
