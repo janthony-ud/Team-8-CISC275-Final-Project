@@ -41,7 +41,7 @@ export function YourList(): JSX.Element {
             <h1> Your Movies </h1>
             <p>Drag movies here to add them to your list</p>
             <div
-                className="col"
+                className="col drop-area"
                 onDrop={handleOnDrop}
                 onDragOver={handleDragOver}
             >
