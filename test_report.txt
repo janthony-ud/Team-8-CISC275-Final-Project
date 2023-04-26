@@ -6,7 +6,7 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 FAIL src/App.test.tsx
-  ✕ renders learn react link (27 ms)
+  ✕ renders learn react link (25 ms)
 
   ● renders learn react link
 
@@ -105,19 +105,20 @@ FAIL src/App.test.tsx
 -------------------|---------|----------|---------|---------|-------------------
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -------------------|---------|----------|---------|---------|-------------------
-All files          |    12.9 |       50 |       5 |    12.9 |                   
+All files          |   11.42 |       50 |    4.34 |   11.42 |                   
  src               |   57.14 |       50 |      25 |   57.14 |                   
   App.tsx          |   57.14 |       50 |      25 |   57.14 | 24-30             
  src/components    |       0 |      100 |       0 |       0 |                   
   CentralList.tsx  |       0 |      100 |       0 |       0 | 9-35              
   UserDropdown.tsx |       0 |      100 |       0 |       0 | 6-17              
-  UserList.tsx     |       0 |      100 |       0 |       0 | 6-66              
+  UserList.tsx     |       0 |      100 |       0 |       0 | 7-85              
  src/interfaces    |       0 |        0 |       0 |       0 |                   
   movie.ts         |       0 |        0 |       0 |       0 |                   
   user.ts          |       0 |        0 |       0 |       0 |                   
+  userMovie.ts     |       0 |        0 |       0 |       0 |                   
 -------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.111 s
+Time:        2.484 s
 Ran all test suites.
