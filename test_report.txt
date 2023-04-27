@@ -6,7 +6,7 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 FAIL src/App.test.tsx
-  ✕ renders learn react link (91 ms)
+  ✕ renders learn react link (66 ms)
 
   ● renders learn react link
 
@@ -59,6 +59,43 @@ FAIL src/App.test.tsx
               [0mTeam 8: Justin Anthony, Meghan Gamble, Brad Daughtery, Jakeb Milburn, Ryan Sanchez[0m
             [36m</p>[39m
           [36m</header>[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mAdd a New User:[0m
+            [36m</h3>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+                [33mfor[39m=[32m"name-text"[39m
+              [36m>[39m
+                [0mEnter Name:[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-control"[39m
+                [33mid[39m=[32m"name-text"[39m
+                [33mvalue[39m=[32m""[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+                [33mfor[39m=[32m"name-text"[39m
+              [36m>[39m
+                [0mEnter Role:[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-control"[39m
+                [33mid[39m=[32m"name-text"[39m
+                [33mvalue[39m=[32m""[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mSave [0m
+            [36m</button>[39m
+          [36m</div>[39m
           [36m<div[39m
             [33mclass[39m=[32m"Role"[39m
           [36m>[39m
@@ -154,12 +191,13 @@ FAIL src/App.test.tsx
 -------------------|---------|----------|---------|---------|-------------------
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -------------------|---------|----------|---------|---------|-------------------
-All files          |   23.91 |       50 |   13.33 |   23.91 |                   
- src               |   57.14 |       50 |      25 |   57.14 |                   
-  App.tsx          |   57.14 |       50 |      25 |   57.14 | 18-24             
- src/components    |   17.94 |       50 |   11.53 |   17.94 |                   
-  CentralList.tsx  |       0 |      100 |       0 |       0 | 9-35              
+All files          |   21.31 |    33.33 |   13.15 |   21.31 |                   
+ src               |   18.18 |    16.66 |      20 |   18.18 |                   
+  App.tsx          |   18.18 |    16.66 |      20 |   18.18 | 16-22,40-43       
+ src/components    |      22 |       50 |   12.12 |      22 |                   
+  CentralList.tsx  |       0 |      100 |       0 |       0 | 16-55             
   ChooseRole.tsx   |   57.14 |       50 |      25 |   57.14 | 17-23             
+  User.tsx         |      40 |      100 |   16.66 |      40 | 13-21,36-38       
   UserDropdown.tsx |       0 |      100 |       0 |       0 | 6-17              
   UserList.tsx     |       0 |      100 |       0 |       0 | 8-116             
   Users.tsx        |      75 |      100 |   66.66 |      75 | 10                
@@ -171,5 +209,5 @@ All files          |   23.91 |       50 |   13.33 |   23.91 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        4.058 s
+Time:        3.102 s
 Ran all test suites.
