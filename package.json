@@ -6,6 +6,7 @@
     "dependencies": {
         "@chakra-ui/core": "^0.8.0",
         "@chakra-ui/icons": "^2.0.19",
+        "@chakra-ui/react": "^2.6.0",
         "@emotion/core": "^10.3.1",
         "@emotion/styled": "^10.3.0",
         "@testing-library/jest-dom": "^5.16.1",
@@ -22,8 +23,8 @@
         "react-dnd": "^15.1.2",
         "react-dnd-html5-backend": "^15.1.3",
         "react-dom": "^17.0.2",
-        "react-icons": "^4.8.0",
         "react-hook-form": "^7.43.9",
+        "react-icons": "^4.8.0",
         "react-router-dom": "^6.10.0",
         "react-scripts": "5.0.0",
         "state-pool": "^0.9.0",

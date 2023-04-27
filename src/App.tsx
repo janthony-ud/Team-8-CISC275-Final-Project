@@ -35,11 +35,12 @@ function App(): JSX.Element {
                         </p>
                     </header>
                     <AddUser />
-
                     <ChooseRole />
                     <Button onClick={() => userRole("User")}>User</Button>
                     {role == "User" && <YourList></YourList>}
                     <Button onClick={() => userRole("Admin")}>Admin</Button>
+                    <br></br>Rendering central list here for testing purposes
+                    <CentralList></CentralList>
                     <Button onClick={() => userRole("Super")}>Super</Button>
                     <hr></hr>
                 </div>
