@@ -4,9 +4,10 @@ import { Box, Image, Flex, Badge, Text } from "@chakra-ui/core";
 import movieList from "../data/movieList.json";
 import { Movie } from "../interfaces/movie";
 import { useState } from "react";
+import NewMovieButton from "./NewMovieButton";
 
 export function CentralList(): JSX.Element {
-    const [movies] = useState<Movie[]>(
+    const [movies, setMovies] = useState<Movie[]>(
         movieList.map((movie) => {
             return {
                 image: movie.image,
@@ -26,6 +27,11 @@ export function CentralList(): JSX.Element {
 
     return (
         <div>
+            <NewMovieButton
+                onSubmit={function (newMovie: Movie): void {
+                    setMovies((prevMovies) => [...prevMovies, newMovie]);
+                }}
+            ></NewMovieButton>
             <h1>Central Movie List</h1>
             <div className="col">
                 {movies.map((movie) => (
