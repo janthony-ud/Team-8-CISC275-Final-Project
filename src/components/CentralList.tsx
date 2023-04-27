@@ -1,9 +1,28 @@
 import React from "react";
 import { Box, Image, Flex, Badge, Text } from "@chakra-ui/core";
-//import { MdStar } from "react-icons/md";
 import movieList from "../data/movieList.json";
 import { Movie } from "../interfaces/movie";
 import { useState } from "react";
+
+export function makeNewMovie(
+    image: string,
+    title: string,
+    description: string,
+    maturity_rating: string,
+    cast: string[],
+    genre: string[],
+    user_rating: number
+): Movie {
+    return {
+        image: image,
+        title: title,
+        description: description,
+        maturity_rating: maturity_rating,
+        cast: cast,
+        genre: genre,
+        user_rating: user_rating
+    };
+}
 
 export function CentralList(): JSX.Element {
     const [movies] = useState<Movie[]>(
@@ -27,6 +46,7 @@ export function CentralList(): JSX.Element {
     return (
         <div>
             <h1>Central Movie List</h1>
+
             <div className="col">
                 {movies.map((movie) => (
                     <div key={movie.title}>
@@ -78,3 +98,13 @@ export function CentralList(): JSX.Element {
         </div>
     );
 }
+
+/*             const newMovie = makeNewMovie(
+                movie.image,
+                movie.title,
+                movie.description,
+                movie.maturity_rating,
+                movie.cast,
+                movie.genre,
+                movie.user_rating
+            );  */
