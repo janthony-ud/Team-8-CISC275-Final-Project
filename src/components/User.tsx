@@ -3,8 +3,6 @@ import { User } from "../interfaces/user";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
-const UserArray: User[] = [];
-
 export function AddUser() {
     const [user, setUser] = useState<User[]>([]);
     const [name, setName] = useState<string>("");
