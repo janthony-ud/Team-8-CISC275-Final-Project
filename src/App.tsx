@@ -35,11 +35,14 @@ function App(): JSX.Element {
                         </p>
                     </header>
                     <AddUser />
-
                     <ChooseRole />
                     <Button onClick={() => userRole("User")}>User</Button>
                     {role == "User" && <YourList></YourList>}
                     <Button onClick={() => userRole("Admin")}>Admin</Button>
+                    {/* showing central list - wasn't displaying before aft pull, i needed to see it for testing sorting*/}
+                    <br></br>**Rendering central list here for testing - see
+                    App.tsx**
+                    <CentralList></CentralList>
                     <Button onClick={() => userRole("Super")}>Super</Button>
                     <hr></hr>
                 </div>
