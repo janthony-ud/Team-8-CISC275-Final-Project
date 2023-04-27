@@ -1,3 +1,7 @@
+import { Movie } from "../interfaces/movie";
+
 export interface User {
-    userOptions: string[];
+    name: string;
+    userMovies: Movie[];
+    role: string;
 }

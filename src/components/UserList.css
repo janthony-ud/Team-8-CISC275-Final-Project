@@ -18,3 +18,12 @@
 .movie-image {
     padding: 10px;
 }
+
+.drop-area {
+    background-color: rgba(196, 190, 190, 0.25);
+    display: grid;
+    gap: 30px;
+    grid-template-columns: auto auto auto auto;
+    padding: 50px;
+    text-align: left;
+}
