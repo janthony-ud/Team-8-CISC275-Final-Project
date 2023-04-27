@@ -52,10 +52,10 @@ export function CentralList(): JSX.Element {
         console.log("called maturity");
         setSelected("Maturity");
         const ratingOrder: { [key: string]: number } = {
-            G: 1,
-            PG: 2,
-            "PG-13": 3,
-            R: 4
+            "G ": 1,
+            "PG ": 2,
+            "PG-13 ": 3,
+            "R ": 4
         };
         const sorted = movies.sort(
             (a, b) =>
