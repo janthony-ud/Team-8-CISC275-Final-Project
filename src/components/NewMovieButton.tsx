@@ -48,7 +48,8 @@ const NewMovieForm: React.FC<NewMovieFormProps> = ({ onSubmit }) => {
         setCast([]);
         setGenres([]);
         setUserRating(1);
-        (window as CustomWindow).close();
+        // eslint-disable-next-line
+        //(window as CustomWindow).close();
     };
 
     return (
