@@ -5,8 +5,7 @@ import { ThemeProvider } from "@chakra-ui/core";
 import { ChooseRole } from "./components/ChooseRole";
 import "./App.css";
 import { CentralList } from "./components/CentralList";
-import YourList from "./components/UserList";
-import { AddUser } from "./components/User";
+import addUser from "./components/User";
 import { UserName } from "./components/Users";
 
 function App(): JSX.Element {
@@ -15,7 +14,7 @@ function App(): JSX.Element {
     function userRole(UR: string): void {
         setRole(UR);
         if (UR == "User") {
-            <YourList></YourList>;
+            ("Your List");
         } else if (UR == "Admin") {
             <CentralList />;
         } else {
@@ -23,31 +22,43 @@ function App(): JSX.Element {
         }
     }
 
+    /*     const handleMovieSelect = (movie: Movie) => {
+        if (selectedUser) {
+            const updatedUser = {
+                ...selectedUser,
+                movieList: [...selectedUser.movieList, movie]
+            };
+            const updatedUsers = users.map((user) =>
+                user.name === selectedUser.name ? updatedUser : user
+            );
+            setUsers(updatedUsers);
+            setSelectedUser(updatedUser);
+        }
+    }; */
+
     return (
         <ThemeProvider>
-            <>
-                <div className="App">
-                    <header className="App-header">
-                        <p>Movie Rating App</p>
-                        <p className="Header-names">
-                            Team 8: Justin Anthony, Meghan Gamble, Brad
-                            Daughtery, Jakeb Milburn, Ryan Sanchez
-                        </p>
-                    </header>
-                    <AddUser />
-                    <ChooseRole />
-                    <Button onClick={() => userRole("User")}>User</Button>
-                    {role == "User" && <YourList></YourList>}
-                    <Button onClick={() => userRole("Admin")}>Admin</Button>
-                    {/* showing central list - wasn't displaying before aft pull, i needed to see it for testing sorting*/}
-                    <br></br>**Rendering central list here for testing - see
-                    App.tsx**
-                    <CentralList></CentralList>
-                    <Button onClick={() => userRole("Super")}>Super</Button>
-                    <hr></hr>
-                </div>
-                <UserName Names={["Jake", "Ryan", "Meg"]}></UserName>
-            </>
+            <div className="App">
+                <header className="App-header">
+                    <p>Movie Rating App</p>
+                    <p className="Header-names">
+                        Team 8: Justin Anthony, Meghan Gamble, Brad Daughtery,
+                        Jakeb Milburn, Ryan Sanchez
+                    </p>
+                </header>
+                {addUser}
+                <ChooseRole />
+                <Button onClick={() => userRole("User")}>User</Button>
+                {role == "User" && "Your List"}
+                <Button onClick={() => userRole("Admin")}>Admin</Button>
+                {/* showing central list - wasn't displaying before aft pull, i needed to see it for testing sorting*/}
+                <br></br>**Rendering central list here for testing - see
+                App.tsx**
+                <CentralList></CentralList>
+                <Button onClick={() => userRole("Super")}>Super</Button>
+                <hr></hr>
+            </div>
+            <UserName Names={["Jake", "Ryan", "Meg"]}></UserName>
         </ThemeProvider>
     );
 }

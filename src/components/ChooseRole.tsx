@@ -44,7 +44,7 @@ export function ChooseRole() {
                         <MenuItem onClick={flipVisibilityuser} as="a">
                             User
                         </MenuItem>
-                        {visibleuser && <YourList></YourList>}
+                        {visibleuser && "Your List"}
                         <MenuItem onClick={flipVisibilityad} as="a">
                             Admin
                         </MenuItem>

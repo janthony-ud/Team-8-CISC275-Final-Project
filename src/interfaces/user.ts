@@ -1,7 +1,7 @@
-import { Movie } from "../interfaces/movie";
+import { userMovie } from "../interfaces/userMovie";
 
 export interface User {
     name: string;
-    userMovies: Movie[];
+    userMovieList: userMovie[];
     role: string;
 }
