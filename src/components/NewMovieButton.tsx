@@ -82,7 +82,8 @@ const NewMovieForm: React.FC<NewMovieFormProps> = ({ onSubmit }) => {
             <br />
             <label>
                 Maturity Rating:
-                <textarea
+                <input
+                    type="text"
                     value={maturity_rating}
                     onChange={(e) => setMaturityRating(e.target.value)}
                 />
