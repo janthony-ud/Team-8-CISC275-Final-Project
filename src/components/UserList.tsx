@@ -3,8 +3,13 @@ import { Movie } from "../interfaces/movie";
 import { userMovie } from "../interfaces/userMovie";
 import "./UserList.css";
 import { Box, Image, Flex, Badge, Text } from "@chakra-ui/core";
+import { User } from "../interfaces/user";
 
-export function YourList(): JSX.Element {
+interface Props {
+    user: User;
+}
+
+const YourList: React.FC<Props> = ({ user }) => {
     const [userMovies, setUserMovies] = useState<userMovie[]>([]);
 
     function handleOnDrop(e: React.DragEvent) {
@@ -13,7 +18,7 @@ export function YourList(): JSX.Element {
         ) as Movie;
         console.log("widgetType", widgetType);
         const newMovie: userMovie = { ...widgetType, id: userMovies.length };
-        setUserMovies([...userMovies, newMovie]);
+        setUserMovies([...user.userMovieList, newMovie]);
     }
 
     function handleDragOver(e: React.DragEvent) {
@@ -125,6 +130,6 @@ export function YourList(): JSX.Element {
             </div>
         </div>
     );
-}
+};
 
 export default YourList;
