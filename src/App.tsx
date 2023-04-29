@@ -14,7 +14,7 @@ function App(): JSX.Element {
     function userRole(UR: string): void {
         setRole(UR);
         if (UR == "User") {
-            ("Your List");
+            <CentralList />;
         } else if (UR == "Admin") {
             <CentralList />;
         } else {

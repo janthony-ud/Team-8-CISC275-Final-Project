@@ -2,7 +2,6 @@ import React from "react";
 //import "./Users.css";
 import { useState } from "react";
 import { Button } from "@chakra-ui/core";
-import YourList from "./UserList";
 import { CentralList } from "./CentralList";
 //import "./App.tsx";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/core";
