@@ -1,41 +1,11 @@
-import { useState } from "react";
-import { Button } from "react-bootstrap";
 import React from "react";
 import { ThemeProvider } from "@chakra-ui/core";
-import { ChooseRole } from "./components/ChooseRole";
+import chosenUser from "./components/ChooseRole";
 import "./App.css";
 import { CentralList } from "./components/CentralList";
-import addUser from "./components/User";
-import { UserName } from "./components/Users";
+//import ChooseUser from "./components/User";
 
 function App(): JSX.Element {
-    const [role, setRole] = useState<string>("");
-
-    function userRole(UR: string): void {
-        setRole(UR);
-        if (UR == "User") {
-            <CentralList />;
-        } else if (UR == "Admin") {
-            <CentralList />;
-        } else {
-            <div>42</div>;
-        }
-    }
-
-    /*     const handleMovieSelect = (movie: Movie) => {
-        if (selectedUser) {
-            const updatedUser = {
-                ...selectedUser,
-                movieList: [...selectedUser.movieList, movie]
-            };
-            const updatedUsers = users.map((user) =>
-                user.name === selectedUser.name ? updatedUser : user
-            );
-            setUsers(updatedUsers);
-            setSelectedUser(updatedUser);
-        }
-    }; */
-
     return (
         <ThemeProvider>
             <div className="App">
@@ -46,19 +16,12 @@ function App(): JSX.Element {
                         Jakeb Milburn, Ryan Sanchez
                     </p>
                 </header>
-                {addUser}
-                <ChooseRole />
-                <Button onClick={() => userRole("User")}>User</Button>
-                {role == "User" && "Your List"}
-                <Button onClick={() => userRole("Admin")}>Admin</Button>
+                {chosenUser}
                 {/* showing central list - wasn't displaying before aft pull, i needed to see it for testing sorting*/}
                 <br></br>**Rendering central list here for testing - see
                 App.tsx**
                 <CentralList></CentralList>
-                <Button onClick={() => userRole("Super")}>Super</Button>
-                <hr></hr>
             </div>
-            <UserName Names={["Jake", "Ryan", "Meg"]}></UserName>
         </ThemeProvider>
     );
 }

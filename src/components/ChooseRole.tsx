@@ -2,59 +2,84 @@ import React from "react";
 //import "./Users.css";
 import { useState } from "react";
 import { Button } from "@chakra-ui/core";
-import { CentralList } from "./CentralList";
-//import "./App.tsx";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/core";
+import initialUsers from "../data/initialUsers.json";
+import { User } from "../interfaces/user";
+import NewUserButton from "./User";
+import YourList from "./UserList";
+import { CentralList } from "./CentralList";
 
-export function ChooseRole() {
-    //const [role, setrole] = useState<string>("");
-    const [visibleuser, setVisibleuser] = useState<boolean>(false);
-    const [visiblead, setVisiblead] = useState<boolean>(false);
-    const [visiblesuper, setVisiblesuper] = useState<boolean>(false);
+const ChooseUser: React.FC = () => {
+    const [users, setUsers] = useState<User[]>(
+        initialUsers.map((user) => {
+            return {
+                name: user.name,
+                userMovieList: user.userMovieList,
+                role: user.role
+            };
+        })
+    );
+    const [currentUser, setCurrentUser] = useState<User>(users[0]);
 
-    function flipVisibilityuser(): void {
-        setVisibleuser(!visibleuser);
-    }
-    function flipVisibilityad(): void {
-        setVisiblead(!visiblead);
-    }
-    function flipVisibilitysuper(): void {
-        setVisiblesuper(!visiblesuper);
+    function handleSetUser(user: User) {
+        setCurrentUser(user);
     }
 
-    /*     function roles() {
-        if (role == "User") {
-            <name="User" />;
-        } else if (role == "Admin") {
-            <Roles name="Admin" />;
-        } else if (role == "Super") {
-            <Roles name="Super" />;
+    function handleUserType(user: User) {
+        if (user.role == "user") {
+            return (
+                <div>
+                    <YourList user={currentUser}></YourList>;
+                    <CentralList />;
+                </div>
+            );
+        } else if (user.role == "admin") {
+            return "pass to show admin list";
+        } else if (user.role == "super") {
+            return (
+                <div>
+                    <h3>
+                        Hello, {user.name} please select what you want to do:
+                    </h3>
+                    <NewUserButton
+                        onSubmit={function (newUser: User): void {
+                            setUsers((prevUsers) => [...prevUsers, newUser]);
+                        }}
+                    ></NewUserButton>
+                </div>
+            );
+        } else {
+            return "Hello!";
         }
-    } */
+    }
 
     return (
         <div className="Role">
             <div>
                 <hr></hr>
-                Please Select Your Role:
+                <h1>Welcome to Movies.com!</h1>
                 <Menu>
-                    <MenuButton as={Button}>Roles</MenuButton>
+                    <MenuButton as={Button}>
+                        Please Select Your Name:
+                    </MenuButton>
                     <MenuList>
-                        <MenuItem onClick={flipVisibilityuser} as="a">
-                            User
-                        </MenuItem>
-                        {visibleuser && "Your List"}
-                        <MenuItem onClick={flipVisibilityad} as="a">
-                            Admin
-                        </MenuItem>
-                        {visiblead && <CentralList />}
-                        <MenuItem onClick={flipVisibilitysuper} as="a">
-                            Super
-                        </MenuItem>
-                        {visiblesuper && <CentralList />}
+                        {users.map((user) => (
+                            <div key={user.name}>
+                                <MenuItem
+                                    onClick={() => handleSetUser(user)}
+                                    as="a"
+                                >
+                                    {user.name} ({user.role})
+                                </MenuItem>
+                            </div>
+                        ))}
                     </MenuList>
                 </Menu>
+                <div>{handleUserType(currentUser)}</div>
             </div>
         </div>
     );
-}
+};
+
+const chosenUser: JSX.Element = <ChooseUser />;
+export default chosenUser;
