@@ -6,7 +6,7 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 FAIL src/App.test.tsx
-  ✕ renders learn react link (371 ms)
+  ✕ renders learn react link (319 ms)
 
   ● renders learn react link
 
@@ -59,49 +59,14 @@ FAIL src/App.test.tsx
               [0mTeam 8: Justin Anthony, Meghan Gamble, Brad Daughtery, Jakeb Milburn, Ryan Sanchez[0m
             [36m</p>[39m
           [36m</header>[39m
-          [36m<div>[39m
-            [36m<h3>[39m
-              [0mAdd a New User:[0m
-            [36m</h3>[39m
-            [36m<div>[39m
-              [36m<label[39m
-                [33mclass[39m=[32m"form-label"[39m
-                [33mfor[39m=[32m"name-text"[39m
-              [36m>[39m
-                [0mEnter Name:[0m
-              [36m</label>[39m
-              [36m<input[39m
-                [33mclass[39m=[32m"form-control"[39m
-                [33mid[39m=[32m"name-text"[39m
-                [33mvalue[39m=[32m""[39m
-              [36m/>[39m
-            [36m</div>[39m
-            [36m<div>[39m
-              [36m<label[39m
-                [33mclass[39m=[32m"form-label"[39m
-                [33mfor[39m=[32m"name-text"[39m
-              [36m>[39m
-                [0mEnter Role:[0m
-              [36m</label>[39m
-              [36m<input[39m
-                [33mclass[39m=[32m"form-control"[39m
-                [33mid[39m=[32m"name-text"[39m
-                [33mvalue[39m=[32m""[39m
-              [36m/>[39m
-            [36m</div>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mSave [0m
-            [36m</button>[39m
-          [36m</div>[39m
           [36m<div[39m
             [33mclass[39m=[32m"Role"[39m
           [36m>[39m
             [36m<div>[39m
               [36m<hr />[39m
-              [0mPlease Select Your Role:[0m
+              [36m<h1>[39m
+                [0mWelcome to Movies.com![0m
+              [36m</h1>[39m
               [36m<button[39m
                 [33maria-controls[39m=[32m"menu-1"[39m
                 [33maria-expanded[39m=[32m"false"[39m
@@ -111,22 +76,13 @@ FAIL src/App.test.tsx
                 [33mrole[39m=[32m"button"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
-                [0mRoles[0m
+                [0mPlease Select Your Name:[0m
               [36m</button>[39m
+              [36m<div>[39m
+                [0mHello![0m
+              [36m</div>[39m
             [36m</div>[39m
           [36m</div>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mUser[0m
-          [36m</button>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mAdmin[0m
-          [36m</button>[39m
           [36m<br />[39m
           [0m**Rendering central list here for testing - see App.tsx**[0m
           [36m<div>[39m
@@ -191,7 +147,42 @@ FAIL src/App.test.tsx
                           [33mclass[39m=[32m"css-1ghfqnb"[39m
                         [36m>[39m
                           [0mAnimation & Adventure & Comedy[0m
-                        [36m</...
+                        [36m</p>[39m
+                      [36m</div>[39m
+                      [36m<p[39m
+                        [33mclass[39m=[32m"css-1gvb3me"[39m
+                      [36m>[39m
+                        [0mThe Super Mario Bros. Movie [0m
+                      [36m</p>[39m
+                      [36m<p[39m
+                        [33mclass[39m=[32m"css-1ljpcab"[39m
+                      [36m>[39m
+                        [0mThe story of The Super Mario Bros. on their journey through the Mushroom Kingdom. [0m
+                      [36m</p>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"css-zp3rvv"[39m
+                      [36m>[39m
+                        [36m<p[39m
+                          [33mclass[39m=[32m"css-15bnp58"[39m
+                        [36m>[39m
+                          [36m<b>[39m
+                            [0mChris Pratt , Anya Taylor-Joy , Charlie Day , Jack Black[0m
+                          [36m</b>[39m
+                        [36m</p>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [36m<div[39m
+                  [33mdraggable[39m=[32m"true"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"border"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"css-1t9azfd"...
 
        5 | test("renders learn react link", () => {
        6 |     render(<App />);
@@ -214,17 +205,17 @@ FAIL src/App.test.tsx
 ---------------------|---------|----------|---------|---------|--------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s  
 ---------------------|---------|----------|---------|---------|--------------------
-All files            |   20.47 |    27.77 |   15.51 |   20.63 |                    
- src                 |   18.18 |    16.66 |      20 |   18.18 |                    
-  App.tsx            |   18.18 |    16.66 |      20 |   18.18 | 15-21,51-58        
- src/components      |   20.68 |    33.33 |   15.09 |   20.86 |                    
-  CentralList.tsx    |    23.8 |       25 |      25 |      25 | 32,59,65-86,93,121 
-  ChooseRole.tsx     |   57.14 |       50 |      25 |   57.14 | 16-22              
+All files            |   16.55 |    28.57 |   15.25 |   16.78 |                    
+ src                 |     100 |      100 |     100 |     100 |                    
+  App.tsx            |     100 |      100 |     100 |     100 |                    
+ src/components      |   15.97 |    28.57 |   13.79 |   16.19 |                    
+  CentralList.tsx    |    23.8 |       25 |      25 |      25 | 31,58,64-85,92,120 
+  ChooseRole.tsx     |   61.11 |       50 |      50 |    64.7 | 25,30,37,39-46,69  
   NewMovieButton.tsx |    8.69 |        0 |    8.33 |    8.69 | 14-88,118-144      
-  User.tsx           |   46.66 |      100 |    12.5 |   46.66 | 15-27,41-45        
+  User.tsx           |    6.66 |        0 |       0 |    6.66 | 16-50,60-97        
   UserDropdown.tsx   |       0 |      100 |       0 |       0 | 6-17               
-  UserList.tsx       |    5.26 |      100 |       0 |    5.26 | 13-121             
-  Users.tsx          |      75 |      100 |   66.66 |      75 | 10                 
+  UserList.tsx       |    4.76 |      100 |       0 |    4.76 | 14-128             
+  Users.tsx          |       0 |      100 |       0 |       0 | 7-19               
  src/interfaces      |       0 |        0 |       0 |       0 |                    
   movie.ts           |       0 |        0 |       0 |       0 |                    
   play.ts            |       0 |        0 |       0 |       0 |                    
@@ -234,5 +225,5 @@ All files            |   20.47 |    27.77 |   15.51 |   20.63 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.923 s
+Time:        4.107 s
 Ran all test suites.
