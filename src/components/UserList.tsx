@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { Movie } from "../interfaces/movie";
 import { userMovie } from "../interfaces/userMovie";
 import "./UserList.css";
@@ -10,7 +11,13 @@ interface Props {
 }
 
 const YourList: React.FC<Props> = ({ user }) => {
-    const [userMovies, setUserMovies] = useState<userMovie[]>([]);
+    const [userMovies, setUserMovies] = useState<userMovie[]>([
+        ...user.userMovieList
+    ]);
+
+    useEffect(() => {
+        setUserMovies(user.userMovieList);
+    }, [user]);
 
     function handleOnDrop(e: React.DragEvent) {
         const widgetType = JSON.parse(
@@ -44,7 +51,7 @@ const YourList: React.FC<Props> = ({ user }) => {
 
     return (
         <div>
-            <h1> Your Movies </h1>
+            <h1> {user.name}s Movies </h1>
             <p>Drag movies here to add them to your list</p>
             <div
                 className="col drop-area"

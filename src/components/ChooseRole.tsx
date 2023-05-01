@@ -2,14 +2,15 @@ import React from "react";
 //import "./Users.css";
 import { useState } from "react";
 import { Button } from "@chakra-ui/core";
-import { CentralList } from "./CentralList";
-//import "./App.tsx";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/core";
 import initialUsers from "../data/initialUsers.json";
 import { User } from "../interfaces/user";
+import NewUserButton from "./User";
+import YourList from "./UserList";
+import { CentralList } from "./CentralList";
 
-export function ChooseUser() {
-    const [users] = useState<User[]>(
+const ChooseUser: React.FC = () => {
+    const [users, setUsers] = useState<User[]>(
         initialUsers.map((user) => {
             return {
                 name: user.name,
@@ -26,11 +27,29 @@ export function ChooseUser() {
 
     function handleUserType(user: User) {
         if (user.role == "user") {
-            return "pass it to show the user list";
+            return (
+                <div>
+                    <YourList user={currentUser}></YourList>;
+                    <CentralList />;
+                </div>
+            );
         } else if (user.role == "admin") {
             return "pass to show admin list";
+        } else if (user.role == "super") {
+            return (
+                <div>
+                    <h3>
+                        Hello, {user.name} please select what you want to do:
+                    </h3>
+                    <NewUserButton
+                        onSubmit={function (newUser: User): void {
+                            setUsers((prevUsers) => [...prevUsers, newUser]);
+                        }}
+                    ></NewUserButton>
+                </div>
+            );
         } else {
-            return "pass to ask if add user, movie, etc";
+            return "Hello!";
         }
     }
 
@@ -38,6 +57,7 @@ export function ChooseUser() {
         <div className="Role">
             <div>
                 <hr></hr>
+                <h1>Welcome to Movies.com!</h1>
                 <Menu>
                     <MenuButton as={Button}>
                         Please Select Your Name:
@@ -59,4 +79,7 @@ export function ChooseUser() {
             </div>
         </div>
     );
-}
+};
+
+const chosenUser: JSX.Element = <ChooseUser />;
+export default chosenUser;
