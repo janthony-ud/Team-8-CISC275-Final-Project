@@ -2,11 +2,12 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import React from "react";
 import { ThemeProvider } from "@chakra-ui/core";
-import { ChooseRole } from "./components/ChooseRole";
+import { ChooseUser } from "./components/ChooseRole";
 import "./App.css";
 import { CentralList } from "./components/CentralList";
 import addUser from "./components/User";
 import { UserName } from "./components/Users";
+//import ChooseUser from "./components/User";
 
 function App(): JSX.Element {
     const [role, setRole] = useState<string>("");
@@ -46,8 +47,8 @@ function App(): JSX.Element {
                         Jakeb Milburn, Ryan Sanchez
                     </p>
                 </header>
+                <ChooseUser />
                 {addUser}
-                <ChooseRole />
                 <Button onClick={() => userRole("User")}>User</Button>
                 {role == "User" && "Your List"}
                 <Button onClick={() => userRole("Admin")}>Admin</Button>

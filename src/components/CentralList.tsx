@@ -11,7 +11,6 @@ import {
     MenuItem,
     MenuList
 } from "@chakra-ui/core";
-//import { MdStar } from "react-icons/md";
 import { FcAlphabeticalSortingAz } from "react-icons/fc";
 import { MdMovieFilter } from "react-icons/md";
 import { AiFillCaretDown } from "react-icons/ai";

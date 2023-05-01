@@ -5,55 +5,57 @@ import { Button } from "@chakra-ui/core";
 import { CentralList } from "./CentralList";
 //import "./App.tsx";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/core";
+import initialUsers from "../data/initialUsers.json";
+import { User } from "../interfaces/user";
 
-export function ChooseRole() {
-    //const [role, setrole] = useState<string>("");
-    const [visibleuser, setVisibleuser] = useState<boolean>(false);
-    const [visiblead, setVisiblead] = useState<boolean>(false);
-    const [visiblesuper, setVisiblesuper] = useState<boolean>(false);
+export function ChooseUser() {
+    const [users] = useState<User[]>(
+        initialUsers.map((user) => {
+            return {
+                name: user.name,
+                userMovieList: user.userMovieList,
+                role: user.role
+            };
+        })
+    );
+    const [currentUser, setCurrentUser] = useState<User>(users[0]);
 
-    function flipVisibilityuser(): void {
-        setVisibleuser(!visibleuser);
-    }
-    function flipVisibilityad(): void {
-        setVisiblead(!visiblead);
-    }
-    function flipVisibilitysuper(): void {
-        setVisiblesuper(!visiblesuper);
+    function handleSetUser(user: User) {
+        setCurrentUser(user);
     }
 
-    /*     function roles() {
-        if (role == "User") {
-            <name="User" />;
-        } else if (role == "Admin") {
-            <Roles name="Admin" />;
-        } else if (role == "Super") {
-            <Roles name="Super" />;
+    function handleUserType(user: User) {
+        if (user.role == "user") {
+            return "pass it to show the user list";
+        } else if (user.role == "admin") {
+            return "pass to show admin list";
+        } else {
+            return "pass to ask if add user, movie, etc";
         }
-    } */
+    }
 
     return (
         <div className="Role">
             <div>
                 <hr></hr>
-                Please Select Your Role:
                 <Menu>
-                    <MenuButton as={Button}>Roles</MenuButton>
+                    <MenuButton as={Button}>
+                        Please Select Your Name:
+                    </MenuButton>
                     <MenuList>
-                        <MenuItem onClick={flipVisibilityuser} as="a">
-                            User
-                        </MenuItem>
-                        {visibleuser && "Your List"}
-                        <MenuItem onClick={flipVisibilityad} as="a">
-                            Admin
-                        </MenuItem>
-                        {visiblead && <CentralList />}
-                        <MenuItem onClick={flipVisibilitysuper} as="a">
-                            Super
-                        </MenuItem>
-                        {visiblesuper && <CentralList />}
+                        {users.map((user) => (
+                            <div key={user.name}>
+                                <MenuItem
+                                    onClick={() => handleSetUser(user)}
+                                    as="a"
+                                >
+                                    {user.name} ({user.role})
+                                </MenuItem>
+                            </div>
+                        ))}
                     </MenuList>
                 </Menu>
+                <div>{handleUserType(currentUser)}</div>
             </div>
         </div>
     );

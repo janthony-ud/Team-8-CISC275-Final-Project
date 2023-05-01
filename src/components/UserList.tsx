@@ -18,7 +18,7 @@ const YourList: React.FC<Props> = ({ user }) => {
         ) as Movie;
         console.log("widgetType", widgetType);
         const newMovie: userMovie = { ...widgetType, id: userMovies.length };
-        setUserMovies([...user.userMovieList, newMovie]);
+        setUserMovies([...userMovies, newMovie]);
     }
 
     function handleDragOver(e: React.DragEvent) {

@@ -4,6 +4,66 @@ import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import YourList from "./UserList";
 
+interface Props {
+    user: User;
+}
+
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/core";
+import initialUsers from "../data/initialUsers.json";
+
+export function ChooseUser(user: Props) {
+    const [users] = useState<User[]>(
+        initialUsers.map((user) => {
+            return {
+                name: user.name,
+                userMovieList: user.userMovieList,
+                role: user.role
+            };
+        })
+    );
+    const [currentUser, setCurrentUser] = useState<User>(users[0]);
+
+    function handleSetUser(user: User) {
+        setCurrentUser(user);
+    }
+
+    function handleUserType(user: User) {
+        if (user.role == "user") {
+            return "pass it to show the user list";
+        } else if (user.role == "admin") {
+            return "pass to show admin list";
+        } else {
+            return "pass to ask if add user, movie, etc";
+        }
+    }
+
+    return (
+        <div className="Role">
+            <div>
+                <hr></hr>
+                <Menu>
+                    <MenuButton as={Button}>
+                        Please Select Your Name:
+                    </MenuButton>
+                    <MenuList>
+                        {users.map((user) => (
+                            <div key={user.name}>
+                                <MenuItem
+                                    onClick={() => handleSetUser(user)}
+                                    as="a"
+                                >
+                                    {user.name} ({user.role})
+                                </MenuItem>
+                            </div>
+                        ))}
+                    </MenuList>
+                </Menu>
+                <div>{handleUserType(currentUser)}</div>
+            </div>
+        </div>
+    );
+}
+
 const AddUser: React.FC = () => {
     //const[array, setArray] = useState<User[]>;
     const [user, setUser] = useState<User[]>([]);
@@ -35,7 +95,7 @@ const AddUser: React.FC = () => {
                 <Form.Control value={name} onChange={changename} />
             </Form.Group>
             <Form.Group controlId="name-text">
-                <Form.Label>Enter Role:</Form.Label>
+                <Form.Label>Enter Role (admin, super, user):</Form.Label>
                 <Form.Control value={role} onChange={changerole} />
             </Form.Group>
             <Button onClick={() => updateUsers(name, role)}>Save </Button>
