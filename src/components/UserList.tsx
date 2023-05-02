@@ -95,6 +95,10 @@ const YourList: React.FC<Props> = ({ user }) => {
             return a.title > b.title ? 1 : -1;
         });
         setUserMovies(sorted);
+        localStorage.setItem(
+            `userMovieList-${user.name}`,
+            JSON.stringify(userMovies)
+        );
     }
 
     function handleSortMaturity() {
@@ -112,6 +116,10 @@ const YourList: React.FC<Props> = ({ user }) => {
         );
         console.log(sorted);
         setUserMovies(sorted);
+        localStorage.setItem(
+            `userMovieList-${user.name}`,
+            JSON.stringify(userMovies)
+        );
     }
 
     function handleSortRating() {
@@ -120,6 +128,10 @@ const YourList: React.FC<Props> = ({ user }) => {
             return a.user_rating > b.user_rating ? 1 : -1;
         });
         setUserMovies(sorted);
+        localStorage.setItem(
+            `userMovieList-${user.name}`,
+            JSON.stringify(userMovies)
+        );
     }
     return (
         <div>
