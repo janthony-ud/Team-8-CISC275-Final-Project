@@ -11,13 +11,21 @@ interface Props {
 }
 
 const YourList: React.FC<Props> = ({ user }) => {
-    const [userMovies, setUserMovies] = useState<userMovie[]>([
-        ...user.userMovieList
-    ]);
+    const [userMovies, setUserMovies] = useState<userMovie[]>(() => {
+        const storedMovies = localStorage.getItem(`userMovies-${user.name}`);
+        if (storedMovies) {
+            return JSON.parse(storedMovies);
+        } else {
+            return user.userMovieList;
+        }
+    });
 
     useEffect(() => {
-        setUserMovies(user.userMovieList);
-    }, [user]);
+        localStorage.setItem(
+            `userMovies-${user.name}`,
+            JSON.stringify(userMovies)
+        );
+    }, [userMovies, user.name]);
 
     function handleOnDrop(e: React.DragEvent) {
         const widgetType = JSON.parse(
@@ -26,6 +34,10 @@ const YourList: React.FC<Props> = ({ user }) => {
         console.log("widgetType", widgetType);
         const newMovie: userMovie = { ...widgetType, id: userMovies.length };
         setUserMovies([...userMovies, newMovie]);
+        localStorage.setItem(
+            `userMovies-${user.name}`,
+            JSON.stringify([...userMovies, newMovie])
+        );
     }
 
     function handleDragOver(e: React.DragEvent) {
@@ -41,11 +53,21 @@ const YourList: React.FC<Props> = ({ user }) => {
             };
             return updatedMovies;
         });
+        localStorage.setItem(
+            `userMovies-${user.name}`,
+            JSON.stringify(userMovies)
+        );
     };
 
     function removeMovie(id: number): void {
         setUserMovies(
             [...userMovies].filter((userMovie) => userMovie.id !== id)
+        );
+        localStorage.setItem(
+            `userMovies-${user.name}`,
+            JSON.stringify(
+                [...userMovies].filter((userMovie) => userMovie.id !== id)
+            )
         );
     }
 
