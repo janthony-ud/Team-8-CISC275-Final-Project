@@ -18,6 +18,13 @@ import movieList from "../data/movieList.json";
 import { Movie } from "../interfaces/movie";
 import { useState } from "react";
 import NewMovieButton from "./NewMovieButton";
+import {
+    Accordion,
+    AccordionItem,
+    AccordionHeader,
+    AccordionPanel,
+    AccordionIcon
+} from "@chakra-ui/core";
 
 export function makeNewMovie(
     image: string,
@@ -112,54 +119,75 @@ export function CentralList(): JSX.Element {
                     </MenuItem>
                 </MenuList>
             </Menu>
-            <div className="col">
-                {movies.map((movie) => (
-                    <div key={movie.title}>
-                        <div
-                            draggable
-                            onDragStart={(e) => handleOnDrag(e, movie)}
-                        >
-                            <div className="border">
-                                <Box p="5" maxW="320px" borderWidth="1px">
-                                    <Image
-                                        borderRadius="md"
-                                        src={movie.image}
-                                        alt={movie.title}
-                                    />
-                                    <Flex align="baseline" mt={2}>
-                                        <Badge color="pink">
-                                            {movie.maturity_rating}
-                                        </Badge>
-                                        <Text
-                                            ml={2}
-                                            textTransform="uppercase"
-                                            fontSize="sm"
-                                            fontWeight="bold"
-                                            color="pink.800"
-                                        >
-                                            {movie.genre.join(" & ")}
-                                        </Text>
-                                    </Flex>
-                                    <Text
-                                        mt={2}
-                                        fontSize="xl"
-                                        fontWeight="semibold"
-                                        lineHeight="short"
-                                    >
-                                        {movie.title}
-                                    </Text>
-                                    <Text mt={2}>{movie.description}</Text>
-                                    <Flex mt={2} align="center">
-                                        <Text ml={1} fontSize="sm">
-                                            <b>{movie.cast.join(" , ")}</b>
-                                        </Text>
-                                    </Flex>
-                                </Box>
+            <Accordion defaultIndex={[0]} allowMultiple>
+                <div className="col">
+                    {movies.map((movie) => (
+                        <div key={movie.title}>
+                            <div
+                                draggable
+                                onDragStart={(e) => handleOnDrag(e, movie)}
+                            >
+                                <div className="border">
+                                    <AccordionItem>
+                                        <AccordionHeader>
+                                            <Box
+                                                width="100%"
+                                                alignContent="left"
+                                            >
+                                                <Box>
+                                                    <Image
+                                                        borderRadius="md"
+                                                        src={movie.image}
+                                                        alt={movie.title}
+                                                    />
+                                                    <Text
+                                                        mt={2}
+                                                        fontSize="xl"
+                                                        fontWeight="semibold"
+                                                    >
+                                                        {movie.title}
+                                                    </Text>
+                                                </Box>
+
+                                                <Box>
+                                                    {" "}
+                                                    <Text
+                                                        ml={2}
+                                                        textTransform="uppercase"
+                                                        fontSize="sm"
+                                                        fontWeight="bold"
+                                                        color="pink.800"
+                                                    >
+                                                        {movie.genre.join(
+                                                            " & "
+                                                        )}
+                                                    </Text>
+                                                    <Badge color="red">
+                                                        {movie.maturity_rating}
+                                                    </Badge>
+                                                </Box>
+                                                <AccordionIcon />
+                                            </Box>
+                                        </AccordionHeader>
+                                        <AccordionPanel pb={4}>
+                                            <Text mt={2}>
+                                                {movie.description}
+                                            </Text>
+                                            <Flex mt={2} align="center">
+                                                <Text ml={1} fontSize="sm">
+                                                    <b>
+                                                        {movie.cast.join(" , ")}
+                                                    </b>
+                                                </Text>
+                                            </Flex>
+                                        </AccordionPanel>
+                                    </AccordionItem>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
+            </Accordion>
         </div>
     );
 }
