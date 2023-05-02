@@ -27,7 +27,7 @@ Browserslist: caniuse-lite is outdated. Please run:
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (668 ms)
+  ✕ renders learn react link (614 ms)
 
   ● renders learn react link
 
@@ -225,7 +225,7 @@ All files            |   14.03 |    14.28 |    12.5 |    14.2 |
  src/components      |   13.52 |    14.28 |   11.26 |   13.69 |                    
   AdminList.tsx      |       0 |        0 |       0 |       0 | 6-90               
   CentralList.tsx    |    23.8 |       25 |      25 |      25 | 38,65,71-92,99,128 
-  ChooseRole.tsx     |   61.11 |       50 |      50 |    64.7 | 25,30,41,43-50,73  
+  ChooseRole.tsx     |   61.11 |       50 |      50 |    64.7 | 26,31,42,44-51,74  
   NewMovieButton.tsx |    8.69 |        0 |    8.33 |    8.69 | 14-88,118-144      
   User.tsx           |    6.66 |        0 |       0 |    6.66 | 16-50,60-97        
   UserDropdown.tsx   |       0 |      100 |       0 |       0 | 6-17               
@@ -240,5 +240,5 @@ All files            |   14.03 |    14.28 |    12.5 |    14.2 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.606 s
+Time:        4.011 s
 Ran all test suites.
