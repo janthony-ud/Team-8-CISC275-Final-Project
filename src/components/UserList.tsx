@@ -2,8 +2,22 @@ import React, { useState } from "react";
 import { Movie } from "../interfaces/movie";
 import { userMovie } from "../interfaces/userMovie";
 import "./UserList.css";
-import { Box, Image, Flex, Badge, Text } from "@chakra-ui/core";
+import {
+    Box,
+    Image,
+    Flex,
+    Badge,
+    Text,
+    Menu,
+    MenuButton,
+    Button,
+    MenuList,
+    MenuItem
+} from "@chakra-ui/core";
 import { User } from "../interfaces/user";
+import { AiFillCaretDown, AiFillStar } from "react-icons/ai";
+import { FcAlphabeticalSortingAz } from "react-icons/fc";
+import { MdMovieFilter } from "react-icons/md";
 
 interface Props {
     user: User;
@@ -42,10 +56,66 @@ const YourList: React.FC<Props> = ({ user }) => {
         );
     }
 
+    const [selected, setSelected] = useState<string>("");
+
+    function handleSortTitle() {
+        setSelected("Title");
+        const sorted = [...userMovies].sort((a, b) => {
+            return a.title > b.title ? 1 : -1;
+        });
+        setUserMovies(sorted);
+    }
+
+    function handleSortMaturity() {
+        console.log("called maturity");
+        setSelected("Maturity");
+        const ratingOrder: { [key: string]: number } = {
+            "G ": 1,
+            "PG ": 2,
+            "PG-13 ": 3,
+            "R ": 4
+        };
+        const sorted = userMovies.sort(
+            (a, b) =>
+                ratingOrder[a.maturity_rating] - ratingOrder[b.maturity_rating]
+        );
+        console.log(sorted);
+        setUserMovies(sorted);
+    }
+
+    function handleSortRating() {
+        setSelected("Rating");
+        const sorted = [...userMovies].sort((a, b) => {
+            return a.user_rating > b.user_rating ? 1 : -1;
+        });
+        setUserMovies(sorted);
+    }
     return (
         <div>
             <h1> Your Movies </h1>
             <p>Drag movies here to add them to your list</p>
+            <Menu>
+                <MenuButton as={Button}>
+                    {selected == "" ? (
+                        <div>
+                            Sort <AiFillCaretDown />
+                        </div>
+                    ) : (
+                        <div>Sorted By: {selected}</div>
+                    )}
+                </MenuButton>
+                <MenuList>
+                    <MenuItem onClick={handleSortTitle}>
+                        Title <FcAlphabeticalSortingAz />
+                    </MenuItem>
+                    <MenuItem onClick={handleSortMaturity}>
+                        Maturity <MdMovieFilter />
+                    </MenuItem>
+                    <MenuItem onClick={handleSortRating}>
+                        Rating <AiFillStar />
+                    </MenuItem>
+                </MenuList>
+            </Menu>
             <div
                 className="col drop-area"
                 onDrop={handleOnDrop}
