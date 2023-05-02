@@ -11,21 +11,23 @@ interface Props {
 }
 
 const YourList: React.FC<Props> = ({ user }) => {
-    const [userMovies, setUserMovies] = useState<userMovie[]>(() => {
-        const storedMovies = localStorage.getItem(`userMovies-${user.name}`);
+    const [userMovies, setUserMovies] = useState<userMovie[]>([]);
+
+    useEffect(() => {
+        const storedMovies = localStorage.getItem(`userMovieList-${user.name}`);
         if (storedMovies) {
-            return JSON.parse(storedMovies);
+            setUserMovies(JSON.parse(storedMovies));
         } else {
-            return user.userMovieList;
+            setUserMovies(user.userMovieList);
         }
-    });
+    }, [user]);
 
     useEffect(() => {
         localStorage.setItem(
-            `userMovies-${user.name}`,
+            `userMovieList-${user.name}`,
             JSON.stringify(userMovies)
         );
-    }, [userMovies, user.name]);
+    }, [userMovies, user]);
 
     function handleOnDrop(e: React.DragEvent) {
         const widgetType = JSON.parse(
@@ -35,7 +37,7 @@ const YourList: React.FC<Props> = ({ user }) => {
         const newMovie: userMovie = { ...widgetType, id: userMovies.length };
         setUserMovies([...userMovies, newMovie]);
         localStorage.setItem(
-            `userMovies-${user.name}`,
+            `userMovieList-${user.name}`,
             JSON.stringify([...userMovies, newMovie])
         );
     }
@@ -54,7 +56,7 @@ const YourList: React.FC<Props> = ({ user }) => {
             return updatedMovies;
         });
         localStorage.setItem(
-            `userMovies-${user.name}`,
+            `userMovieList-${user.name}`,
             JSON.stringify(userMovies)
         );
     };
@@ -64,7 +66,7 @@ const YourList: React.FC<Props> = ({ user }) => {
             [...userMovies].filter((userMovie) => userMovie.id !== id)
         );
         localStorage.setItem(
-            `userMovies-${user.name}`,
+            "userMovieList",
             JSON.stringify(
                 [...userMovies].filter((userMovie) => userMovie.id !== id)
             )
