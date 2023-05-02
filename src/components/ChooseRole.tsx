@@ -1,5 +1,4 @@
 import React from "react";
-//import "./Users.css";
 import { useState } from "react";
 import { Button } from "@chakra-ui/core";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/core";
@@ -8,6 +7,7 @@ import { User } from "../interfaces/user";
 import NewUserButton from "./User";
 import YourList from "./UserList";
 import { CentralList } from "./CentralList";
+import "./ChooseRole.css";
 
 const ChooseUser: React.FC = () => {
     const [users, setUsers] = useState<User[]>(
@@ -29,8 +29,12 @@ const ChooseUser: React.FC = () => {
         if (user.role == "user") {
             return (
                 <div>
-                    <YourList user={currentUser}></YourList>;
-                    <CentralList />;
+                    <div className="yourlist">
+                        <YourList user={currentUser}></YourList>;
+                    </div>
+                    <div className="centrallist">
+                        <CentralList />;
+                    </div>
                 </div>
             );
         } else if (user.role == "admin") {
