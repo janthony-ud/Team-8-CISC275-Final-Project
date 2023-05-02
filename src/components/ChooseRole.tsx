@@ -43,9 +43,6 @@ const ChooseUser: React.FC = () => {
         } else if (user.role == "super") {
             return (
                 <div>
-                    <h3>
-                        Hello, {user.name} please select what you want to do:
-                    </h3>
                     <NewUserButton
                         onSubmit={function (newUser: User): void {
                             setUsers((prevUsers) => [...prevUsers, newUser]);
