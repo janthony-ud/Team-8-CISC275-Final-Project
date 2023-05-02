@@ -8,6 +8,7 @@ import NewUserButton from "./User";
 import YourList from "./UserList";
 import { CentralList } from "./CentralList";
 import "./ChooseRole.css";
+import { AdminList } from "./AdminList";
 
 const ChooseUser: React.FC = () => {
     const [users, setUsers] = useState<User[]>(
@@ -38,7 +39,7 @@ const ChooseUser: React.FC = () => {
                 </div>
             );
         } else if (user.role == "admin") {
-            return "pass to show admin list";
+            return <AdminList />;
         } else if (user.role == "super") {
             return (
                 <div>
