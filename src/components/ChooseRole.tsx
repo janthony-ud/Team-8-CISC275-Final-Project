@@ -31,10 +31,10 @@ const ChooseUser: React.FC = () => {
             return (
                 <div>
                     <div className="yourlist">
-                        <YourList user={currentUser}></YourList>;
+                        <YourList user={currentUser}></YourList>
                     </div>
                     <div className="centrallist">
-                        <CentralList />;
+                        <CentralList />
                     </div>
                 </div>
             );
