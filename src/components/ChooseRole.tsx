@@ -4,6 +4,8 @@ import initialUsers from "../data/initialUsers.json";
 import { User } from "../interfaces/user";
 import NewUserButton from "./User";
 import YourList from "./UserList";
+import { CentralList } from "./CentralList";
+
 import "./ChooseRole.css";
 import { AdminList } from "./AdminList";
 import { Avatar, AvatarBadge, Stack, Box } from "@chakra-ui/core";
