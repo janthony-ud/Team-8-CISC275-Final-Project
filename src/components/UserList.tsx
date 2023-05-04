@@ -125,7 +125,7 @@ const YourList: React.FC<Props> = ({ user }) => {
     function handleSortRating() {
         setSelected("Rating");
         const sorted = [...userMovies].sort((a, b) => {
-            return a.user_rating > b.user_rating ? 1 : -1;
+            return a.user_rating < b.user_rating ? 1 : -1;
         });
         setUserMovies(sorted);
         localStorage.setItem(
