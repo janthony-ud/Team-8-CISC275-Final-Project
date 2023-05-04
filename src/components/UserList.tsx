@@ -6,7 +6,6 @@ import "./UserList.css";
 import { Box, Image, Flex, Badge, Text } from "@chakra-ui/core";
 import { User } from "../interfaces/user";
 import {
-    Accordion,
     AccordionItem,
     AccordionHeader,
     AccordionPanel,
@@ -85,7 +84,7 @@ const YourList: React.FC<Props> = ({ user }) => {
             <h1> {user.name}s Movies </h1>
             <p>Drag movies here to add them to your list</p>
             <div
-                className="col drop-area"
+                className="userlist"
                 onDrop={handleOnDrop}
                 onDragOver={handleDragOver}
             >

@@ -2,17 +2,30 @@
     padding: 10px;
 }
 
-/* .yourlist,
+.yourlist,
 .centrallist {
-    width: 45%;
     background-color: lightgrey;
     font-family: arial;
-    margin-left: 30px;
     height: 80%;
     padding: 5px 10px 10px 10px;
     border-radius: 10px;
     display: inline-block;
+    margin-left: 30px;
 }
 .yourlist {
     vertical-align: top;
-} */
+    width: 20vm;
+    align-self: left;
+    width: 25%;
+}
+.centrallist {
+    width: 60%;
+}
+.users {
+    align-items: center;
+    padding: 10px;
+}
+
+.induseravatar {
+    padding-left: 10px;
+}

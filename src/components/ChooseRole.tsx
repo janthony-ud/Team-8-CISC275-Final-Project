@@ -1,7 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { Button } from "@chakra-ui/core";
-import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/core";
 import initialUsers from "../data/initialUsers.json";
 import { User } from "../interfaces/user";
 import NewUserButton from "./User";
@@ -9,6 +7,7 @@ import YourList from "./UserList";
 import { CentralList } from "./CentralList";
 import "./ChooseRole.css";
 import { AdminList } from "./AdminList";
+import { Avatar, AvatarBadge, Stack, Box } from "@chakra-ui/core";
 
 const ChooseUser: React.FC = () => {
     const [users, setUsers] = useState<User[]>(
@@ -55,28 +54,45 @@ const ChooseUser: React.FC = () => {
         }
     }
 
+    function setBadgeColor(user: User): string {
+        if (user == currentUser) {
+            return "green.500";
+        } else {
+            return "tomato";
+        }
+    }
+
     return (
         <div className="Role">
             <div>
                 <hr></hr>
-                <h1>Welcome to Movies.com!</h1>
-                <Menu>
-                    <MenuButton as={Button}>
-                        Please Select Your Name:
-                    </MenuButton>
-                    <MenuList>
-                        {users.map((user) => (
-                            <div key={user.name}>
-                                <MenuItem
-                                    onClick={() => handleSetUser(user)}
-                                    as="a"
-                                >
-                                    {user.name} ({user.role})
-                                </MenuItem>
-                            </div>
-                        ))}
-                    </MenuList>
-                </Menu>
+                <div className="users">
+                    <Box>
+                        Need to figure out how to center these**
+                        <Stack isInline>
+                            {users.map((user) => (
+                                <div key={user.name}>
+                                    <div className="induseravatar">
+                                        <Avatar
+                                            onClick={() => handleSetUser(user)}
+                                            as="a"
+                                            name={user.name}
+                                            src="https://bit.ly/broken-link"
+                                            // backgroundColor={setAvatarColor(user)}
+                                        >
+                                            <AvatarBadge
+                                                bg={setBadgeColor(user)}
+                                                size="0.75em"
+                                            />
+                                        </Avatar>
+                                    </div>
+                                </div>
+                            ))}
+                        </Stack>
+                    </Box>
+                </div>
+                Welcome, {currentUser.name} You are now interacting as:{" "}
+                {currentUser.role}
                 <div>{handleUserType(currentUser)}</div>
             </div>
         </div>
