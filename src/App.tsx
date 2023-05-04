@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "@chakra-ui/core";
 import chosenUser from "./components/ChooseRole";
 import "./App.css";
 import { CentralList } from "./components/CentralList";
+import { Movie } from "./interfaces/movie";
+import movieList from "./data/movieList.json";
 //import ChooseUser from "./components/User";
 
 function App(): JSX.Element {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [movies, setMovies] = useState<Movie[]>(
+        movieList.map((movie) => {
+            return {
+                image: movie.image,
+                title: movie.name,
+                description: movie.desc,
+                maturity_rating: movie.age,
+                cast: movie.cast,
+                genre: movie.genre,
+                user_rating: 1
+            };
+        })
+    );
+
     return (
         <ThemeProvider>
             <div className="App">
