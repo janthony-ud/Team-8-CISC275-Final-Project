@@ -27,7 +27,7 @@ Browserslist: caniuse-lite is outdated. Please run:
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (889 ms)
+  ✕ renders learn react link (929 ms)
 
   ● renders learn react link
 
@@ -72,7 +72,7 @@ FAIL src/App.test.tsx
             [33mclass[39m=[32m"App-header"[39m
           [36m>[39m
             [36m<p>[39m
-              [0mMovie Rating App[0m
+              [0mWelcome to Movies.com[0m
             [36m</p>[39m
             [36m<p[39m
               [33mclass[39m=[32m"Header-names"[39m
@@ -85,118 +85,125 @@ FAIL src/App.test.tsx
           [36m>[39m
             [36m<div>[39m
               [36m<hr />[39m
-              [36m<h1>[39m
-                [0mWelcome to Movies.com![0m
-              [36m</h1>[39m
-              [36m<button[39m
-                [33maria-controls[39m=[32m"menu-1"[39m
-                [33maria-expanded[39m=[32m"false"[39m
-                [33maria-haspopup[39m=[32m"menu"[39m
-                [33mclass[39m=[32m"css-c4fa1y"[39m
-                [33mid[39m=[32m"menubutton-2"[39m
-                [33mrole[39m=[32m"button"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mPlease Select Your Name:[0m
-              [36m</button>[39m
-              [36m<div>[39m
-                [0mHello![0m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<br />[39m
-          [0m**Rendering central list here for testing - see App.tsx**[0m
-          [36m<div>[39m
-            [36m<button>[39m
-              [0mNew Movie[0m
-            [36m</button>[39m
-            [36m<h1>[39m
-              [0mCentral Movie List[0m
-            [36m</h1>[39m
-            [36m<button[39m
-              [33maria-controls[39m=[32m"menu-3"[39m
-              [33maria-expanded[39m=[32m"false"[39m
-              [33maria-haspopup[39m=[32m"menu"[39m
-              [33mclass[39m=[32m"css-c4fa1y"[39m
-              [33mid[39m=[32m"menubutton-4"[39m
-              [33mrole[39m=[32m"button"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [36m<div>[39m
-                [0mSort [0m
-                [36m<svg[39m
-                  [33mfill[39m=[32m"currentColor"[39m
-                  [33mheight[39m=[32m"1em"[39m
-                  [33mstroke[39m=[32m"currentColor"[39m
-                  [33mstroke-width[39m=[32m"0"[39m
-                  [33mviewBox[39m=[32m"0 0 1024 1024"[39m
-                  [33mwidth[39m=[32m"1em"[39m
-                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
-                [36m>[39m
-                  [36m<path[39m
-                    [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
-                  [36m/>[39m
-                [36m</svg>[39m
-              [36m</div>[39m
-            [36m</button>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"css-0"[39m
-              [33mdata-accordion[39m=[32m""[39m
-            [36m>[39m
               [36m<div[39m
-                [33mclass[39m=[32m"col"[39m
+                [33mclass[39m=[32m"users"[39m
               [36m>[39m
-                [36m<div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"css-0"[39m
+                [36m>[39m
+                  [0mNeed to figure out how to center these**[0m
                   [36m<div[39m
-                    [33mdraggable[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"css-1xhj18k"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33mclass[39m=[32m"border"[39m
+                      [33mmr[39m=[32m"2"[39m
                     [36m>[39m
                       [36m<div[39m
-                        [33mclass[39m=[32m"css-1htfx3z"[39m
-                        [33mdata-accordion-item[39m=[32m""[39m
+                        [33mclass[39m=[32m"induseravatar"[39m
                       [36m>[39m
-                        [36m<button[39m
-                          [33maria-controls[39m=[32m"accordion-panel-5"[39m
-                          [33maria-expanded[39m=[32m"false"[39m
-                          [33mclass[39m=[32m"css-o4mft6"[39m
-                          [33mid[39m=[32m"accordion-header-5"[39m
-                          [33mtype[39m=[32m"button"[39m
+                        [36m<a[39m
+                          [33mclass[39m=[32m"css-v77q72"[39m
                         [36m>[39m
                           [36m<div[39m
-                            [33mclass[39m=[32m"css-1p33byw"[39m
+                            [33maria-label[39m=[32m"Home"[39m
+                            [33mclass[39m=[32m"css-1uc1olj"[39m
                           [36m>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-0"[39m
-                            [36m>[39m
-                              [36m<img[39m
-                                [33malt[39m=[32m"The Super Mario Bros. Movie "[39m
-                                [33mclass[39m=[32m"css-17eao0m"[39m
-                              [36m/>[39m
-                              [36m<p[39m
-                                [33mclass[39m=[32m"css-3cojqf"[39m
-                              [36m>[39m
-                                [0mThe Super Mario Bros. Movie [0m
-                              [36m</p>[39m
-                            [36m</div>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-0"[39m
-                            [36m>[39m
-                              [0m [0m
-                              [36m<p[39m
-                                [33mclass[39m=[32m"css-1ghfqnb"[39m
-                              [36m>[39m
-                                [0mAnimation & Adventure & Comedy[0m
-                              [36m</p>[39m
-                              [36m<div[39m
-                                [33mclass[39m=[32m"css-1kqpkvp"[39m
-                              [36m>[39m
-                                [0mPG [0m
-                              [36m</div>[39m
-                            [36m</div>[39m
-                            [36m<svg[39m
-                              [33m...
+                            [0mH[0m
+                          [36m</div>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"css-1a2odkn"[39m
+                          [36m/>[39m
+                        [36m</a>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mmr[39m=[32m"2"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"induseravatar"[39m
+                      [36m>[39m
+                        [36m<a[39m
+                          [33mclass[39m=[32m"css-1yzo1zz"[39m
+                        [36m>[39m
+                          [36m<div[39m
+                            [33maria-label[39m=[32m"Meg"[39m
+                            [33mclass[39m=[32m"css-1uc1olj"[39m
+                          [36m>[39m
+                            [0mM[0m
+                          [36m</div>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"css-bktzsx"[39m
+                          [36m/>[39m
+                        [36m</a>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mmr[39m=[32m"2"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"induseravatar"[39m
+                      [36m>[39m
+                        [36m<a[39m
+                          [33mclass[39m=[32m"css-yjfay6"[39m
+                        [36m>[39m
+                          [36m<div[39m
+                            [33maria-label[39m=[32m"Brad"[39m
+                            [33mclass[39m=[32m"css-1uc1olj"[39m
+                          [36m>[39m
+                            [0mB[0m
+                          [36m</div>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"css-bktzsx"[39m
+                          [36m/>[39m
+                        [36m</a>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mmr[39m=[32m"2"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"induseravatar"[39m
+                      [36m>[39m
+                        [36m<a[39m
+                          [33mclass[39m=[32m"css-1amk9tg"[39m
+                        [36m>[39m
+                          [36m<div[39m
+                            [33maria-label[39m=[32m"Ryan"[39m
+                            [33mclass[39m=[32m"css-1uc1olj"[39m
+                          [36m>[39m
+                            [0mR[0m
+                          [36m</div>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"css-bktzsx"[39m
+                          [36m/>[39m
+                        [36m</a>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<div>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"induseravatar"[39m
+                      [36m>[39m
+                        [36m<a[39m
+                          [33mclass[39m=[32m"css-lans25"[39m
+                        [36m>[39m
+                          [36m<div[39m
+                            [33maria-label[39m=[32m"Justin"[39m
+                            [33mclass[39m=[32m"css-1uc1olj"[39m
+                          [36m>[39m
+                            [0mJ[0m
+                          [36m</div>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"css-bktzsx"[39m
+                          [36m/>[39m
+                        [36m</a>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [0mWelcome, [0m
+              [0mHome[0m
+           ...
 
        5 | test("renders learn react link", () => {
        6 |     render(<App />);
@@ -219,17 +226,17 @@ FAIL src/App.test.tsx
 ---------------------|---------|----------|---------|---------|--------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s  
 ---------------------|---------|----------|---------|---------|--------------------
-All files            |   13.54 |    11.76 |   12.65 |   13.68 |                    
+All files            |   14.87 |    16.66 |   13.75 |   15.02 |                    
  src                 |     100 |      100 |     100 |     100 |                    
   App.tsx            |     100 |      100 |     100 |     100 |                    
- src/components      |   12.16 |    11.76 |   10.38 |   12.29 |                    
+ src/components      |   13.54 |    16.66 |   11.53 |   13.68 |                    
   AdminList.tsx      |       0 |        0 |       0 |       0 | 6-90               
   CentralList.tsx    |    23.8 |       25 |      25 |      25 | 38,65,71-92,99,128 
-  ChooseRole.tsx     |   61.11 |       50 |      50 |    64.7 | 25,30,38,40-44,67  
+  ChooseRole.tsx     |   66.66 |     62.5 |   55.55 |      70 | 26,31,42,44-48,78  
   NewMovieButton.tsx |    8.69 |        0 |    8.33 |    8.69 | 14-87,117-143      
   User.tsx           |    6.66 |        0 |       0 |    6.66 | 16-50,60-97        
   UserDropdown.tsx   |       0 |      100 |       0 |       0 | 6-17               
-  UserList.tsx       |    2.04 |        0 |       0 |    2.04 | 28-234             
+  UserList.tsx       |    2.04 |        0 |       0 |    2.04 | 35-245             
   Users.tsx          |       0 |      100 |       0 |       0 | 7-19               
  src/interfaces      |       0 |        0 |       0 |       0 |                    
   movie.ts           |       0 |        0 |       0 |       0 |                    
@@ -240,5 +247,5 @@ All files            |   13.54 |    11.76 |   12.65 |   13.68 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        5.657 s
+Time:        5.727 s
 Ran all test suites.
