@@ -1,70 +1,99 @@
 import React, { useState } from "react";
 import { User } from "../interfaces/user";
-import { Form } from "react-bootstrap";
-import { Button } from "react-bootstrap";
+import ReactDOM from "react-dom";
+import { userMovie } from "../interfaces/userMovie";
 
-export function AddUser() {
-    const [user, setUser] = useState<User[]>([]);
-    const [name, setName] = useState<string>("");
-    const [role, setRole] = useState<string>("");
-    //const[array, setArray] = useState<User[]>;
-
-    function changename(event: React.ChangeEvent<HTMLInputElement>) {
-        setName(event.target.value);
-    }
-    function changerole(event: React.ChangeEvent<HTMLInputElement>) {
-        setRole(event.target.value);
-    }
-
-    function updateUsers(name1: string, role1: string) {
-        const newUser: User = { name: name1, userMovies: [], role: role1 };
-        setUser([...user, newUser]);
-    }
-
-    return (
-        <div>
-            <h3>Add a New User:</h3>
-
-            <Form.Group controlId="name-text">
-                <Form.Label>Enter Name:</Form.Label>
-                <Form.Control value={name} onChange={changename} />
-            </Form.Group>
-            <Form.Group controlId="name-text">
-                <Form.Label>Enter Role:</Form.Label>
-                <Form.Control value={role} onChange={changerole} />
-            </Form.Group>
-            <Button onClick={() => updateUsers(name, role)}>Save </Button>
-            {user.map((user) => (
-                <div key={user.name}>
-                    <div>
-                        {user.name} {user.role}
-                    </div>
-                </div>
-            ))}
-        </div>
-    );
+interface NewUserProps {
+    onSubmit: (newUser: User) => void;
 }
 
-/*   function createNewUser(
-        name: string,
-        userMovies: Movie[],
-        role: string
-    ): User {
-        return {
-            name: name,
-            userMovies: userMovies,
-            role: role
+interface CustomWindow extends Window {
+    returnUser?: User;
+}
+
+const NewUserForm: React.FC<NewUserProps> = ({ onSubmit }) => {
+    //const[array, setArray] = useState<User[]>;
+    const [name, setName] = useState<string>("");
+    const [role, setRole] = useState<string>("");
+    const [userMovieList, setMovieList] = useState<userMovie[]>([]);
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const newUser: User = {
+            name,
+            userMovieList,
+            role
         };
-    } */
+        onSubmit(newUser);
+        setName("");
+        setMovieList([]);
+        setRole("");
+        // eslint-disable-next-line
+        //(window as CustomWindow).close();
+    };
 
-/*     function changename(event: React.ChangeEvent<HTMLInputElement>) {
-        setName(event.target.value);
-    }
-    function changerole(event: React.ChangeEvent<HTMLInputElement>) {
-        setRole(event.target.value);
-    }
-    function push() {
-        <div></div>;
-    } */
+    return (
+        <form onSubmit={handleSubmit}>
+            <label>
+                User Name:
+                <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+            </label>
+            <br />
+            <label>
+                Role:
+                <textarea
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                />
+            </label>
+            <br />
+            <button type="submit">Add User</button>
+        </form>
+    );
+};
 
-// const user1: User = { name: name, userMovies: [], role: role };
+const NewUserButton: React.FC<NewUserProps> = ({ onSubmit }) => {
+    const handleClick = () => {
+        // eslint-disable-next-line
+        const newWindow = window.open(
+            "",
+            "_blank",
+            "width=400,height=400"
+        )! as CustomWindow;
+        newWindow.document.write(
+            "<html><head><title>Create a New User</title></head><body><h1>New User</h1></body></html>"
+        );
+        const div = document.createElement("div");
+        newWindow.document.body.appendChild(div);
+        ReactDOM.render(
+            <NewUserForm
+                onSubmit={(newUser) => {
+                    onSubmit(newUser);
+                    newWindow.returnUser = newUser;
+                    newWindow.close();
+                }}
+            />,
+            div
+        );
+        newWindow.addEventListener(
+            "beforeunload",
+            (event: { preventDefault: () => void; returnValue: boolean }) => {
+                event.preventDefault();
+                event.returnValue = false;
+                if (typeof newWindow.returnUser !== "undefined") {
+                    window.opener.postMessage(
+                        { type: "new-user", user: newWindow.returnUser },
+                        "*"
+                    );
+                }
+            }
+        );
+    };
+
+    return <button onClick={handleClick}>Create A New User:</button>;
+};
+export default NewUserButton;

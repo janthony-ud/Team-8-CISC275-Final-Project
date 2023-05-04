@@ -1,53 +1,44 @@
-import { useState } from "react";
-import { Button } from "react-bootstrap";
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "@chakra-ui/core";
-import { ChooseRole } from "./components/ChooseRole";
+import chosenUser from "./components/ChooseRole";
 import "./App.css";
 import { CentralList } from "./components/CentralList";
-import YourList from "./components/UserList";
-import { AddUser } from "./components/User";
-import { UserName } from "./components/Users";
+import { Movie } from "./interfaces/movie";
+import movieList from "./data/movieList.json";
+//import ChooseUser from "./components/User";
 
 function App(): JSX.Element {
-    const [role, setRole] = useState<string>("");
-
-    function userRole(UR: string): void {
-        setRole(UR);
-        if (UR == "User") {
-            <YourList></YourList>;
-        } else if (UR == "Admin") {
-            <CentralList />;
-        } else {
-            <div>42</div>;
-        }
-    }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [movies, setMovies] = useState<Movie[]>(
+        movieList.map((movie) => {
+            return {
+                image: movie.image,
+                title: movie.name,
+                description: movie.desc,
+                maturity_rating: movie.age,
+                cast: movie.cast,
+                genre: movie.genre,
+                user_rating: 1
+            };
+        })
+    );
 
     return (
         <ThemeProvider>
-            <>
-                <div className="App">
-                    <header className="App-header">
-                        <p>Movie Rating App</p>
-                        <p className="Header-names">
-                            Team 8: Justin Anthony, Meghan Gamble, Brad
-                            Daughtery, Jakeb Milburn, Ryan Sanchez
-                        </p>
-                    </header>
-                    <AddUser />
-                    <ChooseRole />
-                    <Button onClick={() => userRole("User")}>User</Button>
-                    {role == "User" && <YourList></YourList>}
-                    <Button onClick={() => userRole("Admin")}>Admin</Button>
-                    {/* showing central list - wasn't displaying before aft pull, i needed to see it for testing sorting*/}
-                    <br></br>**Rendering central list here for testing - see
-                    App.tsx**
-                    <CentralList></CentralList>
-                    <Button onClick={() => userRole("Super")}>Super</Button>
-                    <hr></hr>
-                </div>
-                <UserName Names={["Jake", "Ryan", "Meg"]}></UserName>
-            </>
+            <div className="App">
+                <header className="App-header">
+                    <p>Movie Rating App</p>
+                    <p className="Header-names">
+                        Team 8: Justin Anthony, Meghan Gamble, Brad Daughtery,
+                        Jakeb Milburn, Ryan Sanchez
+                    </p>
+                </header>
+                {chosenUser}
+                {/* showing central list - wasn't displaying before aft pull, i needed to see it for testing sorting*/}
+                <br></br>**Rendering central list here for testing - see
+                App.tsx**
+                <CentralList></CentralList>
+            </div>
         </ThemeProvider>
     );
 }

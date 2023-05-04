@@ -1,11 +1,33 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { Movie } from "../interfaces/movie";
 import { userMovie } from "../interfaces/userMovie";
 import "./UserList.css";
 import { Box, Image, Flex, Badge, Text } from "@chakra-ui/core";
+import { User } from "../interfaces/user";
 
-export function YourList(): JSX.Element {
+interface Props {
+    user: User;
+}
+
+const YourList: React.FC<Props> = ({ user }) => {
     const [userMovies, setUserMovies] = useState<userMovie[]>([]);
+
+    useEffect(() => {
+        const storedMovies = localStorage.getItem(`userMovieList-${user.name}`);
+        if (storedMovies) {
+            setUserMovies(JSON.parse(storedMovies));
+        } else {
+            setUserMovies(user.userMovieList);
+        }
+    }, [user]);
+
+    useEffect(() => {
+        localStorage.setItem(
+            `userMovieList-${user.name}`,
+            JSON.stringify(userMovies)
+        );
+    }, [userMovies, user]);
 
     function handleOnDrop(e: React.DragEvent) {
         const widgetType = JSON.parse(
@@ -14,6 +36,10 @@ export function YourList(): JSX.Element {
         console.log("widgetType", widgetType);
         const newMovie: userMovie = { ...widgetType, id: userMovies.length };
         setUserMovies([...userMovies, newMovie]);
+        localStorage.setItem(
+            `userMovieList-${user.name}`,
+            JSON.stringify([...userMovies, newMovie])
+        );
     }
 
     function handleDragOver(e: React.DragEvent) {
@@ -29,17 +55,27 @@ export function YourList(): JSX.Element {
             };
             return updatedMovies;
         });
+        localStorage.setItem(
+            `userMovieList-${user.name}`,
+            JSON.stringify(userMovies)
+        );
     };
 
     function removeMovie(id: number): void {
         setUserMovies(
             [...userMovies].filter((userMovie) => userMovie.id !== id)
         );
+        localStorage.setItem(
+            "userMovieList",
+            JSON.stringify(
+                [...userMovies].filter((userMovie) => userMovie.id !== id)
+            )
+        );
     }
 
     return (
         <div>
-            <h1> Your Movies </h1>
+            <h1> {user.name}s Movies </h1>
             <p>Drag movies here to add them to your list</p>
             <div
                 className="col drop-area"
@@ -125,6 +161,6 @@ export function YourList(): JSX.Element {
             </div>
         </div>
     );
-}
+};
 
 export default YourList;
