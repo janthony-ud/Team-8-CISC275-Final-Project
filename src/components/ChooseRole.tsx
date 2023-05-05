@@ -5,10 +5,10 @@ import { User } from "../interfaces/user";
 import NewUserButton from "./User";
 import YourList from "./UserList";
 import { CentralList } from "./CentralList";
-
 import "./ChooseRole.css";
 import { AdminList } from "./AdminList";
 import { Avatar, AvatarBadge, Stack, Box } from "@chakra-ui/core";
+import { Tooltip } from "@chakra-ui/core";
 
 const ChooseUser: React.FC = () => {
     const [users, setUsers] = useState<User[]>(
@@ -63,6 +63,10 @@ const ChooseUser: React.FC = () => {
         }
     }
 
+    function handleToolTip(user: User): string {
+        return user.name + ", " + user.role;
+    }
+
     return (
         <div className="Role">
             <div>
@@ -74,18 +78,27 @@ const ChooseUser: React.FC = () => {
                             {users.map((user) => (
                                 <div key={user.name}>
                                     <div className="induseravatar">
-                                        <Avatar
-                                            onClick={() => handleSetUser(user)}
-                                            as="a"
-                                            name={user.name}
-                                            src="https://bit.ly/broken-link"
-                                            // backgroundColor={setAvatarColor(user)}
+                                        <Tooltip
+                                            label={handleToolTip(user)}
+                                            placement="top"
+                                            aria-label="Hello"
+                                            shouldWrapChildren={true}
                                         >
-                                            <AvatarBadge
-                                                bg={setBadgeColor(user)}
-                                                size="0.75em"
-                                            />
-                                        </Avatar>
+                                            <Avatar
+                                                onClick={() =>
+                                                    handleSetUser(user)
+                                                }
+                                                as="a"
+                                                name={user.name}
+                                                src="https://bit.ly/broken-link"
+                                                // backgroundColor={setAvatarColor(user)}
+                                            >
+                                                <AvatarBadge
+                                                    bg={setBadgeColor(user)}
+                                                    size="0.75em"
+                                                />
+                                            </Avatar>
+                                        </Tooltip>
                                     </div>
                                 </div>
                             ))}
