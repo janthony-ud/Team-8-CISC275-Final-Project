@@ -25,6 +25,8 @@ import {
     AccordionPanel,
     AccordionIcon
 } from "@chakra-ui/core";
+import { User } from "../interfaces/user";
+import { useEffect } from "react";
 
 export function makeNewMovie(
     image: string,
@@ -46,7 +48,11 @@ export function makeNewMovie(
     };
 }
 
-export function CentralList(): JSX.Element {
+interface Props {
+    user: User;
+}
+
+const CentralList: React.FC<Props> = ({ user }) => {
     const [movies, setMovies] = useState<Movie[]>(
         movieList.map((movie) => {
             return {
@@ -61,6 +67,31 @@ export function CentralList(): JSX.Element {
         })
     );
 
+    useEffect(() => {
+        const storedMovieList = localStorage.getItem("movies");
+        if (storedMovieList) {
+            setMovies(JSON.parse(storedMovieList));
+        } else {
+            setMovies(
+                movieList.map((movie) => {
+                    return {
+                        image: movie.image,
+                        title: movie.name,
+                        description: movie.desc,
+                        maturity_rating: movie.age,
+                        cast: movie.cast,
+                        genre: movie.genre,
+                        user_rating: 1
+                    };
+                })
+            );
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("movies", JSON.stringify(movies));
+    }, [movies]);
+
     function handleOnDrag(e: React.DragEvent, widgetType: Movie) {
         e.dataTransfer.setData("widgetType", JSON.stringify(widgetType));
     }
@@ -73,6 +104,14 @@ export function CentralList(): JSX.Element {
             return a.title > b.title ? 1 : -1;
         });
         setMovies(sorted);
+    }
+
+    function removeMovie(title: string): void {
+        setMovies([...movies].filter((movie) => movie.title !== title));
+        localStorage.setItem(
+            "movies",
+            JSON.stringify([...movies].filter((movie) => movie.title !== title))
+        );
     }
 
     function handleSortMaturity() {
@@ -92,13 +131,41 @@ export function CentralList(): JSX.Element {
         setMovies(sorted);
     }
 
+    function handleRemoveMovie(movie: Movie, user: User) {
+        if (user.role == "super") {
+            return (
+                <div>
+                    <Button
+                        variantColor="red"
+                        onClick={() => removeMovie(movie.title)}
+                        size="xs"
+                    >
+                        {" "}
+                        Remove Movie{" "}
+                    </Button>
+                </div>
+            );
+        } else {
+            return "";
+        }
+    }
+
+    function handleNewMovie(user: User) {
+        if (user.role == "super") {
+            return (
+                <NewMovieButton
+                    onSubmit={function (newMovie: Movie): void {
+                        setMovies((prevMovies) => [...prevMovies, newMovie]);
+                    }}
+                ></NewMovieButton>
+            );
+        } else {
+            return "";
+        }
+    }
+
     return (
         <div>
-            <NewMovieButton
-                onSubmit={function (newMovie: Movie): void {
-                    setMovies((prevMovies) => [...prevMovies, newMovie]);
-                }}
-            ></NewMovieButton>
             <h1>Central Movie List</h1>
             <Menu>
                 <MenuButton as={Button}>
@@ -119,6 +186,7 @@ export function CentralList(): JSX.Element {
                     </MenuItem>
                 </MenuList>
             </Menu>
+            <div>{handleNewMovie(user)}</div>
             <Accordion defaultIndex={[0]} allowMultiple>
                 <div className="col">
                     {movies.map((movie) => (
@@ -165,6 +233,11 @@ export function CentralList(): JSX.Element {
                                                     <Badge color="red">
                                                         {movie.maturity_rating}
                                                     </Badge>
+                                                    <br></br>
+                                                    {handleRemoveMovie(
+                                                        movie,
+                                                        user
+                                                    )}
                                                 </Box>
                                                 <AccordionIcon />
                                             </Box>
@@ -190,14 +263,6 @@ export function CentralList(): JSX.Element {
             </Accordion>
         </div>
     );
-}
+};
 
-/*             const newMovie = makeNewMovie(
-                movie.image,
-                movie.title,
-                movie.description,
-                movie.maturity_rating,
-                movie.cast,
-                movie.genre,
-                movie.user_rating
-            );  */
+export default CentralList;
