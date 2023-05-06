@@ -4,13 +4,12 @@ import initialUsers from "../data/initialUsers.json";
 import { User } from "../interfaces/user";
 import NewUserButton from "./NewUserButton";
 import YourList from "./UserList";
-import { CentralList } from "./CentralList";
+import CentralList from "./CentralList";
 import "./ChooseRole.css";
 import { AdminList } from "./AdminList";
 import { Avatar, AvatarBadge, Stack, Box } from "@chakra-ui/core";
 import { Tooltip } from "@chakra-ui/core";
 import { Button } from "@chakra-ui/core";
-//import { Icon } from "@chakra-ui/core";
 import { useEffect } from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/core";
 
@@ -63,6 +62,9 @@ const ChooseUser: React.FC = () => {
         } else {
             return (
                 <div className="remove-movie">
+                    <Button variantColor="green" size="xs">
+                        View List
+                    </Button>{" "}
                     <Button
                         variantColor="red"
                         size="xs"
@@ -83,7 +85,7 @@ const ChooseUser: React.FC = () => {
                         <YourList user={currentUser}></YourList>
                     </div>
                     <div className="centrallist">
-                        <CentralList />;
+                        <CentralList user={currentUser}></CentralList>;
                     </div>
                 </div>
             );
@@ -120,12 +122,6 @@ const ChooseUser: React.FC = () => {
                                             <h3>
                                                 {user.name}, {user.role}{" "}
                                             </h3>
-                                            <Button
-                                                variantColor="green"
-                                                size="sm"
-                                            >
-                                                View List
-                                            </Button>{" "}
                                             {handleRemoveUser(user)}
                                         </div>
                                     </div>
@@ -135,7 +131,7 @@ const ChooseUser: React.FC = () => {
                                 <p>View/Edit Admin List</p>
                             </TabPanel>
                             <TabPanel>
-                                <p>Add a New Movie</p>
+                                <CentralList user={currentUser}></CentralList>
                             </TabPanel>
                         </TabPanels>
                     </Tabs>

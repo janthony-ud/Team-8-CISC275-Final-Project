@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ThemeProvider } from "@chakra-ui/core";
 import chosenUser from "./components/ChooseRole";
 import "./App.css";
-import { CentralList } from "./components/CentralList";
+//import CentralList from "./components/CentralList";
 import { Movie } from "./interfaces/movie";
 import movieList from "./data/movieList.json";
 //import ChooseUser from "./components/User";
@@ -40,11 +40,12 @@ function App(): JSX.Element {
                 --------------------------------------------------------
                 <br></br>**Rendering central list here for testing - see
                 App.tsx**
-                <CentralList></CentralList>
             </div>
         </ThemeProvider>
     );
 }
+
+//<CentralList></CentralList>;
 
 export default App;
 
