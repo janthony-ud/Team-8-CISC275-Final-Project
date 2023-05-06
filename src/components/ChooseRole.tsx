@@ -39,11 +39,11 @@ const ChooseUser: React.FC = () => {
                 }))
             );
         }
-    }, [users]);
+    }, []);
 
     useEffect(() => {
         localStorage.setItem("users", JSON.stringify(users));
-    }, []);
+    }, [users]);
 
     function handleSetUser(user: User) {
         setCurrentUser(user);
