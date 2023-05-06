@@ -5,29 +5,8 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-  console.error
-    Warning: React does not recognize the `isOpen` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `isopen` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
-        at div
-        at div
-        at Styled(div)
-        at Accordion (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:30:28)
-        at div
-        at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:50:33)
-        at div
-        at ThemeProvider
-        at ThemeProvider (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/ThemeProvider/index.js:18:20)
-        at App (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/App.tsx:12:33)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3513:7)
-      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3559:21)
-      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3583:3)
-      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:8765:5)
-      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
-
 FAIL src/App.test.tsx
-  ✕ renders learn react link (609 ms)
+  ✕ renders learn react link (82 ms)
 
   ● renders learn react link
 
@@ -198,7 +177,52 @@ FAIL src/App.test.tsx
                           [36m</a>[39m
                         [36m</span>[39m
                       [36m</div>[39m
-    ...
+                    [36m</div>[39m
+                    [36m<div>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"induseravatar"[39m
+                      [36m>[39m
+                        [36m<span[39m
+                          [33mclass[39m=[32m"css-0"[39m
+                          [33mtabindex[39m=[32m"0"[39m
+                        [36m>[39m
+                          [36m<a[39m
+                            [33mclass[39m=[32m"css-lans25"[39m
+                          [36m>[39m
+                            [36m<div[39m
+                              [33maria-label[39m=[32m"Justin"[39m
+                              [33mclass[39m=[32m"css-1uc1olj"[39m
+                            [36m>[39m
+                              [0mJ[0m
+                            [36m</div>[39m
+                            [36m<div[39m
+                              [33mclass[39m=[32m"css-bktzsx"[39m
+                            [36m/>[39m
+                          [36m</a>[39m
+                        [36m</span>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [0mWelcome, [0m
+              [0mHome[0m
+              [0m You are now interacting as:[0m
+              [0m [0m
+              [0m[0m
+              [36m<div>[39m
+                [0mHello![0m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<br />[39m
+          [36m<br />[39m
+          [0m--------------------------------------------------------[0m
+          [36m<br />[39m
+          [0m**Rendering central list here for testing - see App.tsx**[0m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
 
        5 | test("renders learn react link", () => {
        6 |     render(<App />);
@@ -221,14 +245,14 @@ FAIL src/App.test.tsx
 ---------------------|---------|----------|---------|---------|---------------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s         
 ---------------------|---------|----------|---------|---------|---------------------------
-All files            |   17.28 |     17.5 |   16.66 |   17.53 |                           
+All files            |   13.24 |    13.04 |   11.11 |   13.47 |                           
  src                 |     100 |      100 |     100 |     100 |                           
   App.tsx            |     100 |      100 |     100 |     100 |                           
- src/components      |   16.11 |     17.5 |   14.77 |   16.34 |                           
+ src/components      |   12.12 |    13.04 |    9.27 |   12.33 |                           
   AdminList.tsx      |       0 |        0 |       0 |       0 | 6-90                      
-  CentralList.tsx    |    23.8 |       25 |      25 |      25 | 38,65,71-92,99,128        
-  ChooseRole.tsx     |      55 |       50 |   47.36 |   57.89 | 32,49-69,80,91,93-118,180 
-  NewMovieButton.tsx |    8.69 |        0 |    8.33 |    8.69 | 14-87,117-143             
+  CentralList.tsx    |    2.43 |        0 |       0 |    2.56 | 40,56-196                 
+  ChooseRole.tsx     |      55 |       50 |   47.36 |   57.89 | 31,48-71,82,93,95-120,176 
+  NewMovieButton.tsx |    4.34 |        0 |       0 |    4.34 | 14-87,115-152             
   NewUserButton.tsx  |    6.66 |        0 |       0 |    6.66 | 16-50,60-97               
   UserDropdown.tsx   |       0 |      100 |       0 |       0 | 6-17                      
   UserList.tsx       |    2.04 |        0 |       0 |    2.04 | 35-245                    
@@ -242,5 +266,5 @@ All files            |   17.28 |     17.5 |   16.66 |   17.53 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.786 s
+Time:        3.519 s
 Ran all test suites.
