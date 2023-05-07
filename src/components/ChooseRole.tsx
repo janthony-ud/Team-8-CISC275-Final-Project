@@ -91,7 +91,16 @@ const ChooseUser: React.FC = () => {
                 </div>
             );
         } else if (user.role == "admin") {
-            return <AdminList />;
+            return (
+                <div>
+                    <div className="yourlist">
+                        <YourList user={currentUser}></YourList>
+                    </div>
+                    <div className="centrallist">
+                        <CentralList user={currentUser}></CentralList>;
+                    </div>
+                </div>
+            );
         } else if (user.role == "super") {
             return (
                 <div>

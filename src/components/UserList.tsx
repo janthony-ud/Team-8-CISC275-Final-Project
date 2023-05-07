@@ -33,6 +33,7 @@ interface Props {
 
 const YourList: React.FC<Props> = ({ user }) => {
     const [userMovies, setUserMovies] = useState<userMovie[]>([]);
+    const [movielist, setMovieList] = useState<Movie[]>([]);
 
     useEffect(() => {
         const storedMovies = localStorage.getItem(`userMovieList-${user.name}`);
@@ -42,6 +43,22 @@ const YourList: React.FC<Props> = ({ user }) => {
             setUserMovies(user.userMovieList);
         }
     }, [user]);
+
+    useEffect(() => {
+        const storedMovieList = localStorage.getItem("movies");
+        if (storedMovieList) {
+            setMovieList(JSON.parse(storedMovieList));
+        } else {
+            setMovieList([]);
+        }
+    }, ["movies"]);
+
+    useEffect(() => {
+        const filteredMovies = userMovies.filter((movie) =>
+            movielist.some((userMovie) => userMovie.title === movie.title)
+        );
+        setUserMovies(filteredMovies);
+    }, ["movies"]);
 
     useEffect(() => {
         localStorage.setItem(
@@ -95,6 +112,8 @@ const YourList: React.FC<Props> = ({ user }) => {
     }
 
     const [selected, setSelected] = useState<string>("");
+
+    // function filterDeletedMovies() {}
 
     function handleSortTitle() {
         setSelected("Title");

@@ -6,6 +6,18 @@ import "./App.css";
 import { Movie } from "./interfaces/movie";
 import movieList from "./data/movieList.json";
 //import ChooseUser from "./components/User";
+import {
+    Box,
+    Image,
+    Flex,
+    Badge,
+    Text,
+    Menu,
+    MenuButton,
+    Button,
+    MenuList,
+    MenuItem
+} from "@chakra-ui/core";
 
 function App(): JSX.Element {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -27,7 +39,15 @@ function App(): JSX.Element {
         <ThemeProvider>
             <div className="App">
                 <header className="App-header">
-                    <p>Welcome to Movies.com</p>
+                    <div className="logo">
+                        <Image
+                            borderRadius="md"
+                            htmlHeight="30px"
+                            objectFit="cover"
+                            src={require("./movieo-logo.png")}
+                            alt="Movieo Logo"
+                        />
+                    </div>
                     <p className="Header-names">
                         Team 8: Justin Anthony, Meghan Gamble, Brad Daughtery,
                         Jakeb Milburn, Ryan Sanchez
