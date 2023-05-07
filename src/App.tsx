@@ -37,9 +37,6 @@ function App(): JSX.Element {
                 {/* showing central list - wasn't displaying before aft pull, i needed to see it for testing sorting*/}
                 <br></br>
                 <br></br>
-                --------------------------------------------------------
-                <br></br>**Rendering central list here for testing - see
-                App.tsx**
             </div>
         </ThemeProvider>
     );
