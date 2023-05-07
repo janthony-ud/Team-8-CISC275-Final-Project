@@ -4,6 +4,7 @@ import initialUsers from "../data/initialUsers.json";
 import { User } from "../interfaces/user";
 import NewUserButton from "./NewUserButton";
 import YourList from "./UserList";
+import AdminLists from "./DisplayAdminLists";
 import CentralList from "./CentralList";
 import "./ChooseRole.css";
 import { AdminList } from "./AdminList";
@@ -97,7 +98,7 @@ const ChooseUser: React.FC = () => {
                     <Tabs>
                         <TabList>
                             <Tab>Create/Delete Users</Tab>
-                            <Tab>View/Edit Admin List</Tab>
+                            <Tab>View/Edit Admin Lists</Tab>
                             <Tab>Add/Delete Movies</Tab>
                         </TabList>
 
@@ -128,7 +129,8 @@ const ChooseUser: React.FC = () => {
                                 ))}
                             </TabPanel>
                             <TabPanel>
-                                <p>View/Edit Admin List</p>
+                                <h1>View/Edit Admin Lists</h1>
+                                <AdminLists admin={users}></AdminLists>
                             </TabPanel>
                             <TabPanel>
                                 <CentralList user={currentUser}></CentralList>
@@ -162,13 +164,21 @@ const ChooseUser: React.FC = () => {
                     <Box>
                         Need to figure out how to center these**
                         <Stack isInline>
+                            <Avatar
+                                onClick={() => handleSetUser(users[0])}
+                                as="a"
+                                name="Home"
+                                src="https://www.pngkit.com/png/full/208-2084226_hombutton-white-home-button-png.png"
+                            >
+                                {" "}
+                            </Avatar>
                             {users.map((user) => (
                                 <div key={user.name}>
                                     <div className="induseravatar">
                                         <Tooltip
                                             label={handleToolTip(user)}
                                             placement="top"
-                                            aria-label="Hello"
+                                            aria-label="User"
                                             shouldWrapChildren={true}
                                         >
                                             <Avatar
