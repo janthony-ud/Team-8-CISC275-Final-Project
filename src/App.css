@@ -15,11 +15,12 @@
     padding: 50px;
     text-align: left;
     overflow-y: scroll;
-    height: 50vh;
+    height: 70vh;
 }
 
 .App {
     text-align: center;
+    height: fit-content;
 }
 
 .App-logo {

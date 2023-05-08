@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ThemeProvider } from "@chakra-ui/core";
 import chosenUser from "./components/ChooseRole";
 import "./App.css";
-import { CentralList } from "./components/CentralList";
+//import CentralList from "./components/CentralList";
 import { Movie } from "./interfaces/movie";
 import movieList from "./data/movieList.json";
 //import ChooseUser from "./components/User";
@@ -27,7 +27,7 @@ function App(): JSX.Element {
         <ThemeProvider>
             <div className="App">
                 <header className="App-header">
-                    <p>Movie Rating App</p>
+                    <p>Welcome to Movies.com</p>
                     <p className="Header-names">
                         Team 8: Justin Anthony, Meghan Gamble, Brad Daughtery,
                         Jakeb Milburn, Ryan Sanchez
@@ -35,13 +35,14 @@ function App(): JSX.Element {
                 </header>
                 {chosenUser}
                 {/* showing central list - wasn't displaying before aft pull, i needed to see it for testing sorting*/}
-                <br></br>**Rendering central list here for testing - see
-                App.tsx**
-                <CentralList></CentralList>
+                <br></br>
+                <br></br>
             </div>
         </ThemeProvider>
     );
 }
+
+//<CentralList></CentralList>;
 
 export default App;
 

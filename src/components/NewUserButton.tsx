@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { User } from "../interfaces/user";
 import ReactDOM from "react-dom";
 import { userMovie } from "../interfaces/userMovie";
+import { Button } from "@chakra-ui/core";
 
 interface NewUserProps {
     onSubmit: (newUser: User) => void;
@@ -94,6 +95,6 @@ const NewUserButton: React.FC<NewUserProps> = ({ onSubmit }) => {
         );
     };
 
-    return <button onClick={handleClick}>Create A New User:</button>;
+    return <Button onClick={handleClick}>Create A New User:</Button>;
 };
 export default NewUserButton;
