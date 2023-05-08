@@ -6,7 +6,7 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 FAIL src/App.test.tsx
-  ✕ renders learn react link (88 ms)
+  ✕ renders learn react link (149 ms)
 
   ● renders learn react link
 
@@ -50,9 +50,15 @@ FAIL src/App.test.tsx
           [36m<header[39m
             [33mclass[39m=[32m"App-header"[39m
           [36m>[39m
-            [36m<p>[39m
-              [0mWelcome to Movies.com[0m
-            [36m</p>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"logo"[39m
+            [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m"Movieo Logo"[39m
+                [33mclass[39m=[32m"css-uhghij"[39m
+                [33mheight[39m=[32m"30px"[39m
+              [36m/>[39m
+            [36m</div>[39m
             [36m<p[39m
               [33mclass[39m=[32m"Header-names"[39m
             [36m>[39m
@@ -70,7 +76,6 @@ FAIL src/App.test.tsx
                 [36m<div[39m
                   [33mclass[39m=[32m"css-0"[39m
                 [36m>[39m
-                  [0mNeed to figure out how to center these**[0m
                   [36m<div[39m
                     [33mclass[39m=[32m"css-1xhj18k"[39m
                   [36m>[39m
@@ -250,30 +255,30 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-------------------------|---------|----------|---------|---------|-------------------------------
-File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s             
-------------------------|---------|----------|---------|---------|-------------------------------
-All files               |   13.27 |    13.04 |   10.67 |    13.5 |                               
- src                    |     100 |      100 |     100 |     100 |                               
-  App.tsx               |     100 |      100 |     100 |     100 |                               
- src/components         |   12.18 |    13.04 |    8.91 |   12.39 |                               
-  AdminList.tsx         |       0 |        0 |       0 |       0 | 6-90                          
-  CentralList.tsx       |    2.43 |        0 |       0 |    2.56 | 40,56-196                     
-  ChooseRole.tsx        |   53.65 |       50 |      45 |   56.41 | 32,49-72,83,94,96-121,168,186 
-  DisplayAdminLists.tsx |   16.66 |      100 |       0 |   16.66 | 11-19                         
-  NewMovieButton.tsx    |    4.34 |        0 |       0 |    4.34 | 14-87,115-152                 
-  NewUserButton.tsx     |    6.66 |        0 |       0 |    6.66 | 17-51,61-98                   
-  UserDropdown.tsx      |       0 |      100 |       0 |       0 | 6-17                          
-  UserList.tsx          |    2.04 |        0 |       0 |    2.04 | 35-245                        
-  Users.tsx             |       0 |      100 |       0 |       0 | 7-19                          
- src/interfaces         |       0 |        0 |       0 |       0 |                               
-  movie.ts              |       0 |        0 |       0 |       0 |                               
-  play.ts               |       0 |        0 |       0 |       0 |                               
-  user.ts               |       0 |        0 |       0 |       0 |                               
-  userMovie.ts          |       0 |        0 |       0 |       0 |                               
-------------------------|---------|----------|---------|---------|-------------------------------
+------------------------|---------|----------|---------|---------|--------------------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
+------------------------|---------|----------|---------|---------|--------------------------------
+All files               |   12.69 |     12.5 |   10.28 |   12.95 |                                
+ src                    |     100 |      100 |     100 |     100 |                                
+  App.tsx               |     100 |      100 |     100 |     100 |                                
+ src/components         |   11.64 |     12.5 |    8.57 |   11.88 |                                
+  AdminList.tsx         |       0 |        0 |       0 |       0 | 6-90                           
+  CentralList.tsx       |    2.43 |        0 |       0 |    2.56 | 40,56-196                      
+  ChooseRole.tsx        |   53.65 |       50 |      45 |   56.41 | 32,49-72,83,94,105-130,176,194 
+  DisplayAdminLists.tsx |   16.66 |      100 |       0 |   16.66 | 11-19                          
+  NewMovieButton.tsx    |    4.34 |        0 |       0 |    4.34 | 14-87,115-152                  
+  NewUserButton.tsx     |    6.66 |        0 |       0 |    6.66 | 17-51,61-98                    
+  UserDropdown.tsx      |       0 |      100 |       0 |       0 | 6-17                           
+  UserList.tsx          |    1.66 |        0 |       0 |    1.69 | 35-263                         
+  Users.tsx             |       0 |      100 |       0 |       0 | 7-19                           
+ src/interfaces         |       0 |        0 |       0 |       0 |                                
+  movie.ts              |       0 |        0 |       0 |       0 |                                
+  play.ts               |       0 |        0 |       0 |       0 |                                
+  user.ts               |       0 |        0 |       0 |       0 |                                
+  userMovie.ts          |       0 |        0 |       0 |       0 |                                
+------------------------|---------|----------|---------|---------|--------------------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.509 s
+Time:        4.885 s
 Ran all test suites.
