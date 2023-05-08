@@ -95,7 +95,6 @@ export function CentralList(): JSX.Element {
     return (
         <div>
             <NewMovieButton
-                data-testid="new-movie-button"
                 onSubmit={function (newMovie: Movie): void {
                     setMovies((prevMovies) => [...prevMovies, newMovie]);
                 }}
