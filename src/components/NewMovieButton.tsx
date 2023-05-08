@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { Movie } from "../interfaces/movie";
+import { getCurrentUserRole } from "./ChooseRole";
 
 interface NewMovieFormProps {
     onSubmit: (newMovie: Movie) => void;
@@ -113,40 +114,47 @@ const NewMovieForm: React.FC<NewMovieFormProps> = ({ onSubmit }) => {
 
 const NewMovieButton: React.FC<NewMovieFormProps> = ({ onSubmit }) => {
     const handleClick = () => {
-        // eslint-disable-next-line
-        const newWindow = window.open(
-            "",
-            "_blank",
-            "width=400,height=400"
-        )! as CustomWindow;
-        newWindow.document.write(
-            "<html><head><title>New Movie</title></head><body><h1>New Movie</h1></body></html>"
-        );
-        const div = document.createElement("div");
-        newWindow.document.body.appendChild(div);
-        ReactDOM.render(
-            <NewMovieForm
-                onSubmit={(newMovie) => {
-                    onSubmit(newMovie);
-                    newWindow.returnMovie = newMovie;
-                    newWindow.close();
-                }}
-            />,
-            div
-        );
-        newWindow.addEventListener(
-            "beforeunload",
-            (event: { preventDefault: () => void; returnValue: boolean }) => {
-                event.preventDefault();
-                event.returnValue = false;
-                if (typeof newWindow.returnMovie !== "undefined") {
-                    window.opener.postMessage(
-                        { type: "new-movie", movie: newWindow.returnMovie },
-                        "*"
-                    );
+        if (getCurrentUserRole() == "super") {
+            // eslint-disable-next-line
+            const newWindow = window.open(
+                "",
+                "_blank",
+                "width=400,height=400"
+            )! as CustomWindow;
+            newWindow.document.write(
+                "<html><head><title>New Movie</title></head><body><h1>New Movie</h1></body></html>"
+            );
+            const div = document.createElement("div");
+            newWindow.document.body.appendChild(div);
+            ReactDOM.render(
+                <NewMovieForm
+                    onSubmit={(newMovie) => {
+                        onSubmit(newMovie);
+                        newWindow.returnMovie = newMovie;
+                        newWindow.close();
+                    }}
+                />,
+                div
+            );
+            newWindow.addEventListener(
+                "beforeunload",
+                (event: {
+                    preventDefault: () => void;
+                    returnValue: boolean;
+                }) => {
+                    event.preventDefault();
+                    event.returnValue = false;
+                    if (typeof newWindow.returnMovie !== "undefined") {
+                        window.opener.postMessage(
+                            { type: "new-movie", movie: newWindow.returnMovie },
+                            "*"
+                        );
+                    }
                 }
-            }
-        );
+            );
+            // eslint-disable-next-line no-empty
+        } else {
+        }
     };
 
     return <button onClick={handleClick}>New Movie</button>;

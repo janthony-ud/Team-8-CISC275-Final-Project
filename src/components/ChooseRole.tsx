@@ -80,4 +80,7 @@ const ChooseUser: React.FC = () => {
 };
 
 const chosenUser: JSX.Element = <ChooseUser />;
+export function getCurrentUserRole(): string {
+    return currentUser.role;
+}
 export default chosenUser;
