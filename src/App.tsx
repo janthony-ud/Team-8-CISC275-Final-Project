@@ -6,18 +6,7 @@ import "./App.css";
 import { Movie } from "./interfaces/movie";
 import movieList from "./data/movieList.json";
 //import ChooseUser from "./components/User";
-import {
-    Box,
-    Image,
-    Flex,
-    Badge,
-    Text,
-    Menu,
-    MenuButton,
-    Button,
-    MenuList,
-    MenuItem
-} from "@chakra-ui/core";
+import { Image } from "@chakra-ui/core";
 
 function App(): JSX.Element {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -34,6 +34,7 @@ interface Props {
 const YourList: React.FC<Props> = ({ user }) => {
     const [userMovies, setUserMovies] = useState<userMovie[]>([]);
     const [movielist, setMovieList] = useState<Movie[]>([]);
+    const [filtered, setFilteredList] = useState<userMovie[]>([]);
 
     useEffect(() => {
         const storedMovies = localStorage.getItem(`userMovieList-${user.name}`);
@@ -48,17 +49,17 @@ const YourList: React.FC<Props> = ({ user }) => {
         const storedMovieList = localStorage.getItem("movies");
         if (storedMovieList) {
             setMovieList(JSON.parse(storedMovieList));
-        } else {
-            setMovieList([]);
         }
     }, ["movies"]);
 
+    //This code needs to filter out deleted movies from the central list
+
     useEffect(() => {
         const filteredMovies = userMovies.filter((movie) =>
-            movielist.some((userMovie) => userMovie.title === movie.title)
+            movielist.some((userMovie) => movie.title === userMovie.title)
         );
-        setUserMovies(filteredMovies);
-    }, ["movies"]);
+        setFilteredList(filteredMovies);
+    }, [movielist, userMovies, "movies"]);
 
     useEffect(() => {
         localStorage.setItem(
@@ -104,7 +105,7 @@ const YourList: React.FC<Props> = ({ user }) => {
             [...userMovies].filter((userMovie) => userMovie.id !== id)
         );
         localStorage.setItem(
-            "userMovieList",
+            `userMovieList-${user.name}`,
             JSON.stringify(
                 [...userMovies].filter((userMovie) => userMovie.id !== id)
             )
@@ -112,8 +113,6 @@ const YourList: React.FC<Props> = ({ user }) => {
     }
 
     const [selected, setSelected] = useState<string>("");
-
-    // function filterDeletedMovies() {}
 
     function handleSortTitle() {
         setSelected("Title");
@@ -190,7 +189,7 @@ const YourList: React.FC<Props> = ({ user }) => {
                 onDrop={handleOnDrop}
                 onDragOver={handleDragOver}
             >
-                {userMovies.map((movie, index) => (
+                {filtered.map((movie, index) => (
                     <div className="droppedMovie" key={movie.id}>
                         <div className="border">
                             <AccordionItem>
