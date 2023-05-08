@@ -7,7 +7,7 @@ import YourList from "./UserList";
 import AdminLists from "./DisplayAdminLists";
 import CentralList from "./CentralList";
 import "./ChooseRole.css";
-import { AdminList } from "./AdminList";
+//import { AdminList } from "./AdminList";
 import { Avatar, AvatarBadge, Stack, Box } from "@chakra-ui/core";
 import { Tooltip } from "@chakra-ui/core";
 import { Button } from "@chakra-ui/core";
@@ -91,7 +91,16 @@ const ChooseUser: React.FC = () => {
                 </div>
             );
         } else if (user.role == "admin") {
-            return <AdminList />;
+            return (
+                <div>
+                    <div className="yourlist">
+                        <YourList user={currentUser}></YourList>
+                    </div>
+                    <div className="centrallist">
+                        <CentralList user={currentUser}></CentralList>;
+                    </div>
+                </div>
+            );
         } else if (user.role == "super") {
             return (
                 <div>
@@ -162,7 +171,6 @@ const ChooseUser: React.FC = () => {
                 <hr></hr>
                 <div className="users">
                     <Box>
-                        Need to figure out how to center these**
                         <Stack isInline>
                             <Avatar
                                 onClick={() => handleSetUser(users[0])}

@@ -17,7 +17,6 @@ const AdminLists: React.FC<Props> = ({ admin }) => {
         <div>
             {admins.map((admin) => (
                 <div key={admin.name}>
-                    {admin.name}
                     <YourList user={admin}></YourList>
                 </div>
             ))}
