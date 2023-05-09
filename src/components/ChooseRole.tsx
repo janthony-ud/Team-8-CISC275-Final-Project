@@ -125,7 +125,7 @@ const ChooseUser: React.FC = () => {
                                         );
                                     }}
                                 ></NewUserButton>
-                                {users.map((user) => (
+                                {users.slice(1).map((user) => (
                                     <div key={user.name}>
                                         <div className="induseravatar">
                                             <h3>
