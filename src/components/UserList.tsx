@@ -33,7 +33,7 @@ interface Props {
 
 const YourList: React.FC<Props> = ({ user }) => {
     const [userMovies, setUserMovies] = useState<userMovie[]>([]);
-    const [movielist, setMovieList] = useState<Movie[]>([]);
+    //const [movielist, setMovieList] = useState<Movie[]>([]);
     //   const [filtered, setFilteredList] = useState<userMovie[]>([]);
 
     useEffect(() => {
@@ -45,18 +45,20 @@ const YourList: React.FC<Props> = ({ user }) => {
         }
     }, [user]);
 
-    useEffect(() => {
+    //Using following code to remove movies from user list when central list updates-
+    // not working yet
+    /*    useEffect(() => {
         const storedMovieList = localStorage.getItem("movies");
         if (storedMovieList) {
             setMovieList(JSON.parse(storedMovieList));
         } else {
             setMovieList([]);
         }
-    }, ["movies"]);
+    }, ["movies"]); */
 
     //This code needs to filter out deleted movies from the central list
 
-    useEffect(() => {
+    /*     useEffect(() => {
         const filteredMovies = userMovies.filter((movie) =>
             movielist.some((userMovie) => movie.title === userMovie.title)
         );
@@ -66,7 +68,7 @@ const YourList: React.FC<Props> = ({ user }) => {
             `userMovieList-${user.name}`,
             JSON.stringify(filteredMovies)
         );
-    }, []);
+    }, []); */
 
     useEffect(() => {
         localStorage.setItem(
