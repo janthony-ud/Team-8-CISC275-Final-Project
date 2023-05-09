@@ -4,7 +4,6 @@ import initialUsers from "../data/initialUsers.json";
 import { User } from "../interfaces/user";
 import NewUserButton from "./NewUserButton";
 import YourList from "./UserList";
-import AdminLists from "./DisplayAdminLists";
 import CentralList from "./CentralList";
 import "./ChooseRole.css";
 import { AdminList } from "./AdminList";
@@ -91,7 +90,16 @@ const ChooseUser: React.FC = () => {
                 </div>
             );
         } else if (user.role == "admin") {
-            return <AdminList />;
+            return (
+                <div>
+                    <div className="yourlist">
+                        <AdminList></AdminList>;
+                    </div>
+                    <div className="centrallist">
+                        <CentralList user={currentUser}></CentralList>;
+                    </div>
+                </div>
+            );
         } else if (user.role == "super") {
             return (
                 <div>
@@ -129,8 +137,10 @@ const ChooseUser: React.FC = () => {
                                 ))}
                             </TabPanel>
                             <TabPanel>
-                                <h1>View/Edit Admin Lists</h1>
-                                <AdminLists admin={users}></AdminLists>
+                                <h1>View/Edit Admin List</h1>
+                                <div className="yourlist">
+                                    <AdminList></AdminList>;
+                                </div>
                             </TabPanel>
                             <TabPanel>
                                 <CentralList user={currentUser}></CentralList>
@@ -169,6 +179,7 @@ const ChooseUser: React.FC = () => {
                     <Box>
                         <Stack isInline>
                             <Avatar
+                                style={{ textAlign: "center" }}
                                 onClick={() => handleSetUser(users[0])}
                                 as="a"
                                 name="home"
