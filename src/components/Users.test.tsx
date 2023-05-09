@@ -4,7 +4,7 @@ import { UserName } from "./Users";
 import { ThemeProvider } from "@chakra-ui/core/dist";
 
 describe("Users Tests", () => {
-    const testNames = ["Ryan", "Meg", "Brad", "Jake", "Justin"];
+    const testNames = ["First", "Ryan", "Meg", "Brad", "Jake", "Justin"];
     beforeEach(() => {
         render(
             <ThemeProvider>
@@ -32,6 +32,12 @@ describe("Users Tests", () => {
             fireEvent.change(selectElement, { target: { value: "Ryan" } });
         });
         expect(selectElement.value).toBe("Ryan");
+    });
+    test("initially renders with first name value selected", () => {
+        const selectElement = screen.getByLabelText(
+            "Choose Your Name"
+        ) as HTMLSelectElement;
+        expect(selectElement.value).toBe("First");
     });
     test("only one user can be selected at a time", () => {
         const selectElement = screen.getByLabelText(
