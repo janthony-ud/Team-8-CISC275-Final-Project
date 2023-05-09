@@ -9,7 +9,7 @@ export function UserDropdown({ options }: { options: string[] }): JSX.Element {
     }
 
     return (
-        <div>
+        <div data-testid="form" aria-label="form" id="form">
             <Form.Group controlId="formUserSelect">
                 <h3>Select Your User</h3>
                 <Form.Select value={user} onChange={updateSelected}>
