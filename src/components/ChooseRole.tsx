@@ -4,7 +4,6 @@ import initialUsers from "../data/initialUsers.json";
 import { User } from "../interfaces/user";
 import NewUserButton from "./NewUserButton";
 import YourList from "./UserList";
-import AdminLists from "./DisplayAdminLists";
 import CentralList from "./CentralList";
 import "./ChooseRole.css";
 import { AdminList } from "./AdminList";
@@ -94,9 +93,6 @@ const ChooseUser: React.FC = () => {
             return (
                 <div>
                     <div className="yourlist">
-                        <YourList user={currentUser}></YourList>;
-                    </div>
-                    <div className="adminlist">
                         <AdminList></AdminList>;
                     </div>
                     <div className="centrallist">
@@ -141,8 +137,10 @@ const ChooseUser: React.FC = () => {
                                 ))}
                             </TabPanel>
                             <TabPanel>
-                                <h1>View/Edit Admin Lists</h1>
-                                <AdminLists admin={users}></AdminLists>
+                                <h1>View/Edit Admin List</h1>
+                                <div className="yourlist">
+                                    <AdminList></AdminList>;
+                                </div>
                             </TabPanel>
                             <TabPanel>
                                 <CentralList user={currentUser}></CentralList>
