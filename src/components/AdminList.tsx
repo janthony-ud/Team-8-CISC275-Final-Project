@@ -23,6 +23,9 @@ export function AdminList(): JSX.Element {
 
     const [adminMovies, setAdminMovies] = useState<Movie[]>([]);
     const [editMovie, setEditMovie] = useState<boolean[]>([]);
+    useEffect(() => {
+        setEditMovie(Array(adminMovies.length).fill(false));
+    }, [adminMovies.length]);
     const [selectedMovie, selectMovie] = useState<Movie>(blankMovie);
     const [image, updateImage] = useState<string>(selectedMovie.image);
     const [title, updateTitle] = useState<string>(selectedMovie.title);

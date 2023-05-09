@@ -134,7 +134,7 @@ const CentralList: React.FC<Props> = ({ user }) => {
     function handleRemoveMovie(movie: Movie, user: User) {
         if (user.role == "super") {
             return (
-                <div>
+                <div className="newMovie">
                     <Button
                         variantColor="red"
                         onClick={() => removeMovie(movie.title)}
@@ -153,11 +153,16 @@ const CentralList: React.FC<Props> = ({ user }) => {
     function handleNewMovie(user: User) {
         if (user.role == "super") {
             return (
-                <NewMovieButton
-                    onSubmit={function (newMovie: Movie): void {
-                        setMovies((prevMovies) => [...prevMovies, newMovie]);
-                    }}
-                ></NewMovieButton>
+                <div className="newMovie">
+                    <NewMovieButton
+                        onSubmit={function (newMovie: Movie): void {
+                            setMovies((prevMovies) => [
+                                ...prevMovies,
+                                newMovie
+                            ]);
+                        }}
+                    ></NewMovieButton>
+                </div>
             );
         } else {
             return "";
