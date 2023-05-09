@@ -114,7 +114,7 @@ const NewMovieForm: React.FC<NewMovieFormProps> = ({ onSubmit }) => {
 
 const NewMovieButton: React.FC<NewMovieFormProps> = ({ onSubmit }) => {
     const handleClick = () => {
-        // eslint-disable-next-line
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const newWindow = window.open(
             "",
             "_blank",
