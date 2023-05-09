@@ -6,7 +6,7 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 FAIL src/App.test.tsx
-  ✕ renders learn react link (91 ms)
+  ✕ renders learn react link (92 ms)
 
   ● renders learn react link
 
@@ -280,5 +280,5 @@ All files               |   10.73 |     9.67 |    9.32 |   10.99 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.899 s
+Time:        3.67 s
 Ran all test suites.
