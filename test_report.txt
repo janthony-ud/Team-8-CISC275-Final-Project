@@ -5,7 +5,7 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-PASS src/components/CentralList.test.tsx (6.562 s)
+PASS src/components/CentralList.test.tsx (5.53 s)
   ● Console
 
     console.error
@@ -65,278 +65,63 @@ PASS src/components/CentralList.test.tsx (6.562 s)
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
-FAIL src/App.test.tsx
-  ● renders learn react link
+PASS src/components/AdminList.test.tsx
+  ● Console
 
-    TestingLibraryElementError: Unable to find an element with the text: /learn react/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+    console.log
+      found dropzone
 
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div[39m
-        [33mclass[39m=[32m"Toaster"[39m
-        [33mid[39m=[32m"react-toast"[39m
-      [36m>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
-        [36m/>[39m
-      [36m</div>[39m
-      [36m<div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"App"[39m
-        [36m>[39m
-          [36m<header[39m
-            [33mclass[39m=[32m"App-header"[39m
-          [36m>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"logo"[39m
-            [36m>[39m
-              [36m<img[39m
-                [33malt[39m=[32m"Movieo Logo"[39m
-                [33mclass[39m=[32m"css-uhghij"[39m
-                [33mheight[39m=[32m"30px"[39m
-              [36m/>[39m
-            [36m</div>[39m
-            [36m<p[39m
-              [33mclass[39m=[32m"Header-names"[39m
-            [36m>[39m
-              [0mTeam 8: Justin Anthony, Meghan Gamble, Brad Daughtery, Jakeb Milburn, Ryan Sanchez[0m
-            [36m</p>[39m
-          [36m</header>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"Role"[39m
-          [36m>[39m
-            [36m<div>[39m
-              [36m<hr />[39m
-              [36m<div[39m
-                [33mclass[39m=[32m"users"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"css-0"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"css-1xhj18k"[39m
-                  [36m>[39m
-                    [36m<a[39m
-                      [33mclass[39m=[32m"css-5uvi93"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33maria-label[39m=[32m"Home"[39m
-                        [33mclass[39m=[32m"css-1uc1olj"[39m
-                      [36m>[39m
-                        [0mH[0m
-                      [36m</div>[39m
-                      [0m [0m
-                    [36m</a>[39m
-                    [36m<div[39m
-                      [33mmr[39m=[32m"2"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"induseravatar"[39m
-                      [36m>[39m
-                        [36m<span[39m
-                          [33mclass[39m=[32m"css-0"[39m
-                          [33mtabindex[39m=[32m"0"[39m
-                        [36m>[39m
-                          [36m<a[39m
-                            [33mclass[39m=[32m"css-v77q72"[39m
-                          [36m>[39m
-                            [36m<div[39m
-                              [33maria-label[39m=[32m"Home"[39m
-                              [33mclass[39m=[32m"css-1uc1olj"[39m
-                            [36m>[39m
-                              [0mH[0m
-                            [36m</div>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-bktzsx"[39m
-                            [36m/>[39m
-                          [36m</a>[39m
-                        [36m</span>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                    [36m<div[39m
-                      [33mmr[39m=[32m"2"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"induseravatar"[39m
-                      [36m>[39m
-                        [36m<span[39m
-                          [33mclass[39m=[32m"css-0"[39m
-                          [33mtabindex[39m=[32m"0"[39m
-                        [36m>[39m
-                          [36m<a[39m
-                            [33mclass[39m=[32m"css-1yzo1zz"[39m
-                          [36m>[39m
-                            [36m<div[39m
-                              [33maria-label[39m=[32m"Meg"[39m
-                              [33mclass[39m=[32m"css-1uc1olj"[39m
-                            [36m>[39m
-                              [0mM[0m
-                            [36m</div>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-bktzsx"[39m
-                            [36m/>[39m
-                          [36m</a>[39m
-                        [36m</span>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                    [36m<div[39m
-                      [33mmr[39m=[32m"2"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"induseravatar"[39m
-                      [36m>[39m
-                        [36m<span[39m
-                          [33mclass[39m=[32m"css-0"[39m
-                          [33mtabindex[39m=[32m"0"[39m
-                        [36m>[39m
-                          [36m<a[39m
-                            [33mclass[39m=[32m"css-yjfay6"[39m
-                          [36m>[39m
-                            [36m<div[39m
-                              [33maria-label[39m=[32m"Brad"[39m
-                              [33mclass[39m=[32m"css-1uc1olj"[39m
-                            [36m>[39m
-                              [0mB[0m
-                            [36m</div>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-bktzsx"[39m
-                            [36m/>[39m
-                          [36m</a>[39m
-                        [36m</span>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                    [36m<div[39m
-                      [33mmr[39m=[32m"2"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"induseravatar"[39m
-                      [36m>[39m
-                        [36m<span[39m
-                          [33mclass[39m=[32m"css-0"[39m
-                          [33mtabindex[39m=[32m"0"[39m
-                        [36m>[39m
-                          [36m<a[39m
-                            [33mclass[39m=[32m"css-1amk9tg"[39m
-                          [36m>[39m
-                            [36m<div[39m
-                              [33maria-label[39m=[32m"Ryan"[39m
-                              [33mclass[39m=[32m"css-1uc1olj"[39m
-                            [36m>[39m
-                              [0mR[0m
-                            [36m</div>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-bktzsx"[39m
-                            [36m/>[39m
-                          [36m</a>[39m
-                        [36m</span>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                    [36m<div>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"induseravatar"[39m
-                      [36m>[39m
-                        [36m<span[39m
-                          [33mclass[39m=[32m"css-0"[39m
-                          [33mtabindex[39m=[32m"0"[39m
-                        [36m>[39m
-                          [36m<a[39m
-                            [33mclass[39m=[32m"css-lans25"[39m
-                          [36m>[39m
-                            [36m<div[39m
-                              [33maria-label[39m=[32m"Justin"[39m
-                              [33mclass[39m=[32m"css-1uc1olj"[39m
-                            [36m>[39m
-                              [0mJ[0m
-                            [36m</div>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-bktzsx"[39m
-                            [36m/>[39m
-                          [36m</a>[39m
-                        [36m</span>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                [36m</div>[39m
-              [36m</div>[39m
-              [0mWelcome, [0m
-              [0mHome[0m
-              [0m You are now interacting as:[0m
-              [0m [0m
-              [0m[0m
-              [36m<div>[39m
-                [0mHello![0m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<br />[39m
-          [36m<br />[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
+      at src/components/AdminList.test.tsx:28:25
 
-       5 | test("renders learn react link", () => {
-       6 |     render(<App />);
-    >  7 |     const linkElement = screen.getByText(/learn react/i);
-         |                                ^
-       8 |     expect(linkElement).toBeInTheDocument();
-       9 | });
-      10 |
+    console.log
+      widgetType {
+        image: '',
+        title: 'A Movie',
+        description: 'Test description',
+        maturity_rating: 'PG',
+        cast: [ 'Bob', 'Mary', 'Jim' ],
+        genre: [ 'Adventure' ],
+        user_rating: 0
+      }
 
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/App.test.tsx:7:32)
-      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
-      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
-      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
-      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+      at handleOnDrop (src/components/AdminList.tsx:105:17)
 
-------------------------|---------|----------|---------|---------|--------------------------------
-File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
-------------------------|---------|----------|---------|---------|--------------------------------
-All files               |   17.78 |    20.96 |   16.94 |   18.21 |                                
- src                    |     100 |      100 |     100 |     100 |                                
-  App.tsx               |     100 |      100 |     100 |     100 |                                
- src/components         |   16.94 |    20.96 |   15.51 |   17.36 |                                
-  AdminList.tsx         |       0 |        0 |       0 |       0 | 6-215                          
-  CentralList.tsx       |   48.78 |       70 |   38.09 |   51.28 | 40,96,102-131,140,158,196      
-  ChooseRole.tsx        |   53.65 |       50 |      45 |   56.41 | 32,49-72,83,94,108-133,179,197 
-  DisplayAdminLists.tsx |   16.66 |      100 |       0 |   16.66 | 11-19                          
-  NewMovieButton.tsx    |    8.69 |        0 |    8.33 |    8.69 | 14-87,117-143                  
-  NewUserButton.tsx     |    6.66 |        0 |       0 |    6.66 | 17-51,61-98                    
-  UserDropdown.tsx      |       0 |      100 |       0 |       0 | 6-17                           
-  UserList.tsx          |    1.66 |        0 |       0 |    1.69 | 35-263                         
-  Users.tsx             |       0 |      100 |       0 |       0 | 7-19                           
- src/interfaces         |       0 |        0 |       0 |       0 |                                
-  movie.ts              |       0 |        0 |       0 |       0 |                                
-  play.ts               |       0 |        0 |       0 |       0 |                                
-  user.ts               |       0 |        0 |       0 |       0 |                                
-  userMovie.ts          |       0 |        0 |       0 |       0 |                                
-------------------------|---------|----------|---------|---------|--------------------------------
-Test Suites: 1 failed, 1 passed, 2 total
-Tests:       1 failed, 10 passed, 11 total
+    console.log
+      false
+
+      at handleOnDrop (src/components/AdminList.tsx:109:17)
+
+    console.log
+      testing
+
+      at Object.<anonymous> (src/components/AdminList.test.tsx:41:17)
+
+PASS src/App.test.tsx
+------------------------|---------|----------|---------|---------|-----------------------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                 
+------------------------|---------|----------|---------|---------|-----------------------------------
+All files               |   28.18 |    43.54 |   24.57 |   28.52 |                                   
+ src                    |     100 |      100 |     100 |     100 |                                   
+  App.tsx               |     100 |      100 |     100 |     100 |                                   
+ src/components         |   27.45 |    43.54 |   23.27 |   27.77 |                                   
+  AdminList.tsx         |   47.61 |       50 |    40.9 |   47.54 | 31-55,61-71,90-93,107,117,173-218 
+  CentralList.tsx       |   48.78 |       70 |   38.09 |   51.28 | 40,96,102-131,140,158,196         
+  ChooseRole.tsx        |   56.09 |    58.33 |      45 |   58.97 | 49-72,83,94,108-133,179,197       
+  DisplayAdminLists.tsx |   16.66 |      100 |       0 |   16.66 | 11-19                             
+  NewMovieButton.tsx    |    8.69 |        0 |    8.33 |    8.69 | 14-87,117-143                     
+  NewUserButton.tsx     |    6.66 |        0 |       0 |    6.66 | 17-51,61-98                       
+  UserDropdown.tsx      |       0 |      100 |       0 |       0 | 6-17                              
+  UserList.tsx          |    1.66 |        0 |       0 |    1.69 | 35-263                            
+  Users.tsx             |       0 |      100 |       0 |       0 | 7-19                              
+ src/interfaces         |       0 |        0 |       0 |       0 |                                   
+  movie.ts              |       0 |        0 |       0 |       0 |                                   
+  play.ts               |       0 |        0 |       0 |       0 |                                   
+  user.ts               |       0 |        0 |       0 |       0 |                                   
+  userMovie.ts          |       0 |        0 |       0 |       0 |                                   
+------------------------|---------|----------|---------|---------|-----------------------------------
+
+Test Suites: 3 passed, 3 total
+Tests:       16 passed, 16 total
 Snapshots:   0 total
-Time:        8.977 s
+Time:        8.255 s
 Ran all test suites.
