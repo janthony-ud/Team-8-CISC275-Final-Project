@@ -127,7 +127,7 @@ export function AdminList(): JSX.Element {
                 onDragOver={handleDragOver}
             >
                 {adminMovies.map((movie, movie_index) => (
-                    <div className="droppedMovie" key={movie.title}>
+                    <div className="droppedMovie" key={movie_index}>
                         <img src={movie.image} alt={movie.title} />
                         <h3>{movie.title}</h3>
                         <div>
