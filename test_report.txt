@@ -5,7 +5,7 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-PASS src/components/CentralList.test.tsx (5.553 s)
+PASS src/components/CentralList.test.tsx (8.001 s)
   ● Console
 
     console.error
@@ -214,5 +214,5 @@ All files               |   32.54 |       50 |   30.76 |   32.87 |
 Test Suites: 1 failed, 5 passed, 6 total
 Tests:       1 failed, 23 passed, 24 total
 Snapshots:   0 total
-Time:        13.236 s
+Time:        19.454 s
 Ran all test suites.
