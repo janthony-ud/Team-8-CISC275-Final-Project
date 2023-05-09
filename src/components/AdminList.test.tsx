@@ -29,7 +29,7 @@ describe("Admin List Component Tests", () => {
                 fireEvent.drop(dropZone, {
                     dataTransfer: {
                         getData: () => JSON.stringify(mockMovie),
-                        tyeps: ["text/plain"],
+                        types: ["text/plain"],
                         setData: () => {
                             console.log("setting movie");
                         }
