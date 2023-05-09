@@ -3,18 +3,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import CentralList from "./CentralList";
 import { ThemeProvider } from "@chakra-ui/core/dist";
 import movieList from "../data/movieList.json";
-/**
- * Things to test in this file:
- * - presence of NewMovieButton if superuser
- * - remove movie button on accordion boxes if superuser
- * - Sort Menu
- *     - MenuButton is present,
- *       options are hidden unitl clicked
- * - Movie List
- *   - each movie in list is displayed
- *   - clicking each movie shows description and cast
- *   - movies are displayed in sorted order
- */
+
 const testSuper = {
     name: "test super",
     userMovieList: [],
