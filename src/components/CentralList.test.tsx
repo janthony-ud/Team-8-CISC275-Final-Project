@@ -1,13 +1,7 @@
 import React from "react";
-import {
-    fireEvent,
-    getAllByRole,
-    render,
-    screen
-} from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import CentralList from "./CentralList";
 import { ThemeProvider } from "@chakra-ui/core/dist";
-import movieList from "../data/movieList.json";
 
 /**
  * Things to test in this file:
@@ -41,52 +35,92 @@ const testUser = {
 
 describe("Central List Component Tests", () => {
     test("renders NewMovieButton if superuser", () => {
-        render(<CentralList user={testSuper} />);
+        render(
+            <ThemeProvider>
+                <CentralList user={testSuper} />
+            </ThemeProvider>
+        );
         const newMovie = screen.getByText("New Movie");
         expect(newMovie).toBeInTheDocument();
     });
     test("does not render NewMovieButton if admin", () => {
-        render(<CentralList user={testAdmin} />);
+        render(
+            <ThemeProvider>
+                <CentralList user={testAdmin} />
+            </ThemeProvider>
+        );
         const newMovie = screen.getByText("New Movie");
         expect(newMovie).not.toBeInTheDocument();
     });
     test("does not render NewMovieButton if user", () => {
-        render(<CentralList user={testUser} />);
+        render(
+            <ThemeProvider>
+                <CentralList user={testUser} />
+            </ThemeProvider>
+        );
         const newMovie = screen.getByText("New Movie");
         expect(newMovie).not.toBeInTheDocument();
     });
     test("renders Remove Movie if superuser", () => {
-        render(<CentralList user={testSuper} />);
-        const remove = screen.getByText("Remove Movie");
+        render(
+            <ThemeProvider>
+                <CentralList user={testSuper} />
+            </ThemeProvider>
+        );
+        const remove = screen.getAllByText("Remove Movie");
         expect(remove).toBeInTheDocument();
     });
     test("does not render Remove Movie if admin", () => {
-        render(<CentralList user={testAdmin} />);
+        render(
+            <ThemeProvider>
+                <CentralList user={testAdmin} />
+            </ThemeProvider>
+        );
         const remove = screen.getByText("Remove Movie");
         expect(remove).not.toBeInTheDocument();
     });
     test("does not render Remove Movie if user", () => {
-        render(<CentralList user={testUser} />);
+        render(
+            <ThemeProvider>
+                <CentralList user={testUser} />
+            </ThemeProvider>
+        );
         const remove = screen.getByText("Remove Movie");
         expect(remove).not.toBeInTheDocument();
     });
     test("renders Sort button for super", () => {
-        render(<CentralList user={testSuper} />);
+        render(
+            <ThemeProvider>
+                <CentralList user={testSuper} />
+            </ThemeProvider>
+        );
         const sort = screen.getByText("Sort");
         expect(sort).toBeInTheDocument();
     });
     test("renders Sort button for admin", () => {
-        render(<CentralList user={testAdmin} />);
+        render(
+            <ThemeProvider>
+                <CentralList user={testAdmin} />
+            </ThemeProvider>
+        );
         const sort = screen.getByText("Sort");
         expect(sort).toBeInTheDocument();
     });
     test("renders Sort button for super", () => {
-        render(<CentralList user={testAdmin} />);
+        render(
+            <ThemeProvider>
+                <CentralList user={testAdmin} />
+            </ThemeProvider>
+        );
         const sort = screen.getByText("Sort");
         expect(sort).toBeInTheDocument();
     });
     test("dropdown options visible aft button click", () => {
-        render(<CentralList user={testUser} />);
+        render(
+            <ThemeProvider>
+                <CentralList user={testUser} />
+            </ThemeProvider>
+        );
         const sortBtn = screen.getByText("Sort");
         fireEvent.click(sortBtn);
         const sortTitle = screen.getByText("Title");
