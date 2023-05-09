@@ -195,6 +195,9 @@ const YourList: React.FC<Props> = ({ user }) => {
                 className="userlist"
                 onDrop={handleOnDrop}
                 onDragOver={handleDragOver}
+                data-testid="userdropzone"
+                aria-label="userdropzone"
+                id="userdropzone"
             >
                 {userMovies.map((movie, index) => (
                     <div className="droppedMovie" key={movie.id}>
