@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Movie } from "../interfaces/movie";
 import { FormCheck, FormControl, FormGroup, FormLabel } from "react-bootstrap";
 
@@ -14,63 +14,103 @@ export function AdminList(): JSX.Element {
     };
 
     const [adminMovies, setAdminMovies] = useState<Movie[]>([]);
-    const [inEdit, setInEdit] = useState<boolean>(false);
-    const [movie, updateMovie] = useState<Movie>(blankMovie);
-
-    function handleImageChange(e: React.ChangeEvent<HTMLInputElement>) {
-        updateMovie({
-            ...movie,
-            image: e.target.value
-        });
-    }
-
-    function handleTitleChange(e: React.ChangeEvent<HTMLInputElement>) {
-        updateMovie({
-            ...movie,
-            title: e.target.value
-        });
-    }
-
-    function handleDescriptionChange(e: React.ChangeEvent<HTMLInputElement>) {
-        updateMovie({
-            ...movie,
-            description: e.target.value
-        });
-    }
-
-    function handleMaturityRatingChange(
-        e: React.ChangeEvent<HTMLInputElement>
-    ) {
-        updateMovie({
-            ...movie,
-            maturity_rating: e.target.value
-        });
-    }
+    const [editMovie, setEditMovie] = useState<boolean[]>([]);
+    const [selectedMovie, selectMovie] = useState<Movie>(blankMovie);
+    const [image, updateImage] = useState<string>(selectedMovie.image);
+    const [title, updateTitle] = useState<string>(selectedMovie.title);
+    const [description, updateDescription] = useState<string>(
+        selectedMovie.description
+    );
+    const [maturity_rating, updateMaturityRating] = useState<string>(
+        selectedMovie.maturity_rating
+    );
+    const [cast, updateCast] = useState<string[]>(selectedMovie.cast);
+    const [genre, updateGenre] = useState<string[]>(selectedMovie.genre);
 
     function handleCastChange(e: React.ChangeEvent<HTMLInputElement>) {
-        updateMovie({
-            ...movie,
-            cast: [...movie.cast, e.target.value]
-        });
+        const castList = e.target.value.split(",");
+        updateCast(castList);
     }
 
     function handleGenreChange(e: React.ChangeEvent<HTMLInputElement>) {
-        updateMovie({
-            ...movie,
-            genre: [...movie.genre, e.target.value]
-        });
+        const genreList = e.target.value.split(",");
+        updateGenre(genreList);
     }
 
-    function updateMode(e: React.ChangeEvent<HTMLInputElement>) {
-        setInEdit(e.target.checked);
+    function handleEditMovie(e: React.ChangeEvent<HTMLInputElement>) {
+        const movieName = e.target.id;
+        const movieIndex = adminMovies.findIndex(
+            (movie: Movie): boolean => movie.title === movieName
+        );
+        setEditMovie([
+            ...editMovie.slice(0, movieIndex),
+            e.target.checked,
+            ...editMovie.slice(movieIndex + 1)
+        ]);
+        let selectedMovie = adminMovies[movieIndex];
+        if (movieIndex === null) {
+            selectedMovie = blankMovie;
+        }
+        selectMovie(selectedMovie);
+        console.log(selectedMovie);
     }
+
+    useEffect(() => {
+        const check_true = editMovie.some((edit: boolean): boolean => edit);
+        if (check_true) {
+            const check_index = editMovie.findIndex(
+                (edit: boolean): boolean => edit
+            );
+            console.log(adminMovies[check_index].genre);
+            selectMovie(adminMovies[check_index]);
+            updateImage(adminMovies[check_index].image);
+            updateTitle(adminMovies[check_index].title);
+            updateDescription(adminMovies[check_index].description);
+            updateMaturityRating(adminMovies[check_index].maturity_rating);
+            updateCast(adminMovies[check_index].cast);
+            updateGenre(adminMovies[check_index].genre);
+        }
+    }, [selectedMovie && editMovie]);
+
+    useEffect(() => {
+        selectMovie({
+            image: image,
+            title: title,
+            description: description,
+            maturity_rating: maturity_rating,
+            cast: cast,
+            genre: genre,
+            user_rating: 1
+        });
+    }, [image, title, description, maturity_rating, cast, genre]);
+
+    useEffect(() => {
+        const check_true = editMovie.some((edit: boolean): boolean => edit);
+        if (check_true) {
+            const check_index = editMovie.findIndex(
+                (edit: boolean): boolean => edit
+            );
+            setAdminMovies([
+                ...adminMovies.slice(0, check_index),
+                selectedMovie,
+                ...adminMovies.slice(check_index + 1)
+            ]);
+        }
+    }, [selectedMovie]);
 
     function handleOnDrop(e: React.DragEvent) {
         const widgetType = JSON.parse(
             e.dataTransfer.getData("widgetType")
         ) as Movie;
         console.log("widgetType", widgetType);
-        setAdminMovies([...adminMovies, widgetType]);
+        const duplicates = adminMovies.some(
+            (movie: Movie): boolean => movie.title === widgetType.title
+        );
+        console.log(duplicates);
+        if (!duplicates) {
+            setAdminMovies([...adminMovies, widgetType]);
+            setEditMovie([...editMovie, false]);
+        }
     }
 
     function handleDragOver(e: React.DragEvent) {
@@ -86,7 +126,7 @@ export function AdminList(): JSX.Element {
                 onDrop={handleOnDrop}
                 onDragOver={handleDragOver}
             >
-                {adminMovies.map((movie) => (
+                {adminMovies.map((movie, movie_index) => (
                     <div className="droppedMovie" key={movie.title}>
                         <img src={movie.image} alt={movie.title} />
                         <h3>{movie.title}</h3>
@@ -97,92 +137,112 @@ export function AdminList(): JSX.Element {
                             <p>Cast: {movie.cast.join(", ")}</p>
                         </div>{" "}
                         <div>
-                            <FormCheck
-                                type="switch"
-                                id="in-edit-check"
-                                label="Edit Movie"
-                                checked={inEdit}
-                                onChange={updateMode}
-                            ></FormCheck>
+                            {" "}
+                            {editMovie.map((edit, edit_index) =>
+                                movie_index === edit_index ? (
+                                    <div className="editCheck" key={edit_index}>
+                                        <FormCheck
+                                            type="switch"
+                                            id={movie.title}
+                                            label="Edit Movie"
+                                            disabled={
+                                                editMovie.some(
+                                                    (edit: boolean): boolean =>
+                                                        edit
+                                                ) && !editMovie[edit_index]
+                                            }
+                                            checked={editMovie[edit_index]}
+                                            onChange={handleEditMovie}
+                                        ></FormCheck>
+                                    </div>
+                                ) : null
+                            )}
                         </div>
                         <div>
-                            {inEdit ? (
+                            {editMovie[movie_index] && (
                                 <FormGroup controlId="formImage">
                                     <FormLabel>Image: </FormLabel>
                                     <FormControl
                                         name="image"
                                         type="text"
-                                        value={movie.image}
-                                        onChange={handleImageChange}
+                                        value={image}
+                                        onChange={(e) =>
+                                            updateImage(e.target.value)
+                                        }
                                     ></FormControl>
                                 </FormGroup>
-                            ) : null}
+                            )}
                         </div>
                         <div>
-                            {inEdit ? (
+                            {editMovie[movie_index] && (
                                 <FormGroup controlId="formTitle">
                                     <FormLabel>Title: </FormLabel>
                                     <FormControl
                                         name="title"
                                         type="text"
-                                        value={movie.title}
-                                        defaultValue={movie.title}
-                                        onChange={handleTitleChange}
+                                        value={title}
+                                        onChange={(e) =>
+                                            updateTitle(e.target.value)
+                                        }
                                     ></FormControl>
                                 </FormGroup>
-                            ) : null}
+                            )}
                         </div>
                         <div>
-                            {inEdit ? (
+                            {editMovie[movie_index] && (
                                 <FormGroup controlId="formDescription">
                                     <FormLabel>Description: </FormLabel>
                                     <FormControl
                                         name="description"
                                         type="text"
-                                        value={movie.description}
-                                        onChange={handleDescriptionChange}
+                                        value={description}
+                                        onChange={(e) =>
+                                            updateDescription(e.target.value)
+                                        }
                                     ></FormControl>
                                 </FormGroup>
-                            ) : null}
+                            )}
                         </div>
                         <div>
-                            {inEdit ? (
+                            {editMovie[movie_index] && (
                                 <FormGroup controlId="formMaturityRating">
                                     <FormLabel>Maturity Rating: </FormLabel>
                                     <FormControl
                                         name="maturity_rating"
                                         type="text"
-                                        value={movie.maturity_rating}
-                                        onChange={handleMaturityRatingChange}
+                                        value={maturity_rating}
+                                        onChange={(e) =>
+                                            updateMaturityRating(e.target.value)
+                                        }
                                     ></FormControl>
                                 </FormGroup>
-                            ) : null}
+                            )}
                         </div>
                         <div>
-                            {inEdit ? (
+                            {editMovie[movie_index] && (
                                 <FormGroup controlId="formCast">
                                     <FormLabel>Cast: </FormLabel>
                                     <FormControl
                                         name="cast"
                                         type="text"
-                                        value={movie.cast}
+                                        value={cast.join(",")}
                                         onChange={handleCastChange}
                                     ></FormControl>
                                 </FormGroup>
-                            ) : null}
+                            )}
                         </div>
                         <div>
-                            {inEdit ? (
+                            {editMovie[movie_index] && (
                                 <FormGroup controlId="formGenre">
                                     <FormLabel>Genre: </FormLabel>
                                     <FormControl
                                         name="genre"
                                         type="text"
-                                        value={movie.genre}
+                                        value={genre.join(",")}
                                         onChange={handleGenreChange}
                                     ></FormControl>
                                 </FormGroup>
-                            ) : null}
+                            )}
                         </div>
                     </div>
                 ))}

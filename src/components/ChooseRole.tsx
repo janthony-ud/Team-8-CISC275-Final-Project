@@ -4,6 +4,7 @@ import initialUsers from "../data/initialUsers.json";
 import { User } from "../interfaces/user";
 import NewUserButton from "./NewUserButton";
 import YourList from "./UserList";
+<<<<<<< Updated upstream
 import AdminLists from "./DisplayAdminLists";
 import CentralList from "./CentralList";
 import "./ChooseRole.css";
@@ -13,6 +14,10 @@ import { Tooltip } from "@chakra-ui/core";
 import { Button } from "@chakra-ui/core";
 import { useEffect } from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/core";
+=======
+import { CentralList } from "./CentralList";
+import { AdminList } from "./AdminList";
+>>>>>>> Stashed changes
 
 const ChooseUser: React.FC = () => {
     const [users, setUsers] = useState<User[]>(
@@ -93,12 +98,16 @@ const ChooseUser: React.FC = () => {
         } else if (user.role == "admin") {
             return (
                 <div>
+<<<<<<< Updated upstream
                     <div className="yourlist">
                         <YourList user={currentUser}></YourList>
                     </div>
                     <div className="centrallist">
                         <CentralList user={currentUser}></CentralList>;
                     </div>
+=======
+                    <AdminList></AdminList>
+>>>>>>> Stashed changes
                 </div>
             );
         } else if (user.role == "super") {
