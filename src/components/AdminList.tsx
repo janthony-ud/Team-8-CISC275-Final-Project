@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Movie } from "../interfaces/movie";
 import { FormCheck, FormControl, FormGroup, FormLabel } from "react-bootstrap";
+import {
+    AccordionItem,
+    AccordionHeader,
+    AccordionPanel,
+    AccordionIcon
+} from "@chakra-ui/core";
+import { Box, Image, Flex, Badge, Text } from "@chakra-ui/core";
+import "./AdminList.css";
 
 export function AdminList(): JSX.Element {
     const blankMovie: Movie = {
@@ -122,7 +130,7 @@ export function AdminList(): JSX.Element {
             <h1> Movies to be Reviewed </h1>
             <p>Drag Movies to add them to the Review List</p>
             <div
-                className="col"
+                className="adminlist"
                 onDrop={handleOnDrop}
                 onDragOver={handleDragOver}
                 data-testid="dropzone"
@@ -131,14 +139,54 @@ export function AdminList(): JSX.Element {
             >
                 {adminMovies.map((movie, movie_index) => (
                     <div className="droppedMovie" key={movie_index}>
-                        <img src={movie.image} alt={movie.title} />
-                        <h3>{movie.title}</h3>
-                        <div>
-                            <p>{movie.description}</p>
-                            <p>Genre: {movie.genre.join(", ")}</p>
-                            <p>Age Rating: {movie.maturity_rating}</p>
-                            <p>Cast: {movie.cast.join(", ")}</p>
-                        </div>{" "}
+                        <div className="border">
+                            <AccordionItem>
+                                <AccordionHeader>
+                                    <Box width="100%" alignContent="left">
+                                        <Box>
+                                            <Image
+                                                borderRadius="md"
+                                                src={movie.image}
+                                                alt={movie.title}
+                                            />
+                                            <Text
+                                                mt={2}
+                                                fontSize="xl"
+                                                fontWeight="semibold"
+                                            >
+                                                {movie.title}
+                                            </Text>
+                                        </Box>
+
+                                        <Box>
+                                            {" "}
+                                            <Text
+                                                ml={2}
+                                                textTransform="uppercase"
+                                                fontSize="sm"
+                                                fontWeight="bold"
+                                                color="pink.800"
+                                            >
+                                                {movie.genre.join(" & ")}
+                                            </Text>
+                                            <Badge color="red">
+                                                {movie.maturity_rating}
+                                            </Badge>
+                                        </Box>
+                                        <AccordionIcon />
+                                    </Box>
+                                </AccordionHeader>
+                                <AccordionPanel pb={4}>
+                                    <Text mt={2}>{movie.description}</Text>
+                                    <Flex mt={2} align="center">
+                                        <Text ml={1} fontSize="sm">
+                                            <b>{movie.cast.join(" , ")}</b>
+                                        </Text>
+                                    </Flex>
+                                </AccordionPanel>
+                            </AccordionItem>
+                        </div>
+
                         <div>
                             {" "}
                             {editMovie.map((edit, edit_index) =>
@@ -249,7 +297,6 @@ export function AdminList(): JSX.Element {
                         </div>
                     </div>
                 ))}
-                ;
             </div>
         </div>
     );

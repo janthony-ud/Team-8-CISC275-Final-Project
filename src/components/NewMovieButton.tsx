@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { Movie } from "../interfaces/movie";
+import { Button } from "@chakra-ui/core";
 
 interface NewMovieFormProps {
     onSubmit: (newMovie: Movie) => void;
@@ -149,6 +150,12 @@ const NewMovieButton: React.FC<NewMovieFormProps> = ({ onSubmit }) => {
         );
     };
 
-    return <button onClick={handleClick}>New Movie</button>;
+    return (
+        <div>
+            <Button variantColor="green" size="sm" onClick={handleClick}>
+                + New Movie
+            </Button>
+        </div>
+    );
 };
 export default NewMovieButton;
