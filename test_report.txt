@@ -5,7 +5,7 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-PASS src/components/CentralList.test.tsx (7.009 s)
+PASS src/components/CentralList.test.tsx (6.98 s)
   ● Console
 
     console.error
@@ -165,10 +165,29 @@ FAIL src/App.test.tsx
       30 |         expect(
 
       at Object.<anonymous> (src/App.test.tsx:27:15)
-      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
-      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
-      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
-      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
+PASS src/components/UserDropdown.test.tsx
+  ● Console
+
+    console.error
+      Warning: React does not recognize the `isOpen` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `isopen` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+          at div
+          at div
+          at Styled(div)
+          at Accordion (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:30:28)
+          at div
+          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:55:41)
+          at ThemeProvider
+          at ThemeProvider (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/ThemeProvider/index.js:18:20)
+
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3513:7)
+      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3559:21)
+      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3583:3)
+      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:8765:5)
+      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
+      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
 ------------------------|---------|----------|---------|---------|-----------------------------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                       
@@ -191,8 +210,9 @@ All files               |    32.2 |       50 |   30.76 |   32.52 |
   user.ts               |       0 |        0 |       0 |       0 |                                         
   userMovie.ts          |       0 |        0 |       0 |       0 |                                         
 ------------------------|---------|----------|---------|---------|-----------------------------------------
-Test Suites: 1 failed, 4 passed, 5 total
-Tests:       1 failed, 22 passed, 23 total
+
+Test Suites: 1 failed, 5 passed, 6 total
+Tests:       1 failed, 23 passed, 24 total
 Snapshots:   0 total
-Time:        15.95 s
+Time:        17.212 s
 Ran all test suites.
