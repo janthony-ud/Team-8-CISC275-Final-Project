@@ -29,7 +29,7 @@ describe("Central List Component Tests", () => {
                 <CentralList user={testSuper} />
             </ThemeProvider>
         );
-        const newMovie = screen.getByText("New Movie");
+        const newMovie = screen.getByText("+ New Movie");
         expect(newMovie).toBeInTheDocument();
     });
     test("does not render NewMovieButton if admin", () => {
@@ -38,7 +38,7 @@ describe("Central List Component Tests", () => {
                 <CentralList user={testAdmin} />
             </ThemeProvider>
         );
-        const newMovie = screen.queryByText("New Movie");
+        const newMovie = screen.queryByText("+ New Movie");
         expect(newMovie).not.toBeInTheDocument();
     });
     test("does not render NewMovieButton if user", () => {
@@ -47,7 +47,7 @@ describe("Central List Component Tests", () => {
                 <CentralList user={testUser} />
             </ThemeProvider>
         );
-        const newMovie = screen.queryByText("New Movie");
+        const newMovie = screen.queryByText("+ New Movie");
         expect(newMovie).not.toBeInTheDocument();
     });
     test("renders Remove Movie if superuser", () => {
