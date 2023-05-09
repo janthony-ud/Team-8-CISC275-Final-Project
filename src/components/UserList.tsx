@@ -34,7 +34,7 @@ interface Props {
 const YourList: React.FC<Props> = ({ user }) => {
     const [userMovies, setUserMovies] = useState<userMovie[]>([]);
     const [movielist, setMovieList] = useState<Movie[]>([]);
-    const [filtered, setFilteredList] = useState<userMovie[]>([]);
+    //   const [filtered, setFilteredList] = useState<userMovie[]>([]);
 
     useEffect(() => {
         const storedMovies = localStorage.getItem(`userMovieList-${user.name}`);
@@ -49,6 +49,8 @@ const YourList: React.FC<Props> = ({ user }) => {
         const storedMovieList = localStorage.getItem("movies");
         if (storedMovieList) {
             setMovieList(JSON.parse(storedMovieList));
+        } else {
+            setMovieList([]);
         }
     }, ["movies"]);
 
@@ -58,8 +60,13 @@ const YourList: React.FC<Props> = ({ user }) => {
         const filteredMovies = userMovies.filter((movie) =>
             movielist.some((userMovie) => movie.title === userMovie.title)
         );
-        setFilteredList(filteredMovies);
-    }, [movielist, userMovies, "movies"]);
+        //  setFilteredList(filteredMovies);
+        setUserMovies(filteredMovies);
+        localStorage.setItem(
+            `userMovieList-${user.name}`,
+            JSON.stringify(filteredMovies)
+        );
+    }, []);
 
     useEffect(() => {
         localStorage.setItem(
@@ -189,7 +196,7 @@ const YourList: React.FC<Props> = ({ user }) => {
                 onDrop={handleOnDrop}
                 onDragOver={handleDragOver}
             >
-                {filtered.map((movie, index) => (
+                {userMovies.map((movie, index) => (
                     <div className="droppedMovie" key={movie.id}>
                         <div className="border">
                             <AccordionItem>

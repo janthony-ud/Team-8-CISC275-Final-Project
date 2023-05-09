@@ -1,0 +1,35 @@
+.list-header {
+    text-align: left;
+    padding: 5px;
+}
+
+.movie-list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.movie-title {
+    font-weight: bold;
+    padding: 5px;
+}
+
+.movie-image {
+    padding: 10px;
+}
+
+.drop-area {
+    background-color: rgba(196, 190, 190, 0.25);
+    display: grid;
+    gap: 30px;
+    grid-template-columns: auto auto;
+    padding: 50px;
+    text-align: left;
+}
+
+.adminlist {
+    padding: 10px;
+    overflow-y: scroll;
+    height: 84vh;
+}
