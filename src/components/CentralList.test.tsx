@@ -2,7 +2,7 @@ import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import CentralList from "./CentralList";
 import { ThemeProvider } from "@chakra-ui/core/dist";
-
+import movieList from "../data/movieList.json";
 /**
  * Things to test in this file:
  * - presence of NewMovieButton if superuser
@@ -49,7 +49,7 @@ describe("Central List Component Tests", () => {
                 <CentralList user={testAdmin} />
             </ThemeProvider>
         );
-        const newMovie = screen.getByText("New Movie");
+        const newMovie = screen.queryByText("New Movie");
         expect(newMovie).not.toBeInTheDocument();
     });
     test("does not render NewMovieButton if user", () => {
@@ -58,7 +58,7 @@ describe("Central List Component Tests", () => {
                 <CentralList user={testUser} />
             </ThemeProvider>
         );
-        const newMovie = screen.getByText("New Movie");
+        const newMovie = screen.queryByText("New Movie");
         expect(newMovie).not.toBeInTheDocument();
     });
     test("renders Remove Movie if superuser", () => {
@@ -68,7 +68,7 @@ describe("Central List Component Tests", () => {
             </ThemeProvider>
         );
         const remove = screen.getAllByText("Remove Movie");
-        expect(remove).toBeInTheDocument();
+        expect(remove).toHaveLength(movieList.length);
     });
     test("does not render Remove Movie if admin", () => {
         render(
@@ -76,7 +76,7 @@ describe("Central List Component Tests", () => {
                 <CentralList user={testAdmin} />
             </ThemeProvider>
         );
-        const remove = screen.getByText("Remove Movie");
+        const remove = screen.queryByText("Remove Movie");
         expect(remove).not.toBeInTheDocument();
     });
     test("does not render Remove Movie if user", () => {
@@ -85,7 +85,7 @@ describe("Central List Component Tests", () => {
                 <CentralList user={testUser} />
             </ThemeProvider>
         );
-        const remove = screen.getByText("Remove Movie");
+        const remove = screen.queryByText("Remove Movie");
         expect(remove).not.toBeInTheDocument();
     });
     test("renders Sort button for super", () => {
