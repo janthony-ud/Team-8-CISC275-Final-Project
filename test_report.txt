@@ -6,7 +6,7 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 FAIL src/App.test.tsx
-  ✕ renders learn react link (149 ms)
+  ✕ renders learn react link (91 ms)
 
   ● renders learn react link
 
@@ -258,13 +258,13 @@ FAIL src/App.test.tsx
 ------------------------|---------|----------|---------|---------|--------------------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s              
 ------------------------|---------|----------|---------|---------|--------------------------------
-All files               |   12.69 |     12.5 |   10.28 |   12.95 |                                
+All files               |   10.73 |     9.67 |    9.32 |   10.99 |                                
  src                    |     100 |      100 |     100 |     100 |                                
   App.tsx               |     100 |      100 |     100 |     100 |                                
- src/components         |   11.64 |     12.5 |    8.57 |   11.88 |                                
-  AdminList.tsx         |       0 |        0 |       0 |       0 | 6-90                           
+ src/components         |    9.83 |     9.67 |    7.75 |   10.06 |                                
+  AdminList.tsx         |       0 |        0 |       0 |       0 | 6-215                          
   CentralList.tsx       |    2.43 |        0 |       0 |    2.56 | 40,56-196                      
-  ChooseRole.tsx        |   53.65 |       50 |      45 |   56.41 | 32,49-72,83,94,105-130,176,194 
+  ChooseRole.tsx        |   53.65 |       50 |      45 |   56.41 | 32,49-72,83,94,108-133,179,197 
   DisplayAdminLists.tsx |   16.66 |      100 |       0 |   16.66 | 11-19                          
   NewMovieButton.tsx    |    4.34 |        0 |       0 |    4.34 | 14-87,115-152                  
   NewUserButton.tsx     |    6.66 |        0 |       0 |    6.66 | 17-51,61-98                    
@@ -280,5 +280,5 @@ All files               |   12.69 |     12.5 |   10.28 |   12.95 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        4.885 s
+Time:        3.899 s
 Ran all test suites.
