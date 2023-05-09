@@ -139,6 +139,12 @@ const ChooseUser: React.FC = () => {
                     </Tabs>
                 </div>
             );
+        } else if (user.name == "Home") {
+            return (
+                <div className="centrallist">
+                    <CentralList user={currentUser}></CentralList>;
+                </div>
+            );
         } else {
             return "Hello!";
         }
@@ -156,23 +162,23 @@ const ChooseUser: React.FC = () => {
         return user.name + ", " + user.role;
     }
 
-    return (
-        <div className="Role">
-            <div>
-                <hr></hr>
+    function handleUserAvatar() {
+        if (currentUser.name === "Home" && users.length > 0) {
+            return (
                 <div className="users">
                     <Box>
-                        Need to figure out how to center these**
                         <Stack isInline>
                             <Avatar
+                                style={{ textAlign: "center" }}
                                 onClick={() => handleSetUser(users[0])}
                                 as="a"
-                                name="Home"
+                                name="home"
+                                role="home"
                                 src="https://www.pngkit.com/png/full/208-2084226_hombutton-white-home-button-png.png"
                             >
                                 {" "}
                             </Avatar>
-                            {users.map((user) => (
+                            {users.slice(1).map((user) => (
                                 <div key={user.name}>
                                     <div className="induseravatar">
                                         <Tooltip
@@ -202,7 +208,34 @@ const ChooseUser: React.FC = () => {
                         </Stack>
                     </Box>
                 </div>
-                Welcome, {currentUser.name} You are now interacting as:{" "}
+            );
+        } else {
+            return (
+                <div className="users">
+                    <Box>
+                        <Stack isInline>
+                            <Avatar
+                                onClick={() => handleSetUser(users[0])}
+                                as="a"
+                                name="home"
+                                role="home"
+                                src="https://www.pngkit.com/png/full/208-2084226_hombutton-white-home-button-png.png"
+                            >
+                                {" "}
+                            </Avatar>
+                        </Stack>
+                    </Box>
+                </div>
+            );
+        }
+    }
+
+    return (
+        <div className="Role">
+            <div>
+                <hr></hr>
+                <div>{handleUserAvatar()}</div>
+                Welcome, {currentUser.name} You are now interacting as:
                 {currentUser.role}
                 <div>{handleUserType(currentUser)}</div>
             </div>
@@ -211,7 +244,4 @@ const ChooseUser: React.FC = () => {
 };
 
 const chosenUser: JSX.Element = <ChooseUser />;
-export function getCurrentUserRole(): string {
-    return currentUser.role;
-}
 export default chosenUser;
