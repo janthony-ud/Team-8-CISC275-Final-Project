@@ -125,6 +125,9 @@ export function AdminList(): JSX.Element {
                 className="col"
                 onDrop={handleOnDrop}
                 onDragOver={handleDragOver}
+                data-testid="dropzone"
+                aria-label="dropzone"
+                id="dropzone"
             >
                 {adminMovies.map((movie, movie_index) => (
                     <div className="droppedMovie" key={movie_index}>
