@@ -1,5 +1,5 @@
 [
-    { "name": "", "userMovieList": [], "role": "" },
+    { "name": "Home", "userMovieList": [], "role": "" },
     { "name": "Meg", "userMovieList": [], "role": "super" },
     { "name": "Brad", "userMovieList": [], "role": "admin" },
     { "name": "Ryan", "userMovieList": [], "role": "user" },

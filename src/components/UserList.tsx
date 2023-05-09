@@ -16,6 +16,13 @@ import {
     MenuItem
 } from "@chakra-ui/core";
 import { User } from "../interfaces/user";
+import {
+    AccordionItem,
+    AccordionHeader,
+    AccordionPanel,
+    AccordionIcon
+} from "@chakra-ui/core";
+
 import { AiFillCaretDown, AiFillStar } from "react-icons/ai";
 import { FcAlphabeticalSortingAz } from "react-icons/fc";
 import { MdMovieFilter } from "react-icons/md";
@@ -26,6 +33,8 @@ interface Props {
 
 const YourList: React.FC<Props> = ({ user }) => {
     const [userMovies, setUserMovies] = useState<userMovie[]>([]);
+    const [movielist, setMovieList] = useState<Movie[]>([]);
+    const [filtered, setFilteredList] = useState<userMovie[]>([]);
 
     useEffect(() => {
         const storedMovies = localStorage.getItem(`userMovieList-${user.name}`);
@@ -35,6 +44,22 @@ const YourList: React.FC<Props> = ({ user }) => {
             setUserMovies(user.userMovieList);
         }
     }, [user]);
+
+    useEffect(() => {
+        const storedMovieList = localStorage.getItem("movies");
+        if (storedMovieList) {
+            setMovieList(JSON.parse(storedMovieList));
+        }
+    }, ["movies"]);
+
+    //This code needs to filter out deleted movies from the central list
+
+    useEffect(() => {
+        const filteredMovies = userMovies.filter((movie) =>
+            movielist.some((userMovie) => movie.title === userMovie.title)
+        );
+        setFilteredList(filteredMovies);
+    }, [movielist, userMovies, "movies"]);
 
     useEffect(() => {
         localStorage.setItem(
@@ -80,7 +105,7 @@ const YourList: React.FC<Props> = ({ user }) => {
             [...userMovies].filter((userMovie) => userMovie.id !== id)
         );
         localStorage.setItem(
-            "userMovieList",
+            `userMovieList-${user.name}`,
             JSON.stringify(
                 [...userMovies].filter((userMovie) => userMovie.id !== id)
             )
@@ -160,83 +185,100 @@ const YourList: React.FC<Props> = ({ user }) => {
                 </MenuList>
             </Menu>
             <div
-                className="col drop-area"
+                className="userlist"
                 onDrop={handleOnDrop}
                 onDragOver={handleDragOver}
             >
-                {userMovies.map((movie, index) => (
+                {filtered.map((movie, index) => (
                     <div className="droppedMovie" key={movie.id}>
                         <div className="border">
-                            <Box p="5" maxW="320px" borderWidth="1px">
-                                <div className="image">
-                                    <Image
-                                        borderRadius="md"
-                                        src={movie.image}
-                                        alt={movie.title}
-                                    />
-                                </div>
-                                <Flex align="baseline" mt={2}>
-                                    <Badge color="pink">
-                                        {movie.maturity_rating}
-                                    </Badge>
-                                    <Text
-                                        ml={2}
-                                        textTransform="uppercase"
-                                        fontSize="sm"
-                                        fontWeight="bold"
-                                        color="pink.800"
-                                    >
-                                        {movie.genre.join(" & ")}
-                                    </Text>
-                                </Flex>
-                                <Text
-                                    mt={2}
-                                    fontSize="xl"
-                                    fontWeight="semibold"
-                                    lineHeight="short"
-                                >
-                                    {movie.title}
-                                </Text>
-                                <Text mt={2}>{movie.description}</Text>
-                                <Flex mt={2} align="center">
-                                    <Text ml={1} fontSize="sm">
-                                        <b>{movie.cast.join(" , ")}</b>
-                                    </Text>
-                                </Flex>
-                                <div className="movie-rating">
-                                    <input
-                                        type="range"
-                                        min="1"
-                                        max="5"
-                                        value={movie.user_rating}
-                                        onChange={(event) =>
-                                            handleRatingChange(
-                                                index,
-                                                parseInt(event.target.value)
-                                            )
-                                        }
-                                    />
-                                    <div>
-                                        {[...Array(movie.user_rating)].map(
-                                            (_, starIndex) => (
-                                                <span
-                                                    key={starIndex}
-                                                    className="star yellow"
+                            <AccordionItem>
+                                <AccordionHeader>
+                                    <Box width="100%" alignContent="left">
+                                        <Box>
+                                            <Image
+                                                borderRadius="md"
+                                                src={movie.image}
+                                                alt={movie.title}
+                                            />
+                                            <Text
+                                                mt={2}
+                                                fontSize="xl"
+                                                fontWeight="semibold"
+                                            >
+                                                {movie.title}
+                                            </Text>
+                                        </Box>
+
+                                        <Box>
+                                            {" "}
+                                            <Text
+                                                ml={2}
+                                                textTransform="uppercase"
+                                                fontSize="sm"
+                                                fontWeight="bold"
+                                                color="pink.800"
+                                            >
+                                                {movie.genre.join(" & ")}
+                                            </Text>
+                                            <Badge color="red">
+                                                {movie.maturity_rating}
+                                            </Badge>
+                                        </Box>
+                                        <Box>
+                                            <div className="movie-rating">
+                                                <input
+                                                    type="range"
+                                                    min="1"
+                                                    max="5"
+                                                    value={movie.user_rating}
+                                                    onChange={(event) =>
+                                                        handleRatingChange(
+                                                            index,
+                                                            parseInt(
+                                                                event.target
+                                                                    .value
+                                                            )
+                                                        )
+                                                    }
+                                                />
+                                                <div>
+                                                    {[
+                                                        ...Array(
+                                                            movie.user_rating
+                                                        )
+                                                    ].map((_, starIndex) => (
+                                                        <span
+                                                            key={starIndex}
+                                                            className="star yellow"
+                                                        >
+                                                            ★
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                            <div className="remove-movie">
+                                                <button
+                                                    onClick={() =>
+                                                        removeMovie(movie.id)
+                                                    }
                                                 >
-                                                    ★
-                                                </span>
-                                            )
-                                        )}
-                                    </div>
-                                </div>
-                                <div className="remove-movie">
-                                    <button
-                                        onClick={() => removeMovie(movie.id)}
-                                    >
-                                        Remove
-                                    </button>
-                                </div>
-                            </Box>
+                                                    Remove
+                                                </button>
+                                            </div>
+                                        </Box>
+                                        <AccordionIcon />
+                                    </Box>
+                                </AccordionHeader>
+                                <AccordionPanel pb={4}>
+                                    <Text mt={2}>{movie.description}</Text>
+                                    <Flex mt={2} align="center">
+                                        <Text ml={1} fontSize="sm">
+                                            <b>{movie.cast.join(" , ")}</b>
+                                        </Text>
+                                    </Flex>
+                                </AccordionPanel>
+                            </AccordionItem>
                         </div>
                     </div>
                 ))}

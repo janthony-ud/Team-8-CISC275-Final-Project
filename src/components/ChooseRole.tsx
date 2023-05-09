@@ -1,14 +1,18 @@
 import React from "react";
 import { useState } from "react";
-import { Button } from "@chakra-ui/core";
-import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/core";
 import initialUsers from "../data/initialUsers.json";
 import { User } from "../interfaces/user";
-import NewUserButton from "./User";
+import NewUserButton from "./NewUserButton";
 import YourList from "./UserList";
-import { CentralList } from "./CentralList";
+import AdminLists from "./DisplayAdminLists";
+import CentralList from "./CentralList";
 import "./ChooseRole.css";
 import { AdminList } from "./AdminList";
+import { Avatar, AvatarBadge, Stack, Box } from "@chakra-ui/core";
+import { Tooltip } from "@chakra-ui/core";
+import { Button } from "@chakra-ui/core";
+import { useEffect } from "react";
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/core";
 
 const ChooseUser: React.FC = () => {
     const [users, setUsers] = useState<User[]>(
@@ -22,8 +26,56 @@ const ChooseUser: React.FC = () => {
     );
     const [currentUser, setCurrentUser] = useState<User>(users[0]);
 
+    useEffect(() => {
+        const storedUsers = localStorage.getItem("users");
+        if (storedUsers) {
+            setUsers(JSON.parse(storedUsers));
+        } else {
+            setUsers(
+                initialUsers.map((user) => ({
+                    name: user.name,
+                    userMovieList: user.userMovieList,
+                    role: user.role
+                }))
+            );
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("users", JSON.stringify(users));
+    }, [users]);
+
     function handleSetUser(user: User) {
         setCurrentUser(user);
+    }
+
+    function removeUser(name: string): void {
+        setUsers([...users].filter((user) => user.name !== name));
+        localStorage.setItem(
+            "users",
+            JSON.stringify([...users].filter((user) => user.name !== name))
+        );
+    }
+
+    function handleRemoveUser(user: User) {
+        if (user.role == "super") {
+            return "";
+        } else {
+            return (
+                <div className="remove-movie">
+                    <Button variantColor="green" size="xs">
+                        View List
+                    </Button>{" "}
+                    <Button
+                        variantColor="red"
+                        size="xs"
+                        onClick={() => removeUser(user.name)}
+                    >
+                        Delete User
+                    </Button>
+                </div>
+            );
+        }
     }
 
     function handleUserType(user: User) {
@@ -31,23 +83,72 @@ const ChooseUser: React.FC = () => {
             return (
                 <div>
                     <div className="yourlist">
-                        <YourList user={currentUser}></YourList>;
+                        <YourList user={currentUser}></YourList>
                     </div>
                     <div className="centrallist">
-                        <CentralList />;
+                        <CentralList user={currentUser}></CentralList>;
                     </div>
                 </div>
             );
         } else if (user.role == "admin") {
-            return <AdminList />;
+            return (
+                <div>
+                    <div className="yourlist">
+                        <YourList user={currentUser}></YourList>;
+                    </div>
+                    <div className="adminlist">
+                        <AdminList></AdminList>;
+                    </div>
+                    <div className="centrallist">
+                        <CentralList user={currentUser}></CentralList>;
+                    </div>
+                </div>
+            );
         } else if (user.role == "super") {
             return (
                 <div>
-                    <NewUserButton
-                        onSubmit={function (newUser: User): void {
-                            setUsers((prevUsers) => [...prevUsers, newUser]);
-                        }}
-                    ></NewUserButton>
+                    <Tabs>
+                        <TabList>
+                            <Tab>Create/Delete Users</Tab>
+                            <Tab>View/Edit Admin Lists</Tab>
+                            <Tab>Add/Delete Movies</Tab>
+                        </TabList>
+
+                        <TabPanels>
+                            <TabPanel>
+                                <h1>Create/Delete Users</h1>
+                                <NewUserButton
+                                    onSubmit={function (newUser: User): void {
+                                        setUsers((prevUsers) => [
+                                            ...prevUsers,
+                                            newUser
+                                        ]);
+                                        localStorage.setItem(
+                                            "users",
+                                            JSON.stringify([...users, newUser])
+                                        );
+                                    }}
+                                ></NewUserButton>
+                                {users.map((user) => (
+                                    <div key={user.name}>
+                                        <div className="induseravatar">
+                                            <h3>
+                                                {user.name}, {user.role}{" "}
+                                            </h3>
+                                            {handleRemoveUser(user)}
+                                        </div>
+                                    </div>
+                                ))}
+                            </TabPanel>
+                            <TabPanel>
+                                <h1>View/Edit Admin Lists</h1>
+                                <AdminLists admin={users}></AdminLists>
+                            </TabPanel>
+                            <TabPanel>
+                                <CentralList user={currentUser}></CentralList>
+                            </TabPanel>
+                        </TabPanels>
+                    </Tabs>
                 </div>
             );
         } else {
@@ -55,28 +156,65 @@ const ChooseUser: React.FC = () => {
         }
     }
 
+    function setBadgeColor(user: User): string {
+        if (user == currentUser) {
+            return "green.500";
+        } else {
+            return "tomato";
+        }
+    }
+
+    function handleToolTip(user: User): string {
+        return user.name + ", " + user.role;
+    }
+
     return (
         <div className="Role">
             <div>
                 <hr></hr>
-                <h1>Welcome to Movies.com!</h1>
-                <Menu>
-                    <MenuButton as={Button}>
-                        Please Select Your Name:
-                    </MenuButton>
-                    <MenuList>
-                        {users.map((user) => (
-                            <div key={user.name}>
-                                <MenuItem
-                                    onClick={() => handleSetUser(user)}
-                                    as="a"
-                                >
-                                    {user.name} ({user.role})
-                                </MenuItem>
-                            </div>
-                        ))}
-                    </MenuList>
-                </Menu>
+                <div className="users">
+                    <Box>
+                        <Stack isInline>
+                            <Avatar
+                                onClick={() => handleSetUser(users[0])}
+                                as="a"
+                                name="Home"
+                                src="https://www.pngkit.com/png/full/208-2084226_hombutton-white-home-button-png.png"
+                            >
+                                {" "}
+                            </Avatar>
+                            {users.map((user) => (
+                                <div key={user.name}>
+                                    <div className="induseravatar">
+                                        <Tooltip
+                                            label={handleToolTip(user)}
+                                            placement="top"
+                                            aria-label="User"
+                                            shouldWrapChildren={true}
+                                        >
+                                            <Avatar
+                                                onClick={() =>
+                                                    handleSetUser(user)
+                                                }
+                                                as="a"
+                                                name={user.name}
+                                                src="https://bit.ly/broken-link"
+                                                // backgroundColor={setAvatarColor(user)}
+                                            >
+                                                <AvatarBadge
+                                                    bg={setBadgeColor(user)}
+                                                    size="0.75em"
+                                                />
+                                            </Avatar>
+                                        </Tooltip>
+                                    </div>
+                                </div>
+                            ))}
+                        </Stack>
+                    </Box>
+                </div>
+                Welcome, {currentUser.name} You are now interacting as:{" "}
+                {currentUser.role}
                 <div>{handleUserType(currentUser)}</div>
             </div>
         </div>
