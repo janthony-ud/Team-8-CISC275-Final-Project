@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import UserDropdown from "./CentralList";
 import { ThemeProvider } from "@chakra-ui/core/dist";
-// THIS COMPONENT IS NEVER CALLED ANYWHERE
+// THIS COMPONENT IS NEVER CALLED ANYWHERE - delete??
 const testUser = {
     name: "bob",
     userMovieList: [],
