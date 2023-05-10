@@ -169,7 +169,11 @@ const YourList: React.FC<Props> = ({ user }) => {
     }
     return (
         <div>
-            <h1> {user.name}s Movies </h1>
+            <h1>
+                {" "}
+                {user.name}
+                {"'"}s Movies{" "}
+            </h1>
             <p>Drag movies here to add them to your list</p>
             <Menu>
                 <MenuButton as={Button}>

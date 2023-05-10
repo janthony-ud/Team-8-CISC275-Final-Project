@@ -13,7 +13,7 @@ import { Button } from "@chakra-ui/core";
 import { useEffect } from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/core";
 
-const ChooseUser: React.FC = () => {
+export const ChooseUser: React.FC = () => {
     const [users, setUsers] = useState<User[]>(
         initialUsers.map((user) => {
             return {
