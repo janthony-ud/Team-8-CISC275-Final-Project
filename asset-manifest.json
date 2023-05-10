@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Team-8-CISC275-Final-Project/static/css/main.66cd07ee.css",
-    "main.js": "/Team-8-CISC275-Final-Project/static/js/main.a5b0ddc2.js",
+    "main.js": "/Team-8-CISC275-Final-Project/static/js/main.c71ed850.js",
     "static/js/787.ec723425.chunk.js": "/Team-8-CISC275-Final-Project/static/js/787.ec723425.chunk.js",
     "static/media/movieo-logo.png": "/Team-8-CISC275-Final-Project/static/media/movieo-logo.c2b231dc34e2b812a87a.png",
     "index.html": "/Team-8-CISC275-Final-Project/index.html",
     "main.66cd07ee.css.map": "/Team-8-CISC275-Final-Project/static/css/main.66cd07ee.css.map",
-    "main.a5b0ddc2.js.map": "/Team-8-CISC275-Final-Project/static/js/main.a5b0ddc2.js.map",
+    "main.c71ed850.js.map": "/Team-8-CISC275-Final-Project/static/js/main.c71ed850.js.map",
     "787.ec723425.chunk.js.map": "/Team-8-CISC275-Final-Project/static/js/787.ec723425.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.66cd07ee.css",
-    "static/js/main.a5b0ddc2.js"
+    "static/js/main.c71ed850.js"
   ]
 }

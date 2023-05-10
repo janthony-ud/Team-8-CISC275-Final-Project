@@ -5,7 +5,7 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-PASS src/components/CentralList.test.tsx (6.735 s)
+PASS src/components/CentralList.test.tsx (5.478 s)
   ● Console
 
     console.error
@@ -120,7 +120,90 @@ PASS src/components/AdminList.test.tsx
       at Object.<anonymous> (src/components/AdminList.test.tsx:41:17)
 
 PASS src/components/Users.test.tsx
-PASS src/components/NewUserButton.test.tsx
+FAIL src/components/NewUserButton.test.tsx
+  ● New User Button component tests › new-user-button appears on screen
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Create A New User:/i`
+
+    Here are the accessible roles:
+
+      button:
+
+      Name "Create user":
+      [36m<button[39m
+        [33mclass[39m=[32m"css-1brgn68"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"Toaster"[39m
+        [33mid[39m=[32m"react-toast"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
+        [36m/>[39m
+      [36m</div>[39m
+      [36m<div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"css-1brgn68"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"css-yxiis9"[39m
+            [33mfocusable[39m=[32m"false"[39m
+            [33mrole[39m=[32m"presentation"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M0,12a1.5,1.5,0,0,0,1.5,1.5h8.75a.25.25,0,0,1,.25.25V22.5a1.5,1.5,0,0,0,3,0V13.75a.25.25,0,0,1,.25-.25H22.5a1.5,1.5,0,0,0,0-3H13.75a.25.25,0,0,1-.25-.25V1.5a1.5,1.5,0,0,0-3,0v8.75a.25.25,0,0,1-.25.25H1.5A1.5,1.5,0,0,0,0,12Z"[39m
+              [33mfill[39m=[32m"currentColor"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [0mCreate user[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      28 |
+      29 |     test("new-user-button appears on screen", () => {
+    > 30 |         const nub = screen.getByRole("button", {
+         |                            ^
+      31 |             name: /Create A New User:/i
+      32 |         });
+      33 |         expect(nub).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/NewUserButton.test.tsx:30:28)
+
 FAIL src/App.test.tsx
   ● Console
 
@@ -190,30 +273,30 @@ PASS src/components/UserDropdown.test.tsx
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
-------------------------|---------|----------|---------|---------|-----------------------------------------
-File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                       
-------------------------|---------|----------|---------|---------|-----------------------------------------
-All files               |   32.88 |       50 |   31.62 |   33.21 |                                         
- src                    |     100 |      100 |     100 |     100 |                                         
-  App.tsx               |     100 |      100 |     100 |     100 |                                         
- src/components         |   32.19 |       50 |   30.43 |   32.51 |                                         
-  AdminList.tsx         |   49.23 |       50 |   43.47 |    49.2 | 42-66,72-82,101-104,118,128,224-269     
-  CentralList.tsx       |   58.53 |      100 |   47.61 |   61.53 | 40,96,110-131,140,159,201               
-  ChooseRole.tsx        |   53.19 |    55.55 |   45.45 |   55.55 | 48-71,82,93,104-129,159,165,183,202-228 
-  DisplayAdminLists.tsx |       0 |      100 |       0 |       0 | 10-19                                   
-  NewMovieButton.tsx    |    8.69 |        0 |    8.33 |    8.69 | 15-88,118-144                           
-  NewUserButton.tsx     |   13.33 |        0 |    12.5 |   13.33 | 17-51,63-89                             
-  UserDropdown.tsx      |       0 |      100 |       0 |       0 | 6-17                                    
-  UserList.tsx          |    2.04 |        0 |       0 |    2.04 | 35-279                                  
-  Users.tsx             |     100 |      100 |     100 |     100 |                                         
- src/interfaces         |       0 |        0 |       0 |       0 |                                         
-  movie.ts              |       0 |        0 |       0 |       0 |                                         
-  user.ts               |       0 |        0 |       0 |       0 |                                         
-  userMovie.ts          |       0 |        0 |       0 |       0 |                                         
-------------------------|---------|----------|---------|---------|-----------------------------------------
+------------------------|---------|----------|---------|---------|-------------------------------------------------
+File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                               
+------------------------|---------|----------|---------|---------|-------------------------------------------------
+All files               |   35.54 |    51.56 |   31.89 |   36.07 |                                                 
+ src                    |     100 |      100 |     100 |     100 |                                                 
+  App.tsx               |     100 |      100 |     100 |     100 |                                                 
+ src/components         |   34.85 |    51.56 |    30.7 |   35.37 |                                                 
+  AdminList.tsx         |   49.23 |       50 |   43.47 |    49.2 | 42-66,72-82,101-104,118,128,224-269             
+  CentralList.tsx       |   58.53 |      100 |   47.61 |   61.53 | 40,96,110-131,140,159,201                       
+  ChooseRole.tsx        |      50 |    55.55 |   41.66 |   53.19 | 48-71,82,93,104-129,159,165,183,202-228,248-249 
+  DisplayAdminLists.tsx |       0 |      100 |       0 |       0 | 10-19                                           
+  NewMovieButton.tsx    |    8.69 |        0 |    8.33 |    8.69 | 15-86,116-142                                   
+  NewUserButton.tsx     |   47.36 |      100 |      20 |   47.36 | 30-45,98-118                                    
+  UserDropdown.tsx      |       0 |      100 |       0 |       0 | 6-17                                            
+  UserList.tsx          |    2.04 |        0 |       0 |    2.04 | 35-279                                          
+  Users.tsx             |     100 |      100 |     100 |     100 |                                                 
+ src/interfaces         |       0 |        0 |       0 |       0 |                                                 
+  movie.ts              |       0 |        0 |       0 |       0 |                                                 
+  user.ts               |       0 |        0 |       0 |       0 |                                                 
+  userMovie.ts          |       0 |        0 |       0 |       0 |                                                 
+------------------------|---------|----------|---------|---------|-------------------------------------------------
 
-Test Suites: 1 failed, 6 passed, 7 total
-Tests:       1 failed, 24 passed, 25 total
+Test Suites: 2 failed, 5 passed, 7 total
+Tests:       2 failed, 23 passed, 25 total
 Snapshots:   0 total
-Time:        16.897 s
+Time:        13.783 s
 Ran all test suites.
