@@ -42,6 +42,7 @@ function App(): JSX.Element {
                         Jakeb Milburn, Ryan Sanchez
                     </p>
                 </header>
+
                 {chosenUser}
                 {/* showing central list - wasn't displaying before aft pull, i needed to see it for testing sorting*/}
                 <br></br>

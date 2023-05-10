@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import initialUsers from "../data/initialUsers.json";
 import { User } from "../interfaces/user";
-import NewUserButton from "./NewUserButton";
 import YourList from "./UserList";
 import CentralList from "./CentralList";
 import "./ChooseRole.css";
@@ -12,6 +11,7 @@ import { Tooltip } from "@chakra-ui/core";
 import { Button } from "@chakra-ui/core";
 import { useEffect } from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/core";
+import NewUserDrawer from "./NewUserButton";
 
 const ChooseUser: React.FC = () => {
     const [users, setUsers] = useState<User[]>(
@@ -113,7 +113,7 @@ const ChooseUser: React.FC = () => {
                         <TabPanels>
                             <TabPanel>
                                 <h1>Create/Delete Users</h1>
-                                <NewUserButton
+                                <NewUserDrawer
                                     onSubmit={function (newUser: User): void {
                                         setUsers((prevUsers) => [
                                             ...prevUsers,
@@ -124,7 +124,7 @@ const ChooseUser: React.FC = () => {
                                             JSON.stringify([...users, newUser])
                                         );
                                     }}
-                                ></NewUserButton>
+                                ></NewUserDrawer>
                                 {users.map((user) => (
                                     <div key={user.name}>
                                         <div className="induseravatar">
@@ -243,6 +243,15 @@ const ChooseUser: React.FC = () => {
     return (
         <div className="Role">
             <div>
+                <NewUserDrawer
+                    onSubmit={function (newUser: User): void {
+                        setUsers((prevUsers) => [...prevUsers, newUser]);
+                        localStorage.setItem(
+                            "users",
+                            JSON.stringify([...users, newUser])
+                        );
+                    }}
+                ></NewUserDrawer>
                 <hr></hr>
                 <div>{handleUserAvatar()}</div>
                 Welcome, {currentUser.name} You are now interacting as:
