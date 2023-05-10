@@ -124,9 +124,8 @@ export const ChooseUser: React.FC = () => {
                                             JSON.stringify([...users, newUser])
                                         );
                                     }}
-                                    ></NewUserDrawer>
+                                ></NewUserDrawer>
                                 {users.slice(1).map((user) => (
-
                                     <div key={user.name}>
                                         <div className="induseravatar">
                                             <h3>
