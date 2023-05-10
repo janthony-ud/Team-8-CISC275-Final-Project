@@ -13,7 +13,7 @@ import { useEffect } from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/core";
 import NewUserDrawer from "./NewUserButton";
 
-const ChooseUser: React.FC = () => {
+export const ChooseUser: React.FC = () => {
     const [users, setUsers] = useState<User[]>(
         initialUsers.map((user) => {
             return {
@@ -124,8 +124,9 @@ const ChooseUser: React.FC = () => {
                                             JSON.stringify([...users, newUser])
                                         );
                                     }}
-                                ></NewUserDrawer>
-                                {users.map((user) => (
+                                    ></NewUserDrawer>
+                                {users.slice(1).map((user) => (
+
                                     <div key={user.name}>
                                         <div className="induseravatar">
                                             <h3>

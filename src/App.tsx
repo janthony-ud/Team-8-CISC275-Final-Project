@@ -7,7 +7,7 @@ import { Movie } from "./interfaces/movie";
 import movieList from "./data/movieList.json";
 //import ChooseUser from "./components/User";
 import { Image } from "@chakra-ui/core";
-
+//rebuild site
 function App(): JSX.Element {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [movies, setMovies] = useState<Movie[]>(
