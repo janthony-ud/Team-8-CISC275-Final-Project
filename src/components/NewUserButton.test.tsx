@@ -6,7 +6,7 @@ import { ThemeProvider } from "@chakra-ui/core";
 import { render, screen } from "@testing-library/react";
 import NewUserButton from "./NewUserButton";
 
-const mockusers = ["alice", "bob", "charlie"];
+//const mockusers = ["alice", "bob", "charlie"];
 
 describe("New User Button component tests", () => {
     beforeEach(() => {
