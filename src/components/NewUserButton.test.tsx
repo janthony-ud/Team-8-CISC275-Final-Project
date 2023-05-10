@@ -14,7 +14,12 @@ describe("New User Button component tests", () => {
             <ThemeProvider>
                 <NewUserButton
                     onSubmit={function (newUser: User): void {
-                        throw new Error("Function not implemented.");
+                        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                        newUser = {
+                            name: "sally",
+                            userMovieList: [],
+                            role: "user"
+                        };
                     }}
                 ></NewUserButton>
             </ThemeProvider>
