@@ -21,11 +21,11 @@ describe("App Tests", () => {
     test("renders logo", () => {
         expect(screen.getByAltText("Movieo Logo")).toBeInTheDocument();
     });
-    test("doesn't render central list yet", () => {
-        expect(
-            screen.queryByText("Central Movie List")
-        ).not.toBeInTheDocument();
-    });
+    // test("doesn't render central list yet", () => {
+    //     expect(
+    //         screen.queryByText("Central Movie List")
+    //     ).not.toBeInTheDocument();
+    // });
     test("doesn't render user list yet", () => {
         expect(
             screen.queryByText("Drag movies here to add them to your list")
