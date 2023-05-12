@@ -5,7 +5,7 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-FAIL src/components/CentralList.test.tsx (5.598 s)
+FAIL src/components/CentralList.test.tsx (6.608 s)
   ● Console
 
     console.error
@@ -371,57 +371,28 @@ PASS src/components/NewUserButton.test.tsx
 
 PASS src/components/Users.test.tsx
 PASS src/App.test.tsx
-  ● Console
-
-    console.error
-      Warning: React does not recognize the `isOpen` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `isopen` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
-          at div
-          at div
-          at Styled(div)
-          at Accordion (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:30:28)
-          at div
-          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:55:41)
-          at div
-          at div
-          at div
-          at div
-          at ChooseUser (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/ChooseRole.tsx:17:31)
-          at div
-          at ThemeProvider
-          at ThemeProvider (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/ThemeProvider/index.js:18:20)
-          at App (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/App.tsx:13:33)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3513:7)
-      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3559:21)
-      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3583:3)
-      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:8765:5)
-      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
-      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
-
----------------------|---------|----------|---------|---------|-------------------------------------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                               
----------------------|---------|----------|---------|---------|-------------------------------------------------
-All files            |   45.25 |    51.56 |   37.27 |   46.41 |                                                 
- src                 |     100 |      100 |     100 |     100 |                                                 
-  App.tsx            |     100 |      100 |     100 |     100 |                                                 
- src/components      |   44.64 |    51.56 |   36.11 |    45.8 |                                                 
-  AdminList.tsx      |   49.23 |       50 |   43.47 |    49.2 | 42-66,72-82,101-104,118,128,224-269             
-  CentralList.tsx    |   58.53 |      100 |   47.61 |   61.53 | 40,96,110-131,140,159,201                       
-  ChooseRole.tsx     |      50 |    55.55 |   41.66 |   53.19 | 48-71,82,93,104-129,159,165,183,202-228,248-249 
-  NewMovieButton.tsx |    37.2 |        0 |    8.33 |   39.02 | 54-55,59-65,71-104,176-383                      
-  NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                                 
-  UserList.tsx       |    2.04 |        0 |       0 |    2.04 | 35-279                                          
-  Users.tsx          |     100 |      100 |     100 |     100 |                                                 
- src/interfaces      |       0 |        0 |       0 |       0 |                                                 
-  movie.ts           |       0 |        0 |       0 |       0 |                                                 
-  user.ts            |       0 |        0 |       0 |       0 |                                                 
-  userMovie.ts       |       0 |        0 |       0 |       0 |                                                 
----------------------|---------|----------|---------|---------|-------------------------------------------------
+---------------------|---------|----------|---------|---------|--------------------------------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                          
+---------------------|---------|----------|---------|---------|--------------------------------------------
+All files            |   45.09 |    48.38 |   36.93 |   46.24 |                                            
+ src                 |     100 |      100 |     100 |     100 |                                            
+  App.tsx            |     100 |      100 |     100 |     100 |                                            
+ src/components      |   44.48 |    48.38 |   35.77 |   45.62 |                                            
+  AdminList.tsx      |   49.23 |       50 |   43.47 |    49.2 | 42-66,72-82,101-104,118,128,224-269        
+  CentralList.tsx    |   58.53 |      100 |   47.61 |   61.53 | 40,96,110-131,140,159,201                  
+  ChooseRole.tsx     |   49.01 |    43.75 |      40 |   52.08 | 62-102,114,125,136-161,199-214,220,294-322 
+  NewMovieButton.tsx |    37.2 |        0 |    8.33 |   39.02 | 54-55,59-65,71-104,176-383                 
+  NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                            
+  UserList.tsx       |    2.04 |        0 |       0 |    2.04 | 35-279                                     
+  Users.tsx          |     100 |      100 |     100 |     100 |                                            
+ src/interfaces      |       0 |        0 |       0 |       0 |                                            
+  movie.ts           |       0 |        0 |       0 |       0 |                                            
+  user.ts            |       0 |        0 |       0 |       0 |                                            
+  userMovie.ts       |       0 |        0 |       0 |       0 |                                            
+---------------------|---------|----------|---------|---------|--------------------------------------------
 
 Test Suites: 1 failed, 5 passed, 6 total
 Tests:       1 failed, 25 passed, 26 total
 Snapshots:   0 total
-Time:        13.329 s
+Time:        14.324 s
 Ran all test suites.
