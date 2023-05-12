@@ -52,7 +52,7 @@ export const ChooseUser: React.FC = () => {
                 }))
             );
         }
-    }, []);
+    }, [initialUsers]);
 
     useEffect(() => {
         localStorage.setItem("users", JSON.stringify(users));
