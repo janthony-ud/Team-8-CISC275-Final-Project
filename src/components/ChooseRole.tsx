@@ -12,8 +12,22 @@ import { Button } from "@chakra-ui/core";
 import { useEffect } from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/core";
 import NewUserDrawer from "./NewUserButton";
+import { useDisclosure } from "@chakra-ui/core";
+import { IconButton } from "@chakra-ui/core";
+import {
+    Drawer,
+    DrawerBody,
+    DrawerHeader,
+    DrawerOverlay,
+    DrawerContent
+} from "@chakra-ui/core";
 
 export const ChooseUser: React.FC = () => {
+    const {
+        isOpen: isOpenMenu,
+        onOpen: onOpenMenu,
+        onClose: onCloseMenu
+    } = useDisclosure();
     const [users, setUsers] = useState<User[]>(
         initialUsers.map((user) => {
             return {
@@ -56,22 +70,40 @@ export const ChooseUser: React.FC = () => {
         );
     }
 
+    function handleNewUser() {
+        if (currentUser.role == "super") {
+            return (
+                <NewUserDrawer
+                    onSubmit={function (newUser: User): void {
+                        setUsers((prevUsers) => [...prevUsers, newUser]);
+                        localStorage.setItem(
+                            "users",
+                            JSON.stringify([...users, newUser])
+                        );
+                    }}
+                ></NewUserDrawer>
+            );
+        }
+    }
+
     function handleRemoveUser(user: User) {
         if (user.role == "super") {
             return "";
         } else {
             return (
                 <div className="remove-movie">
-                    <Button variantColor="green" size="xs">
-                        View List
-                    </Button>{" "}
-                    <Button
-                        variantColor="red"
-                        size="xs"
-                        onClick={() => removeUser(user.name)}
-                    >
-                        Delete User
-                    </Button>
+                    <>
+                        <Button variantColor="green" size="xs">
+                            View List
+                        </Button>{" "}
+                        <Button
+                            variantColor="red"
+                            size="xs"
+                            onClick={() => removeUser(user.name)}
+                        >
+                            Delete User
+                        </Button>
+                    </>
                 </div>
             );
         }
@@ -151,8 +183,31 @@ export const ChooseUser: React.FC = () => {
             );
         } else if (user.name == "Home") {
             return (
-                <div className="centrallist">
-                    <CentralList user={currentUser}></CentralList>;
+                <div className="home">
+                    <h2> Welcome! Who{"'"}s Browsing?</h2>
+                    <Stack isInline>
+                        {users.slice(1).map((user) => (
+                            <div key={user.name}>
+                                <div className="induseravatar">
+                                    <Tooltip
+                                        label={handleToolTip(user)}
+                                        placement="top"
+                                        aria-label="User"
+                                        shouldWrapChildren={true}
+                                    >
+                                        <Avatar
+                                            onClick={() => handleSetUser(user)}
+                                            as="a"
+                                            name={user.name}
+                                            src={require("../avatar.png")}
+                                            size="xl"
+                                        ></Avatar>
+                                    </Tooltip>
+                                    <div>{user.name}</div>
+                                </div>
+                            </div>
+                        ))}
+                    </Stack>
                 </div>
             );
         } else {
@@ -169,56 +224,12 @@ export const ChooseUser: React.FC = () => {
     }
 
     function handleToolTip(user: User): string {
-        return user.name + ", " + user.role;
+        return user.role;
     }
 
-    function handleUserAvatar() {
+    /*     function handleUserAvatar() {
         if (currentUser.name === "Home" && users.length > 0) {
-            return (
-                <div className="users">
-                    <Box>
-                        <Stack isInline>
-                            <Avatar
-                                style={{ textAlign: "center" }}
-                                onClick={() => handleSetUser(users[0])}
-                                as="a"
-                                name="home"
-                                role="home"
-                                src="https://www.pngkit.com/png/full/208-2084226_hombutton-white-home-button-png.png"
-                            >
-                                {" "}
-                            </Avatar>
-                            {users.slice(1).map((user) => (
-                                <div key={user.name}>
-                                    <div className="induseravatar">
-                                        <Tooltip
-                                            label={handleToolTip(user)}
-                                            placement="top"
-                                            aria-label="User"
-                                            shouldWrapChildren={true}
-                                        >
-                                            <Avatar
-                                                onClick={() =>
-                                                    handleSetUser(user)
-                                                }
-                                                as="a"
-                                                name={user.name}
-                                                src="https://bit.ly/broken-link"
-                                                // backgroundColor={setAvatarColor(user)}
-                                            >
-                                                <AvatarBadge
-                                                    bg={setBadgeColor(user)}
-                                                    size="0.75em"
-                                                />
-                                            </Avatar>
-                                        </Tooltip>
-                                    </div>
-                                </div>
-                            ))}
-                        </Stack>
-                    </Box>
-                </div>
-            );
+            return " ";
         } else {
             return (
                 <div className="users">
@@ -238,24 +249,89 @@ export const ChooseUser: React.FC = () => {
                 </div>
             );
         }
-    }
+    } */
 
     return (
         <div className="Role">
+            <div className="users">
+                <Box>
+                    <Stack isInline>
+                        <>
+                            <IconButton
+                                variantColor="teal"
+                                aria-label="drag-handle"
+                                size="lg"
+                                icon="drag-handle"
+                                onClick={onOpenMenu}
+                            />
+                            <Drawer
+                                placement="left"
+                                onClose={onCloseMenu}
+                                isOpen={isOpenMenu}
+                                size="xs"
+                            >
+                                <DrawerOverlay />
+                                <DrawerContent>
+                                    <DrawerHeader borderBottomWidth="1px">
+                                        Select User
+                                    </DrawerHeader>
+                                    <DrawerBody>
+                                        {users.slice(1).map((user) => (
+                                            <div key={user.name}>
+                                                <div className="induseravatar">
+                                                    <Tooltip
+                                                        label={handleToolTip(
+                                                            user
+                                                        )}
+                                                        placement="top"
+                                                        aria-label="User"
+                                                        shouldWrapChildren={
+                                                            true
+                                                        }
+                                                    >
+                                                        <Avatar
+                                                            onClick={() =>
+                                                                handleSetUser(
+                                                                    user
+                                                                )
+                                                            }
+                                                            as="a"
+                                                            name={user.name}
+                                                            src={require("../avatar.png")}
+                                                        >
+                                                            <AvatarBadge
+                                                                bg={setBadgeColor(
+                                                                    user
+                                                                )}
+                                                                size="0.75em"
+                                                            />
+                                                        </Avatar>
+                                                        {user.name}
+                                                    </Tooltip>
+                                                </div>
+                                            </div>
+                                        ))}
+                                        {handleNewUser}
+                                    </DrawerBody>
+                                </DrawerContent>
+                            </Drawer>
+                        </>
+                        {
+                            <Avatar
+                                style={{ textAlign: "center" }}
+                                onClick={() => handleSetUser(users[0])}
+                                as="a"
+                                name="home"
+                                role="home"
+                                src={require("../home.png")}
+                            >
+                                {" "}
+                            </Avatar>
+                        }
+                    </Stack>
+                </Box>
+            </div>
             <div>
-                <NewUserDrawer
-                    onSubmit={function (newUser: User): void {
-                        setUsers((prevUsers) => [...prevUsers, newUser]);
-                        localStorage.setItem(
-                            "users",
-                            JSON.stringify([...users, newUser])
-                        );
-                    }}
-                ></NewUserDrawer>
-                <hr></hr>
-                <div>{handleUserAvatar()}</div>
-                Welcome, {currentUser.name} You are now interacting as:
-                {currentUser.role}
                 <div>{handleUserType(currentUser)}</div>
             </div>
         </div>

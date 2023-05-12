@@ -30,3 +30,12 @@
 .induseravatar {
     padding-left: 10px;
 }
+
+.home {
+    width: auto;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-left: auto;
+    height: auto;
+}
