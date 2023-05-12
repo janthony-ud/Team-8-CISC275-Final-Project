@@ -38,6 +38,9 @@ export const ChooseUser: React.FC = () => {
         })
     );
     const [currentUser, setCurrentUser] = useState<User>(users[0]);
+    localStorage.removeItem("users");
+
+    localStorage.removeItem("users");
 
     useEffect(() => {
         const storedUsers = localStorage.getItem("users");
