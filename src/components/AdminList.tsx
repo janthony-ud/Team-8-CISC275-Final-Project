@@ -222,7 +222,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
 
     return (
         <div>
-            <h1> Movies to be Reviewed </h1>
+            <h2> Movies to be Reviewed </h2>
             <p>Drag Movies to add them to the Review List</p>
             <div
                 className="adminlist"
