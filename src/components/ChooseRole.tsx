@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import initialUsers from "../data/initialUsers.json";
 import { User } from "../interfaces/user";
-import YourList from "./UserList";
 import CentralList from "./CentralList";
 import "./ChooseRole.css";
 import { AdminList } from "./AdminList";
@@ -38,7 +37,6 @@ export const ChooseUser: React.FC = () => {
         })
     );
     const [currentUser, setCurrentUser] = useState<User>(users[0]);
-    localStorage.removeItem("users");
 
     localStorage.removeItem("users");
 
@@ -112,15 +110,16 @@ export const ChooseUser: React.FC = () => {
         }
     }
 
+    //taken out of the user 'if'
+    //<YourList user={currentUser}></YourList>;
+    //<div className="yourlist"></div>;
+
     function handleUserType(user: User) {
         if (user.role == "user") {
             return (
                 <div>
-                    <div className="yourlist">
-                        <YourList user={currentUser}></YourList>
-                    </div>
-                    <div className="centrallist">
-                        <CentralList user={currentUser}></CentralList>;
+                    <div>
+                        <CentralList user={currentUser}></CentralList>
                     </div>
                 </div>
             );
@@ -128,10 +127,10 @@ export const ChooseUser: React.FC = () => {
             return (
                 <div>
                     <div className="yourlist">
-                        <AdminList></AdminList>;
+                        <AdminList></AdminList>
                     </div>
-                    <div className="centrallist">
-                        <CentralList user={currentUser}></CentralList>;
+                    <div>
+                        <CentralList user={currentUser}></CentralList>
                     </div>
                 </div>
             );
@@ -229,30 +228,6 @@ export const ChooseUser: React.FC = () => {
     function handleToolTip(user: User): string {
         return user.role;
     }
-
-    /*     function handleUserAvatar() {
-        if (currentUser.name === "Home" && users.length > 0) {
-            return " ";
-        } else {
-            return (
-                <div className="users">
-                    <Box>
-                        <Stack isInline>
-                            <Avatar
-                                onClick={() => handleSetUser(users[0])}
-                                as="a"
-                                name="home"
-                                role="home"
-                                src="https://www.pngkit.com/png/full/208-2084226_hombutton-white-home-button-png.png"
-                            >
-                                {" "}
-                            </Avatar>
-                        </Stack>
-                    </Box>
-                </div>
-            );
-        }
-    } */
 
     return (
         <div className="Role">
