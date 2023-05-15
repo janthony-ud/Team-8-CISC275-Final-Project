@@ -22,19 +22,18 @@ import {
     AccordionPanel,
     AccordionIcon
 } from "@chakra-ui/core";
-
 import { AiFillCaretDown, AiFillStar } from "react-icons/ai";
 import { FcAlphabeticalSortingAz } from "react-icons/fc";
 import { MdMovieFilter } from "react-icons/md";
 
 interface Props {
     user: User;
+    movieState: Movie[];
 }
 
-const YourList: React.FC<Props> = ({ user }) => {
+const YourList: React.FC<Props> = ({ user, movieState }) => {
     const [userMovies, setUserMovies] = useState<userMovie[]>([]);
-    //const [movielist, setMovieList] = useState<Movie[]>([]);
-    //   const [filtered, setFilteredList] = useState<userMovie[]>([]);
+    const [filteredMovies, setFilteredMovies] = useState<userMovie[]>([]);
 
     useEffect(() => {
         const storedMovies = localStorage.getItem(`userMovieList-${user.name}`);
@@ -45,37 +44,24 @@ const YourList: React.FC<Props> = ({ user }) => {
         }
     }, [user]);
 
-    //Using following code to remove movies from user list when central list updates-
-    // not working yet
-    /*    useEffect(() => {
-        const storedMovieList = localStorage.getItem("movies");
-        if (storedMovieList) {
-            setMovieList(JSON.parse(storedMovieList));
-        } else {
-            setMovieList([]);
-        }
-    }, ["movies"]); */
-
-    //This code needs to filter out deleted movies from the central list
-
-    /*     useEffect(() => {
-        const filteredMovies = userMovies.filter((movie) =>
-            movielist.some((userMovie) => movie.title === userMovie.title)
-        );
-        //  setFilteredList(filteredMovies);
-        setUserMovies(filteredMovies);
-        localStorage.setItem(
-            `userMovieList-${user.name}`,
-            JSON.stringify(filteredMovies)
-        );
-    }, []); */
-
     useEffect(() => {
         localStorage.setItem(
             `userMovieList-${user.name}`,
             JSON.stringify(userMovies)
         );
     }, [userMovies, user]);
+
+    //This code needs to filter out deleted movies from the central list
+    useEffect(() => {
+        const filteredMovies = userMovies.filter((userMovie: userMovie) =>
+            movieState.some((movie: Movie) => movie.title === userMovie.title)
+        );
+        setFilteredMovies(filteredMovies);
+        localStorage.setItem(
+            `userMovieList-${user.name}`,
+            JSON.stringify(filteredMovies)
+        );
+    }, [userMovies, movieState, "movies"]);
 
     function handleOnDrop(e: React.DragEvent) {
         const widgetType = JSON.parse(
@@ -167,140 +153,169 @@ const YourList: React.FC<Props> = ({ user }) => {
             JSON.stringify(userMovies)
         );
     }
-    return (
-        <div>
-            <h1>
-                {" "}
-                {user.name}
-                {"'"}s Movies{" "}
-            </h1>
-            <p>Drag movies here to add them to your list</p>
-            <Menu>
-                <MenuButton as={Button}>
-                    {selected == "" ? (
-                        <div>
-                            Sort <AiFillCaretDown />
-                        </div>
-                    ) : (
-                        <div>Sorted By: {selected}</div>
-                    )}
-                </MenuButton>
-                <MenuList>
-                    <MenuItem onClick={handleSortTitle}>
-                        Title <FcAlphabeticalSortingAz />
-                    </MenuItem>
-                    <MenuItem onClick={handleSortMaturity}>
-                        Maturity <MdMovieFilter />
-                    </MenuItem>
-                    <MenuItem onClick={handleSortRating}>
-                        Rating <AiFillStar />
-                    </MenuItem>
-                </MenuList>
-            </Menu>
-            <div
-                className="userlist"
-                onDrop={handleOnDrop}
-                onDragOver={handleDragOver}
-                data-testid="userdropzone"
-                aria-label="userdropzone"
-                id="userdropzone"
-            >
-                {userMovies.map((movie, index) => (
-                    <div className="droppedMovie" key={movie.id}>
-                        <div className="border">
-                            <AccordionItem>
-                                <AccordionHeader>
-                                    <Box width="100%" alignContent="left">
-                                        <Box>
-                                            <Image
-                                                borderRadius="md"
-                                                src={movie.image}
-                                                alt={movie.title}
-                                            />
-                                            <Text
-                                                mt={2}
-                                                fontSize="xl"
-                                                fontWeight="semibold"
-                                            >
-                                                {movie.title}
-                                            </Text>
-                                        </Box>
 
-                                        <Box>
-                                            {" "}
-                                            <Text
-                                                ml={2}
-                                                textTransform="uppercase"
-                                                fontSize="sm"
-                                                fontWeight="bold"
-                                                color="pink.800"
+    function handleUserType() {
+        if (user.role == "user") {
+            return (
+                <div>
+                    <h2>
+                        {" "}
+                        {user.name}
+                        {"'"}s Movies{" "}
+                    </h2>
+                    <p>Drag movies here to add them to your list</p>
+                    <Menu>
+                        <MenuButton as={Button}>
+                            {selected == "" ? (
+                                <div>
+                                    Sort <AiFillCaretDown />
+                                </div>
+                            ) : (
+                                <div>Sorted By: {selected}</div>
+                            )}
+                        </MenuButton>
+                        <MenuList>
+                            <MenuItem onClick={handleSortTitle}>
+                                Title <FcAlphabeticalSortingAz />
+                            </MenuItem>
+                            <MenuItem onClick={handleSortMaturity}>
+                                Maturity <MdMovieFilter />
+                            </MenuItem>
+                            <MenuItem onClick={handleSortRating}>
+                                Rating <AiFillStar />
+                            </MenuItem>
+                        </MenuList>
+                    </Menu>
+                    <div
+                        className="userlist"
+                        onDrop={handleOnDrop}
+                        onDragOver={handleDragOver}
+                        data-testid="userdropzone"
+                        aria-label="userdropzone"
+                        id="userdropzone"
+                    >
+                        {filteredMovies.map((movie, index) => (
+                            <div className="droppedMovie" key={movie.id}>
+                                <div className="border">
+                                    <AccordionItem>
+                                        <AccordionHeader>
+                                            <Box
+                                                width="100%"
+                                                alignContent="left"
                                             >
-                                                {movie.genre.join(" & ")}
-                                            </Text>
-                                            <Badge color="red">
-                                                {movie.maturity_rating}
-                                            </Badge>
-                                        </Box>
-                                        <Box>
-                                            <div className="movie-rating">
-                                                <input
-                                                    type="range"
-                                                    min="1"
-                                                    max="5"
-                                                    value={movie.user_rating}
-                                                    onChange={(event) =>
-                                                        handleRatingChange(
-                                                            index,
-                                                            parseInt(
-                                                                event.target
-                                                                    .value
-                                                            )
-                                                        )
-                                                    }
-                                                />
-                                                <div>
-                                                    {[
-                                                        ...Array(
-                                                            movie.user_rating
-                                                        )
-                                                    ].map((_, starIndex) => (
-                                                        <span
-                                                            key={starIndex}
-                                                            className="star yellow"
+                                                <Box>
+                                                    <Image
+                                                        borderRadius="md"
+                                                        src={movie.image}
+                                                        alt={movie.title}
+                                                    />
+                                                    <Text
+                                                        mt={2}
+                                                        fontSize="xl"
+                                                        fontWeight="semibold"
+                                                    >
+                                                        {movie.title}
+                                                    </Text>
+                                                </Box>
+
+                                                <Box>
+                                                    {" "}
+                                                    <Text
+                                                        ml={2}
+                                                        textTransform="uppercase"
+                                                        fontSize="sm"
+                                                        fontWeight="bold"
+                                                        color="pink.800"
+                                                    >
+                                                        {movie.genre.join(
+                                                            " & "
+                                                        )}
+                                                    </Text>
+                                                    <Badge color="red">
+                                                        {movie.maturity_rating}
+                                                    </Badge>
+                                                </Box>
+                                                <Box>
+                                                    <div className="movie-rating">
+                                                        <input
+                                                            type="range"
+                                                            min="1"
+                                                            max="5"
+                                                            value={
+                                                                movie.user_rating
+                                                            }
+                                                            onChange={(event) =>
+                                                                handleRatingChange(
+                                                                    index,
+                                                                    parseInt(
+                                                                        event
+                                                                            .target
+                                                                            .value
+                                                                    )
+                                                                )
+                                                            }
+                                                        />
+                                                        <div>
+                                                            {[
+                                                                ...Array(
+                                                                    movie.user_rating
+                                                                )
+                                                            ].map(
+                                                                (
+                                                                    _,
+                                                                    starIndex
+                                                                ) => (
+                                                                    <span
+                                                                        key={
+                                                                            starIndex
+                                                                        }
+                                                                        className="star yellow"
+                                                                    >
+                                                                        ★
+                                                                    </span>
+                                                                )
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                    <div className="remove-movie">
+                                                        <button
+                                                            onClick={() =>
+                                                                removeMovie(
+                                                                    movie.id
+                                                                )
+                                                            }
                                                         >
-                                                            ★
-                                                        </span>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                            <div className="remove-movie">
-                                                <button
-                                                    onClick={() =>
-                                                        removeMovie(movie.id)
-                                                    }
-                                                >
-                                                    Remove
-                                                </button>
-                                            </div>
-                                        </Box>
-                                        <AccordionIcon />
-                                    </Box>
-                                </AccordionHeader>
-                                <AccordionPanel pb={4}>
-                                    <Text mt={2}>{movie.description}</Text>
-                                    <Flex mt={2} align="center">
-                                        <Text ml={1} fontSize="sm">
-                                            <b>{movie.cast.join(" , ")}</b>
-                                        </Text>
-                                    </Flex>
-                                </AccordionPanel>
-                            </AccordionItem>
-                        </div>
+                                                            Remove
+                                                        </button>
+                                                    </div>
+                                                </Box>
+                                                <AccordionIcon />
+                                            </Box>
+                                        </AccordionHeader>
+                                        <AccordionPanel pb={4}>
+                                            <Text mt={2}>
+                                                {movie.description}
+                                            </Text>
+                                            <Flex mt={2} align="center">
+                                                <Text ml={1} fontSize="sm">
+                                                    <b>
+                                                        {movie.cast.join(" , ")}
+                                                    </b>
+                                                </Text>
+                                            </Flex>
+                                        </AccordionPanel>
+                                    </AccordionItem>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
-        </div>
-    );
+                </div>
+            );
+        } else {
+            return <div className="emptylist"> </div>;
+        }
+    }
+    return <div>{handleUserType()}</div>;
 };
 
 export default YourList;

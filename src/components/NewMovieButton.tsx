@@ -113,6 +113,7 @@ const NewMovieDrawer: React.FC<NewMovieFormProps> = ({ onSubmit }) => {
                 leftIcon="add"
                 variantColor="teal"
                 onClick={onOpenForm}
+                size="xs"
             >
                 Create New Movie
             </Button>

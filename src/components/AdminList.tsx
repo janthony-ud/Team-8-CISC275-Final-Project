@@ -53,17 +53,31 @@ export function AdminList(): JSX.Element {
         const movieIndex = adminMovies.findIndex(
             (movie: Movie): boolean => movie.title === movieName
         );
+
         setEditMovie([
             ...editMovie.slice(0, movieIndex),
             e.target.checked,
             ...editMovie.slice(movieIndex + 1)
         ]);
-        let selectedMovie = adminMovies[movieIndex];
-        if (movieIndex === null) {
-            selectedMovie = blankMovie;
+
+        if (movieIndex !== -1) {
+            const selectedMovie = adminMovies[movieIndex];
+            selectMovie(selectedMovie);
+            updateImage(selectedMovie.image);
+            updateTitle(selectedMovie.title);
+            updateDescription(selectedMovie.description);
+            updateMaturityRating(selectedMovie.maturity_rating);
+            updateCast(selectedMovie.cast);
+            updateGenre(selectedMovie.genre);
+        } else {
+            selectMovie(blankMovie);
+            updateImage("");
+            updateTitle("");
+            updateDescription("");
+            updateMaturityRating("");
+            updateCast([]);
+            updateGenre([]);
         }
-        selectMovie(selectedMovie);
-        console.log(selectedMovie);
     }
 
     useEffect(() => {
