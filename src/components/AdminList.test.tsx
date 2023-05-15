@@ -1,7 +1,7 @@
 import React from "react";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { ThemeProvider } from "@chakra-ui/core/dist";
-import { AdminList } from "./AdminList";
+import AdminList from "./AdminList";
 import { Movie } from "../interfaces/movie";
 
 const mockMovie: Movie = {
@@ -14,11 +14,15 @@ const mockMovie: Movie = {
     user_rating: 0
 };
 
+function updateMovie() {
+    return "";
+}
+
 describe("Admin List Component Tests", () => {
     test("renders a dropped movie and adds it to admin list", async () => {
         render(
             <ThemeProvider>
-                <AdminList />
+                <AdminList movieState={[]} onMovieUpdate={updateMovie} />
             </ThemeProvider>
         );
 

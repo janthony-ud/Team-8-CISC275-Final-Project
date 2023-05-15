@@ -10,7 +10,12 @@ import {
 import { Box, Image, Flex, Badge, Text } from "@chakra-ui/core";
 import "./AdminList.css";
 
-export function AdminList(): JSX.Element {
+interface Props {
+    movieState: Movie[];
+    onMovieUpdate: (updatedMovies: Movie[]) => void;
+}
+
+const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
     const blankMovie: Movie = {
         image: "",
         title: "",
@@ -26,9 +31,58 @@ export function AdminList(): JSX.Element {
     useEffect(() => {
         setEditMovie(Array(adminMovies.length).fill(false));
     }, [adminMovies.length]);
+
+    useEffect(() => {
+        const storedMovies = localStorage.getItem("adminMovies");
+        if (storedMovies) {
+            setAdminMovies(JSON.parse(storedMovies));
+        } else {
+            setAdminMovies([blankMovie]);
+        }
+
+        const storedEditMovie = localStorage.getItem("editMovie");
+        if (storedEditMovie) {
+            setEditMovie(JSON.parse(storedEditMovie));
+        } else {
+            setEditMovie([false]);
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("adminMovies", JSON.stringify(adminMovies));
+    }, [adminMovies]);
+
+    useEffect(() => {
+        localStorage.setItem("editMovie", JSON.stringify(editMovie));
+    }, [editMovie]);
+
+    useEffect(() => {
+        const storedMovies = localStorage.getItem("adminMovies");
+        if (storedMovies) {
+            setAdminMovies(JSON.parse(storedMovies));
+        } else {
+            setAdminMovies([blankMovie]);
+        }
+
+        const storedEditMovie = localStorage.getItem("editMovie");
+        if (storedEditMovie) {
+            setEditMovie(JSON.parse(storedEditMovie));
+        } else {
+            setEditMovie([false]);
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("adminMovies", JSON.stringify(adminMovies));
+    }, [adminMovies]);
+
+    useEffect(() => {
+        localStorage.setItem("editMovie", JSON.stringify(editMovie));
+    }, [editMovie]);
     const [selectedMovie, selectMovie] = useState<Movie>(blankMovie);
     const [image, updateImage] = useState<string>(selectedMovie.image);
     const [title, updateTitle] = useState<string>(selectedMovie.title);
+    const [prevTitle, setPrevTitle] = useState<string>("");
     const [description, updateDescription] = useState<string>(
         selectedMovie.description
     );
@@ -69,6 +123,7 @@ export function AdminList(): JSX.Element {
             updateMaturityRating(selectedMovie.maturity_rating);
             updateCast(selectedMovie.cast);
             updateGenre(selectedMovie.genre);
+            handleMovieUpdate(selectedMovie);
         } else {
             selectMovie(blankMovie);
             updateImage("");
@@ -140,6 +195,26 @@ export function AdminList(): JSX.Element {
 
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
+    }
+
+    const handleMovieUpdate = (updatedMovie: Movie) => {
+        // Find the index of the movie in the movieState
+        const movieIndex = movieState.findIndex(
+            (movie) => movie.title === prevTitle
+        );
+
+        if (movieIndex !== -1) {
+            // Create a new array with the updated movie
+            const updatedMovies = [...movieState];
+            updatedMovies[movieIndex] = updatedMovie;
+
+            // Call the callback function passed from the parent component to update the central list
+            onMovieUpdate(updatedMovies);
+        }
+    };
+
+    function handlePrevTitle(movie: Movie) {
+        setPrevTitle(movie.title);
     }
 
     return (
@@ -221,6 +296,9 @@ export function AdminList(): JSX.Element {
                                             }
                                             checked={editMovie[edit_index]}
                                             onChange={handleEditMovie}
+                                            onClick={() =>
+                                                handlePrevTitle(movie)
+                                            }
                                         ></FormCheck>
                                     </div>
                                 ) : null
@@ -317,4 +395,5 @@ export function AdminList(): JSX.Element {
             </div>
         </div>
     );
-}
+};
+export default AdminList;
