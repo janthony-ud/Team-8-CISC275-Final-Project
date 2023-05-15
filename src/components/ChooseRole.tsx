@@ -4,7 +4,6 @@ import initialUsers from "../data/initialUsers.json";
 import { User } from "../interfaces/user";
 import CentralList from "./CentralList";
 import "./ChooseRole.css";
-import { AdminList } from "./AdminList";
 import { Avatar, AvatarBadge, Stack, Box } from "@chakra-ui/core";
 import { Tooltip } from "@chakra-ui/core";
 import { Button } from "@chakra-ui/core";
@@ -113,6 +112,12 @@ export const ChooseUser: React.FC = () => {
     //taken out of the user 'if'
     //<YourList user={currentUser}></YourList>;
     //<div className="yourlist"></div>;
+    //<div className="yourlist">
+    //    <AdminList></AdminList>
+    //</div>;
+    //                <div className="yourlist">
+    //                    <AdminList></AdminList>;
+    //                </div>;
 
     function handleUserType(user: User) {
         if (user.role == "user") {
@@ -126,9 +131,6 @@ export const ChooseUser: React.FC = () => {
         } else if (user.role == "admin") {
             return (
                 <div>
-                    <div className="yourlist">
-                        <AdminList></AdminList>
-                    </div>
                     <div>
                         <CentralList user={currentUser}></CentralList>
                     </div>
@@ -172,9 +174,6 @@ export const ChooseUser: React.FC = () => {
                             </TabPanel>
                             <TabPanel>
                                 <h1>View/Edit Admin List</h1>
-                                <div className="yourlist">
-                                    <AdminList></AdminList>;
-                                </div>
                             </TabPanel>
                             <TabPanel>
                                 <CentralList user={currentUser}></CentralList>

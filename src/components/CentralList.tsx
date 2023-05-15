@@ -18,6 +18,7 @@ import movieList from "../data/movieList.json";
 import { Movie } from "../interfaces/movie";
 import { useState } from "react";
 import NewMovieButton from "./NewMovieButton";
+import AdminList from "./AdminList";
 import {
     Accordion,
     AccordionItem,
@@ -67,6 +68,9 @@ const CentralList: React.FC<Props> = ({ user }) => {
             };
         })
     );
+
+    //put this back in if wonky code that you deleted screws it up
+    //   localStorage.removeItem("movies");
 
     useEffect(() => {
         const storedMovieList = localStorage.getItem("movies");
@@ -170,11 +174,32 @@ const CentralList: React.FC<Props> = ({ user }) => {
         }
     }
 
+    const updateCentralList = (updatedMovies: Movie[]) => {
+        setMovies(updatedMovies);
+    };
+
+    function handleWhichUser() {
+        if (user.role == "user") {
+            return (
+                <div className="yourlist">
+                    <YourList user={user} movieState={movies}></YourList>
+                </div>
+            );
+        } else {
+            return (
+                <div className="yourlist">
+                    <AdminList
+                        movieState={movies}
+                        onMovieUpdate={updateCentralList}
+                    ></AdminList>
+                    ;
+                </div>
+            );
+        }
+    }
     return (
         <div>
-            <div className="yourlist">
-                <YourList user={user} movieState={movies}></YourList>
-            </div>
+            {handleWhichUser()}
             <div className="centrallist">
                 <h2>Available Movies</h2>
                 <Menu>
