@@ -54,7 +54,7 @@ describe("User List Tests", () => {
     test("renders Sort button for user", () => {
         render(
             <ThemeProvider>
-                <UserList user={testUser} />
+                <UserList user={testUser} handling={""} />
             </ThemeProvider>
         );
         const sort = screen.getByText("Sort");
@@ -63,7 +63,7 @@ describe("User List Tests", () => {
     test("dropdown options visible aft button click", () => {
         render(
             <ThemeProvider>
-                <UserList user={testUser} />
+                <UserList user={testUser} handling={""} />
             </ThemeProvider>
         );
         const dropZone = screen.queryByLabelText("dropzone");

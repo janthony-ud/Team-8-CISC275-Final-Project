@@ -52,9 +52,10 @@ export function makeNewMovie(
 
 interface Props {
     user: User;
+    handling: string;
 }
 
-const CentralList: React.FC<Props> = ({ user }) => {
+const CentralList: React.FC<Props> = ({ user, handling }) => {
     const [movies, setMovies] = useState<Movie[]>(
         movieList.map((movie) => {
             return {
@@ -179,130 +180,285 @@ const CentralList: React.FC<Props> = ({ user }) => {
     };
 
     function handleWhichUser() {
-        if (user.role == "user") {
-            return (
-                <div className="yourlist">
-                    <YourList user={user} movieState={movies}></YourList>
-                </div>
-            );
+        if (handling == "userList") {
+            if (user.role == "user") {
+                return (
+                    <div>
+                        <div className="yourlist">
+                            <YourList
+                                user={user}
+                                movieState={movies}
+                            ></YourList>
+                        </div>
+                        <div className="centrallist">
+                            <h2>Available Movies</h2>
+                            <Menu>
+                                <MenuButton as={Button}>
+                                    {selected == "" ? (
+                                        <div>
+                                            Sort <AiFillCaretDown />
+                                        </div>
+                                    ) : (
+                                        <div>Sorted By: {selected}</div>
+                                    )}
+                                </MenuButton>
+                                <MenuList>
+                                    <MenuItem onClick={handleSortTitle}>
+                                        Title <FcAlphabeticalSortingAz />
+                                    </MenuItem>
+                                    <MenuItem onClick={handleSortMaturity}>
+                                        Maturity <MdMovieFilter />
+                                    </MenuItem>
+                                </MenuList>
+                            </Menu>
+                            <div>{handleNewMovie(user)}</div>
+                            <Accordion defaultIndex={[0]} allowMultiple>
+                                <div className="col">
+                                    {movies.map((movie) => (
+                                        <div key={movie.title}>
+                                            <div
+                                                draggable
+                                                onDragStart={(e) =>
+                                                    handleOnDrag(e, movie)
+                                                }
+                                            >
+                                                <div className="border">
+                                                    <AccordionItem>
+                                                        <AccordionHeader>
+                                                            <Box
+                                                                width="100%"
+                                                                alignContent="left"
+                                                            >
+                                                                <Box>
+                                                                    <Image
+                                                                        borderRadius="md"
+                                                                        src={
+                                                                            movie.image
+                                                                        }
+                                                                        alt={
+                                                                            movie.title
+                                                                        }
+                                                                    />
+                                                                    <Text
+                                                                        mt={2}
+                                                                        fontSize="xl"
+                                                                        fontWeight="semibold"
+                                                                    >
+                                                                        {
+                                                                            movie.title
+                                                                        }
+                                                                    </Text>
+                                                                </Box>
+
+                                                                <Box>
+                                                                    {" "}
+                                                                    <Text
+                                                                        ml={2}
+                                                                        textTransform="uppercase"
+                                                                        fontSize="sm"
+                                                                        fontWeight="bold"
+                                                                        color="pink.800"
+                                                                    >
+                                                                        {movie.genre.join(
+                                                                            " & "
+                                                                        )}
+                                                                    </Text>
+                                                                    <Badge color="red">
+                                                                        {
+                                                                            movie.maturity_rating
+                                                                        }
+                                                                    </Badge>
+                                                                    <br></br>
+                                                                    {handleRemoveMovie(
+                                                                        movie,
+                                                                        user
+                                                                    )}
+                                                                </Box>
+                                                                <AccordionIcon />
+                                                            </Box>
+                                                        </AccordionHeader>
+                                                        <AccordionPanel pb={4}>
+                                                            <Text mt={2}>
+                                                                {
+                                                                    movie.description
+                                                                }
+                                                            </Text>
+                                                            <Flex
+                                                                mt={2}
+                                                                align="center"
+                                                            >
+                                                                <Text
+                                                                    ml={1}
+                                                                    fontSize="sm"
+                                                                >
+                                                                    <b>
+                                                                        {movie.cast.join(
+                                                                            " , "
+                                                                        )}
+                                                                    </b>
+                                                                </Text>
+                                                            </Flex>
+                                                        </AccordionPanel>
+                                                    </AccordionItem>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </Accordion>
+                        </div>
+                    </div>
+                );
+            } else {
+                return (
+                    <div>
+                        <div className="yourlist">
+                            <AdminList
+                                movieState={movies}
+                                onMovieUpdate={updateCentralList}
+                            ></AdminList>
+                        </div>
+                        <div className="centrallist">
+                            <h2>Available Movies</h2>
+                            <Menu>
+                                <MenuButton as={Button}>
+                                    {selected == "" ? (
+                                        <div>
+                                            Sort <AiFillCaretDown />
+                                        </div>
+                                    ) : (
+                                        <div>Sorted By: {selected}</div>
+                                    )}
+                                </MenuButton>
+                                <MenuList>
+                                    <MenuItem onClick={handleSortTitle}>
+                                        Title <FcAlphabeticalSortingAz />
+                                    </MenuItem>
+                                    <MenuItem onClick={handleSortMaturity}>
+                                        Maturity <MdMovieFilter />
+                                    </MenuItem>
+                                </MenuList>
+                            </Menu>
+                            <div>{handleNewMovie(user)}</div>
+                            <Accordion defaultIndex={[0]} allowMultiple>
+                                <div className="col">
+                                    {movies.map((movie) => (
+                                        <div key={movie.title}>
+                                            <div
+                                                draggable
+                                                onDragStart={(e) =>
+                                                    handleOnDrag(e, movie)
+                                                }
+                                            >
+                                                <div className="border">
+                                                    <AccordionItem>
+                                                        <AccordionHeader>
+                                                            <Box
+                                                                width="100%"
+                                                                alignContent="left"
+                                                            >
+                                                                <Box>
+                                                                    <Image
+                                                                        borderRadius="md"
+                                                                        src={
+                                                                            movie.image
+                                                                        }
+                                                                        alt={
+                                                                            movie.title
+                                                                        }
+                                                                    />
+                                                                    <Text
+                                                                        mt={2}
+                                                                        fontSize="xl"
+                                                                        fontWeight="semibold"
+                                                                    >
+                                                                        {
+                                                                            movie.title
+                                                                        }
+                                                                    </Text>
+                                                                </Box>
+
+                                                                <Box>
+                                                                    {" "}
+                                                                    <Text
+                                                                        ml={2}
+                                                                        textTransform="uppercase"
+                                                                        fontSize="sm"
+                                                                        fontWeight="bold"
+                                                                        color="pink.800"
+                                                                    >
+                                                                        {movie.genre.join(
+                                                                            " & "
+                                                                        )}
+                                                                    </Text>
+                                                                    <Badge color="red">
+                                                                        {
+                                                                            movie.maturity_rating
+                                                                        }
+                                                                    </Badge>
+                                                                    <br></br>
+                                                                    {handleRemoveMovie(
+                                                                        movie,
+                                                                        user
+                                                                    )}
+                                                                </Box>
+                                                                <AccordionIcon />
+                                                            </Box>
+                                                        </AccordionHeader>
+                                                        <AccordionPanel pb={4}>
+                                                            <Text mt={2}>
+                                                                {
+                                                                    movie.description
+                                                                }
+                                                            </Text>
+                                                            <Flex
+                                                                mt={2}
+                                                                align="center"
+                                                            >
+                                                                <Text
+                                                                    ml={1}
+                                                                    fontSize="sm"
+                                                                >
+                                                                    <b>
+                                                                        {movie.cast.join(
+                                                                            " , "
+                                                                        )}
+                                                                    </b>
+                                                                </Text>
+                                                            </Flex>
+                                                        </AccordionPanel>
+                                                    </AccordionItem>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </Accordion>
+                        </div>
+                    </div>
+                );
+            }
         } else {
-            return (
-                <div className="yourlist">
-                    <AdminList
-                        movieState={movies}
-                        onMovieUpdate={updateCentralList}
-                    ></AdminList>
-                    ;
-                </div>
-            );
+            if (user.role == "user") {
+                return (
+                    <div className="yourlist">
+                        {" "}
+                        <YourList user={user} movieState={movies}></YourList>
+                    </div>
+                );
+            } else {
+                return (
+                    <div className="yourlist">
+                        <AdminList
+                            movieState={movies}
+                            onMovieUpdate={updateCentralList}
+                        ></AdminList>
+                    </div>
+                );
+            }
         }
     }
-    return (
-        <div>
-            {handleWhichUser()}
-            <div className="centrallist">
-                <h2>Available Movies</h2>
-                <Menu>
-                    <MenuButton as={Button}>
-                        {selected == "" ? (
-                            <div>
-                                Sort <AiFillCaretDown />
-                            </div>
-                        ) : (
-                            <div>Sorted By: {selected}</div>
-                        )}
-                    </MenuButton>
-                    <MenuList>
-                        <MenuItem onClick={handleSortTitle}>
-                            Title <FcAlphabeticalSortingAz />
-                        </MenuItem>
-                        <MenuItem onClick={handleSortMaturity}>
-                            Maturity <MdMovieFilter />
-                        </MenuItem>
-                    </MenuList>
-                </Menu>
-                <div>{handleNewMovie(user)}</div>
-                <Accordion defaultIndex={[0]} allowMultiple>
-                    <div className="col">
-                        {movies.map((movie) => (
-                            <div key={movie.title}>
-                                <div
-                                    draggable
-                                    onDragStart={(e) => handleOnDrag(e, movie)}
-                                >
-                                    <div className="border">
-                                        <AccordionItem>
-                                            <AccordionHeader>
-                                                <Box
-                                                    width="100%"
-                                                    alignContent="left"
-                                                >
-                                                    <Box>
-                                                        <Image
-                                                            borderRadius="md"
-                                                            src={movie.image}
-                                                            alt={movie.title}
-                                                        />
-                                                        <Text
-                                                            mt={2}
-                                                            fontSize="xl"
-                                                            fontWeight="semibold"
-                                                        >
-                                                            {movie.title}
-                                                        </Text>
-                                                    </Box>
-
-                                                    <Box>
-                                                        {" "}
-                                                        <Text
-                                                            ml={2}
-                                                            textTransform="uppercase"
-                                                            fontSize="sm"
-                                                            fontWeight="bold"
-                                                            color="pink.800"
-                                                        >
-                                                            {movie.genre.join(
-                                                                " & "
-                                                            )}
-                                                        </Text>
-                                                        <Badge color="red">
-                                                            {
-                                                                movie.maturity_rating
-                                                            }
-                                                        </Badge>
-                                                        <br></br>
-                                                        {handleRemoveMovie(
-                                                            movie,
-                                                            user
-                                                        )}
-                                                    </Box>
-                                                    <AccordionIcon />
-                                                </Box>
-                                            </AccordionHeader>
-                                            <AccordionPanel pb={4}>
-                                                <Text mt={2}>
-                                                    {movie.description}
-                                                </Text>
-                                                <Flex mt={2} align="center">
-                                                    <Text ml={1} fontSize="sm">
-                                                        <b>
-                                                            {movie.cast.join(
-                                                                " , "
-                                                            )}
-                                                        </b>
-                                                    </Text>
-                                                </Flex>
-                                            </AccordionPanel>
-                                        </AccordionItem>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </Accordion>
-            </div>
-        </div>
-    );
+    return <div>{handleWhichUser()}</div>;
 };
 
 export default CentralList;
