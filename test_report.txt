@@ -5,7 +5,7 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-FAIL src/components/CentralList.test.tsx (7.367 s)
+FAIL src/components/CentralList.test.tsx (6.875 s)
   ● Console
 
     console.error
@@ -33,7 +33,7 @@ FAIL src/components/CentralList.test.tsx (7.367 s)
           at Accordion (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:30:28)
           at div
           at div
-          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:56:41)
+          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:57:41)
           at ThemeProvider
           at ThemeProvider (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/ThemeProvider/index.js:18:20)
 
@@ -54,7 +54,7 @@ FAIL src/components/CentralList.test.tsx (7.367 s)
           at Accordion (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:30:28)
           at div
           at div
-          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:56:41)
+          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:57:41)
           at ThemeProvider
           at ThemeProvider (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/ThemeProvider/index.js:18:20)
 
@@ -108,12 +108,20 @@ FAIL src/components/CentralList.test.tsx (7.367 s)
             [33mclass[39m=[32m"yourlist"[39m
           [36m>[39m
             [36m<div>[39m
+              [36m<h1>[39m
+                [0m Movies to be Reviewed [0m
+              [36m</h1>[39m
+              [36m<p>[39m
+                [0mDrag Movies to add them to the Review List[0m
+              [36m</p>[39m
               [36m<div[39m
-                [33mclass[39m=[32m"emptylist"[39m
-              [36m>[39m
-                [0m [0m
-              [36m</div>[39m
+                [33maria-label[39m=[32m"dropzone"[39m
+                [33mclass[39m=[32m"adminlist"[39m
+                [33mdata-testid[39m=[32m"dropzone"[39m
+                [33mid[39m=[32m"dropzone"[39m
+              [36m/>[39m
             [36m</div>[39m
+            [0m;[0m
           [36m</div>[39m
           [36m<div[39m
             [33mclass[39m=[32m"centrallist"[39m
@@ -220,14 +228,7 @@ FAIL src/components/CentralList.test.tsx (7.367 s)
                                 [33mclass[39m=[32m"css-1ghfqnb"[39m
                               [36m>[39m
                                 [0mAnimation & Adventure & Comedy[0m
-                              [36m</p>[39m
-                              [36m<div[39m
-                                [33mclass[39m=[32m"css-1kqpkvp"[39m
-                              [36m>[39m
-                                [0mPG [0m
-                              [36m</div>[39m
-                              [36m<br />[39m
-                              [36m<...
+                  ...
 
       30 |             </ThemeProvider>
       31 |         );
@@ -473,7 +474,7 @@ FAIL src/components/UserList.test.tsx
           at Accordion (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:30:28)
           at div
           at div
-          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:56:41)
+          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:57:41)
           at ThemeProvider
           at ThemeProvider (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/ThemeProvider/index.js:18:20)
 
@@ -930,7 +931,7 @@ PASS src/components/AdminList.test.tsx
     console.log
       found dropzone
 
-      at src/components/AdminList.test.tsx:28:25
+      at src/components/AdminList.test.tsx:32:25
 
     console.log
       widgetType {
@@ -943,17 +944,17 @@ PASS src/components/AdminList.test.tsx
         user_rating: 0
       }
 
-      at handleOnDrop (src/components/AdminList.tsx:130:17)
+      at handleOnDrop (src/components/AdminList.tsx:185:17)
 
     console.log
       false
 
-      at handleOnDrop (src/components/AdminList.tsx:134:17)
+      at handleOnDrop (src/components/AdminList.tsx:189:17)
 
     console.log
       testing
 
-      at Object.<anonymous> (src/components/AdminList.test.tsx:41:17)
+      at Object.<anonymous> (src/components/AdminList.test.tsx:45:17)
 
 PASS src/components/NewUserButton.test.tsx
   ● Console
@@ -1300,29 +1301,28 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
----------------------------|---------|----------|---------|---------|-----------------------------------------------
-File                       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                             
----------------------------|---------|----------|---------|---------|-----------------------------------------------
-All files                  |   45.81 |    46.96 |   36.75 |   47.05 |                                               
- src                       |     100 |      100 |     100 |     100 |                                               
-  App.tsx                  |     100 |      100 |     100 |     100 |                                               
- src/components            |   45.63 |    46.96 |    36.2 |   46.87 |                                               
-  AdminList.tsx            |    42.1 |       50 |   43.47 |   41.89 | 42-79,86-96,115-118,132,142,238-283           
-  CentralList.tsx          |   48.78 |       70 |   38.09 |   51.28 | 41,97,103-132,141,160,206                     
-  ChooseRole.tsx           |   48.07 |     37.5 |      40 |   51.02 | 46,63-103,119,127,138-163,201-216,222,272-300 
-  NewMovieButton.tsx       |    37.2 |        0 |    8.33 |   39.02 | 54-55,59-65,71-104,177-384                    
-  NewUserButton.tsx        |     100 |      100 |     100 |     100 |                                               
-  UserList.tsx             |   33.89 |       50 |   20.83 |   34.48 | 57,67-80,84-105,113-151,198-283               
-  Users.tsx                |     100 |      100 |     100 |     100 |                                               
-  localStorageHandling.tsx |       0 |        0 |       0 |       0 | 6-17                                          
- src/interfaces            |       0 |        0 |       0 |       0 |                                               
-  movie.ts                 |       0 |        0 |       0 |       0 |                                               
-  play.ts                  |       0 |        0 |       0 |       0 |                                               
-  user.ts                  |       0 |        0 |       0 |       0 |                                               
-  userMovie.ts             |       0 |        0 |       0 |       0 |                                               
----------------------------|---------|----------|---------|---------|-----------------------------------------------
+---------------------|---------|----------|---------|---------|------------------------------------------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                    
+---------------------|---------|----------|---------|---------|------------------------------------------------------
+All files            |    49.4 |       50 |   39.68 |    50.6 |                                                      
+ src                 |     100 |      100 |     100 |     100 |                                                      
+  App.tsx            |     100 |      100 |     100 |     100 |                                                      
+ src/components      |   49.25 |       50 |    39.2 |   50.45 |                                                      
+  AdminList.tsx      |   51.75 |    52.77 |   48.48 |   51.78 | 64,71,96-134,141-151,170-173,187,197,202-217,300-361 
+  CentralList.tsx    |   52.17 |       75 |   39.13 |   54.54 | 42,101,107-136,145,164,178,231                       
+  ChooseRole.tsx     |   48.07 |     37.5 |      40 |   51.02 | 45,62-102,124,132,140-165,200-215,221,271-299        
+  NewMovieButton.tsx |    37.2 |        0 |    8.33 |   39.02 | 54-55,59-65,71-104,177-384                           
+  NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                                      
+  UserList.tsx       |    32.2 |       40 |   20.83 |   32.75 | 57,67-80,84-105,113-151,198-315                      
+  Users.tsx          |     100 |      100 |     100 |     100 |                                                      
+ src/interfaces      |       0 |        0 |       0 |       0 |                                                      
+  movie.ts           |       0 |        0 |       0 |       0 |                                                      
+  play.ts            |       0 |        0 |       0 |       0 |                                                      
+  user.ts            |       0 |        0 |       0 |       0 |                                                      
+  userMovie.ts       |       0 |        0 |       0 |       0 |                                                      
+---------------------|---------|----------|---------|---------|------------------------------------------------------
 Test Suites: 3 failed, 3 passed, 6 total
 Tests:       5 failed, 21 passed, 26 total
 Snapshots:   0 total
-Time:        15.14 s
+Time:        13.748 s
 Ran all test suites.

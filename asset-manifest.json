@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Team-8-CISC275-Final-Project/static/css/main.c5f7e210.css",
-    "main.js": "/Team-8-CISC275-Final-Project/static/js/main.22f18af5.js",
+    "main.css": "/Team-8-CISC275-Final-Project/static/css/main.d6652840.css",
+    "main.js": "/Team-8-CISC275-Final-Project/static/js/main.a4e4c55a.js",
     "static/js/787.ec723425.chunk.js": "/Team-8-CISC275-Final-Project/static/js/787.ec723425.chunk.js",
     "static/media/home.png": "/Team-8-CISC275-Final-Project/static/media/home.60fd9269ddeebc33bd81.png",
     "static/media/movieo-logo.png": "/Team-8-CISC275-Final-Project/static/media/movieo-logo.c2b231dc34e2b812a87a.png",
     "index.html": "/Team-8-CISC275-Final-Project/index.html",
-    "main.c5f7e210.css.map": "/Team-8-CISC275-Final-Project/static/css/main.c5f7e210.css.map",
-    "main.22f18af5.js.map": "/Team-8-CISC275-Final-Project/static/js/main.22f18af5.js.map",
+    "main.d6652840.css.map": "/Team-8-CISC275-Final-Project/static/css/main.d6652840.css.map",
+    "main.a4e4c55a.js.map": "/Team-8-CISC275-Final-Project/static/js/main.a4e4c55a.js.map",
     "787.ec723425.chunk.js.map": "/Team-8-CISC275-Final-Project/static/js/787.ec723425.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5f7e210.css",
-    "static/js/main.22f18af5.js"
+    "static/css/main.d6652840.css",
+    "static/js/main.a4e4c55a.js"
   ]
 }
