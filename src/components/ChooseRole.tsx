@@ -116,7 +116,10 @@ export const ChooseUser: React.FC = () => {
             return (
                 <div>
                     <div>
-                        <CentralList user={currentUser}></CentralList>
+                        <CentralList
+                            user={currentUser}
+                            handling={"userList"}
+                        ></CentralList>
                     </div>
                 </div>
             );
@@ -124,7 +127,10 @@ export const ChooseUser: React.FC = () => {
             return (
                 <div>
                     <div>
-                        <CentralList user={currentUser}></CentralList>
+                        <CentralList
+                            user={currentUser}
+                            handling={"userList"}
+                        ></CentralList>
                     </div>
                 </div>
             );
@@ -159,7 +165,10 @@ export const ChooseUser: React.FC = () => {
                                 >
                                     Toggle User{"'"}s Lists
                                 </Button>{" "}
-                                {users.slice(1).map((user) => (
+                                <h3>
+                                    {currentUser.name}, {currentUser.role}{" "}
+                                </h3>
+                                {users.slice(2).map((user) => (
                                     <div key={user.name}>
                                         <div className="induseravatar">
                                             <h3>
@@ -170,6 +179,7 @@ export const ChooseUser: React.FC = () => {
                                                 {isViewingList && (
                                                     <CentralList
                                                         user={user}
+                                                        handling={"superView"}
                                                     ></CentralList>
                                                 )}{" "}
                                             </div>
@@ -178,7 +188,10 @@ export const ChooseUser: React.FC = () => {
                                 ))}
                             </TabPanel>
                             <TabPanel>
-                                <CentralList user={user}></CentralList>
+                                <CentralList
+                                    user={user}
+                                    handling={"userList"}
+                                ></CentralList>
                             </TabPanel>
                         </TabPanels>
                     </Tabs>
