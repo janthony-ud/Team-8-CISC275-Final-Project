@@ -5,7 +5,7 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-FAIL src/components/CentralList.test.tsx (5.595 s)
+FAIL src/components/CentralList.test.tsx (7.367 s)
   ● Console
 
     console.error
@@ -32,7 +32,8 @@ FAIL src/components/CentralList.test.tsx (5.595 s)
           at Styled(div)
           at Accordion (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:30:28)
           at div
-          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:55:41)
+          at div
+          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:56:41)
           at ThemeProvider
           at ThemeProvider (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/ThemeProvider/index.js:18:20)
 
@@ -52,7 +53,8 @@ FAIL src/components/CentralList.test.tsx (5.595 s)
           at Styled(div)
           at Accordion (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:30:28)
           at div
-          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:55:41)
+          at div
+          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:56:41)
           at ThemeProvider
           at ThemeProvider (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/ThemeProvider/index.js:18:20)
 
@@ -102,129 +104,130 @@ FAIL src/components/CentralList.test.tsx (5.595 s)
       [36m</div>[39m
       [36m<div>[39m
         [36m<div>[39m
-          [36m<h1>[39m
-            [0mCentral Movie List[0m
-          [36m</h1>[39m
-          [36m<button[39m
-            [33maria-controls[39m=[32m"menu-1"[39m
-            [33maria-expanded[39m=[32m"false"[39m
-            [33maria-haspopup[39m=[32m"menu"[39m
-            [33mclass[39m=[32m"css-c4fa1y"[39m
-            [33mid[39m=[32m"menubutton-2"[39m
-            [33mrole[39m=[32m"button"[39m
-            [33mtype[39m=[32m"button"[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"yourlist"[39m
           [36m>[39m
             [36m<div>[39m
-              [0mSort [0m
-              [36m<svg[39m
-                [33mfill[39m=[32m"currentColor"[39m
-                [33mheight[39m=[32m"1em"[39m
-                [33mstroke[39m=[32m"currentColor"[39m
-                [33mstroke-width[39m=[32m"0"[39m
-                [33mviewBox[39m=[32m"0 0 1024 1024"[39m
-                [33mwidth[39m=[32m"1em"[39m
-                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"emptylist"[39m
               [36m>[39m
-                [36m<path[39m
-                  [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
-                [36m/>[39m
-              [36m</svg>[39m
-            [36m</div>[39m
-          [36m</button>[39m
-          [36m<div>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"newMovie"[39m
-            [36m>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"css-1brgn68"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [36m<svg[39m
-                  [33maria-hidden[39m=[32m"true"[39m
-                  [33mclass[39m=[32m"css-yxiis9"[39m
-                  [33mfocusable[39m=[32m"false"[39m
-                  [33mrole[39m=[32m"presentation"[39m
-                  [33mviewBox[39m=[32m"0 0 24 24"[39m
-                [36m>[39m
-                  [36m<path[39m
-                    [33md[39m=[32m"M0,12a1.5,1.5,0,0,0,1.5,1.5h8.75a.25.25,0,0,1,.25.25V22.5a1.5,1.5,0,0,0,3,0V13.75a.25.25,0,0,1,.25-.25H22.5a1.5,1.5,0,0,0,0-3H13.75a.25.25,0,0,1-.25-.25V1.5a1.5,1.5,0,0,0-3,0v8.75a.25.25,0,0,1-.25.25H1.5A1.5,1.5,0,0,0,0,12Z"[39m
-                    [33mfill[39m=[32m"currentColor"[39m
-                  [36m/>[39m
-                [36m</svg>[39m
-                [0mCreate New Movie[0m
-              [36m</button>[39m
+                [0m [0m
+              [36m</div>[39m
             [36m</div>[39m
           [36m</div>[39m
           [36m<div[39m
-            [33mclass[39m=[32m"css-0"[39m
-            [33mdata-accordion[39m=[32m""[39m
+            [33mclass[39m=[32m"centrallist"[39m
           [36m>[39m
-            [36m<div[39m
-              [33mclass[39m=[32m"col"[39m
+            [36m<h2>[39m
+              [0mAvailable Movies[0m
+            [36m</h2>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"menu-1"[39m
+              [33maria-expanded[39m=[32m"false"[39m
+              [33maria-haspopup[39m=[32m"menu"[39m
+              [33mclass[39m=[32m"css-c4fa1y"[39m
+              [33mid[39m=[32m"menubutton-2"[39m
+              [33mrole[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
             [36m>[39m
               [36m<div>[39m
-                [36m<div[39m
-                  [33mdraggable[39m=[32m"true"[39m
+                [0mSort [0m
+                [36m<svg[39m
+                  [33mfill[39m=[32m"currentColor"[39m
+                  [33mheight[39m=[32m"1em"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-width[39m=[32m"0"[39m
+                  [33mviewBox[39m=[32m"0 0 1024 1024"[39m
+                  [33mwidth[39m=[32m"1em"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
                 [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</div>[39m
+            [36m</button>[39m
+            [36m<div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"newMovie"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"css-1f3y7dr"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"css-yxiis9"[39m
+                    [33mfocusable[39m=[32m"false"[39m
+                    [33mrole[39m=[32m"presentation"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M0,12a1.5,1.5,0,0,0,1.5,1.5h8.75a.25.25,0,0,1,.25.25V22.5a1.5,1.5,0,0,0,3,0V13.75a.25.25,0,0,1,.25-.25H22.5a1.5,1.5,0,0,0,0-3H13.75a.25.25,0,0,1-.25-.25V1.5a1.5,1.5,0,0,0-3,0v8.75a.25.25,0,0,1-.25.25H1.5A1.5,1.5,0,0,0,0,12Z"[39m
+                      [33mfill[39m=[32m"currentColor"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [0mCreate New Movie[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-0"[39m
+              [33mdata-accordion[39m=[32m""[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"col"[39m
+              [36m>[39m
+                [36m<div>[39m
                   [36m<div[39m
-                    [33mclass[39m=[32m"border"[39m
+                    [33mdraggable[39m=[32m"true"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33mclass[39m=[32m"css-1htfx3z"[39m
-                      [33mdata-accordion-item[39m=[32m""[39m
+                      [33mclass[39m=[32m"border"[39m
                     [36m>[39m
-                      [36m<button[39m
-                        [33maria-controls[39m=[32m"accordion-panel-3"[39m
-                        [33maria-expanded[39m=[32m"false"[39m
-                        [33mclass[39m=[32m"css-o4mft6"[39m
-                        [33mid[39m=[32m"accordion-header-3"[39m
-                        [33mtype[39m=[32m"button"[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"css-1htfx3z"[39m
+                        [33mdata-accordion-item[39m=[32m""[39m
                       [36m>[39m
-                        [36m<div[39m
-                          [33mclass[39m=[32m"css-1p33byw"[39m
+                        [36m<button[39m
+                          [33maria-controls[39m=[32m"accordion-panel-3"[39m
+                          [33maria-expanded[39m=[32m"false"[39m
+                          [33mclass[39m=[32m"css-o4mft6"[39m
+                          [33mid[39m=[32m"accordion-header-3"[39m
+                          [33mtype[39m=[32m"button"[39m
                         [36m>[39m
                           [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
+                            [33mclass[39m=[32m"css-1p33byw"[39m
                           [36m>[39m
-                            [36m<img[39m
-                              [33malt[39m=[32m"The Super Mario Bros. Movie "[39m
-                              [33mclass[39m=[32m"css-17eao0m"[39m
-                            [36m/>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-3cojqf"[39m
-                            [36m>[39m
-                              [0mThe Super Mario Bros. Movie [0m
-                            [36m</p>[39m
-                          [36m</div>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [0m [0m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ghfqnb"[39m
-                            [36m>[39m
-                              [0mAnimation & Adventure & Comedy[0m
-                            [36m</p>[39m
                             [36m<div[39m
-                              [33mclass[39m=[32m"css-1kqpkvp"[39m
+                              [33mclass[39m=[32m"css-0"[39m
                             [36m>[39m
-                              [0mPG [0m
-                            [36m</div>[39m
-                            [36m<br />[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"newMovie"[39m
-                            [36m>[39m
-                              [36m<button[39m
-                                [33mclass[39m=[32m"css-1xrjl8i"[39m
-                                [33mtype[39m=[32m"button"[39m
+                              [36m<img[39m
+                                [33malt[39m=[32m"The Super Mario Bros. Movie "[39m
+                                [33mclass[39m=[32m"css-17eao0m"[39m
+                              [36m/>[39m
+                              [36m<p[39m
+                                [33mclass[39m=[32m"css-3cojqf"[39m
                               [36m>[39m
-                                [0m [0m
-                                [0mRemove Movie[0m
-                                [0m [0m
-                              [36m</button>[39m
+                                [0mThe Super Mario Bros. Movie [0m
+                              [36m</p>[39m
                             [36m</div>[39m
-                          [36m</div>[39m
-                          [36m<svg[39m...
+                            [36m<div[39m
+                              [33mclass[39m=[32m"css-0"[39m
+                            [36m>[39m
+                              [0m [0m
+                              [36m<p[39m
+                                [33mclass[39m=[32m"css-1ghfqnb"[39m
+                              [36m>[39m
+                                [0mAnimation & Adventure & Comedy[0m
+                              [36m</p>[39m
+                              [36m<div[39m
+                                [33mclass[39m=[32m"css-1kqpkvp"[39m
+                              [36m>[39m
+                                [0mPG [0m
+                              [36m</div>[39m
+                              [36m<br />[39m
+                              [36m<...
 
       30 |             </ThemeProvider>
       31 |         );
@@ -240,7 +243,226 @@ FAIL src/components/CentralList.test.tsx (5.595 s)
       at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/components/CentralList.test.tsx:32:33)
 
-PASS src/components/UserList.test.tsx
+  ● Central List Component Tests › dropdown options visible aft button click
+
+    TestingLibraryElementError: Found multiple elements with the text: Sort
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<div>[39m
+      [0mSort [0m
+      [36m<svg[39m
+        [33mfill[39m=[32m"currentColor"[39m
+        [33mheight[39m=[32m"1em"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-width[39m=[32m"0"[39m
+        [33mviewBox[39m=[32m"0 0 1024 1024"[39m
+        [33mwidth[39m=[32m"1em"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</div>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<div>[39m
+      [0mSort [0m
+      [36m<svg[39m
+        [33mfill[39m=[32m"currentColor"[39m
+        [33mheight[39m=[32m"1em"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-width[39m=[32m"0"[39m
+        [33mviewBox[39m=[32m"0 0 1024 1024"[39m
+        [33mwidth[39m=[32m"1em"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</div>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"Toaster"[39m
+        [33mid[39m=[32m"react-toast"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
+        [36m/>[39m
+      [36m</div>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"yourlist"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<div>[39m
+                [36m<h2>[39m
+                  [0m [0m
+                  [0mtest user[0m
+                  [0m'[0m
+                  [0ms Movies[0m
+                  [0m [0m
+                [36m</h2>[39m
+                [36m<p>[39m
+                  [0mDrag movies here to add them to your list[0m
+                [36m</p>[39m
+                [36m<button[39m
+                  [33maria-controls[39m=[32m"menu-589"[39m
+                  [33maria-expanded[39m=[32m"false"[39m
+                  [33maria-haspopup[39m=[32m"menu"[39m
+                  [33mclass[39m=[32m"css-c4fa1y"[39m
+                  [33mid[39m=[32m"menubutton-590"[39m
+                  [33mrole[39m=[32m"button"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<div>[39m
+                    [0mSort [0m
+                    [36m<svg[39m
+                      [33mfill[39m=[32m"currentColor"[39m
+                      [33mheight[39m=[32m"1em"[39m
+                      [33mstroke[39m=[32m"currentColor"[39m
+                      [33mstroke-width[39m=[32m"0"[39m
+                      [33mviewBox[39m=[32m"0 0 1024 1024"[39m
+                      [33mwidth[39m=[32m"1em"[39m
+                      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                    [36m>[39m
+                      [36m<path[39m
+                        [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
+                      [36m/>[39m
+                    [36m</svg>[39m
+                  [36m</div>[39m
+                [36m</button>[39m
+                [36m<div[39m
+                  [33maria-label[39m=[32m"userdropzone"[39m
+                  [33mclass[39m=[32m"userlist"[39m
+                  [33mdata-testid[39m=[32m"userdropzone"[39m
+                  [33mid[39m=[32m"userdropzone"[39m
+                [36m/>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"centrallist"[39m
+          [36m>[39m
+            [36m<h2>[39m
+              [0mAvailable Movies[0m
+            [36m</h2>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"menu-591"[39m
+              [33maria-expanded[39m=[32m"false"[39m
+              [33maria-haspopup[39m=[32m"menu"[39m
+              [33mclass[39m=[32m"css-c4fa1y"[39m
+              [33mid[39m=[32m"menubutton-592"[39m
+              [33mrole[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<div>[39m
+                [0mSort [0m
+                [36m<svg[39m
+                  [33mfill[39m=[32m"currentColor"[39m
+                  [33mheight[39m=[32m"1em"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-width[39m=[32m"0"[39m
+                  [33mviewBox[39m=[32m"0 0 1024 1024"[39m
+                  [33mwidth[39m=[32m"1em"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</div>[39m
+            [36m</button>[39m
+            [36m<div />[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-0"[39m
+              [33mdata-accordion[39m=[32m""[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"col"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<div[39m
+                    [33mdraggable[39m=[32m"true"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"border"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"css-1htfx3z"[39m
+                        [33mdata-accordion-item[39m=[32m""[39m
+                      [36m>[39m
+                        [36m<button[39m
+                          [33maria-controls[39m=[32m"accordion-panel-593"[39m
+                          [33maria-expanded[39m=[32m"false"[39m
+                          [33mclass[39m=[32m"css-o4mft6"[39m
+                          [33mid[39m=[32m"accordion-header-593"[39m
+                          [33mtype[39m=[32m"button"[39m
+                        [36m>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"css-1p33byw"[39m
+                          [36m>[39m
+                            [36m<div[39m
+                              [33mclass[39m=[32m"css-0"[39m
+                            [36m>[39m
+                              [36m<img[39m
+                                [33malt[39m=[32m"The Super Mario Bros. Movie "[39m
+                                [33mclass[39m=[32m"css-17eao0m"[39m
+                              [36m/>[39m
+                              [36m<p[39m
+                                [33mclass[39m=[32m"css-3cojqf"[39m
+                              [36m>[39m
+                                [0mThe Super Mario Bros. Movie [0m
+                              [36m</p>[39m
+                            [36m</div>[39m
+                            [36m<div[39m
+                              [33mclass...
+
+      111 |             </ThemeProvider>
+      112 |         );
+    > 113 |         const sortBtn = screen.getByText("Sort");
+          |                                ^
+      114 |         fireEvent.click(sortBtn);
+      115 |         const sortTitle = screen.getByText("Title");
+      116 |         const sortMaturity = screen.getByText("Maturity");
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/CentralList.test.tsx:113:32)
+
+FAIL src/components/UserList.test.tsx
   ● Console
 
     console.error
@@ -250,7 +472,8 @@ PASS src/components/UserList.test.tsx
           at Styled(div)
           at Accordion (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:30:28)
           at div
-          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:55:41)
+          at div
+          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:56:41)
           at ThemeProvider
           at ThemeProvider (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/ThemeProvider/index.js:18:20)
 
@@ -262,6 +485,444 @@ PASS src/components/UserList.test.tsx
       at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:8765:5)
       at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
       at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
+
+  ● User List Tests › renders Sort button for user
+
+    TestingLibraryElementError: Found multiple elements with the text: Sort
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<div>[39m
+      [0mSort [0m
+      [36m<svg[39m
+        [33mfill[39m=[32m"currentColor"[39m
+        [33mheight[39m=[32m"1em"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-width[39m=[32m"0"[39m
+        [33mviewBox[39m=[32m"0 0 1024 1024"[39m
+        [33mwidth[39m=[32m"1em"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</div>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<div>[39m
+      [0mSort [0m
+      [36m<svg[39m
+        [33mfill[39m=[32m"currentColor"[39m
+        [33mheight[39m=[32m"1em"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-width[39m=[32m"0"[39m
+        [33mviewBox[39m=[32m"0 0 1024 1024"[39m
+        [33mwidth[39m=[32m"1em"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</div>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"Toaster"[39m
+        [33mid[39m=[32m"react-toast"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
+        [36m/>[39m
+      [36m</div>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"yourlist"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<div>[39m
+                [36m<h2>[39m
+                  [0m [0m
+                  [0mtest user[0m
+                  [0m'[0m
+                  [0ms Movies[0m
+                  [0m [0m
+                [36m</h2>[39m
+                [36m<p>[39m
+                  [0mDrag movies here to add them to your list[0m
+                [36m</p>[39m
+                [36m<button[39m
+                  [33maria-controls[39m=[32m"menu-1"[39m
+                  [33maria-expanded[39m=[32m"false"[39m
+                  [33maria-haspopup[39m=[32m"menu"[39m
+                  [33mclass[39m=[32m"css-c4fa1y"[39m
+                  [33mid[39m=[32m"menubutton-2"[39m
+                  [33mrole[39m=[32m"button"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<div>[39m
+                    [0mSort [0m
+                    [36m<svg[39m
+                      [33mfill[39m=[32m"currentColor"[39m
+                      [33mheight[39m=[32m"1em"[39m
+                      [33mstroke[39m=[32m"currentColor"[39m
+                      [33mstroke-width[39m=[32m"0"[39m
+                      [33mviewBox[39m=[32m"0 0 1024 1024"[39m
+                      [33mwidth[39m=[32m"1em"[39m
+                      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                    [36m>[39m
+                      [36m<path[39m
+                        [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
+                      [36m/>[39m
+                    [36m</svg>[39m
+                  [36m</div>[39m
+                [36m</button>[39m
+                [36m<div[39m
+                  [33maria-label[39m=[32m"userdropzone"[39m
+                  [33mclass[39m=[32m"userlist"[39m
+                  [33mdata-testid[39m=[32m"userdropzone"[39m
+                  [33mid[39m=[32m"userdropzone"[39m
+                [36m/>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"centrallist"[39m
+          [36m>[39m
+            [36m<h2>[39m
+              [0mAvailable Movies[0m
+            [36m</h2>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"menu-3"[39m
+              [33maria-expanded[39m=[32m"false"[39m
+              [33maria-haspopup[39m=[32m"menu"[39m
+              [33mclass[39m=[32m"css-c4fa1y"[39m
+              [33mid[39m=[32m"menubutton-4"[39m
+              [33mrole[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<div>[39m
+                [0mSort [0m
+                [36m<svg[39m
+                  [33mfill[39m=[32m"currentColor"[39m
+                  [33mheight[39m=[32m"1em"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-width[39m=[32m"0"[39m
+                  [33mviewBox[39m=[32m"0 0 1024 1024"[39m
+                  [33mwidth[39m=[32m"1em"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</div>[39m
+            [36m</button>[39m
+            [36m<div />[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-0"[39m
+              [33mdata-accordion[39m=[32m""[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"col"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<div[39m
+                    [33mdraggable[39m=[32m"true"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"border"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"css-1htfx3z"[39m
+                        [33mdata-accordion-item[39m=[32m""[39m
+                      [36m>[39m
+                        [36m<button[39m
+                          [33maria-controls[39m=[32m"accordion-panel-5"[39m
+                          [33maria-expanded[39m=[32m"false"[39m
+                          [33mclass[39m=[32m"css-o4mft6"[39m
+                          [33mid[39m=[32m"accordion-header-5"[39m
+                          [33mtype[39m=[32m"button"[39m
+                        [36m>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"css-1p33byw"[39m
+                          [36m>[39m
+                            [36m<div[39m
+                              [33mclass[39m=[32m"css-0"[39m
+                            [36m>[39m
+                              [36m<img[39m
+                                [33malt[39m=[32m"The Super Mario Bros. Movie "[39m
+                                [33mclass[39m=[32m"css-17eao0m"[39m
+                              [36m/>[39m
+                              [36m<p[39m
+                                [33mclass[39m=[32m"css-3cojqf"[39m
+                              [36m>[39m
+                                [0mThe Super Mario Bros. Movie [0m
+                              [36m</p>[39m
+                            [36m</div>[39m
+                            [36m<div[39m
+                              [33mclass[39m=[32m"c...
+
+      58 |             </ThemeProvider>
+      59 |         );
+    > 60 |         const sort = screen.getByText("Sort");
+         |                             ^
+      61 |         expect(sort).toBeInTheDocument();
+      62 |     });
+      63 |     test("dropdown options visible aft button click", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/UserList.test.tsx:60:29)
+
+  ● User List Tests › dropdown options visible aft button click
+
+    TestingLibraryElementError: Found multiple elements with the text: Sort
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<div>[39m
+      [0mSort [0m
+      [36m<svg[39m
+        [33mfill[39m=[32m"currentColor"[39m
+        [33mheight[39m=[32m"1em"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-width[39m=[32m"0"[39m
+        [33mviewBox[39m=[32m"0 0 1024 1024"[39m
+        [33mwidth[39m=[32m"1em"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</div>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<div>[39m
+      [0mSort [0m
+      [36m<svg[39m
+        [33mfill[39m=[32m"currentColor"[39m
+        [33mheight[39m=[32m"1em"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-width[39m=[32m"0"[39m
+        [33mviewBox[39m=[32m"0 0 1024 1024"[39m
+        [33mwidth[39m=[32m"1em"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</div>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"Toaster"[39m
+        [33mid[39m=[32m"react-toast"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
+        [36m/>[39m
+      [36m</div>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"yourlist"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<div>[39m
+                [36m<h2>[39m
+                  [0m [0m
+                  [0mtest user[0m
+                  [0m'[0m
+                  [0ms Movies[0m
+                  [0m [0m
+                [36m</h2>[39m
+                [36m<p>[39m
+                  [0mDrag movies here to add them to your list[0m
+                [36m</p>[39m
+                [36m<button[39m
+                  [33maria-controls[39m=[32m"menu-71"[39m
+                  [33maria-expanded[39m=[32m"false"[39m
+                  [33maria-haspopup[39m=[32m"menu"[39m
+                  [33mclass[39m=[32m"css-c4fa1y"[39m
+                  [33mid[39m=[32m"menubutton-72"[39m
+                  [33mrole[39m=[32m"button"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<div>[39m
+                    [0mSort [0m
+                    [36m<svg[39m
+                      [33mfill[39m=[32m"currentColor"[39m
+                      [33mheight[39m=[32m"1em"[39m
+                      [33mstroke[39m=[32m"currentColor"[39m
+                      [33mstroke-width[39m=[32m"0"[39m
+                      [33mviewBox[39m=[32m"0 0 1024 1024"[39m
+                      [33mwidth[39m=[32m"1em"[39m
+                      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                    [36m>[39m
+                      [36m<path[39m
+                        [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
+                      [36m/>[39m
+                    [36m</svg>[39m
+                  [36m</div>[39m
+                [36m</button>[39m
+                [36m<div[39m
+                  [33maria-label[39m=[32m"userdropzone"[39m
+                  [33mclass[39m=[32m"userlist"[39m
+                  [33mdata-testid[39m=[32m"userdropzone"[39m
+                  [33mid[39m=[32m"userdropzone"[39m
+                [36m/>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"centrallist"[39m
+          [36m>[39m
+            [36m<h2>[39m
+              [0mAvailable Movies[0m
+            [36m</h2>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"menu-73"[39m
+              [33maria-expanded[39m=[32m"false"[39m
+              [33maria-haspopup[39m=[32m"menu"[39m
+              [33mclass[39m=[32m"css-c4fa1y"[39m
+              [33mid[39m=[32m"menubutton-74"[39m
+              [33mrole[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<div>[39m
+                [0mSort [0m
+                [36m<svg[39m
+                  [33mfill[39m=[32m"currentColor"[39m
+                  [33mheight[39m=[32m"1em"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-width[39m=[32m"0"[39m
+                  [33mviewBox[39m=[32m"0 0 1024 1024"[39m
+                  [33mwidth[39m=[32m"1em"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M840.4 300H183.6c-19.7 0-30.7 20.8-18.5 35l328.4 380.8c9.4 10.9 27.5 10.9 37 0L858.9 335c12.2-14.2 1.2-35-18.5-35z"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</div>[39m
+            [36m</button>[39m
+            [36m<div />[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"css-0"[39m
+              [33mdata-accordion[39m=[32m""[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"col"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<div[39m
+                    [33mdraggable[39m=[32m"true"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"border"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"css-1htfx3z"[39m
+                        [33mdata-accordion-item[39m=[32m""[39m
+                      [36m>[39m
+                        [36m<button[39m
+                          [33maria-controls[39m=[32m"accordion-panel-75"[39m
+                          [33maria-expanded[39m=[32m"false"[39m
+                          [33mclass[39m=[32m"css-o4mft6"[39m
+                          [33mid[39m=[32m"accordion-header-75"[39m
+                          [33mtype[39m=[32m"button"[39m
+                        [36m>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"css-1p33byw"[39m
+                          [36m>[39m
+                            [36m<div[39m
+                              [33mclass[39m=[32m"css-0"[39m
+                            [36m>[39m
+                              [36m<img[39m
+                                [33malt[39m=[32m"The Super Mario Bros. Movie "[39m
+                                [33mclass[39m=[32m"css-17eao0m"[39m
+                              [36m/>[39m
+                              [36m<p[39m
+                                [33mclass[39m=[32m"css-3cojqf"[39m
+                              [36m>[39m
+                                [0mThe Super Mario Bros. Movie [0m
+                              [36m</p>[39m
+                            [36m</div>[39m
+                            [36m<div[39m
+                              [33mclass[39m=...
+
+      80 |             });
+      81 |         }
+    > 82 |         const sortBtn = screen.getByText("Sort");
+         |                                ^
+      83 |         fireEvent.click(sortBtn);
+      84 |         const sortTitle = screen.getByText("Title");
+      85 |         fireEvent.click(sortTitle);
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/UserList.test.tsx:82:32)
 
 PASS src/components/AdminList.test.tsx
   ● Console
@@ -282,12 +943,12 @@ PASS src/components/AdminList.test.tsx
         user_rating: 0
       }
 
-      at handleOnDrop (src/components/AdminList.tsx:116:17)
+      at handleOnDrop (src/components/AdminList.tsx:130:17)
 
     console.log
       false
 
-      at handleOnDrop (src/components/AdminList.tsx:120:17)
+      at handleOnDrop (src/components/AdminList.tsx:134:17)
 
     console.log
       testing
@@ -370,29 +1031,298 @@ PASS src/components/NewUserButton.test.tsx
       at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
 
 PASS src/components/Users.test.tsx
-PASS src/App.test.tsx
----------------------|---------|----------|---------|---------|-----------------------------------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                             
----------------------|---------|----------|---------|---------|-----------------------------------------------
-All files            |   45.12 |    46.77 |   36.93 |   46.26 |                                               
- src                 |     100 |      100 |     100 |     100 |                                               
-  App.tsx            |     100 |      100 |     100 |     100 |                                               
- src/components      |   44.52 |    46.77 |   35.77 |   45.66 |                                               
-  AdminList.tsx      |   49.23 |       50 |   43.47 |    49.2 | 42-66,72-82,101-104,118,128,224-269           
-  CentralList.tsx    |   58.53 |      100 |   47.61 |   61.53 | 40,96,110-131,140,159,201                     
-  ChooseRole.tsx     |   49.05 |     37.5 |      40 |      52 | 48,65-105,117,128,139-164,202-217,223,297-325 
-  NewMovieButton.tsx |    37.2 |        0 |    8.33 |   39.02 | 54-55,59-65,71-104,176-383                    
-  NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                               
-  UserList.tsx       |    2.04 |        0 |       0 |    2.04 | 35-279                                        
-  Users.tsx          |     100 |      100 |     100 |     100 |                                               
- src/interfaces      |       0 |        0 |       0 |       0 |                                               
-  movie.ts           |       0 |        0 |       0 |       0 |                                               
-  user.ts            |       0 |        0 |       0 |       0 |                                               
-  userMovie.ts       |       0 |        0 |       0 |       0 |                                               
----------------------|---------|----------|---------|---------|-----------------------------------------------
+FAIL src/App.test.tsx
+  ● App Tests › renders names
 
-Test Suites: 1 failed, 5 passed, 6 total
-Tests:       1 failed, 25 passed, 26 total
+    TestingLibraryElementError: Unable to find an element with the text: Team 8: Justin Anthony, Meghan Gamble, Brad Daughtery, Jakeb Milburn, Ryan Sanchez. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"Toaster"[39m
+        [33mid[39m=[32m"react-toast"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
+        [36m/>[39m
+      [36m</div>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"logo"[39m
+            [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m"Movieo Logo"[39m
+                [33mclass[39m=[32m"css-uhghij"[39m
+                [33mheight[39m=[32m"30px"[39m
+              [36m/>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"Role"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"users"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"css-0"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"css-1xhj18k"[39m
+                [36m>[39m
+                  [36m<button[39m
+                    [33maria-label[39m=[32m"drag-handle"[39m
+                    [33mclass[39m=[32m"css-1meob41"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [36m<svg[39m
+                      [33maria-hidden[39m=[32m"true"[39m
+                      [33mclass[39m=[32m"css-1im46kq"[39m
+                      [33mfocusable[39m=[32m"false"[39m
+                      [33mrole[39m=[32m"presentation"[39m
+                      [33mviewBox[39m=[32m"0 0 10 10"[39m
+                    [36m>[39m
+                      [36m<path[39m
+                        [33md[39m=[32m"M3,2 C2.44771525,2 2,1.55228475 2,1 C2,0.44771525 2.44771525,0 3,0 C3.55228475,0 4,0.44771525 4,1 C4,1.55228475 3.55228475,2 3,2 Z M3,6 C2.44771525,6 2,5.55228475 2,5 C2,4.44771525 2.44771525,4 3,4 C3.55228475,4 4,4.44771525 4,5 C4,5.55228475 3.55228475,6 3,6 Z M3,10 C2.44771525,10 2,9.55228475 2,9 C2,8.44771525 2.44771525,8 3,8 C3.55228475,8 4,8.44771525 4,9 C4,9.55228475 3.55228475,10 3,10 Z M7,2 C6.44771525,2 6,1.55228475 6,1 C6,0.44771525 6.44771525,0 7,0 C7.55228475,0 8,0.44771525 8,1 C8,1.55228475 7.55228475,2 7,2 Z M7,6 C6.44771525,6 6,5.55228475 6,5 C6,4.44771525 6.44771525,4 7,4 C7.55228475,4 8,4.44771525 8,5 C8,5.55228475 7.55228475,6 7,6 Z M7,10 C6.44771525,10 6,9.55228475 6,9 C6,8.44771525 6.44771525,8 7,8 C7.55228475,8 8,8.44771525 8,9 C8,9.55228475 7.55228475,10 7,10 Z"[39m
+                        [33mfill[39m=[32m"currentColor"[39m
+                      [36m/>[39m
+                    [36m</svg>[39m
+                  [36m</button>[39m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"css-hifzdh"[39m
+                    [33mrole[39m=[32m"home"[39m
+                    [33mstyle[39m=[32m"text-align: center;"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33maria-label[39m=[32m"home"[39m
+                      [33mclass[39m=[32m"css-1uc1olj"[39m
+                    [36m>[39m
+                      [0mh[0m
+                    [36m</div>[39m
+                    [0m [0m
+                  [36m</a>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div>[39m
+              [36m<div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"home"[39m
+                [36m>[39m
+                  [36m<h2>[39m
+                    [0m Welcome! Who[0m
+                    [0m'[0m
+                    [0ms Browsing?[0m
+                  [36m</h2>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"css-1xhj18k"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mmr[39m=[32m"2"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"induseravatar"[39m
+                      [36m>[39m
+                        [36m<span[39m
+                          [33mclass[39m=[32m"css-0"[39m
+                          [33mtabindex[39m=[32m"0"[39m
+                        [36m>[39m
+                          [36m<a[39m
+                            [33mclass[39m=[32m"css-qpziuz"[39m
+                          [36m>[39m
+                            [36m<div[39m
+                              [33maria-label[39m=[32m"Meg"[39m
+                              [33mclass[39m=[32m"css-sg45gj"[39m
+                            [36m>[39m
+                              [0mM[0m
+                            [36m</div>[39m
+                          [36m</a>[39m
+                        [36m</span>[39m
+                        [36m<div>[39m
+                          [0mMeg[0m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mmr[39m=[32m"2"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"induseravatar"[39m
+                      [36m>[39m
+                        [36m<span[39m
+                          [33mclass[39m=[32m"css-0"[39m
+                          [33mtabindex[39m=[32m"0"[39m
+                        [36m>[39m
+                          [36m<a[39m
+                            [33mclass[39m=[32m"css-1631ite"[39m
+                          [36m>[39m
+                            [36m<div[39m
+                              [33maria-label[39m=[32m"Brad"[39m
+                              [33mclass[39m=[32m"css-sg45gj"[39m
+                            [36m>[39m
+                              [0mB[0m
+                            [36m</div>[39m
+                          [36m</a>[39m
+                        [36m</span>[39m
+                        [36m<div>[39m
+                          [0mBrad[0m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mmr[39m=[32m"2"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"induseravatar"[39m
+                      [36m>[39m
+                        [36m<span[39m
+                          [33mclass[39m=[32m"css-0"[39m
+                          [33mtabindex[39m=[32m"0"[39m
+                        [36m>[39m
+                          [36m<a[39m
+                            [33mclass[39m=[32m"css-zrw1qr"[39m
+                          [36m>[39m
+                            [36m<div[39m
+                              [33maria-label[39m=[32m"Ryan"[39m
+                              [33mclass[39m=[32m"css-sg45gj"[39m
+                            [36m>[39m
+                              [0mR[0m
+                            [36m</div>[39m
+                          [36m</a>[39m
+                        [36m</span>[39m
+                        [36m<div>[39m
+                          [0mRyan[0m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<div[39m
+                      [33mmr[39m=[32m"2"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"induseravatar"[39m
+                      [36m>[39m
+                        [36m<span[39m
+                          [33mclass[39m=[32m"css-0"[39m
+                          [33mtabindex[39m=[32m"0"[39m
+                        [36m>[39m
+                          [36m<a[39m
+                            [33mclass[39m=[32m"css-b1o24y"[39m
+                          [36m>[39m
+                            [36m<div[39m
+                              [33maria-label[39m=[32m"Justin"[39m
+                              [33mclass[39m=[32m"css-sg45gj"[39m
+                            [36m>[39m
+                              [0mJ[0m
+                            [36m</div>[39m
+                          [36m</a>[39m
+                        [36m</span>[39m
+                        [36m<div>[39m
+                          [0mJustin[0m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                    [36m<div>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"induseravatar"[39m
+                      [36m>[39m
+                        [36m<span[39m
+                          [33mclass[39m=[32m"css-0"[39m
+                          [33mtabindex[39m=[32m"0"[39m
+                        [36m>[39m
+                          [36m<a[39m
+                            [33mclass[39m=[32m"css-2ego0h"[39m
+                          [36m>[39m
+                            [36m<div[39m
+                              [33maria-label[39m=[32m"Jake"[39m
+                              [33mclass[39m=[32m"css-sg45gj"[39m
+                            [36m>[39m
+                              [0mJ[0m
+                            [36m</div>[39m
+                          [36m</a>[39m
+                        [36m</span>[39m
+                        [36m<div>[39m
+                          [0mJake[0m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<br />[39m
+          [36m<br />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       9 |     test("renders names", () => {
+      10 |         expect(
+    > 11 |             screen.getByText(
+         |                    ^
+      12 |                 "Team 8: Justin Anthony, Meghan Gamble, Brad Daughtery, Jakeb Milburn, Ryan Sanchez"
+      13 |             )
+      14 |         ).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/App.test.tsx:11:20)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
+---------------------------|---------|----------|---------|---------|-----------------------------------------------
+File                       | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                             
+---------------------------|---------|----------|---------|---------|-----------------------------------------------
+All files                  |   45.81 |    46.96 |   36.75 |   47.05 |                                               
+ src                       |     100 |      100 |     100 |     100 |                                               
+  App.tsx                  |     100 |      100 |     100 |     100 |                                               
+ src/components            |   45.63 |    46.96 |    36.2 |   46.87 |                                               
+  AdminList.tsx            |    42.1 |       50 |   43.47 |   41.89 | 42-79,86-96,115-118,132,142,238-283           
+  CentralList.tsx          |   48.78 |       70 |   38.09 |   51.28 | 41,97,103-132,141,160,206                     
+  ChooseRole.tsx           |   48.07 |     37.5 |      40 |   51.02 | 46,63-103,119,127,138-163,201-216,222,272-300 
+  NewMovieButton.tsx       |    37.2 |        0 |    8.33 |   39.02 | 54-55,59-65,71-104,177-384                    
+  NewUserButton.tsx        |     100 |      100 |     100 |     100 |                                               
+  UserList.tsx             |   33.89 |       50 |   20.83 |   34.48 | 57,67-80,84-105,113-151,198-283               
+  Users.tsx                |     100 |      100 |     100 |     100 |                                               
+  localStorageHandling.tsx |       0 |        0 |       0 |       0 | 6-17                                          
+ src/interfaces            |       0 |        0 |       0 |       0 |                                               
+  movie.ts                 |       0 |        0 |       0 |       0 |                                               
+  play.ts                  |       0 |        0 |       0 |       0 |                                               
+  user.ts                  |       0 |        0 |       0 |       0 |                                               
+  userMovie.ts             |       0 |        0 |       0 |       0 |                                               
+---------------------------|---------|----------|---------|---------|-----------------------------------------------
+Test Suites: 3 failed, 3 passed, 6 total
+Tests:       5 failed, 21 passed, 26 total
 Snapshots:   0 total
-Time:        11.954 s
+Time:        15.14 s
 Ran all test suites.
