@@ -36,6 +36,7 @@ export const ChooseUser: React.FC = () => {
         })
     );
     const [currentUser, setCurrentUser] = useState<User>(users[0]);
+    const [isViewingList, setIsViewingList] = useState<boolean>(false);
 
     localStorage.removeItem("users");
 
@@ -86,16 +87,17 @@ export const ChooseUser: React.FC = () => {
         }
     }
 
-    function handleRemoveUser(user: User) {
+    function viewUserList() {
+        setIsViewingList(!isViewingList); // Set the state to view the user list
+    }
+
+    function handleRemoveViewUser(user: User) {
         if (user.role == "super") {
             return "";
         } else {
             return (
                 <div className="remove-movie">
                     <>
-                        <Button variantColor="green" size="xs">
-                            View List
-                        </Button>{" "}
                         <Button
                             variantColor="red"
                             size="xs"
@@ -108,16 +110,6 @@ export const ChooseUser: React.FC = () => {
             );
         }
     }
-
-    //taken out of the user 'if'
-    //<YourList user={currentUser}></YourList>;
-    //<div className="yourlist"></div>;
-    //<div className="yourlist">
-    //    <AdminList></AdminList>
-    //</div>;
-    //                <div className="yourlist">
-    //                    <AdminList></AdminList>;
-    //                </div>;
 
     function handleUserType(user: User) {
         if (user.role == "user") {
@@ -142,8 +134,7 @@ export const ChooseUser: React.FC = () => {
                     <Tabs>
                         <TabList>
                             <Tab>Create/Delete Users</Tab>
-                            <Tab>View/Edit Admin Lists</Tab>
-                            <Tab>Add/Delete Movies</Tab>
+                            <Tab>Add/Delete/Edit Movies</Tab>
                         </TabList>
 
                         <TabPanels>
@@ -161,22 +152,33 @@ export const ChooseUser: React.FC = () => {
                                         );
                                     }}
                                 ></NewUserDrawer>
+                                <Button
+                                    variantColor="teal"
+                                    size="md"
+                                    onClick={() => viewUserList()}
+                                >
+                                    Toggle User{"'"}s Lists
+                                </Button>{" "}
                                 {users.slice(1).map((user) => (
                                     <div key={user.name}>
                                         <div className="induseravatar">
                                             <h3>
                                                 {user.name}, {user.role}{" "}
                                             </h3>
-                                            {handleRemoveUser(user)}
+                                            {handleRemoveViewUser(user)}
+                                            <div>
+                                                {isViewingList && (
+                                                    <CentralList
+                                                        user={user}
+                                                    ></CentralList>
+                                                )}{" "}
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
                             </TabPanel>
                             <TabPanel>
-                                <h1>View/Edit Admin List</h1>
-                            </TabPanel>
-                            <TabPanel>
-                                <CentralList user={currentUser}></CentralList>
+                                <CentralList user={user}></CentralList>
                             </TabPanel>
                         </TabPanels>
                     </Tabs>

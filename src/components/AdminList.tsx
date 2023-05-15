@@ -26,27 +26,26 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         user_rating: 0
     };
 
-    const [adminMovies, setAdminMovies] = useState<Movie[]>([]);
-    const [editMovie, setEditMovie] = useState<boolean[]>([]);
+    const [adminMovies, setAdminMovies] = useState<Movie[]>(() => {
+        const storedMovies = localStorage.getItem("adminMovies");
+        if (storedMovies) {
+            return JSON.parse(storedMovies);
+        } else {
+            return [blankMovie];
+        }
+    });
+
+    const [editMovie, setEditMovie] = useState<boolean[]>(() => {
+        const storedEditMovie = localStorage.getItem("editMovie");
+        if (storedEditMovie) {
+            return JSON.parse(storedEditMovie);
+        } else {
+            return [false];
+        }
+    });
     useEffect(() => {
         setEditMovie(Array(adminMovies.length).fill(false));
     }, [adminMovies.length]);
-
-    useEffect(() => {
-        const storedMovies = localStorage.getItem("adminMovies");
-        if (storedMovies) {
-            setAdminMovies(JSON.parse(storedMovies));
-        } else {
-            setAdminMovies([blankMovie]);
-        }
-
-        const storedEditMovie = localStorage.getItem("editMovie");
-        if (storedEditMovie) {
-            setEditMovie(JSON.parse(storedEditMovie));
-        } else {
-            setEditMovie([false]);
-        }
-    }, []);
 
     useEffect(() => {
         localStorage.setItem("adminMovies", JSON.stringify(adminMovies));
@@ -190,6 +189,10 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         if (!duplicates) {
             setAdminMovies([...adminMovies, widgetType]);
             setEditMovie([...editMovie, false]);
+            localStorage.setItem(
+                "adminMovies",
+                JSON.stringify([...adminMovies, widgetType])
+            );
         }
     }
 
@@ -219,7 +222,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
 
     return (
         <div>
-            <h1> Movies to be Reviewed </h1>
+            <h2> Movies to be Reviewed </h2>
             <p>Drag Movies to add them to the Review List</p>
             <div
                 className="adminlist"
