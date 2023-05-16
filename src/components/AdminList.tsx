@@ -179,20 +179,6 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         }
     }
 
-    function handleMovieRemove(title: string): void {
-        setAdminMovies(
-            [...adminMovies].filter((adminMovie) => adminMovie.title !== title)
-        );
-        localStorage.setItem(
-            "adminMovies",
-            JSON.stringify(
-                [...adminMovies].filter(
-                    (adminMovie) => adminMovie.title !== title
-                )
-            )
-        );
-    }
-
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
     }
@@ -273,17 +259,6 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
                                                 {movie.maturity_rating}
                                             </Badge>
                                         </Box>
-                                        <div className="remove-movie">
-                                            <button
-                                                onClick={() =>
-                                                    handleMovieRemove(
-                                                        movie.title
-                                                    )
-                                                }
-                                            >
-                                                Remove
-                                            </button>
-                                        </div>
                                         <AccordionIcon />
                                     </Box>
                                 </AccordionHeader>
