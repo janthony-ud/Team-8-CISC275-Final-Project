@@ -4,22 +4,25 @@
 
 .yourlist,
 .centrallist {
-    background-color: lightgrey;
     font-family: arial;
-    height: 80%;
-    padding: 5px 10px 10px 10px;
-    border-radius: 10px;
+    height: 80vh;
+    padding: 5px 10px 10px;
     display: inline-block;
-    margin-left: 30px;
 }
+
 .yourlist {
     vertical-align: top;
     width: 20vm;
-    align-self: left;
-    width: 25%;
+    width: 30%;
+    background-color: lightgrey;
+    border-radius: 10px;
+    padding-right: 20px;
 }
 .centrallist {
     width: 60%;
+    padding-left: 10px;
+    background-color: lightgrey;
+    border-radius: 10px;
 }
 .users {
     align-items: center;
@@ -28,4 +31,13 @@
 
 .induseravatar {
     padding-left: 10px;
+}
+
+.home {
+    width: auto;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-left: auto;
+    height: auto;
 }
