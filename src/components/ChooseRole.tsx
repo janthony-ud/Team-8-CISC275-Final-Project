@@ -2,19 +2,30 @@ import React from "react";
 import { useState } from "react";
 import initialUsers from "../data/initialUsers.json";
 import { User } from "../interfaces/user";
-import NewUserButton from "./NewUserButton";
-import YourList from "./UserList";
-import AdminLists from "./DisplayAdminLists";
 import CentralList from "./CentralList";
 import "./ChooseRole.css";
-import { AdminList } from "./AdminList";
 import { Avatar, AvatarBadge, Stack, Box } from "@chakra-ui/core";
 import { Tooltip } from "@chakra-ui/core";
 import { Button } from "@chakra-ui/core";
 import { useEffect } from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/core";
+import NewUserDrawer from "./NewUserButton";
+import { useDisclosure } from "@chakra-ui/core";
+import { IconButton } from "@chakra-ui/core";
+import {
+    Drawer,
+    DrawerBody,
+    DrawerHeader,
+    DrawerOverlay,
+    DrawerContent
+} from "@chakra-ui/core";
 
-const ChooseUser: React.FC = () => {
+export const ChooseUser: React.FC = () => {
+    const {
+        isOpen: isOpenMenu,
+        onOpen: onOpenMenu,
+        onClose: onCloseMenu
+    } = useDisclosure();
     const [users, setUsers] = useState<User[]>(
         initialUsers.map((user) => {
             return {
@@ -25,6 +36,9 @@ const ChooseUser: React.FC = () => {
         })
     );
     const [currentUser, setCurrentUser] = useState<User>(users[0]);
+    const [isViewingList, setIsViewingList] = useState<boolean>(false);
+
+    localStorage.removeItem("users");
 
     useEffect(() => {
         const storedUsers = localStorage.getItem("users");
@@ -39,7 +53,7 @@ const ChooseUser: React.FC = () => {
                 }))
             );
         }
-    }, []);
+    }, [initialUsers]);
 
     useEffect(() => {
         localStorage.setItem("users", JSON.stringify(users));
@@ -57,22 +71,41 @@ const ChooseUser: React.FC = () => {
         );
     }
 
-    function handleRemoveUser(user: User) {
+    function handleNewUser() {
+        if (currentUser.role == "super") {
+            return (
+                <NewUserDrawer
+                    onSubmit={function (newUser: User): void {
+                        setUsers((prevUsers) => [...prevUsers, newUser]);
+                        localStorage.setItem(
+                            "users",
+                            JSON.stringify([...users, newUser])
+                        );
+                    }}
+                ></NewUserDrawer>
+            );
+        }
+    }
+
+    function viewUserList() {
+        setIsViewingList(!isViewingList); // Set the state to view the user list
+    }
+
+    function handleRemoveViewUser(user: User) {
         if (user.role == "super") {
             return "";
         } else {
             return (
                 <div className="remove-movie">
-                    <Button variantColor="green" size="xs">
-                        View List
-                    </Button>{" "}
-                    <Button
-                        variantColor="red"
-                        size="xs"
-                        onClick={() => removeUser(user.name)}
-                    >
-                        Delete User
-                    </Button>
+                    <>
+                        <Button
+                            variantColor="red"
+                            size="xs"
+                            onClick={() => removeUser(user.name)}
+                        >
+                            Delete User
+                        </Button>
+                    </>
                 </div>
             );
         }
@@ -82,25 +115,22 @@ const ChooseUser: React.FC = () => {
         if (user.role == "user") {
             return (
                 <div>
-                    <div className="yourlist">
-                        <YourList user={currentUser}></YourList>
-                    </div>
-                    <div className="centrallist">
-                        <CentralList user={currentUser}></CentralList>;
+                    <div>
+                        <CentralList
+                            user={currentUser}
+                            handling={"userList"}
+                        ></CentralList>
                     </div>
                 </div>
             );
         } else if (user.role == "admin") {
             return (
                 <div>
-                    <div className="yourlist">
-                        <YourList user={currentUser}></YourList>;
-                    </div>
-                    <div className="adminlist">
-                        <AdminList></AdminList>;
-                    </div>
-                    <div className="centrallist">
-                        <CentralList user={currentUser}></CentralList>;
+                    <div>
+                        <CentralList
+                            user={currentUser}
+                            handling={"userList"}
+                        ></CentralList>
                     </div>
                 </div>
             );
@@ -110,14 +140,13 @@ const ChooseUser: React.FC = () => {
                     <Tabs>
                         <TabList>
                             <Tab>Create/Delete Users</Tab>
-                            <Tab>View/Edit Admin Lists</Tab>
-                            <Tab>Add/Delete Movies</Tab>
+                            <Tab>Add/Delete/Edit Movies</Tab>
                         </TabList>
 
                         <TabPanels>
                             <TabPanel>
                                 <h1>Create/Delete Users</h1>
-                                <NewUserButton
+                                <NewUserDrawer
                                     onSubmit={function (newUser: User): void {
                                         setUsers((prevUsers) => [
                                             ...prevUsers,
@@ -128,27 +157,73 @@ const ChooseUser: React.FC = () => {
                                             JSON.stringify([...users, newUser])
                                         );
                                     }}
-                                ></NewUserButton>
-                                {users.map((user) => (
+                                ></NewUserDrawer>
+                                <Button
+                                    variantColor="teal"
+                                    size="md"
+                                    onClick={() => viewUserList()}
+                                >
+                                    Toggle User{"'"}s Lists
+                                </Button>{" "}
+                                <h3>
+                                    {currentUser.name}, {currentUser.role}{" "}
+                                </h3>
+                                {users.slice(2).map((user) => (
                                     <div key={user.name}>
                                         <div className="induseravatar">
                                             <h3>
                                                 {user.name}, {user.role}{" "}
                                             </h3>
-                                            {handleRemoveUser(user)}
+                                            {handleRemoveViewUser(user)}
+                                            <div>
+                                                {isViewingList && (
+                                                    <CentralList
+                                                        user={user}
+                                                        handling={"superView"}
+                                                    ></CentralList>
+                                                )}{" "}
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
                             </TabPanel>
                             <TabPanel>
-                                <h1>View/Edit Admin Lists</h1>
-                                <AdminLists admin={users}></AdminLists>
-                            </TabPanel>
-                            <TabPanel>
-                                <CentralList user={currentUser}></CentralList>
+                                <CentralList
+                                    user={user}
+                                    handling={"userList"}
+                                ></CentralList>
                             </TabPanel>
                         </TabPanels>
                     </Tabs>
+                </div>
+            );
+        } else if (user.name == "Home") {
+            return (
+                <div className="home">
+                    <h2> Welcome! Who{"'"}s Browsing?</h2>
+                    <Stack isInline>
+                        {users.slice(1).map((user) => (
+                            <div key={user.name}>
+                                <div className="induseravatar">
+                                    <Tooltip
+                                        label={handleToolTip(user)}
+                                        placement="top"
+                                        aria-label="User"
+                                        shouldWrapChildren={true}
+                                    >
+                                        <Avatar
+                                            onClick={() => handleSetUser(user)}
+                                            as="a"
+                                            name={user.name}
+                                            src={require("../avatar.png")}
+                                            size="xl"
+                                        ></Avatar>
+                                    </Tooltip>
+                                    <div>{user.name}</div>
+                                </div>
+                            </div>
+                        ))}
+                    </Stack>
                 </div>
             );
         } else {
@@ -165,56 +240,90 @@ const ChooseUser: React.FC = () => {
     }
 
     function handleToolTip(user: User): string {
-        return user.name + ", " + user.role;
+        return user.role;
     }
 
     return (
         <div className="Role">
-            <div>
-                <hr></hr>
-                <div className="users">
-                    <Box>
-                        <Stack isInline>
+            <div className="users">
+                <Box>
+                    <Stack isInline>
+                        <>
+                            <IconButton
+                                variantColor="teal"
+                                aria-label="drag-handle"
+                                size="lg"
+                                icon="drag-handle"
+                                onClick={onOpenMenu}
+                            />
+                            <Drawer
+                                placement="left"
+                                onClose={onCloseMenu}
+                                isOpen={isOpenMenu}
+                                size="xs"
+                            >
+                                <DrawerOverlay />
+                                <DrawerContent>
+                                    <DrawerHeader borderBottomWidth="1px">
+                                        Select User
+                                    </DrawerHeader>
+                                    <DrawerBody>
+                                        {users.slice(1).map((user) => (
+                                            <div key={user.name}>
+                                                <div className="induseravatar">
+                                                    <Tooltip
+                                                        label={handleToolTip(
+                                                            user
+                                                        )}
+                                                        placement="top"
+                                                        aria-label="User"
+                                                        shouldWrapChildren={
+                                                            true
+                                                        }
+                                                    >
+                                                        <Avatar
+                                                            onClick={() =>
+                                                                handleSetUser(
+                                                                    user
+                                                                )
+                                                            }
+                                                            as="a"
+                                                            name={user.name}
+                                                            src={require("../avatar.png")}
+                                                        >
+                                                            <AvatarBadge
+                                                                bg={setBadgeColor(
+                                                                    user
+                                                                )}
+                                                                size="0.75em"
+                                                            />
+                                                        </Avatar>
+                                                        {user.name}
+                                                    </Tooltip>
+                                                </div>
+                                            </div>
+                                        ))}
+                                        {handleNewUser}
+                                    </DrawerBody>
+                                </DrawerContent>
+                            </Drawer>
+                        </>
+                        {
                             <Avatar
+                                style={{ textAlign: "center" }}
                                 onClick={() => handleSetUser(users[0])}
                                 as="a"
-                                name="Home"
-                                src="https://www.pngkit.com/png/full/208-2084226_hombutton-white-home-button-png.png"
+                                name="home"
+                                role="home"
+                                src={require("../home.png")}
                             >
                                 {" "}
                             </Avatar>
-                            {users.map((user) => (
-                                <div key={user.name}>
-                                    <div className="induseravatar">
-                                        <Tooltip
-                                            label={handleToolTip(user)}
-                                            placement="top"
-                                            aria-label="User"
-                                            shouldWrapChildren={true}
-                                        >
-                                            <Avatar
-                                                onClick={() =>
-                                                    handleSetUser(user)
-                                                }
-                                                as="a"
-                                                name={user.name}
-                                                src="https://bit.ly/broken-link"
-                                                // backgroundColor={setAvatarColor(user)}
-                                            >
-                                                <AvatarBadge
-                                                    bg={setBadgeColor(user)}
-                                                    size="0.75em"
-                                                />
-                                            </Avatar>
-                                        </Tooltip>
-                                    </div>
-                                </div>
-                            ))}
-                        </Stack>
-                    </Box>
-                </div>
-                Welcome, {currentUser.name} You are now interacting as:{" "}
-                {currentUser.role}
+                        }
+                    </Stack>
+                </Box>
+            </div>
+            <div>
                 <div>{handleUserType(currentUser)}</div>
             </div>
         </div>
