@@ -1,6 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Movie } from "../interfaces/movie";
+<<<<<<< Updated upstream
 import { FormCheck, FormControl, FormGroup, FormLabel } from "react-bootstrap";
+=======
+import {
+    Button,
+    FormCheck,
+    FormControl,
+    FormGroup,
+    FormLabel
+} from "react-bootstrap";
+import {
+    AccordionItem,
+    AccordionHeader,
+    AccordionPanel,
+    AccordionIcon
+} from "@chakra-ui/core";
+import { Box, Image, Flex, Badge, Text } from "@chakra-ui/core";
+import "./AdminList.css";
+>>>>>>> Stashed changes
 
 export function AdminList(): JSX.Element {
     const blankMovie: Movie = {
@@ -117,6 +135,41 @@ export function AdminList(): JSX.Element {
         e.preventDefault();
     }
 
+<<<<<<< Updated upstream
+=======
+    const handleMovieUpdate = (updatedMovie: Movie) => {
+        // Find the index of the movie in the movieState
+        const movieIndex = movieState.findIndex(
+            (movie) => movie.title === prevTitle
+        );
+
+        if (movieIndex !== -1) {
+            // Create a new array with the updated movie
+            const updatedMovies = [...movieState];
+            updatedMovies[movieIndex] = updatedMovie;
+
+            // Call the callback function passed from the parent component to update the central list
+            onMovieUpdate(updatedMovies);
+        }
+    };
+
+    function handlePrevTitle(movie: Movie) {
+        setPrevTitle(movie.title);
+    }
+
+    function removeMovie(title: string): void {
+        setAdminMovies(
+            [...adminMovies].filter((movie) => movie.title !== title)
+        );
+        localStorage.setItem(
+            "admin_movies",
+            JSON.stringify(
+                [...adminMovies].filter((movie) => movie.title !== title)
+            )
+        );
+    }
+
+>>>>>>> Stashed changes
     return (
         <div>
             <h1> Movies to be Reviewed </h1>
@@ -157,6 +210,11 @@ export function AdminList(): JSX.Element {
                                     </div>
                                 ) : null
                             )}
+                        </div>
+                        <div className="removeMovie">
+                            <Button onClick={() => removeMovie(movie.title)}>
+                                Remove
+                            </Button>
                         </div>
                         <div>
                             {editMovie[movie_index] && (
