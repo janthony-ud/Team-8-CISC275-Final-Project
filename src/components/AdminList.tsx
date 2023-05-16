@@ -50,38 +50,16 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
     useEffect(() => {
         localStorage.setItem("adminMovies", JSON.stringify(adminMovies));
     }, [adminMovies]);
-
+    /* 
     useEffect(() => {
         localStorage.setItem("editMovie", JSON.stringify(editMovie));
-    }, [editMovie]);
+    }, [editMovie]); */
 
-    useEffect(() => {
-        const storedMovies = localStorage.getItem("adminMovies");
-        if (storedMovies) {
-            setAdminMovies(JSON.parse(storedMovies));
-        } else {
-            setAdminMovies([blankMovie]);
-        }
+    //localStorage.removeItem("adminMovies");
 
-        const storedEditMovie = localStorage.getItem("editMovie");
-        if (storedEditMovie) {
-            setEditMovie(JSON.parse(storedEditMovie));
-        } else {
-            setEditMovie([false]);
-        }
-    }, []);
-
-    useEffect(() => {
-        localStorage.setItem("adminMovies", JSON.stringify(adminMovies));
-    }, [adminMovies]);
-
-    useEffect(() => {
-        localStorage.setItem("editMovie", JSON.stringify(editMovie));
-    }, [editMovie]);
     const [selectedMovie, selectMovie] = useState<Movie>(blankMovie);
     const [image, updateImage] = useState<string>(selectedMovie.image);
     const [title, updateTitle] = useState<string>(selectedMovie.title);
-    const [prevTitle, setPrevTitle] = useState<string>("");
     const [description, updateDescription] = useState<string>(
         selectedMovie.description
     );
@@ -103,16 +81,15 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
 
     function handleEditMovie(e: React.ChangeEvent<HTMLInputElement>) {
         const movieName = e.target.id;
+
         const movieIndex = adminMovies.findIndex(
             (movie: Movie): boolean => movie.title === movieName
         );
 
-        setEditMovie([
-            ...editMovie.slice(0, movieIndex),
-            e.target.checked,
-            ...editMovie.slice(movieIndex + 1)
-        ]);
+        const updatedEditMovie = [...editMovie];
+        updatedEditMovie[movieIndex] = e.target.checked;
 
+        setEditMovie(updatedEditMovie);
         if (movieIndex !== -1) {
             const selectedMovie = adminMovies[movieIndex];
             selectMovie(selectedMovie);
@@ -122,7 +99,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
             updateMaturityRating(selectedMovie.maturity_rating);
             updateCast(selectedMovie.cast);
             updateGenre(selectedMovie.genre);
-            handleMovieUpdate(selectedMovie);
+            handleMovieUpdate(e.target.id, selectedMovie); // Pass the previous title
         } else {
             selectMovie(blankMovie);
             updateImage("");
@@ -196,11 +173,25 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         }
     }
 
+    function removeMovie(title: string): void {
+        setAdminMovies(
+            [...adminMovies].filter((adminMovie) => adminMovie.title !== title)
+        );
+        localStorage.setItem(
+            "adminMovies",
+            JSON.stringify(
+                [...adminMovies].filter(
+                    (adminMovie) => adminMovie.title !== title
+                )
+            )
+        );
+    }
+
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
     }
 
-    const handleMovieUpdate = (updatedMovie: Movie) => {
+    function handleMovieUpdate(prevTitle: string, updatedMovie: Movie) {
         // Find the index of the movie in the movieState
         const movieIndex = movieState.findIndex(
             (movie) => movie.title === prevTitle
@@ -211,13 +202,9 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
             const updatedMovies = [...movieState];
             updatedMovies[movieIndex] = updatedMovie;
 
-            // Call the callback function passed from the parent component to update the central list
+            //callback function to update the central list
             onMovieUpdate(updatedMovies);
         }
-    };
-
-    function handlePrevTitle(movie: Movie) {
-        setPrevTitle(movie.title);
     }
 
     return (
@@ -268,6 +255,15 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
                                                 {movie.maturity_rating}
                                             </Badge>
                                         </Box>
+                                        <div className="remove-movie">
+                                            <button
+                                                onClick={() =>
+                                                    removeMovie(movie.title)
+                                                }
+                                            >
+                                                Remove
+                                            </button>
+                                        </div>
                                         <AccordionIcon />
                                     </Box>
                                 </AccordionHeader>
@@ -299,9 +295,6 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
                                             }
                                             checked={editMovie[edit_index]}
                                             onChange={handleEditMovie}
-                                            onClick={() =>
-                                                handlePrevTitle(movie)
-                                            }
                                         ></FormCheck>
                                     </div>
                                 ) : null
