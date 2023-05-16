@@ -169,6 +169,16 @@ FAIL src/components/CentralList.test.tsx
                       [36m</div>[39m
                     [36m</div>[39m
                   [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"removeMovie"[39m
+                  [36m>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mRemove[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
                   [36m<div />[39m
                   [36m<div />[39m
                   [36m<div />[39m
@@ -360,6 +370,16 @@ FAIL src/components/CentralList.test.tsx
                       [36m</div>[39m
                     [36m</div>[39m
                   [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"removeMovie"[39m
+                  [36m>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mRemove[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
                   [36m<div />[39m
                   [36m<div />[39m
                   [36m<div />[39m
@@ -549,6 +569,16 @@ FAIL src/components/CentralList.test.tsx
                         [36m</label>[39m
                       [36m</div>[39m
                     [36m</div>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"removeMovie"[39m
+                  [36m>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mRemove[0m
+                    [36m</button>[39m
                   [36m</div>[39m
                   [36m<div />[39m
                   [36m<div />[39m
@@ -741,6 +771,16 @@ FAIL src/components/CentralList.test.tsx
                       [36m</div>[39m
                     [36m</div>[39m
                   [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"removeMovie"[39m
+                  [36m>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mRemove[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
                   [36m<div />[39m
                   [36m<div />[39m
                   [36m<div />[39m
@@ -932,6 +972,16 @@ FAIL src/components/CentralList.test.tsx
                       [36m</div>[39m
                     [36m</div>[39m
                   [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"removeMovie"[39m
+                  [36m>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mRemove[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
                   [36m<div />[39m
                   [36m<div />[39m
                   [36m<div />[39m
@@ -980,12 +1030,12 @@ PASS src/components/AdminList.test.tsx
         user_rating: 0
       }
 
-      at handleOnDrop (src/components/AdminList.tsx:184:17)
+      at handleOnDrop (src/components/AdminList.tsx:190:17)
 
     console.log
       false
 
-      at handleOnDrop (src/components/AdminList.tsx:188:17)
+      at handleOnDrop (src/components/AdminList.tsx:194:17)
 
     console.log
       testing
@@ -1070,29 +1120,29 @@ PASS src/components/NewUserButton.test.tsx
 PASS src/components/Users.test.tsx
 PASS src/App.test.tsx
 PASS src/components/ChooseRole.test.tsx
----------------------|---------|----------|---------|---------|--------------------------------------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                
----------------------|---------|----------|---------|---------|--------------------------------------------------
-All files            |   44.09 |    42.85 |   38.16 |    44.8 |                                                  
- src                 |     100 |      100 |     100 |     100 |                                                  
-  App.tsx            |     100 |      100 |     100 |     100 |                                                  
- src/components      |   43.93 |    42.85 |   37.69 |   44.64 |                                                  
-  AdminList.tsx      |    53.5 |    55.55 |   55.88 |   52.67 | 63,70,95-133,140-150,169-172,200,205-220,303-364 
-  CentralList.tsx    |   34.61 |    27.77 |      24 |      36 | 42,102,108-174,179,184-350                       
-  ChooseRole.tsx     |   47.27 |    33.33 |   37.03 |      50 | 46,63-104,116,127,138-172,215-230,236,286-314    
-  NewMovieButton.tsx |    2.32 |        0 |       0 |    2.43 | 37-384                                           
-  NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                                  
-  UserList.tsx       |   38.98 |       50 |      25 |   39.65 | 57,67-80,84-105,115,125-151,198-315              
-  Users.tsx          |     100 |      100 |     100 |     100 |                                                  
- src/interfaces      |       0 |        0 |       0 |       0 |                                                  
-  movie.ts           |       0 |        0 |       0 |       0 |                                                  
-  play.ts            |       0 |        0 |       0 |       0 |                                                  
-  user.ts            |       0 |        0 |       0 |       0 |                                                  
-  userMovie.ts       |       0 |        0 |       0 |       0 |                                                  
----------------------|---------|----------|---------|---------|--------------------------------------------------
+---------------------|---------|----------|---------|---------|---------------------------------------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                 
+---------------------|---------|----------|---------|---------|---------------------------------------------------
+All files            |   43.46 |    42.85 |   37.03 |   44.15 |                                                   
+ src                 |     100 |      100 |     100 |     100 |                                                   
+  App.tsx            |     100 |      100 |     100 |     100 |                                                   
+ src/components      |    43.3 |    42.85 |   36.56 |   43.98 |                                                   
+  AdminList.tsx      |   51.26 |    55.55 |      50 |   50.42 | 69,76,101-139,146-156,175-178,206,211-236,321-387 
+  CentralList.tsx    |   34.61 |    27.77 |      24 |      36 | 42,102,108-174,179,184-350                        
+  ChooseRole.tsx     |   47.27 |    33.33 |   37.03 |      50 | 46,63-104,116,127,138-172,215-230,236,286-314     
+  NewMovieButton.tsx |    2.32 |        0 |       0 |    2.43 | 37-384                                            
+  NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                                   
+  UserList.tsx       |   38.98 |       50 |      25 |   39.65 | 57,67-80,84-105,115,125-151,198-315               
+  Users.tsx          |     100 |      100 |     100 |     100 |                                                   
+ src/interfaces      |       0 |        0 |       0 |       0 |                                                   
+  movie.ts           |       0 |        0 |       0 |       0 |                                                   
+  play.ts            |       0 |        0 |       0 |       0 |                                                   
+  user.ts            |       0 |        0 |       0 |       0 |                                                   
+  userMovie.ts       |       0 |        0 |       0 |       0 |                                                   
+---------------------|---------|----------|---------|---------|---------------------------------------------------
 
 Test Suites: 1 failed, 6 passed, 7 total
 Tests:       5 failed, 21 passed, 26 total
 Snapshots:   0 total
-Time:        10.871 s
+Time:        9.092 s
 Ran all test suites.
