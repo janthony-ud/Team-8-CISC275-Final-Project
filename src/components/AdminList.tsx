@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Movie } from "../interfaces/movie";
-<<<<<<< Updated upstream
-import { FormCheck, FormControl, FormGroup, FormLabel } from "react-bootstrap";
-=======
 import {
     Button,
     FormCheck,
@@ -18,9 +15,13 @@ import {
 } from "@chakra-ui/core";
 import { Box, Image, Flex, Badge, Text } from "@chakra-ui/core";
 import "./AdminList.css";
->>>>>>> Stashed changes
 
-export function AdminList(): JSX.Element {
+interface Props {
+    movieState: Movie[];
+    onMovieUpdate: (updatedMovies: Movie[]) => void;
+}
+
+const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
     const blankMovie: Movie = {
         image: "",
         title: "",
@@ -31,11 +32,62 @@ export function AdminList(): JSX.Element {
         user_rating: 0
     };
 
-    const [adminMovies, setAdminMovies] = useState<Movie[]>([]);
-    const [editMovie, setEditMovie] = useState<boolean[]>([]);
+    const [adminMovies, setAdminMovies] = useState<Movie[]>(() => {
+        const storedMovies = localStorage.getItem("adminMovies");
+        if (storedMovies) {
+            return JSON.parse(storedMovies);
+        } else {
+            return [blankMovie];
+        }
+    });
+
+    const [editMovie, setEditMovie] = useState<boolean[]>(() => {
+        const storedEditMovie = localStorage.getItem("editMovie");
+        if (storedEditMovie) {
+            return JSON.parse(storedEditMovie);
+        } else {
+            return [false];
+        }
+    });
+    useEffect(() => {
+        setEditMovie(Array(adminMovies.length).fill(false));
+    }, [adminMovies.length]);
+
+    useEffect(() => {
+        localStorage.setItem("adminMovies", JSON.stringify(adminMovies));
+    }, [adminMovies]);
+
+    useEffect(() => {
+        localStorage.setItem("editMovie", JSON.stringify(editMovie));
+    }, [editMovie]);
+
+    useEffect(() => {
+        const storedMovies = localStorage.getItem("adminMovies");
+        if (storedMovies) {
+            setAdminMovies(JSON.parse(storedMovies));
+        } else {
+            setAdminMovies([blankMovie]);
+        }
+
+        const storedEditMovie = localStorage.getItem("editMovie");
+        if (storedEditMovie) {
+            setEditMovie(JSON.parse(storedEditMovie));
+        } else {
+            setEditMovie([false]);
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("adminMovies", JSON.stringify(adminMovies));
+    }, [adminMovies]);
+
+    useEffect(() => {
+        localStorage.setItem("editMovie", JSON.stringify(editMovie));
+    }, [editMovie]);
     const [selectedMovie, selectMovie] = useState<Movie>(blankMovie);
     const [image, updateImage] = useState<string>(selectedMovie.image);
     const [title, updateTitle] = useState<string>(selectedMovie.title);
+    const [prevTitle, setPrevTitle] = useState<string>("");
     const [description, updateDescription] = useState<string>(
         selectedMovie.description
     );
@@ -60,17 +112,32 @@ export function AdminList(): JSX.Element {
         const movieIndex = adminMovies.findIndex(
             (movie: Movie): boolean => movie.title === movieName
         );
+
         setEditMovie([
             ...editMovie.slice(0, movieIndex),
             e.target.checked,
             ...editMovie.slice(movieIndex + 1)
         ]);
-        let selectedMovie = adminMovies[movieIndex];
-        if (movieIndex === null) {
-            selectedMovie = blankMovie;
+
+        if (movieIndex !== -1) {
+            const selectedMovie = adminMovies[movieIndex];
+            selectMovie(selectedMovie);
+            updateImage(selectedMovie.image);
+            updateTitle(selectedMovie.title);
+            updateDescription(selectedMovie.description);
+            updateMaturityRating(selectedMovie.maturity_rating);
+            updateCast(selectedMovie.cast);
+            updateGenre(selectedMovie.genre);
+            handleMovieUpdate(selectedMovie);
+        } else {
+            selectMovie(blankMovie);
+            updateImage("");
+            updateTitle("");
+            updateDescription("");
+            updateMaturityRating("");
+            updateCast([]);
+            updateGenre([]);
         }
-        selectMovie(selectedMovie);
-        console.log(selectedMovie);
     }
 
     useEffect(() => {
@@ -128,6 +195,10 @@ export function AdminList(): JSX.Element {
         if (!duplicates) {
             setAdminMovies([...adminMovies, widgetType]);
             setEditMovie([...editMovie, false]);
+            localStorage.setItem(
+                "adminMovies",
+                JSON.stringify([...adminMovies, widgetType])
+            );
         }
     }
 
@@ -135,8 +206,6 @@ export function AdminList(): JSX.Element {
         e.preventDefault();
     }
 
-<<<<<<< Updated upstream
-=======
     const handleMovieUpdate = (updatedMovie: Movie) => {
         // Find the index of the movie in the movieState
         const movieIndex = movieState.findIndex(
@@ -169,26 +238,68 @@ export function AdminList(): JSX.Element {
         );
     }
 
->>>>>>> Stashed changes
     return (
         <div>
-            <h1> Movies to be Reviewed </h1>
+            <h2> Movies to be Reviewed </h2>
             <p>Drag Movies to add them to the Review List</p>
             <div
-                className="col"
+                className="adminlist"
                 onDrop={handleOnDrop}
                 onDragOver={handleDragOver}
+                data-testid="dropzone"
+                aria-label="dropzone"
+                id="dropzone"
             >
                 {adminMovies.map((movie, movie_index) => (
-                    <div className="droppedMovie" key={movie.title}>
-                        <img src={movie.image} alt={movie.title} />
-                        <h3>{movie.title}</h3>
-                        <div>
-                            <p>{movie.description}</p>
-                            <p>Genre: {movie.genre.join(", ")}</p>
-                            <p>Age Rating: {movie.maturity_rating}</p>
-                            <p>Cast: {movie.cast.join(", ")}</p>
-                        </div>{" "}
+                    <div className="droppedMovie" key={movie_index}>
+                        <div className="border">
+                            <AccordionItem>
+                                <AccordionHeader>
+                                    <Box width="100%" alignContent="left">
+                                        <Box>
+                                            <Image
+                                                borderRadius="md"
+                                                src={movie.image}
+                                                alt={movie.title}
+                                            />
+                                            <Text
+                                                mt={2}
+                                                fontSize="xl"
+                                                fontWeight="semibold"
+                                            >
+                                                {movie.title}
+                                            </Text>
+                                        </Box>
+
+                                        <Box>
+                                            {" "}
+                                            <Text
+                                                ml={2}
+                                                textTransform="uppercase"
+                                                fontSize="sm"
+                                                fontWeight="bold"
+                                                color="pink.800"
+                                            >
+                                                {movie.genre.join(" & ")}
+                                            </Text>
+                                            <Badge color="red">
+                                                {movie.maturity_rating}
+                                            </Badge>
+                                        </Box>
+                                        <AccordionIcon />
+                                    </Box>
+                                </AccordionHeader>
+                                <AccordionPanel pb={4}>
+                                    <Text mt={2}>{movie.description}</Text>
+                                    <Flex mt={2} align="center">
+                                        <Text ml={1} fontSize="sm">
+                                            <b>{movie.cast.join(" , ")}</b>
+                                        </Text>
+                                    </Flex>
+                                </AccordionPanel>
+                            </AccordionItem>
+                        </div>
+
                         <div>
                             {" "}
                             {editMovie.map((edit, edit_index) =>
@@ -206,6 +317,9 @@ export function AdminList(): JSX.Element {
                                             }
                                             checked={editMovie[edit_index]}
                                             onChange={handleEditMovie}
+                                            onClick={() =>
+                                                handlePrevTitle(movie)
+                                            }
                                         ></FormCheck>
                                     </div>
                                 ) : null
@@ -304,8 +418,8 @@ export function AdminList(): JSX.Element {
                         </div>
                     </div>
                 ))}
-                ;
             </div>
         </div>
     );
-}
+};
+export default AdminList;
