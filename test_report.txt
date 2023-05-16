@@ -6,40 +6,6 @@ Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
 FAIL src/components/CentralList.test.tsx
-  ● Console
-
-    console.error
-      Warning: validateDOMNesting(...): <button> cannot appear as a descendant of <button>.
-          at button
-          at div
-          at div
-          at Styled(div)
-          at button
-          at Styled(div)
-          at /home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:158:24
-          at div
-          at Styled(div)
-          at /home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:108:22
-          at div
-          at div
-          at div
-          at div
-          at AdminList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/AdminList.tsx:24:39)
-          at div
-          at div
-          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:58:41)
-          at ThemeProvider
-          at ThemeProvider (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/ThemeProvider/index.js:18:20)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
-      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
-      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
-      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
-
   ● Central List Component Tests › renders NewMovieButton if superuser
 
     TestingLibraryElementError: Unable to find an element with the text: + New Movie. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -134,13 +100,6 @@ FAIL src/components/CentralList.test.tsx
                             [36m<div[39m
                               [33mclass[39m=[32m"css-1kqpkvp"[39m
                             [36m/>[39m
-                          [36m</div>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"remove-movie"[39m
-                          [36m>[39m
-                            [36m<button>[39m
-                              [0mRemove[0m
-                            [36m</button>[39m
                           [36m</div>[39m
                           [36m<svg[39m
                             [33maria-hidden[39m=[32m"true"[39m
@@ -343,13 +302,6 @@ FAIL src/components/CentralList.test.tsx
                               [33mclass[39m=[32m"css-1kqpkvp"[39m
                             [36m/>[39m
                           [36m</div>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"remove-movie"[39m
-                          [36m>[39m
-                            [36m<button>[39m
-                              [0mRemove[0m
-                            [36m</button>[39m
-                          [36m</div>[39m
                           [36m<svg[39m
                             [33maria-hidden[39m=[32m"true"[39m
                             [33mclass[39m=[32m"css-1duxe6l"[39m
@@ -549,13 +501,6 @@ FAIL src/components/CentralList.test.tsx
                             [36m<div[39m
                               [33mclass[39m=[32m"css-1kqpkvp"[39m
                             [36m/>[39m
-                          [36m</div>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"remove-movie"[39m
-                          [36m>[39m
-                            [36m<button>[39m
-                              [0mRemove[0m
-                            [36m</button>[39m
                           [36m</div>[39m
                           [36m<svg[39m
                             [33maria-hidden[39m=[32m"true"[39m
@@ -758,13 +703,6 @@ FAIL src/components/CentralList.test.tsx
                               [33mclass[39m=[32m"css-1kqpkvp"[39m
                             [36m/>[39m
                           [36m</div>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"remove-movie"[39m
-                          [36m>[39m
-                            [36m<button>[39m
-                              [0mRemove[0m
-                            [36m</button>[39m
-                          [36m</div>[39m
                           [36m<svg[39m
                             [33maria-hidden[39m=[32m"true"[39m
                             [33mclass[39m=[32m"css-1duxe6l"[39m
@@ -966,13 +904,6 @@ FAIL src/components/CentralList.test.tsx
                               [33mclass[39m=[32m"css-1kqpkvp"[39m
                             [36m/>[39m
                           [36m</div>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"remove-movie"[39m
-                          [36m>[39m
-                            [36m<button>[39m
-                              [0mRemove[0m
-                            [36m</button>[39m
-                          [36m</div>[39m
                           [36m<svg[39m
                             [33maria-hidden[39m=[32m"true"[39m
                             [33mclass[39m=[32m"css-1duxe6l"[39m
@@ -1083,35 +1014,6 @@ PASS src/components/UserList.test.tsx
 PASS src/components/AdminList.test.tsx
   ● Console
 
-    console.error
-      Warning: validateDOMNesting(...): <button> cannot appear as a descendant of <button>.
-          at button
-          at div
-          at div
-          at Styled(div)
-          at button
-          at Styled(div)
-          at /home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:158:24
-          at div
-          at Styled(div)
-          at /home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:108:22
-          at div
-          at div
-          at div
-          at div
-          at AdminList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/AdminList.tsx:24:39)
-          at ThemeProvider
-          at ThemeProvider (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/ThemeProvider/index.js:18:20)
-
-      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
-      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
-      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
-      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
-      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
-      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
-      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
-
     console.log
       found dropzone
 
@@ -1221,11 +1123,11 @@ PASS src/components/ChooseRole.test.tsx
 ---------------------|---------|----------|---------|---------|-----------------------------------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                             
 ---------------------|---------|----------|---------|---------|-----------------------------------------------
-All files            |   40.93 |     42.5 |   35.07 |   41.56 |                                               
+All files            |   41.54 |     42.5 |   36.15 |    42.2 |                                               
  src                 |     100 |      100 |     100 |     100 |                                               
   App.tsx            |     100 |      100 |     100 |     100 |                                               
- src/components      |   40.76 |     42.5 |   34.58 |   41.38 |                                               
-  AdminList.tsx      |   44.03 |    56.25 |   43.24 |   42.99 | 79-116,123-133,152-155,183-223,279,324-382    
+ src/components      |   41.36 |     42.5 |   35.65 |   42.02 |                                               
+  AdminList.tsx      |   46.15 |    56.25 |   48.48 |   45.09 | 79-116,123-133,152-155,183-209,299-357        
   CentralList.tsx    |   34.61 |    27.77 |      24 |      36 | 42,102,108-174,179,184-350                    
   ChooseRole.tsx     |   47.27 |    33.33 |   37.03 |      50 | 46,63-104,116,127,138-172,215-230,236,286-314 
   NewMovieButton.tsx |    2.32 |        0 |       0 |    2.43 | 37-384                                        
@@ -1242,5 +1144,5 @@ All files            |   40.93 |     42.5 |   35.07 |   41.56 |
 Test Suites: 1 failed, 6 passed, 7 total
 Tests:       5 failed, 21 passed, 26 total
 Snapshots:   0 total
-Time:        12.502 s
+Time:        11.219 s
 Ran all test suites.
