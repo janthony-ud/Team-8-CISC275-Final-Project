@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Movie } from "../interfaces/movie";
-import { FormCheck, FormControl, FormGroup, FormLabel } from "react-bootstrap";
 import {
     Button,
     FormCheck,
