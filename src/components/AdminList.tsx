@@ -2,6 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Movie } from "../interfaces/movie";
 import { FormCheck, FormControl, FormGroup, FormLabel } from "react-bootstrap";
 import {
+    Button,
+    FormCheck,
+    FormControl,
+    FormGroup,
+    FormLabel
+} from "react-bootstrap";
+import {
     AccordionItem,
     AccordionHeader,
     AccordionPanel,
@@ -220,6 +227,18 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         setPrevTitle(movie.title);
     }
 
+    function removeMovie(title: string): void {
+        setAdminMovies(
+            [...adminMovies].filter((movie) => movie.title !== title)
+        );
+        localStorage.setItem(
+            "admin_movies",
+            JSON.stringify(
+                [...adminMovies].filter((movie) => movie.title !== title)
+            )
+        );
+    }
+
     return (
         <div>
             <h2> Movies to be Reviewed </h2>
@@ -306,6 +325,11 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
                                     </div>
                                 ) : null
                             )}
+                        </div>
+                        <div className="removeMovie">
+                            <Button onClick={() => removeMovie(movie.title)}>
+                                Remove
+                            </Button>
                         </div>
                         <div>
                             {editMovie[movie_index] && (
