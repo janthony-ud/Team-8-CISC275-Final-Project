@@ -6,13 +6,6 @@ describe("App Tests", () => {
     beforeEach(() => {
         render(<App />);
     });
-    test("renders names", () => {
-        expect(
-            screen.getByText(
-                "Team 8: Justin Anthony, Meghan Gamble, Brad Daughtery, Jakeb Milburn, Ryan Sanchez"
-            )
-        ).toBeInTheDocument();
-    });
     test("renders chosen user", () => {
         expect(
             screen.getByText("Welcome", { exact: false })
