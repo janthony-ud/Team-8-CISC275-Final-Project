@@ -50,10 +50,10 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
     useEffect(() => {
         localStorage.setItem("adminMovies", JSON.stringify(adminMovies));
     }, [adminMovies]);
-    /* 
+
     useEffect(() => {
         localStorage.setItem("editMovie", JSON.stringify(editMovie));
-    }, [editMovie]); */
+    }, [editMovie]);
 
     //localStorage.removeItem("adminMovies");
 
@@ -173,7 +173,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         }
     }
 
-    function removeMovie(title: string): void {
+    function handleMovieRemove(title: string): void {
         setAdminMovies(
             [...adminMovies].filter((adminMovie) => adminMovie.title !== title)
         );
@@ -258,7 +258,9 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
                                         <div className="remove-movie">
                                             <button
                                                 onClick={() =>
-                                                    removeMovie(movie.title)
+                                                    handleMovieRemove(
+                                                        movie.title
+                                                    )
                                                 }
                                             >
                                                 Remove
