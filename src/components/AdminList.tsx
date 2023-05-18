@@ -90,7 +90,6 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         }
     }, [adminMovies.length]);
 
-    //localStorage.removeItem("editMovie");
 
     const [selectedMovie, selectMovie] = useState<Movie>(blankMovie);
     const [image, updateImage] = useState<string>(selectedMovie.image);
