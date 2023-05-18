@@ -29,9 +29,10 @@ import { MdMovieFilter } from "react-icons/md";
 interface Props {
     user: User;
     movieState: Movie[];
+    handleUser: string;
 }
 
-const YourList: React.FC<Props> = ({ user, movieState }) => {
+const YourList: React.FC<Props> = ({ user, movieState, handleUser }) => {
     const [userMovies, setUserMovies] = useState<userMovie[]>([]);
     const [filteredMovies, setFilteredMovies] = useState<userMovie[]>([]);
 
@@ -162,6 +163,18 @@ const YourList: React.FC<Props> = ({ user, movieState }) => {
         );
     }
 
+    function handleRemove(movie: userMovie) {
+        if (handleUser !== "superList") {
+            return (
+                <div className="remove-movie">
+                    <button onClick={() => removeMovie(movie.id)}>
+                        Remove
+                    </button>
+                </div>
+            );
+        }
+    }
+
     function handleUserType() {
         if (user.role == "user") {
             return (
@@ -285,17 +298,7 @@ const YourList: React.FC<Props> = ({ user, movieState }) => {
                                                             )}
                                                         </div>
                                                     </div>
-                                                    <div className="remove-movie">
-                                                        <button
-                                                            onClick={() =>
-                                                                removeMovie(
-                                                                    movie.id
-                                                                )
-                                                            }
-                                                        >
-                                                            Remove
-                                                        </button>
-                                                    </div>
+                                                    {handleRemove(movie)}
                                                 </Box>
                                                 <AccordionIcon />
                                             </Box>

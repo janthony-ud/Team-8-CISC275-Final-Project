@@ -19,9 +19,14 @@ import "./AdminList.css";
 interface Props {
     movieState: Movie[];
     onMovieUpdate: (updatedMovies: Movie[]) => void;
+    handleUser: string;
 }
 
-const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
+const AdminList: React.FC<Props> = ({
+    movieState,
+    onMovieUpdate,
+    handleUser
+}) => {
     const blankMovie: Movie = {
         image: "",
         title: "",
@@ -89,7 +94,6 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
             }
         }
     }, [adminMovies.length]);
-
 
     const [selectedMovie, selectMovie] = useState<Movie>(blankMovie);
     const [image, updateImage] = useState<string>(selectedMovie.image);
@@ -246,6 +250,18 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         }
     }
 
+    function removeMovieButton(movie: Movie) {
+        if (handleUser !== "superList") {
+            return (
+                <div className="removeMovie">
+                    <Button onClick={() => removeMovie(movie.title)}>
+                        Remove
+                    </Button>
+                </div>
+            );
+        }
+    }
+
     function removeMovie(title: string): void {
         const removed_index = adminMovies.findIndex(
             (movie: Movie): boolean => movie.title === title
@@ -327,7 +343,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
                                 </AccordionPanel>
                             </AccordionItem>
                         </div>
-
+                        {removeMovieButton(movie)}
                         <div>
                             {" "}
                             {editMovie.map((edit, edit_index) =>
@@ -350,11 +366,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
                                 ) : null
                             )}
                         </div>
-                        <div className="removeMovie">
-                            <Button onClick={() => removeMovie(movie.title)}>
-                                Remove
-                            </Button>
-                        </div>
+
                         <div>
                             {editMovie[movie_index] && (
                                 <FormGroup controlId="formImage">
