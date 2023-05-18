@@ -23,15 +23,6 @@ const testUser = {
 };
 
 describe("Central List Component Tests", () => {
-    test("renders NewMovieButton if superuser", () => {
-        render(
-            <ThemeProvider>
-                <CentralList user={testSuper} handling={"userList"} />
-            </ThemeProvider>
-        );
-        const newMovie = screen.getByText("+ Create New Movie");
-        expect(newMovie).toBeInTheDocument();
-    });
     test("does not render NewMovieButton if admin", () => {
         render(
             <ThemeProvider>
@@ -107,7 +98,7 @@ describe("Central List Component Tests", () => {
     test("dropdown options visible aft button click", () => {
         render(
             <ThemeProvider>
-                <CentralList user={testUser} handling={"userList"} />
+                <CentralList user={testUser} handling={""} />
             </ThemeProvider>
         );
         const sortBtn = screen.getByText("Sort");

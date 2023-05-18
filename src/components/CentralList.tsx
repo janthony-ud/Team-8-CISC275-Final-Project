@@ -161,6 +161,8 @@ const CentralList: React.FC<Props> = ({ user, handling }) => {
             return (
                 <div className="newMovie">
                     <NewMovieButton
+                        data-testid="newMovie"
+                        aria-label="newMovie"
                         onSubmit={function (newMovie: Movie): void {
                             setMovies((prevMovies) => [
                                 ...prevMovies,
