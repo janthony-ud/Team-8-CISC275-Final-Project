@@ -71,7 +71,7 @@ const CentralList: React.FC<Props> = ({ user, handling }) => {
     );
 
     //put this back in if wonky code that you deleted screws it up
-    localStorage.removeItem("movies");
+    //localStorage.removeItem("movies");
 
     useEffect(() => {
         const storedMovieList = localStorage.getItem("movies");
@@ -166,6 +166,10 @@ const CentralList: React.FC<Props> = ({ user, handling }) => {
                                 ...prevMovies,
                                 newMovie
                             ]);
+                            localStorage.setItem(
+                                "movies",
+                                JSON.stringify([...movies, newMovie])
+                            );
                         }}
                     ></NewMovieButton>
                 </div>

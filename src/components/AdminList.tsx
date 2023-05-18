@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Movie } from "../interfaces/movie";
-import { FormCheck, FormControl, FormGroup, FormLabel } from "react-bootstrap";
+import {
+    Button,
+    FormCheck,
+    FormControl,
+    FormGroup,
+    FormLabel
+} from "react-bootstrap";
 import {
     AccordionItem,
     AccordionHeader,
@@ -40,9 +46,19 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         if (storedEditMovie) {
             return JSON.parse(storedEditMovie);
         } else {
-            return [false];
+            return [];
         }
     });
+
+    const [centralEdit, setCentralEdit] = useState<number[]>(() => {
+        const storedCentralEdit = localStorage.getItem("centralEdit");
+        if (storedCentralEdit) {
+            return JSON.parse(storedCentralEdit);
+        } else {
+            return [];
+        }
+    });
+
     useEffect(() => {
         setEditMovie(Array(adminMovies.length).fill(false));
     }, [adminMovies.length]);
@@ -55,12 +71,30 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         localStorage.setItem("editMovie", JSON.stringify(editMovie));
     }, [editMovie]);
 
-    //localStorage.removeItem("adminMovies");
+    useEffect(() => {
+        localStorage.setItem("centralEdit", JSON.stringify(centralEdit));
+    }, [centralEdit]);
+
+    useEffect(() => {
+        if (adminMovies.length !== 0) {
+            const centralIndex = movieState.findIndex(
+                (movie: Movie): boolean =>
+                    movie.title === adminMovies[adminMovies.length - 1].title
+            );
+            const check_duplicate = centralEdit.some(
+                (index: number): boolean => index === centralIndex
+            );
+            if (!check_duplicate) {
+                setCentralEdit([...centralEdit, centralIndex]);
+            }
+        }
+    }, [adminMovies.length]);
+
+    //localStorage.removeItem("editMovie");
 
     const [selectedMovie, selectMovie] = useState<Movie>(blankMovie);
     const [image, updateImage] = useState<string>(selectedMovie.image);
     const [title, updateTitle] = useState<string>(selectedMovie.title);
-    const [prevTitle, setPrevTitle] = useState<string>("");
     const [description, updateDescription] = useState<string>(
         selectedMovie.description
     );
@@ -69,6 +103,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
     );
     const [cast, updateCast] = useState<string[]>(selectedMovie.cast);
     const [genre, updateGenre] = useState<string[]>(selectedMovie.genre);
+    const [prevEdit, setPrevEdit] = useState<number>(0);
 
     function handleCastChange(e: React.ChangeEvent<HTMLInputElement>) {
         const castList = e.target.value.split(",");
@@ -80,23 +115,21 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         updateGenre(genreList);
     }
 
-    /*     function handlePrevTitle(movie: Movie) {
-        setPrevTitle(movie.title);
-        console.log(movie.title);
-    } */
-
-    /*   function handleEditMovie(e: React.ChangeEvent<HTMLInputElement>) {
+    function handleEditMovie(e: React.ChangeEvent<HTMLInputElement>) {
         const movieName = e.target.id;
-        //  setPrevTitle(movieName);
 
         const movieIndex = adminMovies.findIndex(
             (movie: Movie): boolean => movie.title === movieName
         );
 
-        const updatedEditMovie = [...editMovie];
-        updatedEditMovie[movieIndex] = e.target.checked;
+        const updatedEditMovie = [
+            ...editMovie.slice(0, movieIndex),
+            e.target.checked,
+            ...editMovie.slice(movieIndex + 1)
+        ];
 
         setEditMovie(updatedEditMovie);
+        setPrevEdit(movieIndex);
         if (movieIndex !== -1) {
             const selectedMovie = adminMovies[movieIndex];
             selectMovie(selectedMovie);
@@ -106,7 +139,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
             updateMaturityRating(selectedMovie.maturity_rating);
             updateCast(selectedMovie.cast);
             updateGenre(selectedMovie.genre);
-            handleMovieUpdate(selectedMovie);
+            handleMovieUpdate(movieIndex, selectedMovie); // Pass the previous title
         } else {
             selectMovie(blankMovie);
             updateImage("");
@@ -116,30 +149,6 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
             updateCast([]);
             updateGenre([]);
         }
-    } */
-
-    function handleEditMovie(e: React.ChangeEvent<HTMLInputElement>) {
-        const movieName = e.target.id;
-        const movieIndex = adminMovies.findIndex(
-            (movie: Movie): boolean => movie.title === movieName
-        );
-
-        const updatedEditMovie = [...editMovie];
-        updatedEditMovie.fill(false); // Reset all editMovie values to false
-        updatedEditMovie[movieIndex] = true; // Set the selected movie to true
-
-        setEditMovie(updatedEditMovie);
-
-        if (movieIndex !== -1) {
-            const selectedMovie = adminMovies[movieIndex];
-            setPrevTitle(selectedMovie.title);
-            selectMovie(selectedMovie);
-            handleMovieUpdate(selectedMovie);
-            console.log(selectedMovie.title);
-        } else {
-            selectMovie(blankMovie);
-            handleMovieUpdate(blankMovie);
-        }
     }
 
     useEffect(() => {
@@ -148,7 +157,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
             const check_index = editMovie.findIndex(
                 (edit: boolean): boolean => edit
             );
-            //   console.log(adminMovies[check_index].genre);
+            console.log(adminMovies[check_index].genre);
             selectMovie(adminMovies[check_index]);
             updateImage(adminMovies[check_index].image);
             updateTitle(adminMovies[check_index].title);
@@ -156,9 +165,23 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
             updateMaturityRating(adminMovies[check_index].maturity_rating);
             updateCast(adminMovies[check_index].cast);
             updateGenre(adminMovies[check_index].genre);
-            handleMovieUpdate(selectedMovie);
         }
     }, [selectedMovie && editMovie]);
+
+    useEffect(() => {
+        const edited_index = prevEdit;
+        if (adminMovies.length !== 0) {
+            const new_index = movieState.findIndex(
+                (movie: Movie): boolean =>
+                    movie.title === adminMovies[edited_index].title
+            );
+            setCentralEdit([
+                ...centralEdit.slice(0, edited_index),
+                new_index,
+                ...centralEdit.slice(edited_index + 1)
+            ]);
+        }
+    }, [adminMovies && movieState]);
 
     useEffect(() => {
         selectMovie({
@@ -190,14 +213,15 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         const widgetType = JSON.parse(
             e.dataTransfer.getData("widgetType")
         ) as Movie;
-        //  console.log("widgetType", widgetType);
+        console.log("widgetType", widgetType);
         const duplicates = adminMovies.some(
             (movie: Movie): boolean => movie.title === widgetType.title
         );
-        //   console.log(duplicates);
+        console.log(duplicates);
         if (!duplicates) {
             setAdminMovies([...adminMovies, widgetType]);
             setEditMovie([...editMovie, false]);
+            console.log(centralEdit);
             localStorage.setItem(
                 "adminMovies",
                 JSON.stringify([...adminMovies, widgetType])
@@ -205,38 +229,42 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         }
     }
 
-    function handleMovieRemove(title: string): void {
-        setAdminMovies(
-            [...adminMovies].filter((adminMovie) => adminMovie.title !== title)
-        );
-        localStorage.setItem(
-            "adminMovies",
-            JSON.stringify(
-                [...adminMovies].filter(
-                    (adminMovie) => adminMovie.title !== title
-                )
-            )
-        );
-    }
-
     function handleDragOver(e: React.DragEvent) {
         e.preventDefault();
     }
 
-    function handleMovieUpdate(updatedMovie: Movie) {
-        // Find the index of the movie in the movieState
-        const movieIndex = movieState.findIndex(
-            (movie) => movie.title === prevTitle
-        );
-
-        if (movieIndex !== -1) {
+    function handleMovieUpdate(movieIndex: number, updatedMovie: Movie) {
+        const centralIndex = centralEdit[movieIndex];
+        if (centralIndex !== -1) {
             // Create a new array with the updated movie
-            const updatedMovies = [...movieState];
-            updatedMovies[movieIndex] = updatedMovie;
-
-            // Callback function to update the central list
+            const updatedMovies = [
+                ...movieState.slice(0, centralIndex),
+                updatedMovie,
+                ...movieState.slice(centralIndex + 1)
+            ];
+            //callback function to update the central list
             onMovieUpdate(updatedMovies);
         }
+    }
+
+    function removeMovie(title: string): void {
+        const removed_index = adminMovies.findIndex(
+            (movie: Movie): boolean => movie.title === title
+        );
+        setCentralEdit([
+            ...centralEdit.slice(0, removed_index),
+            ...centralEdit.slice(removed_index + 1)
+        ]);
+        setAdminMovies(
+            [...adminMovies].filter((movie) => movie.title !== title)
+        );
+        localStorage.setItem(
+            "admin_movies",
+            JSON.stringify(
+                [...adminMovies].filter((movie) => movie.title !== title)
+            )
+        );
+        console.log(centralEdit.length);
     }
 
     return (
@@ -287,17 +315,6 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
                                                 {movie.maturity_rating}
                                             </Badge>
                                         </Box>
-                                        <div className="remove-movie">
-                                            <button
-                                                onClick={() =>
-                                                    handleMovieRemove(
-                                                        movie.title
-                                                    )
-                                                }
-                                            >
-                                                Remove
-                                            </button>
-                                        </div>
                                         <AccordionIcon />
                                     </Box>
                                 </AccordionHeader>
@@ -333,6 +350,11 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
                                     </div>
                                 ) : null
                             )}
+                        </div>
+                        <div className="removeMovie">
+                            <Button onClick={() => removeMovie(movie.title)}>
+                                Remove
+                            </Button>
                         </div>
                         <div>
                             {editMovie[movie_index] && (
