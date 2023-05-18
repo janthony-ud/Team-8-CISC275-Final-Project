@@ -166,6 +166,10 @@ const CentralList: React.FC<Props> = ({ user, handling }) => {
                                 ...prevMovies,
                                 newMovie
                             ]);
+                            localStorage.setItem(
+                                "movies",
+                                JSON.stringify([...movies, newMovie])
+                            );
                         }}
                     ></NewMovieButton>
                 </div>
