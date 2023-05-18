@@ -192,6 +192,7 @@ const CentralList: React.FC<Props> = ({ user, handling }) => {
                             <YourList
                                 user={user}
                                 movieState={movies}
+                                handleUser="userList"
                             ></YourList>
                         </div>
                         <div className="centrallist">
@@ -320,6 +321,7 @@ const CentralList: React.FC<Props> = ({ user, handling }) => {
                             <AdminList
                                 movieState={movies}
                                 onMovieUpdate={updateCentralList}
+                                handleUser={"userList"}
                             ></AdminList>
                         </div>
                         <div className="centrallist">
@@ -447,7 +449,11 @@ const CentralList: React.FC<Props> = ({ user, handling }) => {
                 return (
                     <div className="yourlist">
                         {" "}
-                        <YourList user={user} movieState={movies}></YourList>
+                        <YourList
+                            user={user}
+                            movieState={movies}
+                            handleUser={"superList"}
+                        ></YourList>
                     </div>
                 );
             } else {
@@ -456,6 +462,7 @@ const CentralList: React.FC<Props> = ({ user, handling }) => {
                         <AdminList
                             movieState={movies}
                             onMovieUpdate={updateCentralList}
+                            handleUser={"superList"}
                         ></AdminList>
                     </div>
                 );

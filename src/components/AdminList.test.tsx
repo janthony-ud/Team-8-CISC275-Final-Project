@@ -22,7 +22,11 @@ describe("Admin List Component Tests", () => {
     test("renders a dropped movie and adds it to admin list", async () => {
         render(
             <ThemeProvider>
-                <AdminList movieState={[]} onMovieUpdate={updateMovie} />
+                <AdminList
+                    movieState={[]}
+                    onMovieUpdate={updateMovie}
+                    handleUser={"userList"}
+                />
             </ThemeProvider>
         );
 

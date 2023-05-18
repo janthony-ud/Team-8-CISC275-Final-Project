@@ -100,7 +100,6 @@ const NewUserDrawer: React.FC<NewUserProps> = ({ onSubmit }) => {
                                     >
                                         <option value="user">User</option>
                                         <option value="admin">Admin</option>
-                                        <option value="super">Super</option>
                                         value={role}
                                     </Select>
                                 </Box>
