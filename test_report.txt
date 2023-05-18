@@ -271,10 +271,10 @@ FAIL src/components/CentralList.test.tsx
                       [33mdata-accordion-item[39m=[32m""[39m
                     [36m>[39m
                       [36m<button[39m
-                        [33maria-controls[39m=[32m"accordion-panel-11"[39m
+                        [33maria-controls[39m=[32m"accordion-panel-13"[39m
                         [33maria-expanded[39m=[32m"false"[39m
                         [33mclass[39m=[32m"css-o4mft6"[39m
-                        [33mid[39m=[32m"accordion-header-11"[39m
+                        [33mid[39m=[32m"accordion-header-13"[39m
                         [33mtype[39m=[32m"button"[39m
                       [36m>[39m
                         [36m<div[39m
@@ -326,10 +326,10 @@ FAIL src/components/CentralList.test.tsx
                         [36m>[39m
                           [36m<div[39m
                             [33maria-hidden[39m=[32m"true"[39m
-                            [33maria-labelledby[39m=[32m"accordion-header-11"[39m
+                            [33maria-labelledby[39m=[32m"accordion-header-13"[39m
                             [33mclass[39m=[32m"css-17vg19s"[39m
                             [33mdata-accordion-panel[39m=[32m""[39m
-                            [33mid[39m=[32m"accordion-panel-11"[39m
+                            [33mid[39m=[32m"accordion-panel-13"[39m
                             [33mrole[39m=[32m"region"[39m
                           [36m>[39m
                             [36m<p[39m
@@ -406,408 +406,6 @@ FAIL src/components/CentralList.test.tsx
       at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
       at getAllByText (node_modules/@testing-library/dom/dist/query-helpers.js:130:15)
       at Object.<anonymous> (src/components/CentralList.test.tsx:59:31)
-
-  ● Central List Component Tests › renders Sort button for super
-
-    TestingLibraryElementError: Unable to find an element with the text: Sort. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div[39m
-        [33mclass[39m=[32m"Toaster"[39m
-        [33mid[39m=[32m"react-toast"[39m
-      [36m>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
-        [36m/>[39m
-      [36m</div>[39m
-      [36m<div>[39m
-        [36m<div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"yourlist"[39m
-          [36m>[39m
-            [36m<div>[39m
-              [36m<h2>[39m
-                [0m Movies to be Reviewed [0m
-              [36m</h2>[39m
-              [36m<p>[39m
-                [0mDrag Movies to add them to the Review List[0m
-              [36m</p>[39m
-              [36m<div[39m
-                [33maria-label[39m=[32m"dropzone"[39m
-                [33mclass[39m=[32m"adminlist"[39m
-                [33mdata-testid[39m=[32m"dropzone"[39m
-                [33mid[39m=[32m"dropzone"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"droppedMovie"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"border"[39m
-                  [36m>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"css-1htfx3z"[39m
-                      [33mdata-accordion-item[39m=[32m""[39m
-                    [36m>[39m
-                      [36m<button[39m
-                        [33maria-controls[39m=[32m"accordion-panel-21"[39m
-                        [33maria-expanded[39m=[32m"false"[39m
-                        [33mclass[39m=[32m"css-o4mft6"[39m
-                        [33mid[39m=[32m"accordion-header-21"[39m
-                        [33mtype[39m=[32m"button"[39m
-                      [36m>[39m
-                        [36m<div[39m
-                          [33mclass[39m=[32m"css-1p33byw"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [36m<img[39m
-                              [33malt[39m=[32m""[39m
-                              [33mclass[39m=[32m"css-17eao0m"[39m
-                            [36m/>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-3cojqf"[39m
-                            [36m/>[39m
-                          [36m</div>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [0m [0m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ghfqnb"[39m
-                            [36m/>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-1kqpkvp"[39m
-                            [36m/>[39m
-                          [36m</div>[39m
-                          [36m<svg[39m
-                            [33maria-hidden[39m=[32m"true"[39m
-                            [33mclass[39m=[32m"css-1duxe6l"[39m
-                            [33mfocusable[39m=[32m"false"[39m
-                            [33mrole[39m=[32m"presentation"[39m
-                            [33mviewBox[39m=[32m"0 0 24 24"[39m
-                          [36m>[39m
-                            [36m<path[39m
-                              [33md[39m=[32m"M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"[39m
-                              [33mfill[39m=[32m"currentColor"[39m
-                            [36m/>[39m
-                          [36m</svg>[39m
-                        [36m</div>[39m
-                      [36m</button>[39m
-                      [36m<div[39m
-                        [33maria-hidden[39m=[32m"true"[39m
-                        [33mclass[39m=[32m"rah-static rah-static--height-zero css-vppuuz"[39m
-                        [33mstyle[39m=[32m"height: 0px; overflow: hidden;"[39m
-                      [36m>[39m
-                        [36m<div[39m
-                          [33mstyle[39m=[32m"transition: opacity 250ms ease 0ms; opacity: 0; display: none;"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33maria-hidden[39m=[32m"true"[39m
-                            [33maria-labelledby[39m=[32m"accordion-header-21"[39m
-                            [33mclass[39m=[32m"css-17vg19s"[39m
-                            [33mdata-accordion-panel[39m=[32m""[39m
-                            [33mid[39m=[32m"accordion-panel-21"[39m
-                            [33mrole[39m=[32m"region"[39m
-                          [36m>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ljpcab"[39m
-                            [36m/>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-zp3rvv"[39m
-                            [36m>[39m
-                              [36m<p[39m
-                                [33mclass[39m=[32m"css-15bnp58"[39m
-                              [36m>[39m
-                                [36m<b />[39m
-                              [36m</p>[39m
-                            [36m</div>[39m
-                          [36m</div>[39m
-                        [36m</div>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [0m [0m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"editCheck"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"form-check form-switch"[39m
-                      [36m>[39m
-                        [36m<input[39m
-                          [33mclass[39m=[32m"form-check-input"[39m
-                          [33mtype[39m=[32m"checkbox"[39m
-                        [36m/>[39m
-                        [36m<label[39m
-                          [33mclass[39m=[32m"form-check-label"[39m
-                          [33mtitle[39m=[32m""[39m
-                        [36m>[39m
-                          [0mEdit Movie[0m
-                        [36m</label>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"removeMovie"[39m
-                  [36m>[39m
-                    [36m<button[39m
-                      [33mclass[39m=[32m"btn btn-primary"[39m
-                      [33mtype[39m=[32m"button"[39m
-                    [36m>[39m
-                      [0mRemove[0m
-                    [36m</button>[39m
-                  [36m</div>[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                [36m</div>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      84 |             </ThemeProvider>
-      85 |         );
-    > 86 |         const sort = screen.getByText("Sort");
-         |                             ^
-      87 |         expect(sort).toBeInTheDocument();
-      88 |     });
-      89 |     test("renders Sort button for admin", () => {
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/components/CentralList.test.tsx:86:29)
-
-  ● Central List Component Tests › renders Sort button for admin
-
-    TestingLibraryElementError: Unable to find an element with the text: Sort. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div[39m
-        [33mclass[39m=[32m"Toaster"[39m
-        [33mid[39m=[32m"react-toast"[39m
-      [36m>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
-        [36m/>[39m
-      [36m</div>[39m
-      [36m<div>[39m
-        [36m<div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"yourlist"[39m
-          [36m>[39m
-            [36m<div>[39m
-              [36m<h2>[39m
-                [0m Movies to be Reviewed [0m
-              [36m</h2>[39m
-              [36m<p>[39m
-                [0mDrag Movies to add them to the Review List[0m
-              [36m</p>[39m
-              [36m<div[39m
-                [33maria-label[39m=[32m"dropzone"[39m
-                [33mclass[39m=[32m"adminlist"[39m
-                [33mdata-testid[39m=[32m"dropzone"[39m
-                [33mid[39m=[32m"dropzone"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"droppedMovie"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"border"[39m
-                  [36m>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"css-1htfx3z"[39m
-                      [33mdata-accordion-item[39m=[32m""[39m
-                    [36m>[39m
-                      [36m<button[39m
-                        [33maria-controls[39m=[32m"accordion-panel-23"[39m
-                        [33maria-expanded[39m=[32m"false"[39m
-                        [33mclass[39m=[32m"css-o4mft6"[39m
-                        [33mid[39m=[32m"accordion-header-23"[39m
-                        [33mtype[39m=[32m"button"[39m
-                      [36m>[39m
-                        [36m<div[39m
-                          [33mclass[39m=[32m"css-1p33byw"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [36m<img[39m
-                              [33malt[39m=[32m""[39m
-                              [33mclass[39m=[32m"css-17eao0m"[39m
-                            [36m/>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-3cojqf"[39m
-                            [36m/>[39m
-                          [36m</div>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [0m [0m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ghfqnb"[39m
-                            [36m/>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-1kqpkvp"[39m
-                            [36m/>[39m
-                          [36m</div>[39m
-                          [36m<svg[39m
-                            [33maria-hidden[39m=[32m"true"[39m
-                            [33mclass[39m=[32m"css-1duxe6l"[39m
-                            [33mfocusable[39m=[32m"false"[39m
-                            [33mrole[39m=[32m"presentation"[39m
-                            [33mviewBox[39m=[32m"0 0 24 24"[39m
-                          [36m>[39m
-                            [36m<path[39m
-                              [33md[39m=[32m"M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"[39m
-                              [33mfill[39m=[32m"currentColor"[39m
-                            [36m/>[39m
-                          [36m</svg>[39m
-                        [36m</div>[39m
-                      [36m</button>[39m
-                      [36m<div[39m
-                        [33maria-hidden[39m=[32m"true"[39m
-                        [33mclass[39m=[32m"rah-static rah-static--height-zero css-vppuuz"[39m
-                        [33mstyle[39m=[32m"height: 0px; overflow: hidden;"[39m
-                      [36m>[39m
-                        [36m<div[39m
-                          [33mstyle[39m=[32m"transition: opacity 250ms ease 0ms; opacity: 0; display: none;"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33maria-hidden[39m=[32m"true"[39m
-                            [33maria-labelledby[39m=[32m"accordion-header-23"[39m
-                            [33mclass[39m=[32m"css-17vg19s"[39m
-                            [33mdata-accordion-panel[39m=[32m""[39m
-                            [33mid[39m=[32m"accordion-panel-23"[39m
-                            [33mrole[39m=[32m"region"[39m
-                          [36m>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ljpcab"[39m
-                            [36m/>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-zp3rvv"[39m
-                            [36m>[39m
-                              [36m<p[39m
-                                [33mclass[39m=[32m"css-15bnp58"[39m
-                              [36m>[39m
-                                [36m<b />[39m
-                              [36m</p>[39m
-                            [36m</div>[39m
-                          [36m</div>[39m
-                        [36m</div>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [0m [0m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"editCheck"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"form-check form-switch"[39m
-                      [36m>[39m
-                        [36m<input[39m
-                          [33mclass[39m=[32m"form-check-input"[39m
-                          [33mtype[39m=[32m"checkbox"[39m
-                        [36m/>[39m
-                        [36m<label[39m
-                          [33mclass[39m=[32m"form-check-label"[39m
-                          [33mtitle[39m=[32m""[39m
-                        [36m>[39m
-                          [0mEdit Movie[0m
-                        [36m</label>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"removeMovie"[39m
-                  [36m>[39m
-                    [36m<button[39m
-                      [33mclass[39m=[32m"btn btn-primary"[39m
-                      [33mtype[39m=[32m"button"[39m
-                    [36m>[39m
-                      [0mRemove[0m
-                    [36m</button>[39m
-                  [36m</div>[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                [36m</div>[39m
-              [36m</div>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      93 |             </ThemeProvider>
-      94 |         );
-    > 95 |         const sort = screen.getByText("Sort");
-         |                             ^
-      96 |         expect(sort).toBeInTheDocument();
-      97 |     });
-      98 |     test("renders Sort button for super", () => {
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/components/CentralList.test.tsx:95:29)
 
   ● Central List Component Tests › renders Sort button for super
 
@@ -996,6 +594,408 @@ FAIL src/components/CentralList.test.tsx
       [36m</div>[39m
     [36m</body>[39m
 
+      84 |             </ThemeProvider>
+      85 |         );
+    > 86 |         const sort = screen.getByText("Sort");
+         |                             ^
+      87 |         expect(sort).toBeInTheDocument();
+      88 |     });
+      89 |     test("renders Sort button for admin", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/CentralList.test.tsx:86:29)
+
+  ● Central List Component Tests › renders Sort button for admin
+
+    TestingLibraryElementError: Unable to find an element with the text: Sort. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"Toaster"[39m
+        [33mid[39m=[32m"react-toast"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
+        [36m/>[39m
+      [36m</div>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"yourlist"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<h2>[39m
+                [0m Movies to be Reviewed [0m
+              [36m</h2>[39m
+              [36m<p>[39m
+                [0mDrag Movies to add them to the Review List[0m
+              [36m</p>[39m
+              [36m<div[39m
+                [33maria-label[39m=[32m"dropzone"[39m
+                [33mclass[39m=[32m"adminlist"[39m
+                [33mdata-testid[39m=[32m"dropzone"[39m
+                [33mid[39m=[32m"dropzone"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"droppedMovie"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"border"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"css-1htfx3z"[39m
+                      [33mdata-accordion-item[39m=[32m""[39m
+                    [36m>[39m
+                      [36m<button[39m
+                        [33maria-controls[39m=[32m"accordion-panel-28"[39m
+                        [33maria-expanded[39m=[32m"false"[39m
+                        [33mclass[39m=[32m"css-o4mft6"[39m
+                        [33mid[39m=[32m"accordion-header-28"[39m
+                        [33mtype[39m=[32m"button"[39m
+                      [36m>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"css-1p33byw"[39m
+                        [36m>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"css-0"[39m
+                          [36m>[39m
+                            [36m<img[39m
+                              [33malt[39m=[32m""[39m
+                              [33mclass[39m=[32m"css-17eao0m"[39m
+                            [36m/>[39m
+                            [36m<p[39m
+                              [33mclass[39m=[32m"css-3cojqf"[39m
+                            [36m/>[39m
+                          [36m</div>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"css-0"[39m
+                          [36m>[39m
+                            [0m [0m
+                            [36m<p[39m
+                              [33mclass[39m=[32m"css-1ghfqnb"[39m
+                            [36m/>[39m
+                            [36m<div[39m
+                              [33mclass[39m=[32m"css-1kqpkvp"[39m
+                            [36m/>[39m
+                          [36m</div>[39m
+                          [36m<svg[39m
+                            [33maria-hidden[39m=[32m"true"[39m
+                            [33mclass[39m=[32m"css-1duxe6l"[39m
+                            [33mfocusable[39m=[32m"false"[39m
+                            [33mrole[39m=[32m"presentation"[39m
+                            [33mviewBox[39m=[32m"0 0 24 24"[39m
+                          [36m>[39m
+                            [36m<path[39m
+                              [33md[39m=[32m"M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"[39m
+                              [33mfill[39m=[32m"currentColor"[39m
+                            [36m/>[39m
+                          [36m</svg>[39m
+                        [36m</div>[39m
+                      [36m</button>[39m
+                      [36m<div[39m
+                        [33maria-hidden[39m=[32m"true"[39m
+                        [33mclass[39m=[32m"rah-static rah-static--height-zero css-vppuuz"[39m
+                        [33mstyle[39m=[32m"height: 0px; overflow: hidden;"[39m
+                      [36m>[39m
+                        [36m<div[39m
+                          [33mstyle[39m=[32m"transition: opacity 250ms ease 0ms; opacity: 0; display: none;"[39m
+                        [36m>[39m
+                          [36m<div[39m
+                            [33maria-hidden[39m=[32m"true"[39m
+                            [33maria-labelledby[39m=[32m"accordion-header-28"[39m
+                            [33mclass[39m=[32m"css-17vg19s"[39m
+                            [33mdata-accordion-panel[39m=[32m""[39m
+                            [33mid[39m=[32m"accordion-panel-28"[39m
+                            [33mrole[39m=[32m"region"[39m
+                          [36m>[39m
+                            [36m<p[39m
+                              [33mclass[39m=[32m"css-1ljpcab"[39m
+                            [36m/>[39m
+                            [36m<div[39m
+                              [33mclass[39m=[32m"css-zp3rvv"[39m
+                            [36m>[39m
+                              [36m<p[39m
+                                [33mclass[39m=[32m"css-15bnp58"[39m
+                              [36m>[39m
+                                [36m<b />[39m
+                              [36m</p>[39m
+                            [36m</div>[39m
+                          [36m</div>[39m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                  [36m<div>[39m
+                    [0m [0m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"editCheck"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"form-check form-switch"[39m
+                      [36m>[39m
+                        [36m<input[39m
+                          [33mclass[39m=[32m"form-check-input"[39m
+                          [33mtype[39m=[32m"checkbox"[39m
+                        [36m/>[39m
+                        [36m<label[39m
+                          [33mclass[39m=[32m"form-check-label"[39m
+                          [33mtitle[39m=[32m""[39m
+                        [36m>[39m
+                          [0mEdit Movie[0m
+                        [36m</label>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"removeMovie"[39m
+                  [36m>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mRemove[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                  [36m<div />[39m
+                  [36m<div />[39m
+                  [36m<div />[39m
+                  [36m<div />[39m
+                  [36m<div />[39m
+                  [36m<div />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      93 |             </ThemeProvider>
+      94 |         );
+    > 95 |         const sort = screen.getByText("Sort");
+         |                             ^
+      96 |         expect(sort).toBeInTheDocument();
+      97 |     });
+      98 |     test("renders Sort button for super", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/CentralList.test.tsx:95:29)
+
+  ● Central List Component Tests › renders Sort button for super
+
+    TestingLibraryElementError: Unable to find an element with the text: Sort. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"Toaster"[39m
+        [33mid[39m=[32m"react-toast"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
+        [36m/>[39m
+      [36m</div>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"yourlist"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<h2>[39m
+                [0m Movies to be Reviewed [0m
+              [36m</h2>[39m
+              [36m<p>[39m
+                [0mDrag Movies to add them to the Review List[0m
+              [36m</p>[39m
+              [36m<div[39m
+                [33maria-label[39m=[32m"dropzone"[39m
+                [33mclass[39m=[32m"adminlist"[39m
+                [33mdata-testid[39m=[32m"dropzone"[39m
+                [33mid[39m=[32m"dropzone"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"droppedMovie"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"border"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"css-1htfx3z"[39m
+                      [33mdata-accordion-item[39m=[32m""[39m
+                    [36m>[39m
+                      [36m<button[39m
+                        [33maria-controls[39m=[32m"accordion-panel-31"[39m
+                        [33maria-expanded[39m=[32m"false"[39m
+                        [33mclass[39m=[32m"css-o4mft6"[39m
+                        [33mid[39m=[32m"accordion-header-31"[39m
+                        [33mtype[39m=[32m"button"[39m
+                      [36m>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"css-1p33byw"[39m
+                        [36m>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"css-0"[39m
+                          [36m>[39m
+                            [36m<img[39m
+                              [33malt[39m=[32m""[39m
+                              [33mclass[39m=[32m"css-17eao0m"[39m
+                            [36m/>[39m
+                            [36m<p[39m
+                              [33mclass[39m=[32m"css-3cojqf"[39m
+                            [36m/>[39m
+                          [36m</div>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"css-0"[39m
+                          [36m>[39m
+                            [0m [0m
+                            [36m<p[39m
+                              [33mclass[39m=[32m"css-1ghfqnb"[39m
+                            [36m/>[39m
+                            [36m<div[39m
+                              [33mclass[39m=[32m"css-1kqpkvp"[39m
+                            [36m/>[39m
+                          [36m</div>[39m
+                          [36m<svg[39m
+                            [33maria-hidden[39m=[32m"true"[39m
+                            [33mclass[39m=[32m"css-1duxe6l"[39m
+                            [33mfocusable[39m=[32m"false"[39m
+                            [33mrole[39m=[32m"presentation"[39m
+                            [33mviewBox[39m=[32m"0 0 24 24"[39m
+                          [36m>[39m
+                            [36m<path[39m
+                              [33md[39m=[32m"M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"[39m
+                              [33mfill[39m=[32m"currentColor"[39m
+                            [36m/>[39m
+                          [36m</svg>[39m
+                        [36m</div>[39m
+                      [36m</button>[39m
+                      [36m<div[39m
+                        [33maria-hidden[39m=[32m"true"[39m
+                        [33mclass[39m=[32m"rah-static rah-static--height-zero css-vppuuz"[39m
+                        [33mstyle[39m=[32m"height: 0px; overflow: hidden;"[39m
+                      [36m>[39m
+                        [36m<div[39m
+                          [33mstyle[39m=[32m"transition: opacity 250ms ease 0ms; opacity: 0; display: none;"[39m
+                        [36m>[39m
+                          [36m<div[39m
+                            [33maria-hidden[39m=[32m"true"[39m
+                            [33maria-labelledby[39m=[32m"accordion-header-31"[39m
+                            [33mclass[39m=[32m"css-17vg19s"[39m
+                            [33mdata-accordion-panel[39m=[32m""[39m
+                            [33mid[39m=[32m"accordion-panel-31"[39m
+                            [33mrole[39m=[32m"region"[39m
+                          [36m>[39m
+                            [36m<p[39m
+                              [33mclass[39m=[32m"css-1ljpcab"[39m
+                            [36m/>[39m
+                            [36m<div[39m
+                              [33mclass[39m=[32m"css-zp3rvv"[39m
+                            [36m>[39m
+                              [36m<p[39m
+                                [33mclass[39m=[32m"css-15bnp58"[39m
+                              [36m>[39m
+                                [36m<b />[39m
+                              [36m</p>[39m
+                            [36m</div>[39m
+                          [36m</div>[39m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                  [36m<div>[39m
+                    [0m [0m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"editCheck"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"form-check form-switch"[39m
+                      [36m>[39m
+                        [36m<input[39m
+                          [33mclass[39m=[32m"form-check-input"[39m
+                          [33mtype[39m=[32m"checkbox"[39m
+                        [36m/>[39m
+                        [36m<label[39m
+                          [33mclass[39m=[32m"form-check-label"[39m
+                          [33mtitle[39m=[32m""[39m
+                        [36m>[39m
+                          [0mEdit Movie[0m
+                        [36m</label>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"removeMovie"[39m
+                  [36m>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0mRemove[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                  [36m<div />[39m
+                  [36m<div />[39m
+                  [36m<div />[39m
+                  [36m<div />[39m
+                  [36m<div />[39m
+                  [36m<div />[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
       102 |             </ThemeProvider>
       103 |         );
     > 104 |         const sort = screen.getByText("Sort");
@@ -1030,12 +1030,17 @@ PASS src/components/AdminList.test.tsx
         user_rating: 0
       }
 
-      at handleOnDrop (src/components/AdminList.tsx:167:17)
+      at handleOnDrop (src/components/AdminList.tsx:216:17)
 
     console.log
       false
 
-      at handleOnDrop (src/components/AdminList.tsx:171:17)
+      at handleOnDrop (src/components/AdminList.tsx:220:17)
+
+    console.log
+      [ -1 ]
+
+      at handleOnDrop (src/components/AdminList.tsx:224:21)
 
     console.log
       testing
@@ -1123,11 +1128,11 @@ PASS src/components/ChooseRole.test.tsx
 ---------------------|---------|----------|---------|---------|-----------------------------------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                             
 ---------------------|---------|----------|---------|---------|-----------------------------------------------
-All files            |   41.17 |    41.46 |   35.87 |   41.81 |                                               
+All files            |   44.65 |    45.65 |   39.13 |   45.35 |                                               
  src                 |     100 |      100 |     100 |     100 |                                               
   App.tsx            |     100 |      100 |     100 |     100 |                                               
- src/components      |      41 |    41.46 |   35.38 |   41.64 |                                               
-  AdminList.tsx      |   46.15 |    56.25 |   48.48 |   45.09 | 79-116,123-133,152-155,183-209,299-357        
+ src/components      |    44.5 |    45.65 |   38.68 |   45.19 |                                               
+  AdminList.tsx      |   55.03 |     61.9 |    57.5 |   54.33 | 109-150,157-167,201-204,233-267,355-413       
   CentralList.tsx    |   34.61 |    27.77 |      24 |      36 | 42,102,108-174,179,184-350                    
   ChooseRole.tsx     |   47.27 |    33.33 |   37.03 |      50 | 46,63-104,116,127,138-172,215-230,236,286-314 
   NewMovieButton.tsx |    2.32 |        0 |       0 |    2.43 | 37-384                                        
@@ -1144,5 +1149,5 @@ All files            |   41.17 |    41.46 |   35.87 |   41.81 |
 Test Suites: 1 failed, 6 passed, 7 total
 Tests:       5 failed, 21 passed, 26 total
 Snapshots:   0 total
-Time:        8.69 s
+Time:        9.031 s
 Ran all test suites.
