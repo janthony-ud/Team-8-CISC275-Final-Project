@@ -5,7 +5,7 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-FAIL src/components/CentralList.test.tsx
+FAIL src/components/CentralList.test.tsx (5.181 s)
   ● Central List Component Tests › renders NewMovieButton if superuser
 
     TestingLibraryElementError: Unable to find an element with the text: + New Movie. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -997,7 +997,7 @@ PASS src/components/AdminList.test.tsx
 
       at Object.<anonymous> (src/components/AdminList.test.tsx:49:17)
 
-FAIL src/components/NewUserButton.test.tsx
+PASS src/components/NewUserButton.test.tsx
   ● Console
 
     console.error
@@ -1072,26 +1072,9 @@ FAIL src/components/NewUserButton.test.tsx
       at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
       at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
 
-  ● New User Button component tests › name and role values are initially null and user respectively
-
-    expect(received).toEqual(expected) // deep equality
-
-    Expected: "UserAdminSupervalue=user"
-    Received: "UserAdminvalue=user"
-
-      55 |         });
-      56 |         expect(defaultname.textContent).toEqual("");
-    > 57 |         expect(defaultrole.textContent).toEqual("UserAdminSupervalue=user");
-         |                                         ^
-      58 |     });
-      59 |     test("inputting user name and clicking role adds that user to list of current users", () => {
-      60 |         const nub = screen.getByRole("button", {
-
-      at Object.<anonymous> (src/components/NewUserButton.test.tsx:57:41)
-
 PASS src/components/Users.test.tsx
-PASS src/App.test.tsx
 PASS src/components/ChooseRole.test.tsx
+PASS src/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------------------------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                               
 ---------------------|---------|----------|---------|---------|-------------------------------------------------
@@ -1113,8 +1096,8 @@ All files            |   44.59 |    45.83 |   39.28 |   45.27 |
   userMovie.ts       |       0 |        0 |       0 |       0 |                                                 
 ---------------------|---------|----------|---------|---------|-------------------------------------------------
 
-Test Suites: 2 failed, 5 passed, 7 total
-Tests:       6 failed, 20 passed, 26 total
+Test Suites: 1 failed, 6 passed, 7 total
+Tests:       5 failed, 23 passed, 28 total
 Snapshots:   0 total
-Time:        9.543 s
+Time:        14.115 s
 Ran all test suites.
