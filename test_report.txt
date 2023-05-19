@@ -5,7 +5,175 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-PASS src/components/CentralList.test.tsx (8.136 s)
+PASS src/components/AdminList.test.tsx
+  ● Console
+
+    console.log
+      found dropzone
+
+      at src/components/AdminList.test.tsx:36:25
+
+    console.log
+      widgetType {
+        image: '',
+        title: 'A Movie',
+        description: 'Test description',
+        maturity_rating: 'PG',
+        cast: [ 'Bob', 'Mary', 'Jim' ],
+        genre: [ 'Adventure' ],
+        user_rating: 0
+      }
+
+      at handleOnDrop (src/components/AdminList.tsx:261:17)
+
+    console.log
+      false
+
+      at handleOnDrop (src/components/AdminList.tsx:265:17)
+
+    console.log
+      []
+
+      at handleOnDrop (src/components/AdminList.tsx:269:21)
+
+    console.log
+      testing
+
+      at Object.<anonymous> (src/components/AdminList.test.tsx:49:17)
+
+    console.log
+      found dropzone
+
+      at src/components/AdminList.test.tsx:67:25
+
+    console.log
+      widgetType {
+        image: '',
+        title: 'A Movie',
+        description: 'Test description',
+        maturity_rating: 'PG',
+        cast: [ 'Bob', 'Mary', 'Jim' ],
+        genre: [ 'Adventure' ],
+        user_rating: 0
+      }
+
+      at handleOnDrop (src/components/AdminList.tsx:261:17)
+
+    console.log
+      false
+
+      at handleOnDrop (src/components/AdminList.tsx:265:17)
+
+    console.log
+      []
+
+      at handleOnDrop (src/components/AdminList.tsx:269:21)
+
+    console.log
+      [ 'Adventure' ]
+
+      at src/components/AdminList.tsx:181:21
+
+    console.log
+      found dropzone
+
+      at src/components/AdminList.test.tsx:102:25
+
+    console.log
+      widgetType {
+        image: '',
+        title: 'A Movie',
+        description: 'Test description',
+        maturity_rating: 'PG',
+        cast: [ 'Bob', 'Mary', 'Jim' ],
+        genre: [ 'Adventure' ],
+        user_rating: 0
+      }
+
+      at handleOnDrop (src/components/AdminList.tsx:261:17)
+
+    console.log
+      false
+
+      at handleOnDrop (src/components/AdminList.tsx:265:17)
+
+    console.log
+      []
+
+      at handleOnDrop (src/components/AdminList.tsx:269:21)
+
+    console.log
+      [ 'Adventure' ]
+
+      at src/components/AdminList.tsx:181:21
+
+    console.log
+      [ 'Adventure' ]
+
+      at src/components/AdminList.tsx:181:21
+
+    console.log
+      found dropzone
+
+      at src/components/AdminList.test.tsx:163:25
+
+    console.log
+      widgetType {
+        image: '',
+        title: 'A Movie',
+        description: 'Test description',
+        maturity_rating: 'PG',
+        cast: [ 'Bob', 'Mary', 'Jim' ],
+        genre: [ 'Adventure' ],
+        user_rating: 0
+      }
+
+      at handleOnDrop (src/components/AdminList.tsx:261:17)
+
+    console.log
+      false
+
+      at handleOnDrop (src/components/AdminList.tsx:265:17)
+
+    console.log
+      []
+
+      at handleOnDrop (src/components/AdminList.tsx:269:21)
+
+    console.log
+      found dropzone
+
+      at src/components/AdminList.test.tsx:191:25
+
+    console.log
+      widgetType {
+        image: '',
+        title: 'A Movie',
+        description: 'Test description',
+        maturity_rating: 'PG',
+        cast: [ 'Bob', 'Mary', 'Jim' ],
+        genre: [ 'Adventure' ],
+        user_rating: 0
+      }
+
+      at handleOnDrop (src/components/AdminList.tsx:261:17)
+
+    console.log
+      false
+
+      at handleOnDrop (src/components/AdminList.tsx:265:17)
+
+    console.log
+      []
+
+      at handleOnDrop (src/components/AdminList.tsx:269:21)
+
+    console.log
+      [ 'Adventure' ]
+
+      at src/components/AdminList.tsx:181:21
+
+PASS src/components/CentralList.test.tsx
   ● Console
 
     console.error
@@ -69,242 +237,30 @@ PASS src/components/CentralList.test.tsx (8.136 s)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
       at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
-FAIL src/components/AdminList.test.tsx
+PASS src/components/UserList.test.tsx
   ● Console
 
-    console.log
-      found dropzone
+    console.error
+      Warning: React does not recognize the `isOpen` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `isopen` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+          at div
+          at div
+          at Styled(div)
+          at Accordion (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:30:28)
+          at div
+          at div
+          at div
+          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:58:41)
+          at ThemeProvider
+          at ThemeProvider (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/ThemeProvider/index.js:18:20)
 
-      at src/components/AdminList.test.tsx:36:25
-
-    console.log
-      widgetType {
-        image: '',
-        title: 'A Movie',
-        description: 'Test description',
-        maturity_rating: 'PG',
-        cast: [ 'Bob', 'Mary', 'Jim' ],
-        genre: [ 'Adventure' ],
-        user_rating: 0
-      }
-
-      at handleOnDrop (src/components/AdminList.tsx:261:17)
-
-    console.log
-      false
-
-      at handleOnDrop (src/components/AdminList.tsx:265:17)
-
-    console.log
-      []
-
-      at handleOnDrop (src/components/AdminList.tsx:269:21)
-
-    console.log
-      testing
-
-      at Object.<anonymous> (src/components/AdminList.test.tsx:49:17)
-
-  ● Admin List Component Tests › Check to Edit is present
-
-    TestingLibraryElementError: Unable to find a label with the text of: Edit Movie
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div[39m
-        [33mclass[39m=[32m"Toaster"[39m
-        [33mid[39m=[32m"react-toast"[39m
-      [36m>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
-        [36m/>[39m
-      [36m</div>[39m
-      [36m<div>[39m
-        [36m<div>[39m
-          [36m<h2>[39m
-            [0m Movies to be Reviewed [0m
-          [36m</h2>[39m
-          [36m<p>[39m
-            [0mDrag Movies to add them to the Review List[0m
-          [36m</p>[39m
-          [36m<div[39m
-            [33maria-label[39m=[32m"dropzone"[39m
-            [33mclass[39m=[32m"adminlist"[39m
-            [33mdata-testid[39m=[32m"dropzone"[39m
-            [33mid[39m=[32m"dropzone"[39m
-          [36m/>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      61 |             </ThemeProvider>
-      62 |         );
-    > 63 |         const editButton = screen.getByLabelText(
-         |                                   ^
-      64 |             "Edit Movie"
-      65 |         ) as HTMLInputElement;
-      66 |         fireEvent.click(editButton);
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at getAllByLabelText (node_modules/@testing-library/dom/dist/queries/label-text.js:116:38)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByLabelText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/components/AdminList.test.tsx:63:35)
-
-  ● Admin List Component Tests › Edit options visible after clicking checkbox
-
-    TestingLibraryElementError: Unable to find a label with the text of: Edit Movie
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div[39m
-        [33mclass[39m=[32m"Toaster"[39m
-        [33mid[39m=[32m"react-toast"[39m
-      [36m>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
-        [36m/>[39m
-      [36m</div>[39m
-      [36m<div>[39m
-        [36m<div>[39m
-          [36m<h2>[39m
-            [0m Movies to be Reviewed [0m
-          [36m</h2>[39m
-          [36m<p>[39m
-            [0mDrag Movies to add them to the Review List[0m
-          [36m</p>[39m
-          [36m<div[39m
-            [33maria-label[39m=[32m"dropzone"[39m
-            [33mclass[39m=[32m"adminlist"[39m
-            [33mdata-testid[39m=[32m"dropzone"[39m
-            [33mid[39m=[32m"dropzone"[39m
-          [36m/>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      79 |             </ThemeProvider>
-      80 |         );
-    > 81 |         const editButton = screen.getByLabelText(
-         |                                   ^
-      82 |             "Edit Movie"
-      83 |         ) as HTMLInputElement;
-      84 |         fireEvent.click(editButton);
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at getAllByLabelText (node_modules/@testing-library/dom/dist/queries/label-text.js:116:38)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByLabelText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/components/AdminList.test.tsx:81:35)
-
-  ● Admin List Component Tests › renders remove button
-
-    TestingLibraryElementError: Unable to find an element with the text: Remove. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div[39m
-        [33mclass[39m=[32m"Toaster"[39m
-        [33mid[39m=[32m"react-toast"[39m
-      [36m>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
-        [36m/>[39m
-      [36m</div>[39m
-      [36m<div>[39m
-        [36m<div>[39m
-          [36m<h2>[39m
-            [0m Movies to be Reviewed [0m
-          [36m</h2>[39m
-          [36m<p>[39m
-            [0mDrag Movies to add them to the Review List[0m
-          [36m</p>[39m
-          [36m<div[39m
-            [33maria-label[39m=[32m"dropzone"[39m
-            [33mclass[39m=[32m"adminlist"[39m
-            [33mdata-testid[39m=[32m"dropzone"[39m
-            [33mid[39m=[32m"dropzone"[39m
-          [36m/>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      108 |         );
-      109 |
-    > 110 |         expect(screen.getByText("Remove")).toBeInTheDocument();
-          |                       ^
-      111 |     });
-      112 | });
-      113 |
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/components/AdminList.test.tsx:110:23)
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3513:7)
+      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3559:21)
+      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3583:3)
+      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:8765:5)
+      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
+      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
 PASS src/components/NewUserButton.test.tsx
   ● Console
@@ -381,33 +337,32 @@ PASS src/components/NewUserButton.test.tsx
       at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
       at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
 
-PASS src/components/UserList.test.tsx
 PASS src/components/Users.test.tsx
 PASS src/components/ChooseRole.test.tsx
 PASS src/App.test.tsx
----------------------|---------|----------|---------|---------|-----------------------------------------------------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                               
----------------------|---------|----------|---------|---------|-----------------------------------------------------------------
-All files            |   52.98 |       58 |   42.36 |   53.86 |                                                                 
- src                 |     100 |      100 |     100 |     100 |                                                                 
-  App.tsx            |     100 |      100 |     100 |     100 |                                                                 
- src/components      |   52.86 |       58 |   41.95 |   53.74 |                                                                 
-  AdminList.tsx      |   58.38 |       68 |   54.34 |   57.82 | 105,130-171,178-188,197,212,246-249,263,278-291,299-324,421-466 
-  CentralList.tsx    |   52.83 |    72.22 |      40 |    54.9 | 42,102,108-137,146,167-171,185,229,358,462                      
-  ChooseRole.tsx     |   47.27 |    33.33 |   37.03 |      50 | 46,63-104,116,127,138-172,215-230,236,286-314                   
-  NewMovieButton.tsx |    37.2 |        0 |    8.33 |   39.02 | 54-55,59-65,71-104,177-384                                      
-  NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                                                 
-  UserList.tsx       |    37.7 |    41.66 |      24 |   38.33 | 58,68-84,88-109,119,129-165,214-320                             
-  Users.tsx          |     100 |      100 |     100 |     100 |                                                                 
- src/interfaces      |       0 |        0 |       0 |       0 |                                                                 
-  movie.ts           |       0 |        0 |       0 |       0 |                                                                 
-  play.ts            |       0 |        0 |       0 |       0 |                                                                 
-  user.ts            |       0 |        0 |       0 |       0 |                                                                 
-  userMovie.ts       |       0 |        0 |       0 |       0 |                                                                 
----------------------|---------|----------|---------|---------|-----------------------------------------------------------------
+---------------------|---------|----------|---------|---------|-----------------------------------------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                   
+---------------------|---------|----------|---------|---------|-----------------------------------------------------
+All files            |   61.55 |       69 |   47.22 |   62.66 |                                                     
+ src                 |     100 |      100 |     100 |     100 |                                                     
+  App.tsx            |     100 |      100 |     100 |     100 |                                                     
+ src/components      |   61.45 |       69 |   46.85 |   62.56 |                                                     
+  AdminList.tsx      |   80.53 |       90 |   69.56 |   80.27 | 130-136,165-171,212,263,278,285-291,299-324,421-466 
+  CentralList.tsx    |   52.83 |    72.22 |      40 |    54.9 | 42,102,108-137,146,167-171,185,229,358,462          
+  ChooseRole.tsx     |   47.27 |    33.33 |   37.03 |      50 | 46,63-104,116,127,138-172,215-230,236,286-314       
+  NewMovieButton.tsx |    37.2 |        0 |    8.33 |   39.02 | 54-55,59-65,71-104,177-384                          
+  NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                                     
+  UserList.tsx       |    37.7 |    41.66 |      24 |   38.33 | 58,68-84,88-109,119,129-165,214-320                 
+  Users.tsx          |     100 |      100 |     100 |     100 |                                                     
+ src/interfaces      |       0 |        0 |       0 |       0 |                                                     
+  movie.ts           |       0 |        0 |       0 |       0 |                                                     
+  play.ts            |       0 |        0 |       0 |       0 |                                                     
+  user.ts            |       0 |        0 |       0 |       0 |                                                     
+  userMovie.ts       |       0 |        0 |       0 |       0 |                                                     
+---------------------|---------|----------|---------|---------|-----------------------------------------------------
 
-Test Suites: 1 failed, 6 passed, 7 total
-Tests:       3 failed, 28 passed, 31 total
+Test Suites: 7 passed, 7 total
+Tests:       35 passed, 35 total
 Snapshots:   0 total
-Time:        15.83 s
+Time:        12.729 s
 Ran all test suites.
