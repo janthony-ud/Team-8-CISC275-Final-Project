@@ -5,372 +5,70 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-FAIL src/components/CentralList.test.tsx
-  ● Central List Component Tests › renders NewMovieButton if superuser
+PASS src/components/CentralList.test.tsx (7.098 s)
+  ● Console
 
-    TestingLibraryElementError: Unable to find an element with the text: + New Movie. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+    console.error
+      Warning: React does not recognize the `isOpen` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `isopen` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+          at div
+          at div
+          at Styled(div)
+          at Accordion (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:30:28)
+          at div
+          at div
+          at div
+          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:58:41)
+          at ThemeProvider
+          at ThemeProvider (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/ThemeProvider/index.js:18:20)
 
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div[39m
-        [33mclass[39m=[32m"Toaster"[39m
-        [33mid[39m=[32m"react-toast"[39m
-      [36m>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
-        [36m/>[39m
-      [36m</div>[39m
-      [36m<div>[39m
-        [36m<div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"yourlist"[39m
-          [36m>[39m
-            [36m<div>[39m
-              [36m<h2>[39m
-                [0m Movies to be Reviewed [0m
-              [36m</h2>[39m
-              [36m<p>[39m
-                [0mDrag Movies to add them to the Review List[0m
-              [36m</p>[39m
-              [36m<div[39m
-                [33maria-label[39m=[32m"dropzone"[39m
-                [33mclass[39m=[32m"adminlist"[39m
-                [33mdata-testid[39m=[32m"dropzone"[39m
-                [33mid[39m=[32m"dropzone"[39m
-              [36m/>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateProperty$1 (node_modules/react-dom/cjs/react-dom.development.js:3513:7)
+      at warnUnknownProperties (node_modules/react-dom/cjs/react-dom.development.js:3559:21)
+      at validateProperties$2 (node_modules/react-dom/cjs/react-dom.development.js:3583:3)
+      at validatePropertiesInDevelopment (node_modules/react-dom/cjs/react-dom.development.js:8765:5)
+      at setInitialProperties (node_modules/react-dom/cjs/react-dom.development.js:9041:5)
+      at finalizeInitialChildren (node_modules/react-dom/cjs/react-dom.development.js:10201:3)
 
-      30 |             </ThemeProvider>
-      31 |         );
-    > 32 |         const newMovie = screen.getByText("+ New Movie");
-         |                                 ^
-      33 |         expect(newMovie).toBeInTheDocument();
-      34 |     });
-      35 |     test("does not render NewMovieButton if admin", () => {
+    console.error
+      Warning: validateDOMNesting(...): <button> cannot appear as a descendant of <button>.
+          at button
+          at Styled(div)
+          at /home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Button/index.js:52:26
+          at div
+          at div
+          at Styled(div)
+          at div
+          at Styled(div)
+          at button
+          at Styled(div)
+          at /home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:158:24
+          at div
+          at Styled(div)
+          at /home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:108:22
+          at div
+          at div
+          at div
+          at div
+          at div
+          at Styled(div)
+          at Accordion (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/Accordion/index.js:30:28)
+          at div
+          at div
+          at div
+          at CentralList (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/src/components/CentralList.tsx:58:41)
+          at ThemeProvider
+          at ThemeProvider (/home/runner/work/Team-8-CISC275-Final-Project/Team-8-CISC275-Final-Project/node_modules/@chakra-ui/core/dist/ThemeProvider/index.js:18:20)
 
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/components/CentralList.test.tsx:32:33)
+      at printWarning (node_modules/react-dom/cjs/react-dom.development.js:67:30)
+      at error (node_modules/react-dom/cjs/react-dom.development.js:43:5)
+      at validateDOMNesting (node_modules/react-dom/cjs/react-dom.development.js:10083:7)
+      at createInstance (node_modules/react-dom/cjs/react-dom.development.js:10181:5)
+      at completeWork (node_modules/react-dom/cjs/react-dom.development.js:19464:28)
+      at completeUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22812:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22787:5)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
-  ● Central List Component Tests › renders Remove Movie if superuser
-
-    TestingLibraryElementError: Unable to find an element with the text: Remove Movie. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div[39m
-        [33mclass[39m=[32m"Toaster"[39m
-        [33mid[39m=[32m"react-toast"[39m
-      [36m>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
-        [36m/>[39m
-      [36m</div>[39m
-      [36m<div>[39m
-        [36m<div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"yourlist"[39m
-          [36m>[39m
-            [36m<div>[39m
-              [36m<h2>[39m
-                [0m Movies to be Reviewed [0m
-              [36m</h2>[39m
-              [36m<p>[39m
-                [0mDrag Movies to add them to the Review List[0m
-              [36m</p>[39m
-              [36m<div[39m
-                [33maria-label[39m=[32m"dropzone"[39m
-                [33mclass[39m=[32m"adminlist"[39m
-                [33mdata-testid[39m=[32m"dropzone"[39m
-                [33mid[39m=[32m"dropzone"[39m
-              [36m/>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      57 |             </ThemeProvider>
-      58 |         );
-    > 59 |         const remove = screen.getAllByText("Remove Movie");
-         |                               ^
-      60 |         expect(remove).toHaveLength(movieList.length);
-      61 |     });
-      62 |     test("does not render Remove Movie if admin", () => {
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at getAllByText (node_modules/@testing-library/dom/dist/query-helpers.js:130:15)
-      at Object.<anonymous> (src/components/CentralList.test.tsx:59:31)
-
-  ● Central List Component Tests › renders Sort button for super
-
-    TestingLibraryElementError: Unable to find an element with the text: Sort. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div[39m
-        [33mclass[39m=[32m"Toaster"[39m
-        [33mid[39m=[32m"react-toast"[39m
-      [36m>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
-        [36m/>[39m
-      [36m</div>[39m
-      [36m<div>[39m
-        [36m<div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"yourlist"[39m
-          [36m>[39m
-            [36m<div>[39m
-              [36m<h2>[39m
-                [0m Movies to be Reviewed [0m
-              [36m</h2>[39m
-              [36m<p>[39m
-                [0mDrag Movies to add them to the Review List[0m
-              [36m</p>[39m
-              [36m<div[39m
-                [33maria-label[39m=[32m"dropzone"[39m
-                [33mclass[39m=[32m"adminlist"[39m
-                [33mdata-testid[39m=[32m"dropzone"[39m
-                [33mid[39m=[32m"dropzone"[39m
-              [36m/>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      84 |             </ThemeProvider>
-      85 |         );
-    > 86 |         const sort = screen.getByText("Sort");
-         |                             ^
-      87 |         expect(sort).toBeInTheDocument();
-      88 |     });
-      89 |     test("renders Sort button for admin", () => {
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/components/CentralList.test.tsx:86:29)
-
-  ● Central List Component Tests › renders Sort button for admin
-
-    TestingLibraryElementError: Unable to find an element with the text: Sort. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div[39m
-        [33mclass[39m=[32m"Toaster"[39m
-        [33mid[39m=[32m"react-toast"[39m
-      [36m>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
-        [36m/>[39m
-      [36m</div>[39m
-      [36m<div>[39m
-        [36m<div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"yourlist"[39m
-          [36m>[39m
-            [36m<div>[39m
-              [36m<h2>[39m
-                [0m Movies to be Reviewed [0m
-              [36m</h2>[39m
-              [36m<p>[39m
-                [0mDrag Movies to add them to the Review List[0m
-              [36m</p>[39m
-              [36m<div[39m
-                [33maria-label[39m=[32m"dropzone"[39m
-                [33mclass[39m=[32m"adminlist"[39m
-                [33mdata-testid[39m=[32m"dropzone"[39m
-                [33mid[39m=[32m"dropzone"[39m
-              [36m/>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      93 |             </ThemeProvider>
-      94 |         );
-    > 95 |         const sort = screen.getByText("Sort");
-         |                             ^
-      96 |         expect(sort).toBeInTheDocument();
-      97 |     });
-      98 |     test("renders Sort button for super", () => {
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/components/CentralList.test.tsx:95:29)
-
-  ● Central List Component Tests › renders Sort button for super
-
-    TestingLibraryElementError: Unable to find an element with the text: Sort. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div[39m
-        [33mclass[39m=[32m"Toaster"[39m
-        [33mid[39m=[32m"react-toast"[39m
-      [36m>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
-        [36m/>[39m
-        [36m<span[39m
-          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
-          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
-        [36m/>[39m
-      [36m</div>[39m
-      [36m<div>[39m
-        [36m<div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"yourlist"[39m
-          [36m>[39m
-            [36m<div>[39m
-              [36m<h2>[39m
-                [0m Movies to be Reviewed [0m
-              [36m</h2>[39m
-              [36m<p>[39m
-                [0mDrag Movies to add them to the Review List[0m
-              [36m</p>[39m
-              [36m<div[39m
-                [33maria-label[39m=[32m"dropzone"[39m
-                [33mclass[39m=[32m"adminlist"[39m
-                [33mdata-testid[39m=[32m"dropzone"[39m
-                [33mid[39m=[32m"dropzone"[39m
-              [36m/>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-        [36m</div>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      102 |             </ThemeProvider>
-      103 |         );
-    > 104 |         const sort = screen.getByText("Sort");
-          |                             ^
-      105 |         expect(sort).toBeInTheDocument();
-      106 |     });
-      107 |     test("dropdown options visible aft button click", () => {
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/components/CentralList.test.tsx:104:29)
-
-PASS src/components/UserList.test.tsx
 PASS src/components/AdminList.test.tsx
   ● Console
 
@@ -482,20 +180,21 @@ PASS src/components/NewUserButton.test.tsx
       at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
       at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
 
+PASS src/components/UserList.test.tsx
 PASS src/components/Users.test.tsx
 PASS src/components/ChooseRole.test.tsx
 PASS src/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------------------------------------------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                                 
 ---------------------|---------|----------|---------|---------|-------------------------------------------------------------------
-All files            |   43.05 |    44.68 |   35.97 |   43.97 |                                                                   
+All files            |   49.86 |    53.19 |   39.56 |   50.98 |                                                                   
  src                 |     100 |      100 |     100 |     100 |                                                                   
   App.tsx            |     100 |      100 |     100 |     100 |                                                                   
- src/components      |   42.89 |    44.68 |    35.5 |   43.82 |                                                                   
+ src/components      |   49.72 |    53.19 |   39.13 |   50.84 |                                                                   
   AdminList.tsx      |   50.38 |    59.09 |   46.34 |   50.38 | 87,90,112-153,160-170,177-181,204-207,221,236-249,257-282,379-424 
-  CentralList.tsx    |   33.96 |    27.77 |      24 |   35.29 | 42,102,108-178,183,188-356                                        
+  CentralList.tsx    |   52.83 |    72.22 |      40 |    54.9 | 42,102,108-137,146,167-171,185,229,358,462                        
   ChooseRole.tsx     |   47.27 |    33.33 |   37.03 |      50 | 46,63-104,116,127,138-172,215-230,236,286-314                     
-  NewMovieButton.tsx |    2.32 |        0 |       0 |    2.43 | 37-384                                                            
+  NewMovieButton.tsx |    37.2 |        0 |    8.33 |   39.02 | 54-55,59-65,71-104,177-384                                        
   NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                                                   
   UserList.tsx       |    37.7 |    41.66 |      24 |   38.33 | 58,68-84,88-109,119,129-165,214-320                               
   Users.tsx          |     100 |      100 |     100 |     100 |                                                                   
@@ -506,8 +205,8 @@ All files            |   43.05 |    44.68 |   35.97 |   43.97 |
   userMovie.ts       |       0 |        0 |       0 |       0 |                                                                   
 ---------------------|---------|----------|---------|---------|-------------------------------------------------------------------
 
-Test Suites: 1 failed, 6 passed, 7 total
-Tests:       5 failed, 23 passed, 28 total
+Test Suites: 7 passed, 7 total
+Tests:       27 passed, 27 total
 Snapshots:   0 total
-Time:        9.969 s
+Time:        14.023 s
 Ran all test suites.
