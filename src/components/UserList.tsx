@@ -233,7 +233,6 @@ const YourList: React.FC<Props> = ({ user, movieState, handleUser }) => {
                                                         {movie.title}
                                                     </Text>
                                                 </Box>
-
                                                 <Box>
                                                     {" "}
                                                     <Text
@@ -293,8 +292,8 @@ const YourList: React.FC<Props> = ({ user, movieState, handleUser }) => {
                                                             )}
                                                         </div>
                                                     </div>
-                                                    {handleRemove(movie)}
                                                 </Box>
+                                                {handleRemove(movie)}
                                                 <AccordionIcon />
                                             </Box>
                                         </AccordionHeader>
