@@ -497,7 +497,7 @@ All files            |   43.05 |    44.68 |   35.97 |   43.97 |
   ChooseRole.tsx     |   47.27 |    33.33 |   37.03 |      50 | 46,63-104,116,127,138-172,215-230,236,286-314                     
   NewMovieButton.tsx |    2.32 |        0 |       0 |    2.43 | 37-384                                                            
   NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                                                   
-  UserList.tsx       |    37.7 |    41.66 |      24 |   38.33 | 58,68-84,88-109,119,129-165,214-321                               
+  UserList.tsx       |    37.7 |    41.66 |      24 |   38.33 | 58,68-84,88-109,119,129-165,214-320                               
   Users.tsx          |     100 |      100 |     100 |     100 |                                                                   
  src/interfaces      |       0 |        0 |       0 |       0 |                                                                   
   movie.ts           |       0 |        0 |       0 |       0 |                                                                   
@@ -509,5 +509,5 @@ All files            |   43.05 |    44.68 |   35.97 |   43.97 |
 Test Suites: 1 failed, 6 passed, 7 total
 Tests:       5 failed, 23 passed, 28 total
 Snapshots:   0 total
-Time:        9.347 s
+Time:        9.969 s
 Ran all test suites.
