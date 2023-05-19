@@ -5,7 +5,7 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-PASS src/components/CentralList.test.tsx (7.098 s)
+PASS src/components/CentralList.test.tsx (5.928 s)
   ● Console
 
     console.error
@@ -88,17 +88,17 @@ PASS src/components/AdminList.test.tsx
         user_rating: 0
       }
 
-      at handleOnDrop (src/components/AdminList.tsx:219:17)
+      at handleOnDrop (src/components/AdminList.tsx:261:17)
 
     console.log
       false
 
-      at handleOnDrop (src/components/AdminList.tsx:223:17)
+      at handleOnDrop (src/components/AdminList.tsx:265:17)
 
     console.log
       []
 
-      at handleOnDrop (src/components/AdminList.tsx:227:21)
+      at handleOnDrop (src/components/AdminList.tsx:269:21)
 
     console.log
       testing
@@ -184,29 +184,29 @@ PASS src/components/UserList.test.tsx
 PASS src/components/Users.test.tsx
 PASS src/components/ChooseRole.test.tsx
 PASS src/App.test.tsx
----------------------|---------|----------|---------|---------|-------------------------------------------------------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                                 
----------------------|---------|----------|---------|---------|-------------------------------------------------------------------
-All files            |   49.86 |    53.19 |   39.56 |   50.98 |                                                                   
- src                 |     100 |      100 |     100 |     100 |                                                                   
-  App.tsx            |     100 |      100 |     100 |     100 |                                                                   
- src/components      |   49.72 |    53.19 |   39.13 |   50.84 |                                                                   
-  AdminList.tsx      |   50.38 |    59.09 |   46.34 |   50.38 | 87,90,112-153,160-170,177-181,204-207,221,236-249,257-282,379-424 
-  CentralList.tsx    |   52.83 |    72.22 |      40 |    54.9 | 42,102,108-137,146,167-171,185,229,358,462                        
-  ChooseRole.tsx     |   47.27 |    33.33 |   37.03 |      50 | 46,63-104,116,127,138-172,215-230,236,286-314                     
-  NewMovieButton.tsx |    37.2 |        0 |    8.33 |   39.02 | 54-55,59-65,71-104,177-384                                        
-  NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                                                   
-  UserList.tsx       |    37.7 |    41.66 |      24 |   38.33 | 58,68-84,88-109,119,129-165,214-320                               
-  Users.tsx          |     100 |      100 |     100 |     100 |                                                                   
- src/interfaces      |       0 |        0 |       0 |       0 |                                                                   
-  movie.ts           |       0 |        0 |       0 |       0 |                                                                   
-  play.ts            |       0 |        0 |       0 |       0 |                                                                   
-  user.ts            |       0 |        0 |       0 |       0 |                                                                   
-  userMovie.ts       |       0 |        0 |       0 |       0 |                                                                   
----------------------|---------|----------|---------|---------|-------------------------------------------------------------------
+---------------------|---------|----------|---------|---------|-------------------------------------------------------------------------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                                                   
+---------------------|---------|----------|---------|---------|-------------------------------------------------------------------------------------
+All files            |    50.9 |       55 |   40.27 |      52 |                                                                                     
+ src                 |     100 |      100 |     100 |     100 |                                                                                     
+  App.tsx            |     100 |      100 |     100 |     100 |                                                                                     
+ src/components      |   50.78 |       55 |   39.86 |   51.87 |                                                                                     
+  AdminList.tsx      |   53.02 |       62 |   47.82 |   53.06 | 105,108,130-171,178-188,195-199,210-212,216-224,246-249,263,278-291,299-324,421-466 
+  CentralList.tsx    |   52.83 |    72.22 |      40 |    54.9 | 42,102,108-137,146,167-171,185,229,358,462                                          
+  ChooseRole.tsx     |   47.27 |    33.33 |   37.03 |      50 | 46,63-104,116,127,138-172,215-230,236,286-314                                       
+  NewMovieButton.tsx |    37.2 |        0 |    8.33 |   39.02 | 54-55,59-65,71-104,177-384                                                          
+  NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                                                                     
+  UserList.tsx       |    37.7 |    41.66 |      24 |   38.33 | 58,68-84,88-109,119,129-165,214-320                                                 
+  Users.tsx          |     100 |      100 |     100 |     100 |                                                                                     
+ src/interfaces      |       0 |        0 |       0 |       0 |                                                                                     
+  movie.ts           |       0 |        0 |       0 |       0 |                                                                                     
+  play.ts            |       0 |        0 |       0 |       0 |                                                                                     
+  user.ts            |       0 |        0 |       0 |       0 |                                                                                     
+  userMovie.ts       |       0 |        0 |       0 |       0 |                                                                                     
+---------------------|---------|----------|---------|---------|-------------------------------------------------------------------------------------
 
 Test Suites: 7 passed, 7 total
 Tests:       27 passed, 27 total
 Snapshots:   0 total
-Time:        14.023 s
+Time:        11.697 s
 Ran all test suites.
