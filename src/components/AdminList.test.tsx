@@ -84,4 +84,29 @@ describe("Admin List Component Tests", () => {
         fireEvent.click(editButton);
         expect(screen.queryAllByRole("textbox")).not.toBeNull();
     });
+    test("Edit options not visible before clicking checkbox", () => {
+        render(
+            <ThemeProvider>
+                <AdminList
+                    movieState={[]}
+                    onMovieUpdate={updateMovie}
+                    handleUser={"userList"}
+                />
+            </ThemeProvider>
+        );
+        expect(screen.queryAllByRole("textbox")).not.toBeNull();
+    });
+    test("renders remove button", () => {
+        render(
+            <ThemeProvider>
+                <AdminList
+                    movieState={[]}
+                    onMovieUpdate={updateMovie}
+                    handleUser={"userList"}
+                />
+            </ThemeProvider>
+        );
+
+        expect(screen.getByText("Remove")).toBeInTheDocument();
+    });
 });
