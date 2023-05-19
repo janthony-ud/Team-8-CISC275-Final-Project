@@ -84,38 +84,4 @@ describe("User List Tests", () => {
         const sortTitle = screen.getByText("Title");
         fireEvent.click(sortTitle);
     });
-    // test("renders a dropped movie and adds it to admin list", async () => {
-    //     render(
-    //         <ThemeProvider>
-    //             <UserList user={testUser} />
-    //         </ThemeProvider>
-    //     );
-
-    //     await waitFor(() => {
-    //         const dropZone = screen.queryByLabelText("userdropzone");
-    //         if (dropZone !== null) {
-    //             console.log("found dropzone");
-    //             fireEvent.drop(dropZone, {
-    //                 dataTransfer: {
-    //                     getData: () => JSON.stringify(mockMovie),
-    //                     tyeps: ["text/plain"],
-    //                     setData: () => {
-    //                         console.log("setting movie");
-    //                     }
-    //                 }
-    //             });
-    //         }
-    //     });
-
-    //     console.log("testing");
-    //     const droppedMovie = screen.getByText("A Movie");
-    //     expect(droppedMovie).toBeInTheDocument();
-    // });
-    // test("movies sorted by title after click", () => {
-    //     render(
-    //         <ThemeProvider>
-    //             <UserList user={testUser} />
-    //         </ThemeProvider>
-    //     );
-    // });
 });

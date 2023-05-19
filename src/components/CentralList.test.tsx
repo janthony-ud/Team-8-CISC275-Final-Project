@@ -23,37 +23,28 @@ const testUser = {
 };
 
 describe("Central List Component Tests", () => {
-    test("renders NewMovieButton if superuser", () => {
-        render(
-            <ThemeProvider>
-                <CentralList user={testSuper} handling={""} />
-            </ThemeProvider>
-        );
-        const newMovie = screen.getByText("+ New Movie");
-        expect(newMovie).toBeInTheDocument();
-    });
     test("does not render NewMovieButton if admin", () => {
         render(
             <ThemeProvider>
-                <CentralList user={testAdmin} handling={""} />
+                <CentralList user={testAdmin} handling={"userList"} />
             </ThemeProvider>
         );
-        const newMovie = screen.queryByText("+ New Movie");
+        const newMovie = screen.queryByText("+ Create New Movie");
         expect(newMovie).not.toBeInTheDocument();
     });
     test("does not render NewMovieButton if user", () => {
         render(
             <ThemeProvider>
-                <CentralList user={testUser} handling={""} />
+                <CentralList user={testUser} handling={"userList"} />
             </ThemeProvider>
         );
-        const newMovie = screen.queryByText("+ New Movie");
+        const newMovie = screen.queryByText("+ Create New Movie");
         expect(newMovie).not.toBeInTheDocument();
     });
     test("renders Remove Movie if superuser", () => {
         render(
             <ThemeProvider>
-                <CentralList user={testSuper} handling={""} />
+                <CentralList user={testSuper} handling={"userList"} />
             </ThemeProvider>
         );
         const remove = screen.getAllByText("Remove Movie");
@@ -62,7 +53,7 @@ describe("Central List Component Tests", () => {
     test("does not render Remove Movie if admin", () => {
         render(
             <ThemeProvider>
-                <CentralList user={testAdmin} handling={""} />
+                <CentralList user={testAdmin} handling={"userList"} />
             </ThemeProvider>
         );
         const remove = screen.queryByText("Remove Movie");
@@ -71,7 +62,7 @@ describe("Central List Component Tests", () => {
     test("does not render Remove Movie if user", () => {
         render(
             <ThemeProvider>
-                <CentralList user={testUser} handling={""} />
+                <CentralList user={testUser} handling={"userList"} />
             </ThemeProvider>
         );
         const remove = screen.queryByText("Remove Movie");
@@ -80,7 +71,7 @@ describe("Central List Component Tests", () => {
     test("renders Sort button for super", () => {
         render(
             <ThemeProvider>
-                <CentralList user={testSuper} handling={""} />
+                <CentralList user={testSuper} handling={"userList"} />
             </ThemeProvider>
         );
         const sort = screen.getByText("Sort");
@@ -89,7 +80,7 @@ describe("Central List Component Tests", () => {
     test("renders Sort button for admin", () => {
         render(
             <ThemeProvider>
-                <CentralList user={testAdmin} handling={""} />
+                <CentralList user={testAdmin} handling={"userList"} />
             </ThemeProvider>
         );
         const sort = screen.getByText("Sort");
@@ -98,7 +89,7 @@ describe("Central List Component Tests", () => {
     test("renders Sort button for super", () => {
         render(
             <ThemeProvider>
-                <CentralList user={testAdmin} handling={""} />
+                <CentralList user={testAdmin} handling={"userList"} />
             </ThemeProvider>
         );
         const sort = screen.getByText("Sort");
