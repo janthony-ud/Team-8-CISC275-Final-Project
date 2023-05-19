@@ -64,6 +64,24 @@ const AdminList: React.FC<Props> = ({
         }
     });
 
+    const [centralList, setCentralList] = useState<Movie[]>(() => {
+        const storedCentralList = localStorage.getItem("movies");
+        if (storedCentralList) {
+            return JSON.parse(storedCentralList);
+        } else {
+            return [];
+        }
+    });
+
+    useEffect(() => {
+        const storedCentralList = localStorage.getItem("movies");
+        if (storedCentralList) {
+            setCentralList(JSON.parse(storedCentralList));
+        } else {
+            setCentralList([]);
+        }
+    }, []);
+
     useEffect(() => {
         setEditMovie(Array(adminMovies.length).fill(false));
     }, [adminMovies.length]);
@@ -142,7 +160,7 @@ const AdminList: React.FC<Props> = ({
             updateMaturityRating(selectedMovie.maturity_rating);
             updateCast(selectedMovie.cast);
             updateGenre(selectedMovie.genre);
-            handleMovieUpdate(movieIndex, selectedMovie); // Pass the previous title
+            handleMovieUpdate(movieIndex, selectedMovie);
         } else {
             selectMovie(blankMovie);
             updateImage("");
@@ -185,6 +203,30 @@ const AdminList: React.FC<Props> = ({
             ]);
         }
     }, [adminMovies && movieState]);
+
+    useEffect(() => {
+        const removed_index = adminMovies.findIndex(
+            (movie: Movie): boolean =>
+                !centralList.some(
+                    (centralMovie: Movie): boolean =>
+                        centralMovie.title === movie.title
+                )
+        );
+        if (removed_index !== -1) {
+            setAdminMovies([
+                ...adminMovies.slice(0, removed_index),
+                ...adminMovies.slice(removed_index + 1)
+            ]);
+            setEditMovie([
+                ...editMovie.slice(0, removed_index),
+                ...editMovie.slice(removed_index + 1)
+            ]);
+            setCentralEdit([
+                ...centralEdit.slice(0, removed_index),
+                ...centralEdit.slice(removed_index + 1)
+            ]);
+        }
+    }, ["movies"]);
 
     useEffect(() => {
         selectMovie({
