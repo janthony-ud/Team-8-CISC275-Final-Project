@@ -290,6 +290,9 @@ export const ChooseUser: React.FC = () => {
                                                             as="a"
                                                             name={user.name}
                                                             src={require("../avatar.png")}
+                                                            data-testid={
+                                                                user.name
+                                                            }
                                                         >
                                                             <AvatarBadge
                                                                 bg={setBadgeColor(
