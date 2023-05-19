@@ -3,7 +3,6 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import UserList from "./CentralList";
 import { ThemeProvider } from "@chakra-ui/core/dist";
 import { userMovie } from "../interfaces/userMovie";
-import YourList from "./UserList";
 
 const testUser = {
     name: "test user",
