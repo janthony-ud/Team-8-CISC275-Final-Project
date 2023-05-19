@@ -50,37 +50,38 @@ describe("Admin List Component Tests", () => {
         const droppedMovie = screen.getByText("A Movie");
         expect(droppedMovie).toBeInTheDocument();
     });
-    // test("edit options appear when checkbox is clicked", async () => {
-    //     render(
-    //         <ThemeProvider>
-    //             <AdminList />
-    //         </ThemeProvider>
-    //     );
-
-    //     await waitFor(() => {
-    //         const dropZone = screen.queryByLabelText("dropzone");
-    //         if (dropZone !== null) {
-    //             console.log("found dropzone");
-    //             fireEvent.drop(dropZone, {
-    //                 dataTransfer: {
-    //                     getData: () => JSON.stringify(mockMovie),
-    //                     tyeps: ["text/plain"],
-    //                     setData: () => {
-    //                         console.log("setting movie");
-    //                     }
-    //                 }
-    //             });
-    //         }
-    //     });
-
-    //     const checkbox = screen.getByText("edit-checkbox");
-    //     fireEvent.click(checkbox);
-
-    //     expect(screen.getByText("Title")).toBeInTheDocument();
-    //     expect(screen.getByText("Image URL")).toBeInTheDocument();
-    //     expect(screen.getByText("Description")).toBeInTheDocument();
-    //     expect(screen.getByText("Genre")).toBeInTheDocument();
-    //     expect(screen.getByText("Age Rating")).toBeInTheDocument();
-    //     expect(screen.getByText("Cast")).toBeInTheDocument();
-    // });
+    test("Check to Edit is present", () => {
+        render(
+            <ThemeProvider>
+                <AdminList
+                    movieState={[]}
+                    onMovieUpdate={updateMovie}
+                    handleUser={"userList"}
+                />
+            </ThemeProvider>
+        );
+        const editButton = screen.getByLabelText(
+            "Edit Movie"
+        ) as HTMLInputElement;
+        fireEvent.click(editButton);
+        expect(editButton.checked).toBe(true);
+        fireEvent.click(editButton);
+        expect(editButton.checked).toBe(false);
+    });
+    test("Edit options visible after clicking checkbox", () => {
+        render(
+            <ThemeProvider>
+                <AdminList
+                    movieState={[]}
+                    onMovieUpdate={updateMovie}
+                    handleUser={"userList"}
+                />
+            </ThemeProvider>
+        );
+        const editButton = screen.getByLabelText(
+            "Edit Movie"
+        ) as HTMLInputElement;
+        fireEvent.click(editButton);
+        expect(screen.queryAllByRole("textbox")).not.toBeNull();
+    });
 });
