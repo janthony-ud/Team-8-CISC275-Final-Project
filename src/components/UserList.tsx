@@ -29,9 +29,10 @@ import { MdMovieFilter } from "react-icons/md";
 interface Props {
     user: User;
     movieState: Movie[];
+    handleUser: string;
 }
 
-const YourList: React.FC<Props> = ({ user, movieState }) => {
+const YourList: React.FC<Props> = ({ user, movieState, handleUser }) => {
     const [userMovies, setUserMovies] = useState<userMovie[]>([]);
     const [filteredMovies, setFilteredMovies] = useState<userMovie[]>([]);
 
@@ -68,20 +69,15 @@ const YourList: React.FC<Props> = ({ user, movieState }) => {
             e.dataTransfer.getData("widgetType")
         ) as Movie;
         console.log("widgetType", widgetType);
-        const duplicates = userMovies.some(
-            (movie: Movie): boolean => movie.title === widgetType.title
+        const newMovie: userMovie = {
+            ...widgetType,
+            id: userMovies.length
+        };
+        setUserMovies([...userMovies, newMovie]);
+        localStorage.setItem(
+            `userMovieList-${user.name}`,
+            JSON.stringify([...userMovies, newMovie])
         );
-        if (!duplicates) {
-            const newMovie: userMovie = {
-                ...widgetType,
-                id: userMovies.length
-            };
-            setUserMovies([...userMovies, newMovie]);
-            localStorage.setItem(
-                `userMovieList-${user.name}`,
-                JSON.stringify([...userMovies, newMovie])
-            );
-        }
     }
 
     function handleDragOver(e: React.DragEvent) {
@@ -160,6 +156,18 @@ const YourList: React.FC<Props> = ({ user, movieState }) => {
             `userMovieList-${user.name}`,
             JSON.stringify(userMovies)
         );
+    }
+
+    function handleRemove(movie: userMovie) {
+        if (handleUser !== "superList") {
+            return (
+                <div className="remove-movie">
+                    <button onClick={() => removeMovie(movie.id)}>
+                        Remove
+                    </button>
+                </div>
+            );
+        }
     }
 
     function handleUserType() {
@@ -285,17 +293,7 @@ const YourList: React.FC<Props> = ({ user, movieState }) => {
                                                             )}
                                                         </div>
                                                     </div>
-                                                    <div className="remove-movie">
-                                                        <button
-                                                            onClick={() =>
-                                                                removeMovie(
-                                                                    movie.id
-                                                                )
-                                                            }
-                                                        >
-                                                            Remove
-                                                        </button>
-                                                    </div>
+                                                    {handleRemove(movie)}
                                                 </Box>
                                                 <AccordionIcon />
                                             </Box>

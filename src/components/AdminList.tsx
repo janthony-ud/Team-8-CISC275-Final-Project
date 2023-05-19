@@ -19,9 +19,14 @@ import "./AdminList.css";
 interface Props {
     movieState: Movie[];
     onMovieUpdate: (updatedMovies: Movie[]) => void;
+    handleUser: string;
 }
 
-const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
+const AdminList: React.FC<Props> = ({
+    movieState,
+    onMovieUpdate,
+    handleUser
+}) => {
     const blankMovie: Movie = {
         image: "",
         title: "",
@@ -37,7 +42,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         if (storedMovies) {
             return JSON.parse(storedMovies);
         } else {
-            return [blankMovie];
+            return [];
         }
     });
 
@@ -46,9 +51,19 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         if (storedEditMovie) {
             return JSON.parse(storedEditMovie);
         } else {
-            return [false];
+            return [];
         }
     });
+
+    const [centralEdit, setCentralEdit] = useState<number[]>(() => {
+        const storedCentralEdit = localStorage.getItem("centralEdit");
+        if (storedCentralEdit) {
+            return JSON.parse(storedCentralEdit);
+        } else {
+            return [];
+        }
+    });
+
     useEffect(() => {
         setEditMovie(Array(adminMovies.length).fill(false));
     }, [adminMovies.length]);
@@ -61,7 +76,24 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         localStorage.setItem("editMovie", JSON.stringify(editMovie));
     }, [editMovie]);
 
-    //localStorage.removeItem("adminMovies");
+    useEffect(() => {
+        localStorage.setItem("centralEdit", JSON.stringify(centralEdit));
+    }, [centralEdit]);
+
+    useEffect(() => {
+        if (adminMovies.length !== 0) {
+            const centralIndex = movieState.findIndex(
+                (movie: Movie): boolean =>
+                    movie.title === adminMovies[adminMovies.length - 1].title
+            );
+            const check_duplicate = centralEdit.some(
+                (index: number): boolean => index === centralIndex
+            );
+            if (!check_duplicate) {
+                setCentralEdit([...centralEdit, centralIndex]);
+            }
+        }
+    }, [adminMovies.length]);
 
     const [selectedMovie, selectMovie] = useState<Movie>(blankMovie);
     const [image, updateImage] = useState<string>(selectedMovie.image);
@@ -74,6 +106,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
     );
     const [cast, updateCast] = useState<string[]>(selectedMovie.cast);
     const [genre, updateGenre] = useState<string[]>(selectedMovie.genre);
+    const [prevEdit, setPrevEdit] = useState<number>(0);
 
     function handleCastChange(e: React.ChangeEvent<HTMLInputElement>) {
         const castList = e.target.value.split(",");
@@ -92,10 +125,14 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
             (movie: Movie): boolean => movie.title === movieName
         );
 
-        const updatedEditMovie = [...editMovie];
-        updatedEditMovie[movieIndex] = e.target.checked;
+        const updatedEditMovie = [
+            ...editMovie.slice(0, movieIndex),
+            e.target.checked,
+            ...editMovie.slice(movieIndex + 1)
+        ];
 
         setEditMovie(updatedEditMovie);
+        setPrevEdit(movieIndex);
         if (movieIndex !== -1) {
             const selectedMovie = adminMovies[movieIndex];
             selectMovie(selectedMovie);
@@ -105,7 +142,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
             updateMaturityRating(selectedMovie.maturity_rating);
             updateCast(selectedMovie.cast);
             updateGenre(selectedMovie.genre);
-            handleMovieUpdate(e.target.id, selectedMovie); // Pass the previous title
+            handleMovieUpdate(movieIndex, selectedMovie); // Pass the previous title
         } else {
             selectMovie(blankMovie);
             updateImage("");
@@ -133,6 +170,21 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
             updateGenre(adminMovies[check_index].genre);
         }
     }, [selectedMovie && editMovie]);
+
+    useEffect(() => {
+        const edited_index = prevEdit;
+        if (adminMovies.length !== 0) {
+            const new_index = movieState.findIndex(
+                (movie: Movie): boolean =>
+                    movie.title === adminMovies[edited_index].title
+            );
+            setCentralEdit([
+                ...centralEdit.slice(0, edited_index),
+                new_index,
+                ...centralEdit.slice(edited_index + 1)
+            ]);
+        }
+    }, [adminMovies && movieState]);
 
     useEffect(() => {
         selectMovie({
@@ -172,6 +224,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         if (!duplicates) {
             setAdminMovies([...adminMovies, widgetType]);
             setEditMovie([...editMovie, false]);
+            console.log(centralEdit);
             localStorage.setItem(
                 "adminMovies",
                 JSON.stringify([...adminMovies, widgetType])
@@ -183,23 +236,40 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
         e.preventDefault();
     }
 
-    function handleMovieUpdate(prevTitle: string, updatedMovie: Movie) {
-        // Find the index of the movie in the movieState
-        const movieIndex = movieState.findIndex(
-            (movie) => movie.title === prevTitle
-        );
-
-        if (movieIndex !== -1) {
+    function handleMovieUpdate(movieIndex: number, updatedMovie: Movie) {
+        const centralIndex = centralEdit[movieIndex];
+        if (centralIndex !== -1) {
             // Create a new array with the updated movie
-            const updatedMovies = [...movieState];
-            updatedMovies[movieIndex] = updatedMovie;
-
+            const updatedMovies = [
+                ...movieState.slice(0, centralIndex),
+                updatedMovie,
+                ...movieState.slice(centralIndex + 1)
+            ];
             //callback function to update the central list
             onMovieUpdate(updatedMovies);
         }
     }
 
+    function removeMovieButton(movie: Movie) {
+        if (handleUser !== "superList") {
+            return (
+                <div className="removeMovie">
+                    <Button onClick={() => removeMovie(movie.title)}>
+                        Remove
+                    </Button>
+                </div>
+            );
+        }
+    }
+
     function removeMovie(title: string): void {
+        const removed_index = adminMovies.findIndex(
+            (movie: Movie): boolean => movie.title === title
+        );
+        setCentralEdit([
+            ...centralEdit.slice(0, removed_index),
+            ...centralEdit.slice(removed_index + 1)
+        ]);
         setAdminMovies(
             [...adminMovies].filter((movie) => movie.title !== title)
         );
@@ -209,6 +279,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
                 [...adminMovies].filter((movie) => movie.title !== title)
             )
         );
+        console.log(centralEdit.length);
     }
 
     return (
@@ -272,7 +343,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
                                 </AccordionPanel>
                             </AccordionItem>
                         </div>
-
+                        {removeMovieButton(movie)}
                         <div>
                             {" "}
                             {editMovie.map((edit, edit_index) =>
@@ -295,11 +366,7 @@ const AdminList: React.FC<Props> = ({ movieState, onMovieUpdate }) => {
                                 ) : null
                             )}
                         </div>
-                        <div className="removeMovie">
-                            <Button onClick={() => removeMovie(movie.title)}>
-                                Remove
-                            </Button>
-                        </div>
+
                         <div>
                             {editMovie[movie_index] && (
                                 <FormGroup controlId="formImage">

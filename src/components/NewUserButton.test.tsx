@@ -54,7 +54,7 @@ describe("New User Button component tests", () => {
             name: /Select Role/i
         });
         expect(defaultname.textContent).toEqual("");
-        expect(defaultrole.textContent).toEqual("UserAdminSupervalue=user");
+        expect(defaultrole.textContent).toEqual("UserAdminvalue=user");
     });
     test("inputting user name and clicking role adds that user to list of current users", () => {
         const nub = screen.getByRole("button", {
