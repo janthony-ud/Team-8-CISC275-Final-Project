@@ -5,7 +5,7 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-FAIL src/components/CentralList.test.tsx (5.181 s)
+FAIL src/components/CentralList.test.tsx
   ● Central List Component Tests › renders NewMovieButton if superuser
 
     TestingLibraryElementError: Unable to find an element with the text: + New Movie. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
@@ -58,125 +58,7 @@ FAIL src/components/CentralList.test.tsx (5.181 s)
                 [33mclass[39m=[32m"adminlist"[39m
                 [33mdata-testid[39m=[32m"dropzone"[39m
                 [33mid[39m=[32m"dropzone"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"droppedMovie"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"border"[39m
-                  [36m>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"css-1htfx3z"[39m
-                      [33mdata-accordion-item[39m=[32m""[39m
-                    [36m>[39m
-                      [36m<button[39m
-                        [33maria-controls[39m=[32m"accordion-panel-1"[39m
-                        [33maria-expanded[39m=[32m"false"[39m
-                        [33mclass[39m=[32m"css-o4mft6"[39m
-                        [33mid[39m=[32m"accordion-header-1"[39m
-                        [33mtype[39m=[32m"button"[39m
-                      [36m>[39m
-                        [36m<div[39m
-                          [33mclass[39m=[32m"css-1p33byw"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [36m<img[39m
-                              [33malt[39m=[32m""[39m
-                              [33mclass[39m=[32m"css-17eao0m"[39m
-                            [36m/>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-3cojqf"[39m
-                            [36m/>[39m
-                          [36m</div>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [0m [0m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ghfqnb"[39m
-                            [36m/>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-1kqpkvp"[39m
-                            [36m/>[39m
-                          [36m</div>[39m
-                          [36m<svg[39m
-                            [33maria-hidden[39m=[32m"true"[39m
-                            [33mclass[39m=[32m"css-1duxe6l"[39m
-                            [33mfocusable[39m=[32m"false"[39m
-                            [33mrole[39m=[32m"presentation"[39m
-                            [33mviewBox[39m=[32m"0 0 24 24"[39m
-                          [36m>[39m
-                            [36m<path[39m
-                              [33md[39m=[32m"M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"[39m
-                              [33mfill[39m=[32m"currentColor"[39m
-                            [36m/>[39m
-                          [36m</svg>[39m
-                        [36m</div>[39m
-                      [36m</button>[39m
-                      [36m<div[39m
-                        [33maria-hidden[39m=[32m"true"[39m
-                        [33mclass[39m=[32m"rah-static rah-static--height-zero css-vppuuz"[39m
-                        [33mstyle[39m=[32m"height: 0px; overflow: hidden;"[39m
-                      [36m>[39m
-                        [36m<div[39m
-                          [33mstyle[39m=[32m"transition: opacity 250ms ease 0ms; opacity: 0; display: none;"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33maria-hidden[39m=[32m"true"[39m
-                            [33maria-labelledby[39m=[32m"accordion-header-1"[39m
-                            [33mclass[39m=[32m"css-17vg19s"[39m
-                            [33mdata-accordion-panel[39m=[32m""[39m
-                            [33mid[39m=[32m"accordion-panel-1"[39m
-                            [33mrole[39m=[32m"region"[39m
-                          [36m>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ljpcab"[39m
-                            [36m/>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-zp3rvv"[39m
-                            [36m>[39m
-                              [36m<p[39m
-                                [33mclass[39m=[32m"css-15bnp58"[39m
-                              [36m>[39m
-                                [36m<b />[39m
-                              [36m</p>[39m
-                            [36m</div>[39m
-                          [36m</div>[39m
-                        [36m</div>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [0m [0m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"editCheck"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"form-check form-switch"[39m
-                      [36m>[39m
-                        [36m<input[39m
-                          [33mclass[39m=[32m"form-check-input"[39m
-                          [33mtype[39m=[32m"checkbox"[39m
-                        [36m/>[39m
-                        [36m<label[39m
-                          [33mclass[39m=[32m"form-check-label"[39m
-                          [33mtitle[39m=[32m""[39m
-                        [36m>[39m
-                          [0mEdit Movie[0m
-                        [36m</label>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                [36m</div>[39m
-              [36m</div>[39m
+              [36m/>[39m
             [36m</div>[39m
           [36m</div>[39m
         [36m</div>[39m
@@ -249,125 +131,7 @@ FAIL src/components/CentralList.test.tsx (5.181 s)
                 [33mclass[39m=[32m"adminlist"[39m
                 [33mdata-testid[39m=[32m"dropzone"[39m
                 [33mid[39m=[32m"dropzone"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"droppedMovie"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"border"[39m
-                  [36m>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"css-1htfx3z"[39m
-                      [33mdata-accordion-item[39m=[32m""[39m
-                    [36m>[39m
-                      [36m<button[39m
-                        [33maria-controls[39m=[32m"accordion-panel-13"[39m
-                        [33maria-expanded[39m=[32m"false"[39m
-                        [33mclass[39m=[32m"css-o4mft6"[39m
-                        [33mid[39m=[32m"accordion-header-13"[39m
-                        [33mtype[39m=[32m"button"[39m
-                      [36m>[39m
-                        [36m<div[39m
-                          [33mclass[39m=[32m"css-1p33byw"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [36m<img[39m
-                              [33malt[39m=[32m""[39m
-                              [33mclass[39m=[32m"css-17eao0m"[39m
-                            [36m/>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-3cojqf"[39m
-                            [36m/>[39m
-                          [36m</div>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [0m [0m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ghfqnb"[39m
-                            [36m/>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-1kqpkvp"[39m
-                            [36m/>[39m
-                          [36m</div>[39m
-                          [36m<svg[39m
-                            [33maria-hidden[39m=[32m"true"[39m
-                            [33mclass[39m=[32m"css-1duxe6l"[39m
-                            [33mfocusable[39m=[32m"false"[39m
-                            [33mrole[39m=[32m"presentation"[39m
-                            [33mviewBox[39m=[32m"0 0 24 24"[39m
-                          [36m>[39m
-                            [36m<path[39m
-                              [33md[39m=[32m"M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"[39m
-                              [33mfill[39m=[32m"currentColor"[39m
-                            [36m/>[39m
-                          [36m</svg>[39m
-                        [36m</div>[39m
-                      [36m</button>[39m
-                      [36m<div[39m
-                        [33maria-hidden[39m=[32m"true"[39m
-                        [33mclass[39m=[32m"rah-static rah-static--height-zero css-vppuuz"[39m
-                        [33mstyle[39m=[32m"height: 0px; overflow: hidden;"[39m
-                      [36m>[39m
-                        [36m<div[39m
-                          [33mstyle[39m=[32m"transition: opacity 250ms ease 0ms; opacity: 0; display: none;"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33maria-hidden[39m=[32m"true"[39m
-                            [33maria-labelledby[39m=[32m"accordion-header-13"[39m
-                            [33mclass[39m=[32m"css-17vg19s"[39m
-                            [33mdata-accordion-panel[39m=[32m""[39m
-                            [33mid[39m=[32m"accordion-panel-13"[39m
-                            [33mrole[39m=[32m"region"[39m
-                          [36m>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ljpcab"[39m
-                            [36m/>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-zp3rvv"[39m
-                            [36m>[39m
-                              [36m<p[39m
-                                [33mclass[39m=[32m"css-15bnp58"[39m
-                              [36m>[39m
-                                [36m<b />[39m
-                              [36m</p>[39m
-                            [36m</div>[39m
-                          [36m</div>[39m
-                        [36m</div>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [0m [0m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"editCheck"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"form-check form-switch"[39m
-                      [36m>[39m
-                        [36m<input[39m
-                          [33mclass[39m=[32m"form-check-input"[39m
-                          [33mtype[39m=[32m"checkbox"[39m
-                        [36m/>[39m
-                        [36m<label[39m
-                          [33mclass[39m=[32m"form-check-label"[39m
-                          [33mtitle[39m=[32m""[39m
-                        [36m>[39m
-                          [0mEdit Movie[0m
-                        [36m</label>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                [36m</div>[39m
-              [36m</div>[39m
+              [36m/>[39m
             [36m</div>[39m
           [36m</div>[39m
         [36m</div>[39m
@@ -439,125 +203,7 @@ FAIL src/components/CentralList.test.tsx (5.181 s)
                 [33mclass[39m=[32m"adminlist"[39m
                 [33mdata-testid[39m=[32m"dropzone"[39m
                 [33mid[39m=[32m"dropzone"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"droppedMovie"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"border"[39m
-                  [36m>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"css-1htfx3z"[39m
-                      [33mdata-accordion-item[39m=[32m""[39m
-                    [36m>[39m
-                      [36m<button[39m
-                        [33maria-controls[39m=[32m"accordion-panel-25"[39m
-                        [33maria-expanded[39m=[32m"false"[39m
-                        [33mclass[39m=[32m"css-o4mft6"[39m
-                        [33mid[39m=[32m"accordion-header-25"[39m
-                        [33mtype[39m=[32m"button"[39m
-                      [36m>[39m
-                        [36m<div[39m
-                          [33mclass[39m=[32m"css-1p33byw"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [36m<img[39m
-                              [33malt[39m=[32m""[39m
-                              [33mclass[39m=[32m"css-17eao0m"[39m
-                            [36m/>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-3cojqf"[39m
-                            [36m/>[39m
-                          [36m</div>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [0m [0m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ghfqnb"[39m
-                            [36m/>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-1kqpkvp"[39m
-                            [36m/>[39m
-                          [36m</div>[39m
-                          [36m<svg[39m
-                            [33maria-hidden[39m=[32m"true"[39m
-                            [33mclass[39m=[32m"css-1duxe6l"[39m
-                            [33mfocusable[39m=[32m"false"[39m
-                            [33mrole[39m=[32m"presentation"[39m
-                            [33mviewBox[39m=[32m"0 0 24 24"[39m
-                          [36m>[39m
-                            [36m<path[39m
-                              [33md[39m=[32m"M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"[39m
-                              [33mfill[39m=[32m"currentColor"[39m
-                            [36m/>[39m
-                          [36m</svg>[39m
-                        [36m</div>[39m
-                      [36m</button>[39m
-                      [36m<div[39m
-                        [33maria-hidden[39m=[32m"true"[39m
-                        [33mclass[39m=[32m"rah-static rah-static--height-zero css-vppuuz"[39m
-                        [33mstyle[39m=[32m"height: 0px; overflow: hidden;"[39m
-                      [36m>[39m
-                        [36m<div[39m
-                          [33mstyle[39m=[32m"transition: opacity 250ms ease 0ms; opacity: 0; display: none;"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33maria-hidden[39m=[32m"true"[39m
-                            [33maria-labelledby[39m=[32m"accordion-header-25"[39m
-                            [33mclass[39m=[32m"css-17vg19s"[39m
-                            [33mdata-accordion-panel[39m=[32m""[39m
-                            [33mid[39m=[32m"accordion-panel-25"[39m
-                            [33mrole[39m=[32m"region"[39m
-                          [36m>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ljpcab"[39m
-                            [36m/>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-zp3rvv"[39m
-                            [36m>[39m
-                              [36m<p[39m
-                                [33mclass[39m=[32m"css-15bnp58"[39m
-                              [36m>[39m
-                                [36m<b />[39m
-                              [36m</p>[39m
-                            [36m</div>[39m
-                          [36m</div>[39m
-                        [36m</div>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [0m [0m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"editCheck"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"form-check form-switch"[39m
-                      [36m>[39m
-                        [36m<input[39m
-                          [33mclass[39m=[32m"form-check-input"[39m
-                          [33mtype[39m=[32m"checkbox"[39m
-                        [36m/>[39m
-                        [36m<label[39m
-                          [33mclass[39m=[32m"form-check-label"[39m
-                          [33mtitle[39m=[32m""[39m
-                        [36m>[39m
-                          [0mEdit Movie[0m
-                        [36m</label>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                [36m</div>[39m
-              [36m</div>[39m
+              [36m/>[39m
             [36m</div>[39m
           [36m</div>[39m
         [36m</div>[39m
@@ -630,125 +276,7 @@ FAIL src/components/CentralList.test.tsx (5.181 s)
                 [33mclass[39m=[32m"adminlist"[39m
                 [33mdata-testid[39m=[32m"dropzone"[39m
                 [33mid[39m=[32m"dropzone"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"droppedMovie"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"border"[39m
-                  [36m>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"css-1htfx3z"[39m
-                      [33mdata-accordion-item[39m=[32m""[39m
-                    [36m>[39m
-                      [36m<button[39m
-                        [33maria-controls[39m=[32m"accordion-panel-28"[39m
-                        [33maria-expanded[39m=[32m"false"[39m
-                        [33mclass[39m=[32m"css-o4mft6"[39m
-                        [33mid[39m=[32m"accordion-header-28"[39m
-                        [33mtype[39m=[32m"button"[39m
-                      [36m>[39m
-                        [36m<div[39m
-                          [33mclass[39m=[32m"css-1p33byw"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [36m<img[39m
-                              [33malt[39m=[32m""[39m
-                              [33mclass[39m=[32m"css-17eao0m"[39m
-                            [36m/>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-3cojqf"[39m
-                            [36m/>[39m
-                          [36m</div>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [0m [0m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ghfqnb"[39m
-                            [36m/>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-1kqpkvp"[39m
-                            [36m/>[39m
-                          [36m</div>[39m
-                          [36m<svg[39m
-                            [33maria-hidden[39m=[32m"true"[39m
-                            [33mclass[39m=[32m"css-1duxe6l"[39m
-                            [33mfocusable[39m=[32m"false"[39m
-                            [33mrole[39m=[32m"presentation"[39m
-                            [33mviewBox[39m=[32m"0 0 24 24"[39m
-                          [36m>[39m
-                            [36m<path[39m
-                              [33md[39m=[32m"M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"[39m
-                              [33mfill[39m=[32m"currentColor"[39m
-                            [36m/>[39m
-                          [36m</svg>[39m
-                        [36m</div>[39m
-                      [36m</button>[39m
-                      [36m<div[39m
-                        [33maria-hidden[39m=[32m"true"[39m
-                        [33mclass[39m=[32m"rah-static rah-static--height-zero css-vppuuz"[39m
-                        [33mstyle[39m=[32m"height: 0px; overflow: hidden;"[39m
-                      [36m>[39m
-                        [36m<div[39m
-                          [33mstyle[39m=[32m"transition: opacity 250ms ease 0ms; opacity: 0; display: none;"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33maria-hidden[39m=[32m"true"[39m
-                            [33maria-labelledby[39m=[32m"accordion-header-28"[39m
-                            [33mclass[39m=[32m"css-17vg19s"[39m
-                            [33mdata-accordion-panel[39m=[32m""[39m
-                            [33mid[39m=[32m"accordion-panel-28"[39m
-                            [33mrole[39m=[32m"region"[39m
-                          [36m>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ljpcab"[39m
-                            [36m/>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-zp3rvv"[39m
-                            [36m>[39m
-                              [36m<p[39m
-                                [33mclass[39m=[32m"css-15bnp58"[39m
-                              [36m>[39m
-                                [36m<b />[39m
-                              [36m</p>[39m
-                            [36m</div>[39m
-                          [36m</div>[39m
-                        [36m</div>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [0m [0m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"editCheck"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"form-check form-switch"[39m
-                      [36m>[39m
-                        [36m<input[39m
-                          [33mclass[39m=[32m"form-check-input"[39m
-                          [33mtype[39m=[32m"checkbox"[39m
-                        [36m/>[39m
-                        [36m<label[39m
-                          [33mclass[39m=[32m"form-check-label"[39m
-                          [33mtitle[39m=[32m""[39m
-                        [36m>[39m
-                          [0mEdit Movie[0m
-                        [36m</label>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                [36m</div>[39m
-              [36m</div>[39m
+              [36m/>[39m
             [36m</div>[39m
           [36m</div>[39m
         [36m</div>[39m
@@ -821,125 +349,7 @@ FAIL src/components/CentralList.test.tsx (5.181 s)
                 [33mclass[39m=[32m"adminlist"[39m
                 [33mdata-testid[39m=[32m"dropzone"[39m
                 [33mid[39m=[32m"dropzone"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"droppedMovie"[39m
-                [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"border"[39m
-                  [36m>[39m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"css-1htfx3z"[39m
-                      [33mdata-accordion-item[39m=[32m""[39m
-                    [36m>[39m
-                      [36m<button[39m
-                        [33maria-controls[39m=[32m"accordion-panel-31"[39m
-                        [33maria-expanded[39m=[32m"false"[39m
-                        [33mclass[39m=[32m"css-o4mft6"[39m
-                        [33mid[39m=[32m"accordion-header-31"[39m
-                        [33mtype[39m=[32m"button"[39m
-                      [36m>[39m
-                        [36m<div[39m
-                          [33mclass[39m=[32m"css-1p33byw"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [36m<img[39m
-                              [33malt[39m=[32m""[39m
-                              [33mclass[39m=[32m"css-17eao0m"[39m
-                            [36m/>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-3cojqf"[39m
-                            [36m/>[39m
-                          [36m</div>[39m
-                          [36m<div[39m
-                            [33mclass[39m=[32m"css-0"[39m
-                          [36m>[39m
-                            [0m [0m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ghfqnb"[39m
-                            [36m/>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-1kqpkvp"[39m
-                            [36m/>[39m
-                          [36m</div>[39m
-                          [36m<svg[39m
-                            [33maria-hidden[39m=[32m"true"[39m
-                            [33mclass[39m=[32m"css-1duxe6l"[39m
-                            [33mfocusable[39m=[32m"false"[39m
-                            [33mrole[39m=[32m"presentation"[39m
-                            [33mviewBox[39m=[32m"0 0 24 24"[39m
-                          [36m>[39m
-                            [36m<path[39m
-                              [33md[39m=[32m"M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"[39m
-                              [33mfill[39m=[32m"currentColor"[39m
-                            [36m/>[39m
-                          [36m</svg>[39m
-                        [36m</div>[39m
-                      [36m</button>[39m
-                      [36m<div[39m
-                        [33maria-hidden[39m=[32m"true"[39m
-                        [33mclass[39m=[32m"rah-static rah-static--height-zero css-vppuuz"[39m
-                        [33mstyle[39m=[32m"height: 0px; overflow: hidden;"[39m
-                      [36m>[39m
-                        [36m<div[39m
-                          [33mstyle[39m=[32m"transition: opacity 250ms ease 0ms; opacity: 0; display: none;"[39m
-                        [36m>[39m
-                          [36m<div[39m
-                            [33maria-hidden[39m=[32m"true"[39m
-                            [33maria-labelledby[39m=[32m"accordion-header-31"[39m
-                            [33mclass[39m=[32m"css-17vg19s"[39m
-                            [33mdata-accordion-panel[39m=[32m""[39m
-                            [33mid[39m=[32m"accordion-panel-31"[39m
-                            [33mrole[39m=[32m"region"[39m
-                          [36m>[39m
-                            [36m<p[39m
-                              [33mclass[39m=[32m"css-1ljpcab"[39m
-                            [36m/>[39m
-                            [36m<div[39m
-                              [33mclass[39m=[32m"css-zp3rvv"[39m
-                            [36m>[39m
-                              [36m<p[39m
-                                [33mclass[39m=[32m"css-15bnp58"[39m
-                              [36m>[39m
-                                [36m<b />[39m
-                              [36m</p>[39m
-                            [36m</div>[39m
-                          [36m</div>[39m
-                        [36m</div>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div>[39m
-                    [0m [0m
-                    [36m<div[39m
-                      [33mclass[39m=[32m"editCheck"[39m
-                    [36m>[39m
-                      [36m<div[39m
-                        [33mclass[39m=[32m"form-check form-switch"[39m
-                      [36m>[39m
-                        [36m<input[39m
-                          [33mclass[39m=[32m"form-check-input"[39m
-                          [33mtype[39m=[32m"checkbox"[39m
-                        [36m/>[39m
-                        [36m<label[39m
-                          [33mclass[39m=[32m"form-check-label"[39m
-                          [33mtitle[39m=[32m""[39m
-                        [36m>[39m
-                          [0mEdit Movie[0m
-                        [36m</label>[39m
-                      [36m</div>[39m
-                    [36m</div>[39m
-                  [36m</div>[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                  [36m<div />[39m
-                [36m</div>[39m
-              [36m</div>[39m
+              [36m/>[39m
             [36m</div>[39m
           [36m</div>[39m
         [36m</div>[39m
@@ -988,7 +398,7 @@ PASS src/components/AdminList.test.tsx
       at handleOnDrop (src/components/AdminList.tsx:223:17)
 
     console.log
-      [ -1 ]
+      []
 
       at handleOnDrop (src/components/AdminList.tsx:227:21)
 
@@ -1075,29 +485,29 @@ PASS src/components/NewUserButton.test.tsx
 PASS src/components/Users.test.tsx
 PASS src/components/ChooseRole.test.tsx
 PASS src/App.test.tsx
----------------------|---------|----------|---------|---------|-------------------------------------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                               
----------------------|---------|----------|---------|---------|-------------------------------------------------
-All files            |   44.59 |    45.83 |   39.28 |   45.27 |                                                 
- src                 |     100 |      100 |     100 |     100 |                                                 
-  App.tsx            |     100 |      100 |     100 |     100 |                                                 
- src/components      |   44.44 |    45.83 |   38.84 |   45.12 |                                                 
-  AdminList.tsx      |   55.72 |    63.63 |   58.53 |   55.03 | 112-153,160-170,204-207,236-249,257-282,379-424 
-  CentralList.tsx    |   33.96 |    27.77 |      24 |   35.29 | 42,102,108-178,183,188-356                      
-  ChooseRole.tsx     |   47.27 |    33.33 |   37.03 |      50 | 46,63-104,116,127,138-172,215-230,236,286-314   
-  NewMovieButton.tsx |    2.32 |        0 |       0 |    2.43 | 37-384                                          
-  NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                                 
-  UserList.tsx       |   35.93 |    35.71 |   23.07 |    36.5 | 58,68-89,93-114,124,134-170,219-326             
-  Users.tsx          |     100 |      100 |     100 |     100 |                                                 
- src/interfaces      |       0 |        0 |       0 |       0 |                                                 
-  movie.ts           |       0 |        0 |       0 |       0 |                                                 
-  play.ts            |       0 |        0 |       0 |       0 |                                                 
-  user.ts            |       0 |        0 |       0 |       0 |                                                 
-  userMovie.ts       |       0 |        0 |       0 |       0 |                                                 
----------------------|---------|----------|---------|---------|-------------------------------------------------
+---------------------|---------|----------|---------|---------|-------------------------------------------------------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                                 
+---------------------|---------|----------|---------|---------|-------------------------------------------------------------------
+All files            |   43.05 |    44.68 |   35.97 |   43.97 |                                                                   
+ src                 |     100 |      100 |     100 |     100 |                                                                   
+  App.tsx            |     100 |      100 |     100 |     100 |                                                                   
+ src/components      |   42.89 |    44.68 |    35.5 |   43.82 |                                                                   
+  AdminList.tsx      |   50.38 |    59.09 |   46.34 |   50.38 | 87,90,112-153,160-170,177-181,204-207,221,236-249,257-282,379-424 
+  CentralList.tsx    |   33.96 |    27.77 |      24 |   35.29 | 42,102,108-178,183,188-356                                        
+  ChooseRole.tsx     |   47.27 |    33.33 |   37.03 |      50 | 46,63-104,116,127,138-172,215-230,236,286-314                     
+  NewMovieButton.tsx |    2.32 |        0 |       0 |    2.43 | 37-384                                                            
+  NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                                                   
+  UserList.tsx       |    37.7 |    41.66 |      24 |   38.33 | 58,68-84,88-109,119,129-165,214-321                               
+  Users.tsx          |     100 |      100 |     100 |     100 |                                                                   
+ src/interfaces      |       0 |        0 |       0 |       0 |                                                                   
+  movie.ts           |       0 |        0 |       0 |       0 |                                                                   
+  play.ts            |       0 |        0 |       0 |       0 |                                                                   
+  user.ts            |       0 |        0 |       0 |       0 |                                                                   
+  userMovie.ts       |       0 |        0 |       0 |       0 |                                                                   
+---------------------|---------|----------|---------|---------|-------------------------------------------------------------------
 
 Test Suites: 1 failed, 6 passed, 7 total
 Tests:       5 failed, 23 passed, 28 total
 Snapshots:   0 total
-Time:        14.115 s
+Time:        9.347 s
 Ran all test suites.
