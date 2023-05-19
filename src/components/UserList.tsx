@@ -69,20 +69,15 @@ const YourList: React.FC<Props> = ({ user, movieState, handleUser }) => {
             e.dataTransfer.getData("widgetType")
         ) as Movie;
         console.log("widgetType", widgetType);
-        const duplicates = userMovies.some(
-            (movie: Movie): boolean => movie.title === widgetType.title
+        const newMovie: userMovie = {
+            ...widgetType,
+            id: userMovies.length
+        };
+        setUserMovies([...userMovies, newMovie]);
+        localStorage.setItem(
+            `userMovieList-${user.name}`,
+            JSON.stringify([...userMovies, newMovie])
         );
-        if (!duplicates) {
-            const newMovie: userMovie = {
-                ...widgetType,
-                id: userMovies.length
-            };
-            setUserMovies([...userMovies, newMovie]);
-            localStorage.setItem(
-                `userMovieList-${user.name}`,
-                JSON.stringify([...userMovies, newMovie])
-            );
-        }
     }
 
     function handleDragOver(e: React.DragEvent) {

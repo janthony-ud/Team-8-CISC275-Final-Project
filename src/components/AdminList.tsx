@@ -42,7 +42,7 @@ const AdminList: React.FC<Props> = ({
         if (storedMovies) {
             return JSON.parse(storedMovies);
         } else {
-            return [blankMovie];
+            return [];
         }
     });
 
