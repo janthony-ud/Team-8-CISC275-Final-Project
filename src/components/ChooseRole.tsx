@@ -36,7 +36,6 @@ export const ChooseUser: React.FC = () => {
         })
     );
     const [currentUser, setCurrentUser] = useState<User>(users[0]);
-    const [isViewingList, setIsViewingList] = useState<boolean>(false);
 
     localStorage.removeItem("users");
 
@@ -85,10 +84,6 @@ export const ChooseUser: React.FC = () => {
                 ></NewUserDrawer>
             );
         }
-    }
-
-    function viewUserList() {
-        setIsViewingList(!isViewingList); // Set the state to view the user list
     }
 
     function handleRemoveViewUser(user: User) {
@@ -158,13 +153,7 @@ export const ChooseUser: React.FC = () => {
                                         );
                                     }}
                                 ></NewUserDrawer>
-                                <Button
-                                    variantColor="teal"
-                                    size="md"
-                                    onClick={() => viewUserList()}
-                                >
-                                    Toggle User{"'"}s Lists
-                                </Button>{" "}
+
                                 <h3>
                                     {currentUser.name}, {currentUser.role}{" "}
                                 </h3>
@@ -175,14 +164,6 @@ export const ChooseUser: React.FC = () => {
                                                 {user.name}, {user.role}{" "}
                                             </h3>
                                             {handleRemoveViewUser(user)}
-                                            <div>
-                                                {isViewingList && (
-                                                    <CentralList
-                                                        user={user}
-                                                        handling={"superView"}
-                                                    ></CentralList>
-                                                )}{" "}
-                                            </div>
                                         </div>
                                     </div>
                                 ))}
