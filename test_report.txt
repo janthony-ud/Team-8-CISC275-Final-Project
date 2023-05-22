@@ -5,7 +5,7 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-PASS src/components/AdminList.test.tsx
+FAIL src/components/AdminList.test.tsx
   ● Console
 
     console.log
@@ -24,17 +24,17 @@ PASS src/components/AdminList.test.tsx
         user_rating: 0
       }
 
-      at handleOnDrop (src/components/AdminList.tsx:261:17)
+      at handleOnDrop (src/components/AdminList.tsx:219:17)
 
     console.log
       false
 
-      at handleOnDrop (src/components/AdminList.tsx:265:17)
+      at handleOnDrop (src/components/AdminList.tsx:223:17)
 
     console.log
       []
 
-      at handleOnDrop (src/components/AdminList.tsx:269:21)
+      at handleOnDrop (src/components/AdminList.tsx:227:21)
 
     console.log
       testing
@@ -57,22 +57,17 @@ PASS src/components/AdminList.test.tsx
         user_rating: 0
       }
 
-      at handleOnDrop (src/components/AdminList.tsx:261:17)
+      at handleOnDrop (src/components/AdminList.tsx:219:17)
 
     console.log
-      false
+      true
 
-      at handleOnDrop (src/components/AdminList.tsx:265:17)
-
-    console.log
-      []
-
-      at handleOnDrop (src/components/AdminList.tsx:269:21)
+      at handleOnDrop (src/components/AdminList.tsx:223:17)
 
     console.log
       [ 'Adventure' ]
 
-      at src/components/AdminList.tsx:181:21
+      at src/components/AdminList.tsx:163:21
 
     console.log
       found dropzone
@@ -90,27 +85,22 @@ PASS src/components/AdminList.test.tsx
         user_rating: 0
       }
 
-      at handleOnDrop (src/components/AdminList.tsx:261:17)
+      at handleOnDrop (src/components/AdminList.tsx:219:17)
 
     console.log
-      false
+      true
 
-      at handleOnDrop (src/components/AdminList.tsx:265:17)
-
-    console.log
-      []
-
-      at handleOnDrop (src/components/AdminList.tsx:269:21)
+      at handleOnDrop (src/components/AdminList.tsx:223:17)
 
     console.log
       [ 'Adventure' ]
 
-      at src/components/AdminList.tsx:181:21
+      at src/components/AdminList.tsx:163:21
 
     console.log
       [ 'Adventure' ]
 
-      at src/components/AdminList.tsx:181:21
+      at src/components/AdminList.tsx:163:21
 
     console.log
       found dropzone
@@ -128,17 +118,17 @@ PASS src/components/AdminList.test.tsx
         user_rating: 0
       }
 
-      at handleOnDrop (src/components/AdminList.tsx:261:17)
+      at handleOnDrop (src/components/AdminList.tsx:219:17)
 
     console.log
       false
 
-      at handleOnDrop (src/components/AdminList.tsx:265:17)
+      at handleOnDrop (src/components/AdminList.tsx:223:17)
 
     console.log
-      []
+      [ -1 ]
 
-      at handleOnDrop (src/components/AdminList.tsx:269:21)
+      at handleOnDrop (src/components/AdminList.tsx:227:21)
 
     console.log
       found dropzone
@@ -156,24 +146,374 @@ PASS src/components/AdminList.test.tsx
         user_rating: 0
       }
 
-      at handleOnDrop (src/components/AdminList.tsx:261:17)
+      at handleOnDrop (src/components/AdminList.tsx:219:17)
 
     console.log
-      false
+      true
 
-      at handleOnDrop (src/components/AdminList.tsx:265:17)
-
-    console.log
-      []
-
-      at handleOnDrop (src/components/AdminList.tsx:269:21)
+      at handleOnDrop (src/components/AdminList.tsx:223:17)
 
     console.log
       [ 'Adventure' ]
 
-      at src/components/AdminList.tsx:181:21
+      at src/components/AdminList.tsx:163:21
 
-PASS src/components/CentralList.test.tsx
+  ● Admin List Component Tests › renders remove button
+
+    TestingLibraryElementError: Found multiple elements with the text: Remove
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<button[39m
+      [33mclass[39m=[32m"btn btn-primary"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [0mRemove[0m
+    [36m</button>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<button[39m
+      [33mclass[39m=[32m"btn btn-primary"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [0mRemove[0m
+    [36m</button>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"Toaster"[39m
+        [33mid[39m=[32m"react-toast"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; top: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-top-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; top: 0px; right: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-left"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; margin: 0px auto; text-align: center; bottom: 0px; right: 0px; left: 0px;"[39m
+        [36m/>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"Toaster__manager-bottom-right"[39m
+          [33mstyle[39m=[32m"max-width: 560px; position: fixed; z-index: 5500; pointer-events: none; bottom: 0px; right: 0px;"[39m
+        [36m/>[39m
+      [36m</div>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<h2>[39m
+            [0m Movies to be Reviewed [0m
+          [36m</h2>[39m
+          [36m<p>[39m
+            [0mDrag Movies to add them to the Review List[0m
+          [36m</p>[39m
+          [36m<div[39m
+            [33maria-label[39m=[32m"dropzone"[39m
+            [33mclass[39m=[32m"adminlist"[39m
+            [33mdata-testid[39m=[32m"dropzone"[39m
+            [33mid[39m=[32m"dropzone"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"droppedMovie"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"border"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"css-1htfx3z"[39m
+                  [33mdata-accordion-item[39m=[32m""[39m
+                [36m>[39m
+                  [36m<button[39m
+                    [33maria-controls[39m=[32m"accordion-panel-17"[39m
+                    [33maria-expanded[39m=[32m"false"[39m
+                    [33mclass[39m=[32m"css-o4mft6"[39m
+                    [33mid[39m=[32m"accordion-header-17"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"css-1p33byw"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"css-0"[39m
+                      [36m>[39m
+                        [36m<img[39m
+                          [33malt[39m=[32m""[39m
+                          [33mclass[39m=[32m"css-17eao0m"[39m
+                        [36m/>[39m
+                        [36m<p[39m
+                          [33mclass[39m=[32m"css-3cojqf"[39m
+                        [36m/>[39m
+                      [36m</div>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"css-0"[39m
+                      [36m>[39m
+                        [0m [0m
+                        [36m<p[39m
+                          [33mclass[39m=[32m"css-1ghfqnb"[39m
+                        [36m/>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"css-1kqpkvp"[39m
+                        [36m/>[39m
+                      [36m</div>[39m
+                      [36m<svg[39m
+                        [33maria-hidden[39m=[32m"true"[39m
+                        [33mclass[39m=[32m"css-1duxe6l"[39m
+                        [33mfocusable[39m=[32m"false"[39m
+                        [33mrole[39m=[32m"presentation"[39m
+                        [33mviewBox[39m=[32m"0 0 24 24"[39m
+                      [36m>[39m
+                        [36m<path[39m
+                          [33md[39m=[32m"M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"[39m
+                          [33mfill[39m=[32m"currentColor"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                    [36m</div>[39m
+                  [36m</button>[39m
+                  [36m<div[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"rah-static rah-static--height-zero css-vppuuz"[39m
+                    [33mstyle[39m=[32m"height: 0px; overflow: hidden;"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mstyle[39m=[32m"transition: opacity 250ms ease 0ms; opacity: 0; display: none;"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33maria-hidden[39m=[32m"true"[39m
+                        [33maria-labelledby[39m=[32m"accordion-header-17"[39m
+                        [33mclass[39m=[32m"css-17vg19s"[39m
+                        [33mdata-accordion-panel[39m=[32m""[39m
+                        [33mid[39m=[32m"accordion-panel-17"[39m
+                        [33mrole[39m=[32m"region"[39m
+                      [36m>[39m
+                        [36m<p[39m
+                          [33mclass[39m=[32m"css-1ljpcab"[39m
+                        [36m/>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"css-zp3rvv"[39m
+                        [36m>[39m
+                          [36m<p[39m
+                            [33mclass[39m=[32m"css-15bnp58"[39m
+                          [36m>[39m
+                            [36m<b />[39m
+                          [36m</p>[39m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"removeMovie"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mRemove[0m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [0m [0m
+                [36m<div[39m
+                  [33mclass[39m=[32m"editCheck"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check form-switch"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mEdit Movie[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div />[39m
+              [36m<div />[39m
+              [36m<div />[39m
+              [36m<div />[39m
+              [36m<div />[39m
+              [36m<div />[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"droppedMovie"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"border"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"css-1htfx3z"[39m
+                  [33mdata-accordion-item[39m=[32m""[39m
+                [36m>[39m
+                  [36m<button[39m
+                    [33maria-controls[39m=[32m"accordion-panel-20"[39m
+                    [33maria-expanded[39m=[32m"false"[39m
+                    [33mclass[39m=[32m"css-o4mft6"[39m
+                    [33mid[39m=[32m"accordion-header-20"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"css-1p33byw"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"css-0"[39m
+                      [36m>[39m
+                        [36m<img[39m
+                          [33malt[39m=[32m"A Movie"[39m
+                          [33mclass[39m=[32m"css-17eao0m"[39m
+                        [36m/>[39m
+                        [36m<p[39m
+                          [33mclass[39m=[32m"css-3cojqf"[39m
+                        [36m>[39m
+                          [0mA Movie[0m
+                        [36m</p>[39m
+                      [36m</div>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"css-0"[39m
+                      [36m>[39m
+                        [0m [0m
+                        [36m<p[39m
+                          [33mclass[39m=[32m"css-1ghfqnb"[39m
+                        [36m>[39m
+                          [0mAdventure[0m
+                        [36m</p>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"css-1kqpkvp"[39m
+                        [36m>[39m
+                          [0mPG[0m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                      [36m<svg[39m
+                        [33maria-hidden[39m=[32m"true"[39m
+                        [33mclass[39m=[32m"css-1duxe6l"[39m
+                        [33mfocusable[39m=[32m"false"[39m
+                        [33mrole[39m=[32m"presentation"[39m
+                        [33mviewBox[39m=[32m"0 0 24 24"[39m
+                      [36m>[39m
+                        [36m<path[39m
+                          [33md[39m=[32m"M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"[39m
+                          [33mfill[39m=[32m"currentColor"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                    [36m</div>[39m
+                  [36m</button>[39m
+                  [36m<div[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"rah-static rah-static--height-zero css-vppuuz"[39m
+                    [33mstyle[39m=[32m"height: 0px; overflow: hidden;"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mstyle[39m=[32m"transition: opacity 250ms ease 0ms; opacity: 0; display: none;"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33maria-hidden[39m=[32m"true"[39m
+                        [33maria-labelledby[39m=[32m"accordion-header-20"[39m
+                        [33mclass[39m=[32m"css-17vg19s"[39m
+                        [33mdata-accordion-panel[39m=[32m""[39m
+                        [33mid[39m=[32m"accordion-panel-20"[39m
+                        [33mrole[39m=[32m"region"[39m
+                      [36m>[39m
+                        [36m<p[39m
+                          [33mclass[39m=[32m"css-1ljpcab"[39m
+                        [36m>[39m
+                          [0mTest description[0m
+                        [36m</p>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"css-zp3rvv"[39m
+                        [36m>[39m
+                          [36m<p[39m
+                            [33mclass[39m=[32m"css-15bnp58"[39m
+                          [36m>[39m
+                            [36m<b>[39m
+                              [0mBob , Mary , Jim[0m
+                            [36m</b>[39m
+                          [36m</p>[39m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"removeMovie"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mRemove[0m
+                [36m</button>[39m
+              [36m</div>[39m
+              [36m<div>[39m
+                [0m [0m
+                [36m<div[39m
+                  [33mclass[39m=[32m"editCheck"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check form-switch"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"A Movie"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"A Movie"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mEdit Movie[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div />[39m
+              [36m<div />[39m
+              [36m<div />[39m
+              [36m<div />[39m
+              [36m<div />[39m
+              [36m<div />[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      173 |             }
+      174 |         });
+    > 175 |         expect(screen.getByText("Remove")).toBeInTheDocument();
+          |                       ^
+      176 |     });
+      177 |     test("options dissapear after click", async () => {
+      178 |         render(
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/AdminList.test.tsx:175:23)
+
+PASS src/components/CentralList.test.tsx (6.073 s)
   ● Console
 
     console.error
@@ -340,29 +680,29 @@ PASS src/components/NewUserButton.test.tsx
 PASS src/components/Users.test.tsx
 PASS src/components/ChooseRole.test.tsx
 PASS src/App.test.tsx
----------------------|---------|----------|---------|---------|-----------------------------------------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                   
----------------------|---------|----------|---------|---------|-----------------------------------------------------
-All files            |   61.55 |       69 |   47.22 |   62.66 |                                                     
- src                 |     100 |      100 |     100 |     100 |                                                     
-  App.tsx            |     100 |      100 |     100 |     100 |                                                     
- src/components      |   61.45 |       69 |   46.85 |   62.56 |                                                     
-  AdminList.tsx      |   80.53 |       90 |   69.56 |   80.27 | 130-136,165-171,212,263,278,285-291,299-324,421-466 
-  CentralList.tsx    |   52.83 |    72.22 |      40 |    54.9 | 42,102,108-137,146,167-171,185,229,358,462          
-  ChooseRole.tsx     |   47.27 |    33.33 |   37.03 |      50 | 46,63-104,116,127,138-172,215-230,236,286-314       
-  NewMovieButton.tsx |    37.2 |        0 |    8.33 |   39.02 | 54-55,59-65,71-104,177-384                          
-  NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                                     
-  UserList.tsx       |    37.7 |    41.66 |      24 |   38.33 | 58,68-84,88-109,119,129-165,214-320                 
-  Users.tsx          |     100 |      100 |     100 |     100 |                                                     
- src/interfaces      |       0 |        0 |       0 |       0 |                                                     
-  movie.ts           |       0 |        0 |       0 |       0 |                                                     
-  play.ts            |       0 |        0 |       0 |       0 |                                                     
-  user.ts            |       0 |        0 |       0 |       0 |                                                     
-  userMovie.ts       |       0 |        0 |       0 |       0 |                                                     
----------------------|---------|----------|---------|---------|-----------------------------------------------------
+---------------------|---------|----------|---------|---------|----------------------------------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                            
+---------------------|---------|----------|---------|---------|----------------------------------------------
+All files            |   60.98 |    71.73 |   47.44 |   62.14 |                                              
+ src                 |     100 |      100 |     100 |     100 |                                              
+  App.tsx            |     100 |      100 |     100 |     100 |                                              
+ src/components      |   60.88 |    71.73 |   47.05 |   62.03 |                                              
+  AdminList.tsx      |   80.91 |    95.45 |   70.73 |   80.62 | 112-118,147-153,236,257-282,379-424          
+  CentralList.tsx    |   52.83 |    72.22 |      40 |    54.9 | 42,102,108-137,146,167-171,185,229,358,462   
+  ChooseRole.tsx     |   48.07 |     37.5 |      40 |   51.02 | 45,62-99,111,122,133-161,196-211,217,267-295 
+  NewMovieButton.tsx |    37.2 |        0 |    8.33 |   39.02 | 54-55,59-65,71-104,177-384                   
+  NewUserButton.tsx  |     100 |      100 |     100 |     100 |                                              
+  UserList.tsx       |    37.7 |    41.66 |      24 |   38.33 | 58,68-84,88-109,119,129-165,214-320          
+  Users.tsx          |     100 |      100 |     100 |     100 |                                              
+ src/interfaces      |       0 |        0 |       0 |       0 |                                              
+  movie.ts           |       0 |        0 |       0 |       0 |                                              
+  play.ts            |       0 |        0 |       0 |       0 |                                              
+  user.ts            |       0 |        0 |       0 |       0 |                                              
+  userMovie.ts       |       0 |        0 |       0 |       0 |                                              
+---------------------|---------|----------|---------|---------|----------------------------------------------
 
-Test Suites: 7 passed, 7 total
-Tests:       35 passed, 35 total
+Test Suites: 1 failed, 6 passed, 7 total
+Tests:       1 failed, 34 passed, 35 total
 Snapshots:   0 total
-Time:        12.729 s
+Time:        18.649 s
 Ran all test suites.

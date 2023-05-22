@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Team-8-CISC275-Final-Project/static/css/main.7d2a737e.css",
-    "main.js": "/Team-8-CISC275-Final-Project/static/js/main.46c77998.js",
+    "main.js": "/Team-8-CISC275-Final-Project/static/js/main.2e87065d.js",
     "static/js/787.ec723425.chunk.js": "/Team-8-CISC275-Final-Project/static/js/787.ec723425.chunk.js",
     "static/media/home.png": "/Team-8-CISC275-Final-Project/static/media/home.60fd9269ddeebc33bd81.png",
     "static/media/movieo-logo.png": "/Team-8-CISC275-Final-Project/static/media/movieo-logo.c2b231dc34e2b812a87a.png",
     "index.html": "/Team-8-CISC275-Final-Project/index.html",
     "main.7d2a737e.css.map": "/Team-8-CISC275-Final-Project/static/css/main.7d2a737e.css.map",
-    "main.46c77998.js.map": "/Team-8-CISC275-Final-Project/static/js/main.46c77998.js.map",
+    "main.2e87065d.js.map": "/Team-8-CISC275-Final-Project/static/js/main.2e87065d.js.map",
     "787.ec723425.chunk.js.map": "/Team-8-CISC275-Final-Project/static/js/787.ec723425.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7d2a737e.css",
-    "static/js/main.46c77998.js"
+    "static/js/main.2e87065d.js"
   ]
 }
